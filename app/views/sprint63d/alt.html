@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post">
+
+                <h1 class="govuk-heading-xl">Alternative format</h1>
+
+                <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Which alternative format do you require?
+      </h1>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="alternative-format" name="alternative-format" type="radio" value="Audio cassette tape">
+        <label class="govuk-label govuk-radios__label" for="alternative-format">
+          Audio cassette tape
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="alternative-format-2" name="alternative-format" type="radio" value="Audio CD">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-2">
+          Audio CD
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="alternative-format-3" name="alternative-format" type="radio" value="Braille">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-3">
+          Braille
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="alternative-format-4" name="alternative-format" type="radio" value="BSL (British Sign Language DVD/MPEG)">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-4">
+          BSL (British Sign Language DVD/MPEG)
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="alternative-format-4" name="alternative-format" type="radio" value="Large Print (16 - 26 Bold)">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-4">
+          Large Print (16 - 26 Bold)
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="alternative-format-4" name="alternative-format" type="radio" value="Welsh Language">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-4">
+          Welsh Language
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+               <a button href="contact-updated" type="submit" class="govuk-button">
+              Save
+            </button></a>
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

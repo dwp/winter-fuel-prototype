@@ -115,6 +115,7 @@ const sprint62 = require('./routes/sprint62');
 const sprint62b = require('./routes/sprint62b');
 const sprint62c = require('./routes/sprint62c');
 const sprint63 = require('./routes/sprint63');
+const sprint63c = require('./routes/sprint63c');
 
 //copy the router use and update the sprint version
 router.use(sprint15);
@@ -230,6 +231,7 @@ router.use(sprint62);
 router.use(sprint62b);
 router.use(sprint62c);
 router.use(sprint63);
+router.use(sprint63c);
 
 router.use((req, res, next) => {
   if (req.method === 'POST') {
