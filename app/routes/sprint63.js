@@ -153,4 +153,12 @@ router.post('/sprint63/declaration', (req, res) => {
   res.redirect('update-details-changed')
 });
 
+router.post('/sprint63/update-details-changed', (req, res) => {
+  res.redirect('overview')
+});
+
+router.post('/sprint63/update-details', (req, res) => {
+  res.redirect('overview')
+});
+
 module.exports = router;

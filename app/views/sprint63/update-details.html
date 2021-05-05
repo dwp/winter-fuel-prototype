@@ -181,7 +181,7 @@ Winter Fuel Payments
             
             
   
-          <h2 class="govuk-heading-m">Previous address and occupancy</h2>
+          <!--<h2 class="govuk-heading-m">Previous address and occupancy</h2>
   
           
 
@@ -230,7 +230,7 @@ Winter Fuel Payments
 
           <a class="govuk-link" href="#" style="font-size:18px">
             Add a previous address<span class="govuk-visually-hidden"> address</span>
-          </a><br><br><br><br><br>
+          </a><br><br><br><br><br>-->
   
           
   
@@ -241,14 +241,17 @@ Winter Fuel Payments
       <form method="post">
 
 
-        {% if (data['address-change'] === '27 Kent Street, Amble, NE65 0LZ') or (data['living-with-date-changed'] == 'true') or (data['living-with-date-changed'] == 'true') or (data['homephone-changed'] == 'true') or (data['poa-changed'] == 'true')%} 
+       <!-- {% if (data['address-change'] === '27 Kent Street, Amble, NE65 0LZ') or (data['living-with-date-changed'] == 'true') or (data['living-with-date-changed'] == 'true') or (data['homephone-changed'] == 'true') or (data['poa-changed'] == 'true')%} 
         <button class="govuk-button" data-module="govuk-button">
           Update details
         </button>
-        {% endif %}
-                 
+        {% endif %}-->
+              <button class="govuk-button" data-module="govuk-button">
+                  Back to overview
+                </button>    
         
                 </form>
+               
     </main>
   </div>
   </div>
