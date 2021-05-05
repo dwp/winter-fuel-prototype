@@ -78,7 +78,7 @@ router.post('/sprint63/address-search-result', function(req, res) {
 
 // Move date
 router.post('/sprint63/move-date', (req, res) => {
-  res.redirect('update-anything-else')
+  res.redirect('living-with')
 });
 
 // Living with anyone at address change
