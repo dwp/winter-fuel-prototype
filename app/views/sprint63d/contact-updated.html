@@ -145,11 +145,10 @@ Winter Fuel Payments
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Alternative format</th>
                 <td class="govuk-table__cell">
-                  {% if data['alt'] === 'Yes' %}
-                  {% elseif data.alt %}
-                  {{data.alt}}
+                  {% if data['alternative-format'] %}
+                    {{data['alternative-format']}}
                   {% else %}
-                  Welsh language
+                    None
                   {% endif %}
                 </td>
                 <td class="govuk-table__cell">
