@@ -16,13 +16,28 @@ Winter Fuel Payments
       <div class="govuk-grid-column-two-thirds">
 
         <form method="post">
+
+          
+
           {% include './_bar.html' %}
 
+          
+          {% if data['alt-format-changed'] == 'true' %}
+          <div class="moj-banner moj-banner--success">
+
+          <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+          <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+          </svg>
+
+          <div class="moj-banner__message">
+          <span class="moj-banner__assistive">Success</span>Details updated
+          </div>
+
+          </div>
+        {% endif %}
+          
           {% include './_tab-contact.html' %}
-
-          <br>
-          <br>
-
+          <br><br>
           <table class="govuk-table">
             <h2 class="govuk-heading-m">Contact details</h2>
             <tbody class="govuk-table__body">
@@ -133,12 +148,11 @@ Winter Fuel Payments
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Alternative format</th>
                 <td class="govuk-table__cell">
-                  {% if data['alt'] === 'Yes' %}
-                  {% elseif data.alt %}
-                  {{data.alt}}
-                  {% else %}
-                
-                  {% endif %}
+                  {% if data['alternative-format'] %}
+                  {{data['alternative-format']}}
+                {% else %}
+                  None
+                {% endif %}
                 </td>
                 <td class="govuk-table__cell">
                   <a href="alt">
@@ -151,10 +165,15 @@ Winter Fuel Payments
           </table>
 
       </div>
-
-      <div class="govuk-grid-column-one-third">
-          {% include './_history.html' %}
-      </div>
+      {% if data['alt-format-changed'] == 'true' %}
+        <div class="govuk-grid-column-one-third">
+          {% include './_history3.html' %}
+       </div>
+      {% else %}
+        <div class="govuk-grid-column-one-third">
+            {% include './_history.html' %}
+        </div>
+      {% endif %}
 
     </div>
 

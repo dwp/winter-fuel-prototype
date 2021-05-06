@@ -10,7 +10,7 @@ router.use((req, res, next) => {
 
 // alt format to updated contact
 router.post('/sprint63d/alt', (req, res) => {
-  res.redirect('contact-updated')
+  res.redirect('contact')
 });
 
 
