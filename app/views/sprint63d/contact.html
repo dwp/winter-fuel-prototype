@@ -151,12 +151,16 @@ Winter Fuel Payments
                   {% if data['alternative-format'] %}
                   {{data['alternative-format']}}
                 {% else %}
-                  None
+                  
                 {% endif %}
                 </td>
                 <td class="govuk-table__cell">
                   <a href="alt">
-                    Change<span class="govuk-visually-hidden">alternative format</span>
+                    {% if data['alternative-format'] %}
+                    Change<span class="govuk-visually-hidden"> alternative format.</span>
+                    {% else %}
+                    Add<span class="govuk-visually-hidden"> alternative format.</span>
+                    {% endif %}
                   </a>
                 </td>
               </tr>
