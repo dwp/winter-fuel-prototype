@@ -223,13 +223,8 @@ router.post('/sprint63c/2nd-nationality-q', function(req, res) {
   if (req.body['2nd-nationality-q'] === 'yes') {
     res.redirect('2nd-nationality');
   } else {
-    res.redirect('no-nationality');
+    res.redirect('declaration');
   }
-});
-
-// no nationality to declaration
-router.post('/sprint63c/no-nationality', (req, res) => {
-  res.redirect('/sprint63c/declaration')
 });
 
 // 1st nationality to 2nd nationality Q

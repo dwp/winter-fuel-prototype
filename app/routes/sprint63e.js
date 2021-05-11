@@ -114,28 +114,23 @@ router.post('/sprint63e/uk-national', function(req, res) {
   }
 });
 
-// 2nd nationality (yes) to capture or (no) to not eligible no natiionality
-router.post('/sprint63c/2nd-nationality-q', function(req, res) {
+// 2nd nationality (yes) to capture or (no) to uk property
+router.post('/sprint63e/2nd-nationality-q', function(req, res) {
   if (req.body['2nd-nationality-q'] === 'yes') {
     res.redirect('2nd-nationality');
   } else {
-    res.redirect('no-nationality');
+    res.redirect('uk-property');
   }
 });
 
-// no nationality to declaration
-router.post('/sprint63c/no-nationality', (req, res) => {
-  res.redirect('/sprint63c/uk-property')
-});
-
 // 1st nationality to 2nd nationality Q
-router.post('/sprint63c/1st-nationality', (req, res) => {
-  res.redirect('/sprint63c/2nd-nationality-q')
+router.post('/sprint63e/1st-nationality', (req, res) => {
+  res.redirect('/sprint63e/2nd-nationality-q')
 });
 
-// 2nd nationality to declaration
-router.post('/sprint63c/2nd-nationality', (req, res) => {
-  res.redirect('/sprint63c/uk-property')
+// 2nd nationality to uk property
+router.post('/sprint63e/2nd-nationality', (req, res) => {
+  res.redirect('/sprint63e/uk-property')
 });
 
 // UK property to UK business
