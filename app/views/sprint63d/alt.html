@@ -59,23 +59,29 @@
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="large" name="alternative-format" type="radio" value="Large print">
-        <label class="govuk-label govuk-radios__label" for="alternative-format-4">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-5">
           Large print
         </label>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="welsh" name="alternative-format" type="radio" value="Welsh language">
-        <label class="govuk-label govuk-radios__label" for="alternative-format-4">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-6">
           Welsh language
         </label>
       </div>
-      <div class="govuk-radios__divider">or</div>
+
+{% if data['alt-format-changed'] == 'true' %}
+
+          <div class="govuk-radios__divider">or</div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="none" name="alternative-format" type="radio" value="">
-        <label class="govuk-label govuk-radios__label" for="alternative-format-">
-          None
+        <label class="govuk-label govuk-radios__label" for="alternative-format-7">
+          Remove alternative format previously selected
         </label>
       </div>
+
+        {% endif %}
+      
     </div>
 
   </fieldset>

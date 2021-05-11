@@ -28,7 +28,7 @@ router.post('/sprint63c/are-you-sure', function(req, res) {
   if (req.body['are-you-sure'] === 'yes') {
     res.redirect('type-of-application');
   } else {
-    res.redirect('move-date');
+    res.redirect('immigration-control');
   }
 });
 
@@ -127,7 +127,7 @@ router.post('/sprint63c/address-for-letters-1', (req, res) => {
   res.redirect('/sprint63c/contact')
 });
 
-// Confirm first line of address to move date
+// Confirm first line of address to immigration control
 router.post('/sprint63c/address-1', function(req, res) {
   if (req.body['address-change'] === 'see all') {
     res.redirect('/sprint63c/address-see-all');
@@ -136,7 +136,7 @@ router.post('/sprint63c/address-1', function(req, res) {
     res.redirect('address');
   }
   else {
-    res.redirect('move-date');
+    res.redirect('immigration-control');
   }
 });
 
@@ -146,11 +146,19 @@ router.post('/sprint63c/no-address-found', (req, res) => {
 });
 
 
-// See all results to move date
+// See all results to immigration-control
 router.post('/sprint63c/address-see-all', (req, res) => {
-  res.redirect('/sprint63c/move-date')
+  res.redirect('/sprint63c/immigration-control')
 });
 
+// immigration control YES to not eligible or NO to move date
+router.post('/sprint63c/immigration-control', function(req, res) {
+  if (req.body['immigration-control'] === 'yes') {
+    res.redirect('under-immigration-control');
+  } else {
+    res.redirect('move-date');
+  }
+});
 
 // Move date to living with
 router.post('/sprint63c/move-date', (req, res) => {
@@ -196,8 +204,41 @@ router.post('/sprint63c/contact', (req, res) => {
 });
 
 
-// Bank details to declaration
+// Bank details to uk national
 router.post('/sprint63c/bank-details', (req, res) => {
+  res.redirect('/sprint63c/uk-national')
+});
+
+// Uk National to (yes) 2nd nationality or (no) to 1st nationality
+router.post('/sprint63c/uk-national', function(req, res) {
+  if (req.body['uk-national'] === 'yes') {
+    res.redirect('2nd-nationality-q');
+  } else {
+    res.redirect('1st-nationality');
+  }
+});
+
+// 2nd nationality (yes) to capture or (no) to not eligible no natiionality
+router.post('/sprint63c/2nd-nationality-q', function(req, res) {
+  if (req.body['2nd-nationality-q'] === 'yes') {
+    res.redirect('2nd-nationality');
+  } else {
+    res.redirect('no-nationality');
+  }
+});
+
+// no nationality to declaration
+router.post('/sprint63c/no-nationality', (req, res) => {
+  res.redirect('/sprint63c/declaration')
+});
+
+// 1st nationality to 2nd nationality Q
+router.post('/sprint63c/1st-nationality', (req, res) => {
+  res.redirect('/sprint63c/2nd-nationality-q')
+});
+
+// 2nd nationality to declaration
+router.post('/sprint63c/2nd-nationality', (req, res) => {
   res.redirect('/sprint63c/declaration')
 });
 

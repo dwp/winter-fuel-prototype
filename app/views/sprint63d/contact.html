@@ -154,6 +154,20 @@ Winter Fuel Payments
                   
                 {% endif %}
                 </td>
+                  <td class="govuk-table__cell">
+                  {% if data['large-print'] %}
+                  {{data['large-print']}}
+                {% else %}
+                  
+                {% endif %}
+                </td>
+                <td class="govuk-table__cell">
+                  {% if data['bold'] === 'Yes' %}
+                  {{data['bold']}}
+                {% else %}
+                  
+                {% endif %}
+                </td>
                 <td class="govuk-table__cell">
                   <a href="alt">
                     {% if data['alternative-format'] %}
@@ -163,7 +177,7 @@ Winter Fuel Payments
                     {% endif %}
                   </a>
                 </td>
-              </tr>
+                </tr>
 
             </tbody>
           </table>
