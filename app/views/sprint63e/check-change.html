@@ -412,8 +412,8 @@ Winter Fuel Payments
                       First Nationality
                     </dt>
                   <dd class="govuk-summary-list__value">
-                    {% if data['1st-nationality'] %}
-                    {{data.1st-nationality}}
+                    {% if data['1st-country'] %}
+                    {{data['1st-country']}}
                     {% else %}
                     French
                     {% endif %}
@@ -425,8 +425,8 @@ Winter Fuel Payments
                       Second Nationality
                     </dt>
                   <dd class="govuk-summary-list__value">
-                    {% if data['2nd-nationality'] %}
-                    {{data['2nd-nationality']}}
+                    {% if data['2nd-country'] %}
+                    {{data['2nd-country']}}
                     {% else %}
                     Spanish
                     {% endif %}
