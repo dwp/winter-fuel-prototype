@@ -407,18 +407,21 @@ Winter Fuel Payments
               <div id="accordion-with-summary-sections-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-3_5"style="margin-left:25px">
                 <dl class="govuk-summary-list govuk-!-margin-bottom-9"style="margin-bottom: 0px !important;">
 
+                {% if data['uk-national'] !== 'yes' %} 
                     <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                       First Nationality
                     </dt>
                   <dd class="govuk-summary-list__value">
-                    {% if data['uk-national'] === 'yes' %}
-                    British
-                    {% elseif data['1st-country'] %}
+                                      
+                    {% if data['1st-country'] %}
                     {{data['1st-country']}}
+                    {% else %}
+                    None
                     {% endif %}
                       </dd>
                   </div>
+                {% endif %}
 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
@@ -433,17 +436,7 @@ Winter Fuel Payments
                       </dd>
                   </div>
                     
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Are you a national of any other countries?
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    No
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-
-                    </dd>
-                  </div>
+                  
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key"style="border-bottom: none;">
                       Do you get benefits or pensions from a country outside of the UK?

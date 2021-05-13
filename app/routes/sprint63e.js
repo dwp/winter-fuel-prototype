@@ -155,11 +155,6 @@ router.post('/sprint63e/uk-healthcare', (req, res) => {
 
 // Returning to the UK in past 3 years to
 router.post('/sprint63e/returning-to-uk', (req, res) => {
-  res.redirect('/sprint63e/other-nationalities')
-});
-
-// Returning to the UK in past 3 years to
-router.post('/sprint63e/other-nationalities', (req, res) => {
   res.redirect('/sprint63e/benefits-outside')
 });
 
