@@ -108,28 +108,15 @@ router.post('/sprint63e/lived-worked', (req, res) => {
 // Uk National to (yes) 2nd nationality or (no) to 1st nationality
 router.post('/sprint63e/uk-national', function(req, res) {
   if (req.body['uk-national'] === 'yes') {
-    res.redirect('2nd-nationality-q');
+    res.redirect('uk-property');
   } else {
     res.redirect('1st-nationality');
   }
 });
 
-// 2nd nationality (yes) to capture or (no) to uk property
-router.post('/sprint63e/2nd-nationality-q', function(req, res) {
-  if (req.body['2nd-nationality-q'] === 'yes') {
-    res.redirect('2nd-nationality');
-  } else {
-    res.redirect('uk-property');
-  }
-});
 
 // 1st nationality to 2nd nationality Q
 router.post('/sprint63e/1st-nationality', (req, res) => {
-  res.redirect('/sprint63e/2nd-nationality-q')
-});
-
-// 2nd nationality to uk property
-router.post('/sprint63e/2nd-nationality', (req, res) => {
   res.redirect('/sprint63e/uk-property')
 });
 
@@ -155,6 +142,30 @@ router.post('/sprint63e/uk-healthcare', (req, res) => {
 
 // Returning to the UK in past 3 years to
 router.post('/sprint63e/returning-to-uk', (req, res) => {
+  res.redirect('/sprint63e/2nd-nationality-q')
+});
+
+// 2nd nationality (yes) to capture or (no) to uk property
+router.post('/sprint63e/2nd-nationality-q', function(req, res) {
+  if (req.body['2nd-nationality-q'] === 'yes') {
+    res.redirect('2nd-nationality');
+  } else {
+    res.redirect('2nd-no');
+  }
+});
+
+// 2nd nationality to uk property
+router.post('/sprint63e/2nd-nationality', (req, res) => {
+  res.redirect('/sprint63e/2nd-nationality-date')
+});
+
+// 2nd nationality to uk property
+router.post('/sprint63e/2nd-no', (req, res) => {
+  res.redirect('/sprint63e/benefits-outside')
+});
+
+// 2nd nationality to uk property
+router.post('/sprint63e/2nd-nationality-date', (req, res) => {
   res.redirect('/sprint63e/benefits-outside')
 });
 
