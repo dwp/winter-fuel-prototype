@@ -412,10 +412,10 @@ Winter Fuel Payments
                       First Nationality
                     </dt>
                   <dd class="govuk-summary-list__value">
-                    {% if data['1st-country'] %}
+                    {% if data['uk-national'] === 'yes' %}
+                    British
+                    {% elseif data['1st-country'] %}
                     {{data['1st-country']}}
-                    {% else %}
-                    French
                     {% endif %}
                       </dd>
                   </div>
@@ -428,7 +428,7 @@ Winter Fuel Payments
                     {% if data['2nd-country'] %}
                     {{data['2nd-country']}}
                     {% else %}
-                    Spanish
+                    None
                     {% endif %}
                       </dd>
                   </div>
