@@ -149,10 +149,20 @@ router.post('/sprint63e/returning-to-uk', (req, res) => {
 router.post('/sprint63e/2nd-nationality-q', function(req, res) {
   if (req.body['2nd-nationality-q'] === 'yes') {
     res.redirect('2nd-nationality');
-  } else {
+   } else {
     res.redirect('2nd-no');
   }
 });
+
+// IF 2nd-nationality-q is YES go to 2nd-nationality. 
+// IF 2nd-nationality-q is NO [and uk-national (earlier) is YES] go to benefits-outside
+// IF 2nd-nationality-q is NO [and uk-national (earlier) is also NO][and 1st-nationality is NATIONALITY] go to benefits-outside
+// IF 2nd-nationality-q is NO [and uk-national (earlier) is also NO][and 1st-nationality is 'I don't have one'] go to 2nd-no
+
+// 2nd-nationality-q = Are you a national of any other countries?
+// uk-national = Are you a UK national?
+// 1st-nationality = What is your first nationality?
+// 2nd-no = If you answered no to the previous Q, which of these apply?
 
 // 2nd nationality to uk property
 router.post('/sprint63e/2nd-nationality', (req, res) => {
