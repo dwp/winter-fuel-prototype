@@ -2,10 +2,14 @@
 
 {% block content %}
 
-{{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.go(-1)"
-  }) }}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="check-cases">Caseload statuses</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Ineligible cases</li>
+  </ol>
+</div>
 
 
 <br>
