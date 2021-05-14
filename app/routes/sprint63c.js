@@ -209,13 +209,9 @@ router.post('/sprint63c/bank-details', (req, res) => {
   res.redirect('/sprint63c/uk-national')
 });
 
-// Uk National to (yes) 2nd nationality or (no) to 1st nationality
-router.post('/sprint63c/uk-national', function(req, res) {
-  if (req.body['uk-national'] === 'yes') {
-    res.redirect('2nd-nationality-q');
-  } else {
-    res.redirect('1st-nationality');
-  }
+// Uk national to 2nd nationality 
+router.post('/sprint63c/uk-national', (req, res) => {
+  res.redirect('/sprint63c/2nd-nationality-q')
 });
 
 // 2nd nationality (yes) to capture or (no) to not eligible no natiionality
@@ -232,10 +228,17 @@ router.post('/sprint63c/1st-nationality', (req, res) => {
   res.redirect('/sprint63c/2nd-nationality-q')
 });
 
-// 2nd nationality to declaration
+// 2nd nationality to date
 router.post('/sprint63c/2nd-nationality', (req, res) => {
+  res.redirect('/sprint63c/2nd-nationality-date')
+});
+
+// 2nd nationality to declaration
+router.post('/sprint63c/2nd-nationality-date', (req, res) => {
   res.redirect('/sprint63c/declaration')
 });
+
+
 
 // Declaration to completion
 router.post('/sprint63c/declaration', function(req, res) {

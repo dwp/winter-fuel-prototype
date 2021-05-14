@@ -407,31 +407,15 @@ Winter Fuel Payments
               <div id="accordion-with-summary-sections-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-3_5"style="margin-left:25px">
                 <dl class="govuk-summary-list govuk-!-margin-bottom-9"style="margin-bottom: 0px !important;">
 
-                {% if data['uk-national'] !== 'yes' %} 
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      What is your first nationality?
-                    </dt>
-                  <dd class="govuk-summary-list__value">
-                                      
-                    {% if data['1st-country'] %}
-                    {{data['1st-country']}}
-                    {% else %}
-                    None
-                    {% endif %}
-                      </dd>
-                  </div>
-                {% endif %}
-
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      What is your second nationality?
+                      Are you a national of any other countries?
                     </dt>
                   <dd class="govuk-summary-list__value">
                     {% if data['2nd-country'] %}
                     {{data['2nd-country']}}
                     {% else %}
-                    None
+                    No
                     {% endif %}
                       </dd>
                   </div>
@@ -439,7 +423,7 @@ Winter Fuel Payments
                 {% if data['2nd-nationality-q'] === 'yes' %} 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      What date did your second nationality start?
+                      What date did the nationality start?
                     </dt>
                   
                   <dd class="govuk-summary-list__value">
@@ -462,7 +446,7 @@ Winter Fuel Payments
                 {% if data['2nd-nationality-q'] === 'no' %} 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      If you answered no to the previous Q, which of these apply?
+                      You are a
                     </dt>
                   
                   <dd class="govuk-summary-list__value">
