@@ -10,149 +10,175 @@
   <div class="govuk-grid-column-full">
 
     {{ govukBackLink({
-        text: "Back",
-        href: "javascript:history.go(-1)"
-      }) }}
-
-<br>
-<br>
+    text: "Back",
+    href: "javascript:history.go(-1)"
+    }) }}
 
     <h1 class="govuk-heading-xl">Jobs run</h1>
 
-<p>
-From <input class="govuk-input govuk-input--width-10" type="date" id="date" name="date"> to 
-<input class="govuk-input govuk-input--width-10" type="date" id="date2" name="date2">
-</p>
-<br>
+    <div class="govuk-grid-row govuk-!-margin-bottom-9">
+      <div class="govuk-grid-column-one-third">
+        <label class="govuk-label--m" for="wfstart">
+          <!-- just an example, we should have proper content below to read correctly -->
+          <span class="govuk-visually-hidden"> Jobs </span> From <span class="govuk-visually-hidden"> date</span>
+          <div class="govuk-hint"> For example, 12-06-2007</div>
+          <duet-date-picker
+              name="start"
+              class="wfstart"
+              id="wfstart"
+              label="From">
+          </duet-date-picker>
+        </label>
+      </div>
+    </div>
 
+    <div class="govuk-grid-row govuk-!-margin-bottom-9">
+      <div class="govuk-grid-column-one-third">
+        <label class="govuk-label--m" for="wfend">
+          <!-- just an example, we should have proper content below to read correctly -->
+          <span class="govuk-visually-hidden"> Jobs </span> To <span class="govuk-visually-hidden"> date</span>
+          <div class="govuk-hint"> For example, 12-06-2007</div>
+        </label>
+        <duet-date-picker
+            name="start"
+            class="wfend"
+            id="wfend"
+            label="To">
+        </duet-date-picker>
+      </div>
+    </div>
 
-<div class="govuk-input govuk-input--width-10">
-From <duet-fieldset label="Valitse aikaväli">  
-  <duet-grid responsive style="max-width: 480px">    
-    <duet-date-picker name="startdate" class="start" expand margin="none" label="Valitse aloituspäivä" label-hidden value="2020-06-01"></duet-date-picker>    
-    <duet-spacer direction="horizontal" breakpoint="small" size="x-small"></duet-spacer>    
-    <duet-spacer direction="vertical" breakpoint="x-small" size="small"></duet-spacer>    
-    <duet-icon class="icon-arrow" name="navigation-arrow-right" margin="none" color="currentColor" size="x-small"></duet-icon>    
-    <duet-spacer direction="horizontal" breakpoint="small" size="x-small"></duet-spacer>    
-    <duet-spacer direction="vertical" breakpoint="x-small" size="small"></duet-spacer>    
-    To <duet-date-picker name="enddate" class="end" expand margin="none" label="Valitse lopetuspäivä" label-hidden direction="left" value="2020-06-10"></duet-date-picker>  
-  </duet-grid>
-</duet-fieldset>
-</div>
+    <style>
 
-<style>  
-  .icon-arrow {    
-    transform: rotate(90deg);    
-    align-self: center;  
-  }  
-  
-@media (min-width: 36em) {    
-  .icon-arrow {      
-    transform: rotate(0);      
-    padding-top: var(--space-medium);      
-    align-self: start;    
-    }  
-  }
-</style>
+.duet-date__input {
+  border: 2px solid #0b0c0c;
+}
 
-<script>  
-  // Select the above date picker components  
-  var startPicker = document.querySelector(".start")  
-  var endPicker = document.querySelector(".end")  
-  var startDate, endDate  
-  
-  // Handle date selection  
-  function handleDateSelect() {    
-    if (startDate && endDate) {      
-      console.log("date range selected", startDate, endDate)    
-    }  
-  }  
-  
-  // When the start date picker is changed…  
-  startPicker.addEventListener("duetChange", function(e) {    
-    startDate = e.detail.valueAsDate    
-    endPicker.min = e.detail.value    
-    
-    if (!endDate) {      
-      endPicker.show()    
-    }    
-    handleDateSelect()  
-  })  
-  
-  // When the end date date picker is changed…  
-  endPicker.addEventListener("duetChange", function(e) {    
-    endDate = e.detail.valueAsDate    
-    startPicker.max = e.detail.value    
-    handleDateSelect()  
-  })
-</script>
+    .duet-date__toggle {
+      display: none;
+    }
+    </style>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    <script>
+      window.onload = function() {
+              setTimeout(function() {
+                      var pad0IfNeeded = function(datePart) {
+                              const d = (datePart && datePart.toString()) || "";
+                              if (datePart.toString().length === 1) {
+                                      return "0" + datePart;
+                                    }
+                              return datePart;
+                            };
+                      var dateAdapter = {
+                          parse: function(value) {
+                                  return new Date();
+                                },
+                          format: function(date) {
+                                  return [
+                                      pad0IfNeeded(date.getDate()),
+                                      pad0IfNeeded(date.getMonth()),
+                                      date.getFullYear()
+                                    ].join("-");
+                                }
+                      };
+                      // Select the above date picker components
+                      console.log('loaded');
+                      var startDate, endDate;
+                      var startPicker = document.querySelector(".wfstart");
+                      var endPicker = document.querySelector(".wfend");
+                      var localization = {
+                              buttonLabel: "",
+                              selectedDateMessage: "Selected date is",
+                              prevMonthLabel: "Previous month",
+                              nextMonthLabel: "Next month",
+                              monthSelectLabel: "Month",
+                              yearSelectLabel: "Year",
+                              closeLabel: "Close window",
+                              keyboardInstruction: "You can use arrow keys to navigate dates",
+                              calendarHeading: "Choose a date",
+                              dayNames: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                              monthNames: [
+                                      "January",
+                                      "February",
+                                      "March",
+                                      "April",
+                                      "May",
+                                      "June",
+                                      "July",
+                                      "August",
+                                      "September",
+                                      "October",
+                                      "November",
+                                      "December",
+                                    ],
+                              monthNamesShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                              locale: "en-GB",
+                            };
+                      startPicker.localization = localization ;
+                      startPicker.dateAdapter = dateAdapter;
 
-<div id="date-picker" class="datepicker"></div>
-<dl id="dates-cant-attend-list" class="add-another-list">
+                      endPicker.localization = localization ;
+                      endPicker.dateAdapter = dateAdapter;
 
-{{ govukButton ({
-  html: 'Continue'
-}) }}
+                      startDate = startPicker.querySelector('.duet-date__input');
+                      startDate.classList.add('govuk-input');
+                      startDate.addEventListener('click', function(ev) {
+                              console.log(ev);
+                              startPicker.show();
+                            });
 
-    <form method="post">
+                      endDate = endPicker.querySelector('.duet-date__input');
+                      endDate.classList.add('govuk-input');
+                      endDate.addEventListener('click', function(ev) {
+                              console.log(ev);
+                              endPicker.show();
+                            });
 
-      <table class="govuk-table">
-        <caption class="govuk-table__caption"></caption>
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Job</th>
-            <th scope="col" class="govuk-table__header">Status</th>
-            <th scope="col" class="govuk-table__header">Start</th>
-            <th scope="col" class="govuk-table__header">End</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="da-file" class="govuk-link">Data and analytics file</td></a>
-            <td class="govuk-table__cell">Completed</td>
-            <td class="govuk-table__cell">1 April 2021 5:21pm</td>
-            <td class="govuk-table__cell">1 April 2021 6:06pm</td>
-            <td class="govuk-table__cell"><span class="verified-badge verified">
-          </span></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="war-pensions" class="govuk-link">War pension file</td></a>
-            <td class="govuk-table__cell">In progress</td>
-            <td class="govuk-table__cell">1 April 2021 6:07pm</td>
-            <td class="govuk-table__cell"></td>
-            <td class="govuk-table__cell">
-          </tr>
-        </tbody>
-      </table>
+                    }, 200);
+            };
+    </script>
 
-    </form>
+    <div id="date-picker" class="datepicker"></div>
+    <dl id="dates-cant-attend-list" class="add-another-list">
+
+      {{ govukButton ({
+      html: 'Continue'
+      }) }}
+
+      <form method="post">
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption"></caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Job</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header">Start</th>
+              <th scope="col" class="govuk-table__header">End</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="da-file" class="govuk-link">Data and analytics file</td></a>
+                <td class="govuk-table__cell">Completed</td>
+                <td class="govuk-table__cell">1 April 2021 5:21pm</td>
+                <td class="govuk-table__cell">1 April 2021 6:06pm</td>
+                <td class="govuk-table__cell"><span class="verified-badge verified">
+                  </span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="war-pensions" class="govuk-link">War pension file</td></a>
+                <td class="govuk-table__cell">In progress</td>
+                <td class="govuk-table__cell">1 April 2021 6:07pm</td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell">
+            </tr>
+          </tbody>
+        </table>
+
+      </form>
 
   </div>
 </div>
-
-<script src="https://track-your-appeal.herokuapp.com/public/javascripts/govuk-template.js?0.22.2"></script>
-<link rel="stylesheet" href="https://track-your-appeal.herokuapp.com/public/font-awesome/css/font-awesome.min.css">
-<script src="https://track-your-appeal.herokuapp.com/public/javascripts/details.polyfill.js"></script>
-<script src="https://track-your-appeal.herokuapp.com/public/javascripts/jquery-1.11.3.js"></script>
-<script src="https://track-your-appeal.herokuapp.com/public/javascripts/govuk/selection-buttons.js"></script>
-<script src="https://track-your-appeal.herokuapp.com/public/javascripts/govuk/shim-links-with-button-role.js"></script>
-<script src="https://track-your-appeal.herokuapp.com/public/javascripts/application.js"></script>
-<script src="https://track-your-appeal.herokuapp.com/public/javascripts/sscs.js"></script>
-<script src="https://track-your-appeal.herokuapp.com/public/javascripts/dropzone.js"></script>
-<script src="https://track-your-appeal.herokuapp.com/public/javascripts/file-upload.js"></script>
-<script src="https://track-your-appeal.herokuapp.com/public/javascripts/date-picker/bootstrap-datepicker1.8.0.min.js"></script>
-<script src="https://track-your-appeal.herokuapp.com/public/javascripts/lodash-4.17.0.js"></script>
-<script src="https://track-your-appeal.herokuapp.com/public/javascripts/moment.min.js"></script>
-<script src="https://track-your-appeal.herokuapp.com/public/javascripts/date-picker/date-picker.js"></script>
-<script src="https://track-your-appeal.herokuapp.com/public/javascripts/auto-complete/autocomplete.js"></script>
-<script src="https://track-your-appeal.herokuapp.com/public/javascripts/auto-complete/init-auto-complete.js"></script>
 
 {% endblock %}
