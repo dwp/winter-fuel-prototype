@@ -76,7 +76,7 @@
                           format: function(date) {
                                   return [
                                       pad0IfNeeded(date.getDate()),
-                                      pad0IfNeeded(date.getMonth()),
+                                      pad0IfNeeded(date.getMonth() + 1),
                                       date.getFullYear()
                                     ].join("-");
                                 }
