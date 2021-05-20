@@ -132,12 +132,13 @@ router.post('/sprint63e/uk-healthcare', (req, res) => {
 
 // Power of attourney
 router.post('/sprint63e/returning-to-uk', function(req, res) {
-  if (req.body['uk-national'] === 'yes') {
+  if (req.session.data["uk-national"] === "yes") {
     res.redirect('2nd-nationality-q');
   } else {
     res.redirect('2nd-nationality-q-2');
   }
 });
+
 
 // 2nd nationality (yes) to capture or (no) to not eligible no natiionality
 router.post('/sprint63e/2nd-nationality-q', function(req, res) {
