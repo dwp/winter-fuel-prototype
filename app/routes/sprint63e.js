@@ -110,12 +110,6 @@ router.post('/sprint63e/uk-national', (req, res) => {
   res.redirect('/sprint63e/uk-property')
 });
     
-
-// 1st nationality to 2nd nationality Q
-router.post('/sprint63e/1st-nationality', (req, res) => {
-  res.redirect('/sprint63e/uk-property')
-});
-
 // UK property to UK business
 router.post('/sprint63e/uk-property', (req, res) => {
   res.redirect('/sprint63e/uk-business')
@@ -136,50 +130,47 @@ router.post('/sprint63e/uk-healthcare', (req, res) => {
   res.redirect('/sprint63e/returning-to-uk')
 });
 
-// Returning to the UK in past 3 years to
-router.post('/sprint63e/returning-to-uk', (req, res) => {
-  res.redirect('/sprint63e/2nd-nationality-q')
+// Power of attourney
+router.post('/sprint63e/returning-to-uk', function(req, res) {
+  if (req.body['uk-national'] === 'yes') {
+    res.redirect('2nd-nationality-q');
+  } else {
+    res.redirect('2nd-nationality-q-2');
+  }
 });
 
-// 2nd nationality (yes) to capture or (no) to uk property
+// 2nd nationality (yes) to capture or (no) to not eligible no natiionality
 router.post('/sprint63e/2nd-nationality-q', function(req, res) {
   if (req.body['2nd-nationality-q'] === 'yes') {
-    res.redirect('2nd-nationality');
-   } else if (req.body['2nd-nationality-q uk-national'] === 'no') {
-    res.redirect('2nd-no');
-   } else {
+    res.redirect('nationality');
+  } else {
     res.redirect('benefits-outside');
   }
 });
 
-// IF 2nd-nationality-q is YES go to 2nd-nationality. 
-// IF 2nd-nationality-q is NO [and uk-national (earlier) is also NO] go to 2nd-no
-// IF 2nd-nationality-q is NO [and uk-national (earlier) is YES] go to benefits-outside
-
-// 2nd-nationality-q = Are you a national of any other countries?
-// uk-national = Are you a UK national?
-// 2nd-no = Select all that apply (checkboxes)
-
-// 2nd nationality to date
-router.post('/sprint63e/2nd-nationality', (req, res) => {
-  res.redirect('/sprint63e/2nd-nationality-date')
+// 2nd nationality (yes) to capture or (no) to not eligible no natiionality
+router.post('/sprint63e/2nd-nationality-q-2', function(req, res) {
+  if (req.body['2nd-nationality-q-2'] === 'yes') {
+    res.redirect('nationality-2');
+  } else {
+    res.redirect('2nd-no');
+  }
 });
 
-// 2nd nationality to uk property
+// Benefits outside the UK to questions about qualifying week
 router.post('/sprint63e/2nd-no', (req, res) => {
   res.redirect('/sprint63e/benefits-outside')
 });
 
-// 2nd nationality to uk property
-router.post('/sprint63e/2nd-nationality-date', (req, res) => {
+// Benefits outside the UK to questions about qualifying week
+router.post('/sprint63e/nationality-2', (req, res) => {
   res.redirect('/sprint63e/benefits-outside')
 });
 
-// Benefits outside the UK to questions about qualifying week
-router.post('/sprint63e/benefits-outside', (req, res) => {
-  res.redirect('/sprint63e/qualifying-week')
+// UK healthcare to returning to the UK in past 3 years
+router.post('/sprint63e/uk-healthcare', (req, res) => {
+  res.redirect('/sprint63e/returning-to-uk')
 });
-
 
 // Questions about qualifying week to any other links to the UK?
 router.post('/sprint63e/qualifying-week', (req, res) => {
