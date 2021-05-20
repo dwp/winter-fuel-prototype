@@ -40,6 +40,7 @@ $govuk-assets-path: '/govuk/assets/';
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 @import 'custom-styles';
+@import 'duet-date-picker-custom';
 
 // Hide GOV.UK logo and bump size of service name
 .govuk-header__logo {display: none}
