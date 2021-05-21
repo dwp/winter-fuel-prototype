@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-  {% include './_header-check.html' %}
+{% include './_header-check.html' %}
 {% endblock %}
 
 {% block content %}
@@ -11,62 +11,49 @@
   <div class="govuk-grid-column-full">
 
     {{ govukBackLink({
-        text: "Back",
-        href: "javascript:history.go(-1)"
-      }) }}
-
-      <br>
-      <br>
-
-        <h1 class="govuk-heading-xl">Caseload statuses</h1>
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-quarter govuk-card--selectable">
-        <section class="key-details-bar-black" role="contentinfo" aria-label="Key details">
-          <dl class="key-details-bar-black__key-details">
-            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">11.67 million</h2>
-              <span class="govuk-caption-l">cases</span>
-          </dl>
-        </section>
-      </div>
-
-    <div class="govuk-grid-column-one-quarter">
-        <section class="key-details-bar" role="contentinfo" aria-label="Key details">
-          <dl class="key-details-bar__key-details">
-            <span class="govuk-heading-l govuk-!-margin-bottom-0">11.34 million<span class="govuk-caption-l">eligible</span></span>
-        <br><span class="govuk-caption-m"><a href="link-to-csv">Download csv file</a></span>
-           </dl>
-        </section>
-    </div>
-
-    <div class="govuk-grid-column-one-quarter"><a>
-      </a><a href="eligible"></a>
-        <section class="key-details-bar" role="contentinfo" aria-label="Key details">
-          <dl class="key-details-bar__key-details">
-            <span class="govuk-heading-l govuk-!-margin-bottom-5">133,004<span class="govuk-caption-l">ineligible</span></span>
-          </dl>
-        </section>
-    </div>
-
-    <div class="govuk-grid-column-one-quarter"><a>
-      </a><a href="error"></a>
-        <section class="key-details-bar" role="contentinfo" aria-label="Key details">
-          <dl class="key-details-bar__key-details">
-            <span class="govuk-heading-l govuk-!-margin-bottom-5">265,998<span class="govuk-caption-l">in error</span></span>
-          </dl>
-        </section></a>
+    text: "Back",
+    href: "javascript:history.go(-1)"
+    }) }}
 
     <br>
-  
-        <section class="key-details-bar-grey" role="contentinfo" aria-label="Key details"><a>
-      </a><a href="recalculation"></a>
-          <dl class="key-details-bar-grey__key-details">
-            <span class="govuk-heading-l govuk-!-margin-bottom-0">492<span class="govuk-caption-l">to be recalculated</span></span>
-          </dl>
-        </section><a>
+    <br>
+
+    <h1 class="govuk-heading-xl">Caseload statuses</h1>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div class="sp-panel-deck">
+
+          <p class="sp-panel-deck__panel sp-panel-deck__panel--black-bg govuk-heading-l sp-panel-deck__panel_content sp-panel--white-text">
+          17.13 M
+          <span class="govuk-caption-l sp-panel--white-text" aria-hidden="true">Total cases</span>
+          <span class="govuk-visually-hidden">for this year</span>
+          </p>
+
+
+          <a href="/foo" class="sp-panel-deck__panel sp-panel-deck__link-panel govuk-heading-l sp-panel-deck__panel_content sp-panel--white-text">
+            11.34 M
+            <span class="govuk-caption-l sp-panel--white-text" aria-hidden="true">Eligible cases</span>
+            <span class="govuk-visually-hidden">for this year</span>
+          </a>
+
+          <a href="/boo" class="sp-panel-deck__panel  sp-panel-deck__link-panel govuk-heading-l sp-panel-deck__panel_content sp-panel--white-text">
+            2.1 M
+            <span class="govuk-caption-l sp-panel--white-text" aria-hidden="true">Ineligible cases</span>
+            <span class="govuk-visually-hidden">for this year</span>
+          </a>
+
+          <a href="/bar" class="sp-panel-deck__panel sp-panel-deck__link-panel sp-panel-deck__last-panel--no-border govuk-heading-l sp-panel-deck__panel_content sp-panel--white-text">
+            <span>400 K</span>
+            <span class="govuk-caption-l sp-panel--white-text" aria-hidden="true">In-error cases</span>
+            <span class="govuk-visually-hidden">for this year</span>
+          </a>
+
+        </div>
+
       </div>
 
-</div>
+    </div>
 
   </div>
 </div>
