@@ -209,34 +209,57 @@ router.post('/sprint63c/bank-details', (req, res) => {
   res.redirect('/sprint63c/uk-national')
 });
 
-// Uk national to 2nd nationality 
-router.post('/sprint63c/uk-national', (req, res) => {
-  res.redirect('/sprint63c/2nd-nationality-q')
+
+
+
+
+// 2nd nationality (yes) to nationality or (no) to declaration
+router.post('/sprint63c/uk-national', function(req, res) {
+  if (req.body['uk-national'] === 'yes') {
+    res.redirect('2nd-nationality-q');
+  } else {
+    res.redirect('2nd-nationality-q-2');
+  }
 });
 
-// 2nd nationality (yes) to capture or (no) to not eligible no natiionality
+
+// 2nd nationality (yes) to nationality or (no) to declaration
 router.post('/sprint63c/2nd-nationality-q', function(req, res) {
   if (req.body['2nd-nationality-q'] === 'yes') {
-    res.redirect('2nd-nationality');
+    res.redirect('nationality');
   } else {
     res.redirect('declaration');
   }
 });
 
-// 1st nationality to 2nd nationality Q
-router.post('/sprint63c/1st-nationality', (req, res) => {
-  res.redirect('/sprint63c/2nd-nationality-q')
+// 2nd nationality (yes) to nationality-2 or (no) to 2nd-no
+router.post('/sprint63c/2nd-nationality-q-2', function(req, res) {
+  if (req.body['2nd-nationality-q-2'] === 'yes') {
+    res.redirect('nationality-2');
+  } else {
+    res.redirect('2nd-no');
+  }
 });
 
-// 2nd nationality to date
-router.post('/sprint63c/2nd-nationality', (req, res) => {
-  res.redirect('/sprint63c/2nd-nationality-date')
-});
-
-// 2nd nationality to declaration
-router.post('/sprint63c/2nd-nationality-date', (req, res) => {
+// 2nd no to declaration
+router.post('/sprint63c/2nd-no', (req, res) => {
   res.redirect('/sprint63c/declaration')
 });
+
+// Benefits outside the UK to questions about qualifying week
+router.post('/sprint63c/nationality', (req, res) => {
+  res.redirect('/sprint63c/declaration')
+});
+
+// Benefits outside the UK to questions about qualifying week
+router.post('/sprint63c/nationality-2', (req, res) => {
+  res.redirect('/sprint63c/declaration')
+});
+
+
+
+
+
 
 
 

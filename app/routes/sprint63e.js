@@ -173,6 +173,11 @@ router.post('/sprint63e/nationality-2', (req, res) => {
   res.redirect('/sprint63e/benefits-outside')
 });
 
+// Benefits outside the UK to questions about qualifying week
+router.post('/sprint63e/benefits-outside', (req, res) => {
+  res.redirect('/sprint63e/qualifying-week')
+});
+
 // UK healthcare to returning to the UK in past 3 years
 router.post('/sprint63e/uk-healthcare', (req, res) => {
   res.redirect('/sprint63e/returning-to-uk')
