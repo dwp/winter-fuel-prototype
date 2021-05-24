@@ -1,5 +1,8 @@
+// NB: Opt into using global styles in each page rather than globally 
+//     applying these rules which are hard to work around in individual
+//     pages
 // global styles for <a> and <p> tags
-$govuk-global-styles: true;
+//$govuk-global-styles: true;
 
 // We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
 $govuk-assets-path: '/govuk/assets/';
@@ -41,6 +44,7 @@ $govuk-assets-path: '/govuk/assets/';
 
 @import 'custom-styles';
 @import 'duet-date-picker-custom';
+@import 'panels';
 
 // Hide GOV.UK logo and bump size of service name
 .govuk-header__logo {display: none}
