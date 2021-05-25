@@ -70,17 +70,17 @@
                               return datePart;
                             };
                       var dateAdapter = {
-                          parse: function(value) {
-                                  return new Date();
-                                },
-                          format: function(date) {
-                                  return [
-                                      pad0IfNeeded(date.getDate()),
-                                      pad0IfNeeded(date.getMonth() + 1),
-                                      date.getFullYear()
-                                    ].join("-");
-                                }
-                      };
+                              parse: function(value) {
+                                      return new Date();
+                                    },
+                              format: function(date) {
+                                      return [
+                                              pad0IfNeeded(date.getDate()),
+                                              pad0IfNeeded(date.getMonth() + 1),
+                                              date.getFullYear()
+                                            ].join("-");
+                                    }
+                            };
                       // Select the above date picker components
                       console.log('loaded');
                       var startDate, endDate;
