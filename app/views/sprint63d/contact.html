@@ -38,8 +38,10 @@ Winter Fuel Payments
           
           {% include './_tab-contact.html' %}
           <br><br>
+
           <table class="govuk-table">
             <h2 class="govuk-heading-m">Contact details</h2>
+
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Home phone</th>
@@ -155,22 +157,24 @@ Winter Fuel Payments
                   {{data['alternative-format']}}
                 {% else %}
                 {% endif %}
-                
+                            
                 {% if data['large'] === 'yes' %}
                   <br>Large print
                 {% else %}
                 {% endif %}
-                
+                            
                   {% if data['large-print'] %}
                   ({{data['large-print']}})
                 {% else %}
                 {% endif %}
-                
+                              
                   {% if data['bold'] === 'yes' %}
                   <br>Bold
                 {% else %}
                 {% endif %}
+
               {% endif %}
+
                 </td>
               
 
