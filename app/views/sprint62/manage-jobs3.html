@@ -18,18 +18,28 @@
 
     <h1 class="govuk-heading-xl">Manage Winter Fuel Payments</h1>
 
-      <form method="post">
+    
 
-<span class="app-task-list__task-name">
-                    <a href="jobs" aria-describedby="jobs-completed-in-last-7-days">
-                      Jobs run
-                    </a>
-                  </span><br><br>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <ol class="app-task-list">
+        <ol class="app-task-list">
+            <li>
+              <h2 class="app-task-list__section">
+                Manage previous jobs run
+              </h2>
+              <ul class="app-task-list__items govuk-!-padding-left-0">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="jobs" aria-describedby="previous-jobs-completed">
+                      Jobs run
+                    </a>
+                  </span>
+              </ul>
+            </li>
+
+          
             <li>
               <h2 class="app-task-list__section">
                 Load files
@@ -160,10 +170,10 @@
 
 
 
-    </form>
+    
 
-  </div>
-</div>
+  
+
 
 
 {% endblock %}
