@@ -155,24 +155,27 @@ Winter Fuel Payments
               {% if data['alternative-format'] !== 'remove' %}  
                   {% if data['alternative-format'] %}
                   {{data['alternative-format']}}
-                {% else %}
                 {% endif %}
                             
+                {% if data['alternative-format'] === 'Welsh language' or data['alternative-format'] === 'Large print' %}  
                 {% if data['large'] === 'yes' %}
                   <br>Large print
-                {% else %}
                 {% endif %}
-                            
-                  {% if data['large-print'] %}
-                  ({{data['large-print']}})
-                {% else %}
-                {% endif %}
-                              
-                  {% if data['bold'] === 'yes' %}
-                  <br>Bold
-                {% else %}
                 {% endif %}
 
+                {% if data['alternative-format'] === 'Welsh language' or data['alternative-format'] === 'Large print' %}             
+                  {% if data['large-print'] %}
+                  ({{data['large-print']}})
+                {% endif %}
+                {% endif %}
+
+                {% if data['alternative-format'] === 'Welsh language' or data['alternative-format'] === 'Large print' %}    
+                  {% if data['bold'] === 'yes' %}
+                  <br>Bold
+                {% endif %}
+                {% endif %}
+
+               
               {% endif %}
 
                 </td>
@@ -180,11 +183,15 @@ Winter Fuel Payments
 
                 <td class="govuk-table__cell">
                   <a href="alt">
+                  {% if data['alternative-format'] !== 'remove' %}  
                     {% if data['alternative-format'] %}
                     Change<span class="govuk-visually-hidden"> alternative format.</span>
                     {% else %}
                     Add<span class="govuk-visually-hidden"> alternative format.</span>
                     {% endif %}
+                     {% else %}
+                    Add
+                  {% endif %}
                   </a>
                 </td>
                 </tr>
