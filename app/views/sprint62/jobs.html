@@ -141,6 +141,33 @@
     <div id="date-picker" class="datepicker"></div>
     <dl id="dates-cant-attend-list" class="add-another-list">
 
+
+                        <h2 class="app-task-list__section">
+                        Job type
+                        </h2>
+                        <div id="event-name-hint" class="govuk-hint">
+                        Select the jobs you want to see
+                        </div>
+                        
+
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="jobs" name="jobs" type="checkbox" value="jobs" data-aria-controls="jobs">
+                          <label class="govuk-label govuk-checkboxes__label" for="jobs">
+                            Data and analytics file
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="jobs-2" name="jobs-2" type="checkbox" value="jobs-2" data-aria-controls="jobs-2">
+                          <label class="govuk-label govuk-checkboxes__label" for="jobs-2">
+                            War pension file
+                          </label>
+                        </div>
+
+                        <br>
+                        <br>
+
       {{ govukButton ({
       html: 'Continue'
       }) }}
