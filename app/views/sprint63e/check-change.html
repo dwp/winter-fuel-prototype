@@ -414,13 +414,15 @@ Winter Fuel Payments
                     </dt>
                   <dd class="govuk-summary-list__value">
                     {% if data['nationality'] %}
-                    {{data['nationality']}}
+                      Yes:<br>
+                      {{data['nationality']}}
                     {% else %}
                     No
                     {% endif %}
                       </dd>
                   </div>
-                    
+
+               {% if data['2nd-nationality-q'] === 'yes' %}      
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                       What date did the nationality start?
@@ -440,11 +442,11 @@ Winter Fuel Payments
                     {% if data['nationality-date-year'] %}
                     {{data['nationality-date-year']}}
                     {% endif %}
-
-                    </dd>
+                  </dd>
+                
 
                   </div>
-                
+                {% endif %}
                              
            {% endif %}
 
@@ -460,13 +462,17 @@ Winter Fuel Payments
                     </dt>
                   <dd class="govuk-summary-list__value">
                     {% if data['nationality-2'] %}
-                    {{data['nationality-2']}}
+                      Yes:<br>
+                      {{data['nationality-2']}}
                     {% else %}
                     No
                     {% endif %}
                       </dd>
                   </div>
-                    
+
+
+               {% if data['2nd-nationality-q-2'] === 'yes' %} 
+
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                       What date did the nationality start?
@@ -486,9 +492,7 @@ Winter Fuel Payments
                     {% if data['nationality-date-year-2'] %}
                     {{data['nationality-date-year-2']}}
                     {% endif %}
-
                     </dd>
-
                   </div>
                 
 
@@ -498,7 +502,8 @@ Winter Fuel Payments
                     </dt>
                   <dd class="govuk-summary-list__value">
                     {% if data['nationality-2-2'] %}
-                    {{data['nationality-2-2']}}
+                      Yes:<br>
+                      {{data['nationality-2-2']}}
                     {% else %}
                     No
                     {% endif %}
@@ -528,23 +533,23 @@ Winter Fuel Payments
                   </dd>
 
                   </div>
-             
+                {% endif %}  
 
                 {% if data['2nd-nationality-q-2'] === 'no' %} 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      You are a
+                      What is your status?
                     </dt>
                   
                   <dd class="govuk-summary-list__value">
                     {% if data['no-nationality'] === 'stateless' %}
                     Stateless person
                     {% endif %}
-                      
+                  
                     {% if data['no-nationality-2'] === 'refugee' %}
                     <br>Refugee
                     {% endif %}                      
-
+                  
                     {% if data['no-nationality-3'] === 'parter-eea' %}
                     <br>Partner of a EEA national
                     {% endif %}
@@ -552,7 +557,7 @@ Winter Fuel Payments
 
                   </div>
                 {% endif %}
-                  
+                
             {% endif %}
 
                   <div class="govuk-summary-list__row">
