@@ -4,6 +4,10 @@
 {% include './_header-international.html' %}
 {% endblock %}
 
+{% block beforeContent %}
+{% include './_name_bar.html' %}
+{% endblock %}
+
 {% block add_head %}
     <script src="/public/javascripts/accessible-autocomplete.js"></script>
     <script src="/public/javascripts/autocomplete-configuration.js"></script>
