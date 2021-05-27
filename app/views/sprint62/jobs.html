@@ -243,9 +243,11 @@
                         <br>
                         <br>
 
-      {{ govukButton ({
-      html: 'Continue'
-      }) }}
+      <button class="govuk-button" data-module="govuk-button">
+      Continue
+      </button>
+      <input type="hidden" name="jobs-run" value="true">
+     
 
       <form method="post">
 
@@ -261,19 +263,19 @@
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="war-pensions" class="govuk-link">War pension file</td></a>
+                <td class="govuk-table__cell">In progress</td>
+                <td class="govuk-table__cell">1 April 2021 6:07pm</td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell">
+            </tr>
+            <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a href="da-file" class="govuk-link">Data and analytics file</td></a>
                 <td class="govuk-table__cell">Completed</td>
                 <td class="govuk-table__cell">1 April 2021 5:21pm</td>
                 <td class="govuk-table__cell">1 April 2021 6:06pm</td>
                 <td class="govuk-table__cell"><span class="verified-badge verified">
                   </span></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="war-pensions" class="govuk-link">War pension file</td></a>
-                <td class="govuk-table__cell">In progress</td>
-                <td class="govuk-table__cell">1 April 2021 6:07pm</td>
-                <td class="govuk-table__cell"></td>
-                <td class="govuk-table__cell">
             </tr>
           </tbody>
         </table>
