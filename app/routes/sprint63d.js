@@ -19,12 +19,17 @@ router.use((req, res, next) => {
     }
   });
   
-// large to size
-router.post('/sprint63d/large', (req, res) => {
-  res.redirect('large-print')
+
+// large YES to size, NO to bold
+router.post('/sprint63d/large', function(req, res) {
+  if (req.body['large'] === 'yes') {
+    res.redirect('large-print');
+  } else {
+    res.redirect('bold');
+  }
 });
 
-// Large Print Size to Bold
+// large print to bold
 router.post('/sprint63d/large-print', (req, res) => {
   res.redirect('bold')
 });
