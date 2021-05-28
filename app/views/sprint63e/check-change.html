@@ -425,7 +425,7 @@ Winter Fuel Payments
                {% if data['2nd-nationality-q'] === 'yes' %}      
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      What date did the nationality start?
+                      Date nationality started
                     </dt>
                   
                   <dd class="govuk-summary-list__value">
@@ -435,9 +435,19 @@ Winter Fuel Payments
                     Not applicable
                     {% endif %}
                       
-                    {% if data['nationality-date-month'] %}
-                    {{data['nationality-date-month']}}
-                    {% endif %}                      
+                    {% if (data['nationality-date-month'] == '1') or (data['nationality-date-month'] == '01') %} January 
+                    {% elif (data['nationality-date-month'] == '2') or (data['nationality-date-month'] == '02') %} February 
+                    {% elif (data['nationality-date-month'] == '3') or (data['nationality-date-month'] == '03') %} March 
+                    {% elif (data['nationality-date-month'] == '4') or (data['nationality-date-month'] == '04') %} April 
+                    {% elif (data['nationality-date-month'] == '5') or (data['nationality-date-month'] == '05') %} May 
+                    {% elif (data['nationality-date-month'] == '6') or (data['nationality-date-month'] == '06') %} June 
+                    {% elif (data['nationality-date-month'] == '7') or (data['nationality-date-month'] == '07') %} July 
+                    {% elif (data['nationality-date-month'] == '8') or (data['nationality-date-month'] == '08') %} August 
+                    {% elif (data['nationality-date-month'] == '9') or (data['nationality-date-month'] == '09') %} September 
+                    {% elif data['nationality-date-month'] == '10' %} October 
+                    {% elif data['nationality-date-month'] == '11' %} November 
+                    {% elif data['nationality-date-month'] == '12' %} December 
+                    {% endif %}
 
                     {% if data['nationality-date-year'] %}
                     {{data['nationality-date-year']}}
@@ -475,7 +485,7 @@ Winter Fuel Payments
 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      What date did the nationality start?
+                      Date nationality started
                     </dt>
                   
                   <dd class="govuk-summary-list__value">
@@ -485,9 +495,20 @@ Winter Fuel Payments
                     Not applicable
                     {% endif %}
                       
-                    {% if data['nationality-date-month-2'] %}
-                    {{data['nationality-date-month-2']}}
-                    {% endif %}                      
+                    {% if (data['nationality-date-month-2'] == '1') or (data['nationality-date-month-2'] == '01') %} January 
+                    {% elif (data['nationality-date-month-2'] == '2') or (data['nationality-date-month-2'] == '02') %} February 
+                    {% elif (data['nationality-date-month-2'] == '3') or (data['nationality-date-month-2'] == '03') %} March 
+                    {% elif (data['nationality-date-month-2'] == '4') or (data['nationality-date-month-2'] == '04') %} April 
+                    {% elif (data['nationality-date-month-2'] == '5') or (data['nationality-date-month-2'] == '05') %} May 
+                    {% elif (data['nationality-date-month-2'] == '6') or (data['nationality-date-month-2'] == '06') %} June 
+                    {% elif (data['nationality-date-month-2'] == '7') or (data['nationality-date-month-2'] == '07') %} July 
+                    {% elif (data['nationality-date-month-2'] == '8') or (data['nationality-date-month-2'] == '08') %} August 
+                    {% elif (data['nationality-date-month-2'] == '9') or (data['nationality-date-month-2'] == '09') %} September 
+                    {% elif data['nationality-date-month-2'] == '10' %} October 
+                    {% elif data['nationality-date-month-2'] == '11' %} November 
+                    {% elif data['nationality-date-month-2'] == '12' %} December 
+                    {% endif %}
+                                         
 
                     {% if data['nationality-date-year-2'] %}
                     {{data['nationality-date-year-2']}}
@@ -495,7 +516,7 @@ Winter Fuel Payments
                     </dd>
                   </div>
                 
-
+              {% if data['nationality-2-2'] %}
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                       Do you have a second nationality?
@@ -512,7 +533,7 @@ Winter Fuel Payments
 
                     <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      What date did the second nationality start?
+                      Date second nationality started
                     </dt>
                   
                   <dd class="govuk-summary-list__value">
@@ -522,9 +543,19 @@ Winter Fuel Payments
                     Not applicable
                     {% endif %}
                       
-                    {% if data['2nd-nationality-date-month-2'] %}
-                    {{data['2nd-nationality-date-month-2']}}
-                    {% endif %}                      
+                    {% if (data['2nd-nationality-date-month-2'] == '1') or (data['2nd-nationality-date-month-2'] == '01') %} January 
+                    {% elif (data['2nd-nationality-date-month-2'] == '2') or (data['2nd-nationality-date-month-2'] == '02') %} February 
+                    {% elif (data['2nd-nationality-date-month-2'] == '3') or (data['2nd-nationality-date-month-2'] == '03') %} March 
+                    {% elif (data['2nd-nationality-date-month-2'] == '4') or (data['2nd-nationality-date-month-2'] == '04') %} April 
+                    {% elif (data['2nd-nationality-date-month-2'] == '5') or (data['2nd-nationality-date-month-2'] == '05') %} May 
+                    {% elif (data['2nd-nationality-date-month-2'] == '6') or (data['2nd-nationality-date-month-2'] == '06') %} June 
+                    {% elif (data['2nd-nationality-date-month-2'] == '7') or (data['2nd-nationality-date-month-2'] == '07') %} July 
+                    {% elif (data['2nd-nationality-date-month-2'] == '8') or (data['2nd-nationality-date-month-2'] == '08') %} August 
+                    {% elif (data['2nd-nationality-date-month-2'] == '9') or (data['2nd-nationality-date-month-2'] == '09') %} September 
+                    {% elif data['2nd-nationality-date-month-2'] == '10' %} October 
+                    {% elif data['2nd-nationality-date-month-2'] == '11' %} November 
+                    {% elif data['2nd-nationality-date-month-2'] == '12' %} December 
+                    {% endif %}
 
                     {% if data['2nd-nationality-date-year-2'] %}
                     {{data['2nd-nationality-date-year-2']}}
@@ -533,7 +564,9 @@ Winter Fuel Payments
                   </dd>
 
                   </div>
-                {% endif %}  
+                {% endif %}
+                  {% endif %}
+                 
 
                 {% if data['2nd-nationality-q-2'] === 'no' %} 
                   <div class="govuk-summary-list__row">
