@@ -160,6 +160,11 @@ router.post('/sprint63c/immigration-control', function(req, res) {
   }
 });
 
+// See all results to immigration-control
+router.post('/sprint63c/under-immigration-control', (req, res) => {
+  res.redirect('/sprint63c/overview-immigration-control')
+});
+
 // Move date to living with
 router.post('/sprint63c/move-date', (req, res) => {
   res.redirect('/sprint63c/living-with')
