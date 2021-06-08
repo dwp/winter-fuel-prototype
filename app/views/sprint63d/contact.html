@@ -157,19 +157,22 @@ Winter Fuel Payments
                   {{data['alternative-format']}}
                 {% endif %}
                             
-                {% if data['alternative-format'] === 'Welsh language' or data['alternative-format'] === 'Large print' %}  
-                {% if data['large'] === 'yes' %}
-                  <br>Large print
+                {% if data['alternative-format'] === 'Welsh language' %}      
+                {% if data['large'] === 'Large print (default - size 16)' %}
+                  <br>Large print (default - size 16)
+                {% if data['large-2'] === 'Large print (custom size)' %}
+                  <br>Large print (custom size)
+                {% endif %}
                 {% endif %}
                 {% endif %}
 
-                {% if data['alternative-format'] === 'Welsh language' or data['alternative-format'] === 'Large print' %}             
+                {% if data['alternative-format'] === 'Welsh language' or data['alternative-format'] === 'Large print (default - size 16)' or data['alternative-format'] === 'Large print (custom size)' %}            
                   {% if data['large-print'] %}
-                  ({{data['large-print']}})
+                  <br>{{data['large-print']}}
                 {% endif %}
                 {% endif %}
 
-                {% if data['alternative-format'] === 'Welsh language' or data['alternative-format'] === 'Large print' %}    
+                {% if data['alternative-format'] === 'Welsh language' or data['alternative-format'] === 'Large print (default - size 16)' or data['alternative-format'] === 'Large print (custom size)' %}
                   {% if data['bold'] === 'yes' %}
                   <br>Bold
                 {% endif %}

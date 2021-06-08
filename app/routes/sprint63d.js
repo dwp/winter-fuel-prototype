@@ -12,8 +12,10 @@ router.use((req, res, next) => {
   router.post('/sprint63d/alt', function(req, res) {
     if (req.body['alternative-format'] === 'Welsh language') {
       res.redirect('large');
-    } else if (req.body['alternative-format'] === 'Large print') {
+    } else if (req.body['alternative-format'] === 'Large print (custom size)') {
       res.redirect('large-print');
+    } else if (req.body['alternative-format'] === 'Large print (default - size 16)') {
+      res.redirect('bold');
     } else {
       res.redirect('contact');
     }
@@ -22,7 +24,7 @@ router.use((req, res, next) => {
 
 // large YES to size, NO to bold
 router.post('/sprint63d/large', function(req, res) {
-  if (req.body['large'] === 'yes') {
+  if (req.body['large-2'] === 'Large print (custom size)') {
     res.redirect('large-print');
   } else {
     res.redirect('bold');
