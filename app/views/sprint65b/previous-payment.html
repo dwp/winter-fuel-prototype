@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include './_bar.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          <table class="govuk-table">
+            <span class="govuk-caption-m">Winter 2021 to 2022</span>
+            <h2 class="govuk-heading-l">Payment details</h2>
+            <thead class="govuk-table__head">
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Amount</th>
+                <td class="govuk-table__cell">None - did not qualify</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-m">Qualification details</h2>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Age</th>
+                <td class="govuk-table__cell">79</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
+                  {% if data['address-change'] %}
+                  {{data['address-change'].split(', ').join('<br />') | safe }}
+                  {% elif data.address %}
+                  {{data.address.split(', ').join('<br />') | safe}}
+                  {% else %}
+                  78 Graham Road<br>
+                  Chelsham<br>
+                  CR6 9ND
+                  {% endif %}
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Occupancy details</th>
+                <td class="govuk-table__cell"> {% if data['living-with'] %}
+                  {{data['living-with']}}
+                  {% else %}
+                  Lives with someone else of State Pension age
+                  {% endif %}</td>
+              </tr>
+            </tbody>
+          </table>
+
+         
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}
