@@ -17,13 +17,15 @@ Winter Fuel Payments
 
         <form method="post">
 
-          {% include './_bar.html' %}
+          {% include './_bar_ineligible.html' %}
+
+          
 
           {{ govukBackLink({
                 text: "Back",
                 href: "javascript:history.go(-1)"
               }) }}
-
+             
           <br>
           <br>
 
