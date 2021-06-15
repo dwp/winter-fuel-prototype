@@ -40,8 +40,13 @@ Winter Fuel Payments
                 <td class="govuk-table__cell">None - did not qualify</td>
                 <td class="govuk-table__cell"></td>
               </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Reason</th>
+                <td class="govuk-table__cell">Resident in ineligible EEA</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
             </tbody>
-          </table>
+          </table><br>
 
           <table class="govuk-table">
             <h2 class="govuk-heading-m">Qualification details</h2>
@@ -54,25 +59,18 @@ Winter Fuel Payments
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Address</th>
                 <td class="govuk-table__cell">
-                  {% if data['address-change'] %}
-                  {{data['address-change'].split(', ').join('<br />') | safe }}
-                  {% elif data.address %}
-                  {{data.address.split(', ').join('<br />') | safe}}
-                  {% else %}
-                  78 Graham Road<br>
-                  Chelsham<br>
-                  CR6 9ND
-                  {% endif %}
+                  7812 Esplanade de Walne<br>
+                  El Researchio<br>
+                  Spain<br>
+                  827651
                 </td>
               </tr>
 
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Occupancy details</th>
-                <td class="govuk-table__cell"> {% if data['living-with'] %}
-                  {{data['living-with']}}
-                  {% else %}
+                <td class="govuk-table__cell"> 
                   Lives with someone else of State Pension age
-                  {% endif %}</td>
+                 </td>
               </tr>
             </tbody>
           </table>
