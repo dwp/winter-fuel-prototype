@@ -264,9 +264,9 @@ router.post('/sprint49/declaration', function(req, res) {
     } else if (req.session.data["movemonth"] === "8") {
       res.redirect('make-payment');
     } else if (req.session.data["movemonth"] === "07") {
-      res.redirect('over-payment');
+      res.redirect('/sprint60c/over-payment-2');
     } else if (req.session.data["movemonth"] === "7") {
-      res.redirect('over-payment');
+      res.redirect('/sprint60c/over-payment-2');
     } else if (req.session.data["movemonth"] === "10") {
       res.redirect('over-payment');
     } else if (req.session.data["movemonth"] === "05") {
