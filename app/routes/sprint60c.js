@@ -277,7 +277,7 @@ router.post('/sprint60c/over-payment-3', (req, res) => {
 
 // Confirm report overpayment?
 router.post('/sprint60c/over-payment-2', (req, res) => {
-  res.redirect('/sprint60c/overview-updated-prison')
+  res.redirect('/sprint49/overview-changed')
 })
 ;
 
