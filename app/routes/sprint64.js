@@ -30,6 +30,15 @@ router.post('/sprint64/commercial-address', function(req, res) {
   });
   ;
 
+  router.post('/sprint64/commercial-address-hint', function(req, res) {
+    if ( req.body['approve-commercial'] === 'no-update' ) {
+      res.redirect('address');
+    } else {
+      res.redirect('next-task');
+    }
+    });
+    ;
+
 
   router.post('/sprint64/address', (req, res) => {
     res.redirect('address-1')
