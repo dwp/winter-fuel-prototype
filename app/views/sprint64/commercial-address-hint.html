@@ -74,49 +74,41 @@ GOV.UK Prototype Kit
                     Is this also the residential address for Gracie-Mae Dixon?
                   </h1>
                 </legend>
-                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+               
+
+
+                <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="contact" name="approve-commercial" type="radio" value="Yes" data-aria-controls="conditional-contact">
-                    <label class="govuk-label govuk-radios__label" for="contact">
+                    <label class="govuk-label govuk-radios__label" for="contact" style="font-weight: bold;">
                       Yes
                     </label>
-                  </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                    <div class="govuk-form-group">
-                      <p class="govuk-label" for="contact-by-email">
-                        This will allow payments to be made even though this is a commercial address.
-                      </p>
-                     </div>
-            
-                  </div>
+                    <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                      This will allow payments to be made even though this is a commercial address.
+                    </div>
+                  </div><br>
+                  
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="contact-2" name="approve-commercial" type="radio" value="No" data-aria-controls="conditional-contact-2">
-                    <label class="govuk-label govuk-radios__label" for="contact-2">
+                    <label class="govuk-label govuk-radios__label" for="contact-2" style="font-weight: bold;">
                       No
                     </label>
-                  </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
-                    <div class="govuk-form-group">
-                      <p class="govuk-label" for="contact-by-email">
-                        Payments will be stopped as this is not a residential address.
-                      </p>
-                     </div>
-            
-                  </div>
+                    <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                      Payments will be stopped as this is not a residential address.
+                    </div>
+                  </div><br>
+                 
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="contact-3" name="approve-commercial" type="radio" value="no-update" data-aria-controls="conditional-contact-3">
-                    <label class="govuk-label govuk-radios__label" for="contact-3">
+                    <label class="govuk-label govuk-radios__label" for="contact-3" style="font-weight: bold;">
                       I want to enter a new address
                     </label>
+                    <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                      This will close this case and let you enter a new address on the next page.
+                    </div>
                   </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
-                    <div class="govuk-form-group">
-                      <p class="govuk-label" for="contact-by-email">
-                        This will close this case and let you enter a new address on the next page.
-                      </p>
-                     </div>
-            
-                  </div>
+                  
                 </div>
             
               </fieldset>
