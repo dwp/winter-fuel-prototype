@@ -308,9 +308,13 @@ router.post('/sprint49/make-payment', (req, res) => {
 
 
 
-// Living with age back to contact
-router.post('/sprint49/living-with-age', (req, res) => {
-  res.redirect('/sprint49/living-with-date')
+
+router.post('/sprint49/living-with-age', function(req, res) {
+  if (req.body['before-1954'] === 'Yes') {
+    res.redirect('/sprint65c/living-with-over-80');
+  } else {
+    res.redirect('living-with-date');
+  }
 });
 
 // Living with age back to contact
