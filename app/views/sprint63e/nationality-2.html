@@ -33,8 +33,12 @@ Winter Fuel Payments
         <br>
         <br>
 
-        <h1 class="govuk-heading-l">Which nationality do you have?</h1>
+                 <h1 class="govuk-heading-l">Which nationality do you have?</h1>
         <form method="post">
+
+        <div class="govuk-inset-text">
+          Make sure you capture from the citizen their nationality, not the country they are from e.g. Dutch not Netherlands.
+          </div>
 
           <fieldset class="govuk-fieldset">
             
@@ -270,9 +274,9 @@ Winter Fuel Payments
                         <option value="Zimbabwean" >Zimbabwean</option>
                       </select>
 
-                    </div><br>
+                    </div>
 
-            <h1 class="govuk-heading-m">Date nationality started</h1>
+            <h1 class="govuk-heading-s">Date nationality started</h1>
 
             <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" role="group" aria-describedby="nationality-date-hint">
@@ -305,21 +309,32 @@ Winter Fuel Payments
 
   </fieldset>
 </div>
+<br><br>
 
 {% if data['uk-national'] === 'no' %} 
 
-<details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Add another nationality if you have more than one
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    Tell us your second nationality if you have one. 
-  <br>
-  <br>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+       Do you have a second nationality?
+      </h1>
+        </legend>
 
-<h1 class="govuk-heading-m">What is your second nationality?</h1>
+        <br>
+    
+  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="contact">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        <div class="govuk-form-group">
+          </div>
+     
+      <h1 class="govuk-heading-s">Second nationality</h1>
         <form method="post">
 
           <fieldset class="govuk-fieldset">
@@ -556,9 +571,9 @@ Winter Fuel Payments
                         <option value="Zimbabwean" >Zimbabwean</option>
                       </select>
 
-                    </div><br>
+                    </div>
 
-            <h1 class="govuk-heading-m">Date second nationality started</h1>
+            <h1 class="govuk-heading-s">Date second nationality started</h1>
 
             <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" role="group" aria-describedby="2nd-nationality-date-hint-2">
@@ -590,16 +605,43 @@ Winter Fuel Payments
     </div>
 
   </fieldset>
+
+  
 </div>
 
 </div>
 </details>
-{% endif %}
+
+<div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          No
+        </label>
+      </div>
+
+
+            </div>
+        </div>
+    </div>
+    
+    
+      
+      
+
+
+  </fieldset>
+</div>
+
+
+
 
             </div>
         </div>
 
           </fieldset>
+
+          {% endif %}
 
 
           <button class="govuk-button" data-module="govuk-button">
@@ -617,5 +659,4 @@ Winter Fuel Payments
 </div>
 </main>
 </div>
-
 {% endblock %}
