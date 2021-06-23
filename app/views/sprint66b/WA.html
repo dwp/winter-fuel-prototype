@@ -4,9 +4,7 @@
 {% include './_header.html' %}
 {% endblock %}
 
-{% block beforeContent %}
-{% include './_blue_bar.html' %}
-{% endblock %}
+
 
 
 {% block pageTitle %}
@@ -14,26 +12,33 @@ Winter Fuel Payments
 {% endblock %}
 {% block content %}
 
+<form method="post">
 
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
-      <form method="post">
-
+      
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+                  Nicholas Higgins<br>
+                  <span class="govuk-body-l">
+                    XX 12 34 56 A
+                  </span>
+              </div>
+            </div>
+   
 
             {{ govukBackLink({
                 text: "Back",
                 href: "javascript:history.go(-1)"
               }) }}
 
-            <br>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
             <br>
 
-            <form method="post">
+              <h1 class="govuk-heading-l">Has Withdrawal Agreement passed?</h1>
 
-              <h1 class="govuk-heading-xl">Has Withdrawal Agreement passed?</h1>
+              
 
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
@@ -54,7 +59,7 @@ Winter Fuel Payments
                 </fieldset>
               </div>
 
-              <br>
+<br>
 
               <button type="submit" class="govuk-button">
                 Continue
