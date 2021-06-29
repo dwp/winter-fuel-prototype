@@ -8,9 +8,7 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-{% include './_blue_bar.html' %}
-{% endblock %}
+
 
 {% block content %}
 
@@ -102,7 +100,7 @@ GOV.UK Prototype Kit
     <div id="recoverable-hint" class="govuk-hint">
 
     </div>
-    <div class="govuk-radios govuk-radios--inline">
+    <div class="govuk-radios govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="recoverable" name="alt-format" type="radio" value="yes">
         <label class="govuk-label govuk-radios__label" for="recoverable">
@@ -112,13 +110,14 @@ GOV.UK Prototype Kit
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="recoverable2" name="alt-format" type="radio" value="no">
         <label class="govuk-label govuk-radios__label" for="recoverable2">
-          No
+          No - return to queue
         </label>
       </div>
     </div>
   </fieldset>
 </div>
-
+<a href="next-task" class="govuk-link">Return this case to the queue</a>
+        <br><br><br>
             <button type="submit" class="govuk-button">
               Continue
             </button>
