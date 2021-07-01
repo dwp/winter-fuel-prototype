@@ -109,28 +109,24 @@ Winter Fuel Payments
                 <th scope="row" class="govuk-table__header">Email address</th>
                 <td class="govuk-table__cell">
                   
-                  {% if data['alternative-format'] !== 'remove' %} 
+                  
                   {% if data['email'] %}
                   {{data['email']}}
                   {% elseif data['email3'] %}
                   {{data['email3']}}
-                  {% else %}
-                  
                   {% endif %}
-                  {% endif %}
+                 
 
                 </td>
                 <td class="govuk-table__cell">
                   <a href="email">
-                    {% if data['alternative-format'] !== 'remove' %}  
+                   
                     {% if data['email'] or data['email3'] %}
                     Change<span class="govuk-visually-hidden">email</span>
                     {% else %}
                     Add<span class="govuk-visually-hidden">email</span>
                     {% endif %}
-                    {% else %}
-                    Add
-                  {% endif %}
+                    
                   </a>
                 </td>
               </tr>
