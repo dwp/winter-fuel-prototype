@@ -16,9 +16,16 @@ router.use((req, res, next) => {
       res.redirect('large-print');
     } else if (req.body['alternative-format'] === 'Large print (default - size 16)') {
       res.redirect('bold');
+    } else if (req.body['alternative-format'] === 'Web accessible PDF') {
+      res.redirect('email2');
     } else {
       res.redirect('contact');
     }
+  });
+
+  // email capture to contact
+  router.post('/sprint63d/email2', (req, res) => {
+    res.redirect('contact')
   });
   
 
@@ -30,6 +37,8 @@ router.post('/sprint63d/large', function(req, res) {
     res.redirect('bold');
   }
 });
+
+
 
 // large print to bold
 router.post('/sprint63d/large-print', (req, res) => {
