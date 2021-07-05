@@ -67,8 +67,50 @@ router.post('/sprint68/homephone-remove', function(req, res) {
 
 // Declaration to confirmation
 
-router.post('/sprint68/declaration', (req, res) => {
-  res.redirect('/sprint68/overview-changed')
+
+
+router.post('/sprint68/declaration', function(req, res) {
+  if (req.session.data["move-month"] === "01") {
+    res.redirect('overview-residency-ineligible-eea');
+  } else if (req.session.data["move-month"] === "02") {
+    res.redirect('make-new-claim');
+  } else if (req.session.data["move-month"] === "03") {
+    res.redirect('over-payment-3');
+  } else if (req.session.data["move-month"] === "04") {
+    res.redirect('make-payment');
+  } else if (req.session.data["move-month"] === "05") {
+    res.redirect('over-payment-2');
+  } else if (req.session.data["move-month"] === "06") {
+    res.redirect('overview-updated');
+  } else {
+    res.redirect('overview');
+  }
+});
+
+
+
+
+// make new claim to overview
+router.post('/sprint68/make-new-claim', (req, res) => {
+  res.redirect('/sprint68/overview-new-claim')
+})
+;
+
+// do not qualify for wfp - overview
+router.post('/sprint68/over-payment-3', (req, res) => {
+  res.redirect('/sprint68/overview-dnq')
+})
+;
+
+// underpayment to overview
+router.post('/sprint68/make-payment', (req, res) => {
+  res.redirect('/sprint68/overview-make-payment')
+})
+;
+
+// underpayment to overview
+router.post('/sprint68/over-payment-2', (req, res) => {
+  res.redirect('/sprint68/make-new-claim')
 })
 ;
 
