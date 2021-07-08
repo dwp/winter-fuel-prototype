@@ -23,10 +23,21 @@ router.post('/sprint64b/task-lists', (req, res) => {
 
 
   // Referral to get next
-  router.post('/sprint64b/alternative-format', (req, res) => {
+  router.post('/sprint64b/alternative-format-radio-audio', (req, res) => {
     res.redirect('/sprint64b/next-task')
   })
   ;
+
+
+
+// confirm reove from queue
+router.post('/sprint64b/confirm-remove', function(req, res) {
+  if (req.body['delete'] === 'No') {
+    res.redirect('alternative-format-radio-audio');
+  } else {
+    res.redirect('next-task-deleted');
+  }
+});
 
 
   module.exports = router;
