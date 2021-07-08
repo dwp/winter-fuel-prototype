@@ -23,7 +23,8 @@ gov-question{% extends 'layout.html' %}
 
             <form method="post">
 
-                <h1 class="govuk-heading-xl">Customer matching service</h1>
+                <h1 class="govuk-heading-xl">Customer opportunities - matched results</h1>
+                
                 </form>
                 </div>
                 </div>
@@ -74,6 +75,9 @@ gov-question{% extends 'layout.html' %}
 
             <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Design</a></li>
 
+            <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Hospitality</a></li>
+
+          
           </ul>
 
           <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Skills</h3>
@@ -81,6 +85,10 @@ gov-question{% extends 'layout.html' %}
           <ul class="moj-filter-tags">
 
             <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Programming</a></li>
+
+            <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Sketching</a></li>
+
+            <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Customer Service</a></li>
 
           </ul>
 
@@ -202,11 +210,23 @@ gov-question{% extends 'layout.html' %}
         <div class="moj-button-menu__wrapper">
 
           <button class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
-            Action 1
+            Show Kickstart
+          </button>
+
+        <button class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
+            Show Homeworking
+          </button>
+
+           <button class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
+            Show Saved
           </button>
 
           <button class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
-            Action 2
+            Show disability confident 
+          </button>
+
+          <button class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
+            Contact work coach
           </button>
 
         </div>
@@ -242,7 +262,7 @@ gov-question{% extends 'layout.html' %}
 
               <th scope="row" class="govuk-table__header"><a href="#">Draftsperson</a></th>
 
-              <td class="govuk-table__cell">Goose Engineering</td>
+              <td class="govuk-table__cell">Team 12</td>
 
               <td class="govuk-table__cell">Engineering</td>
 
@@ -256,7 +276,7 @@ gov-question{% extends 'layout.html' %}
 
               <th scope="row" class="govuk-table__header"><a href="#">Interaction Designer</a></th>
 
-              <td class="govuk-table__cell">DWP Digital</td>
+              <td class="govuk-table__cell">Unicorn</td>
 
               <td class="govuk-table__cell">Design</td>
 
@@ -268,199 +288,75 @@ gov-question{% extends 'layout.html' %}
 
             <tr class="govuk-table__row">
 
-              <th scope="row" class="govuk-table__header"><a href="#">45678765</a></th>
+              <th scope="row" class="govuk-table__header"><a href="#">Chef</a></th>
 
-              <td class="govuk-table__cell">Alan Jones</td>
-
-              <td class="govuk-table__cell">Design</td>
-
-              <td class="govuk-table__cell">Customer Service</td>
-
-              <td class="govuk-table__cell">9 May 2021</td>
-
-            </tr>
-
-            <tr class="govuk-table__row">
-
-              <th scope="row" class="govuk-table__header"><a href="#">12345678</a></th>
-
-              <td class="govuk-table__cell">Jennifer Langley</td>
-
-              <td class="govuk-table__cell">Design</td>
-
-              <td class="govuk-table__cell">Customer Service</td>
-
-              <td class="govuk-table__cell">9 May 2021</td>
-
-            </tr>
-
-            <tr class="govuk-table__row">
-
-              <th scope="row" class="govuk-table__header"><a href="#">89009800</a></th>
-
-              <td class="govuk-table__cell">Susan Francis</td>
+              <td class="govuk-table__cell">Winners</td>
 
               <td class="govuk-table__cell">Hospitality</td>
 
-              <td class="govuk-table__cell">Sketching</td>
+              <td class="govuk-table__cell">Customer Service</td>
 
-              <td class="govuk-table__cell">9 May 2021</td>
+              <td class="govuk-table__cell">92%</td>
 
             </tr>
 
             <tr class="govuk-table__row">
 
-              <th scope="row" class="govuk-table__header"><a href="#">44455453</a></th>
+              <th scope="row" class="govuk-table__header"><a href="#">User Needs Manager</a></th>
 
-              <td class="govuk-table__cell">John Smith</td>
+              <td class="govuk-table__cell">Technical Executors</td>
 
-              <td class="govuk-table__cell">Engineering</td>
+              <td class="govuk-table__cell">Design</td>
 
               <td class="govuk-table__cell">Programming</td>
 
-              <td class="govuk-table__cell">25 Jan 2021</td>
+              <td class="govuk-table__cell">89%</td>
 
             </tr>
 
             <tr class="govuk-table__row">
 
-              <th scope="row" class="govuk-table__header"><a href="#">12323212</a></th>
+              <th scope="row" class="govuk-table__header"><a href="#">Usability and Accessibility Co-ordinator</a></th>
 
-              <td class="govuk-table__cell">Warren Sutton</td>
-
-              <td class="govuk-table__cell">Design</td>
-
-              <td class="govuk-table__cell">Customer Service</td>
-
-              <td class="govuk-table__cell">25 Jan 2021</td>
-
-            </tr>
-
-            <tr class="govuk-table__row">
-
-              <th scope="row" class="govuk-table__header"><a href="#">45678765</a></th>
-
-              <td class="govuk-table__cell">Alan Jones</td>
-
-              <td class="govuk-table__cell">Design</td>
-
-              <td class="govuk-table__cell">Customer Service</td>
-
-              <td class="govuk-table__cell">9 May 2021</td>
-
-            </tr>
-
-            <tr class="govuk-table__row">
-
-              <th scope="row" class="govuk-table__header"><a href="#">12345678</a></th>
-
-              <td class="govuk-table__cell">Jennifer Langley</td>
-
-              <td class="govuk-table__cell">Design</td>
-
-              <td class="govuk-table__cell">Customer Service</td>
-
-              <td class="govuk-table__cell">9 May 2021</td>
-
-            </tr>
-
-            <tr class="govuk-table__row">
-
-              <th scope="row" class="govuk-table__header"><a href="#">89009800</a></th>
-
-              <td class="govuk-table__cell">Susan Francis</td>
-
-              <td class="govuk-table__cell">Hospitality</td>
-
-              <td class="govuk-table__cell">Sketching</td>
-
-              <td class="govuk-table__cell">9 May 2021</td>
-
-            </tr>
-
-            <tr class="govuk-table__row">
-
-              <th scope="row" class="govuk-table__header"><a href="#">45456765</a></th>
-
-              <td class="govuk-table__cell">John Smith</td>
-
-              <td class="govuk-table__cell">Hospitality</td>
-
-              <td class="govuk-table__cell">Sketching</td>
-
-              <td class="govuk-table__cell">9 May 2021</td>
-
-            </tr>
-
-            <tr class="govuk-table__row">
-
-              <th scope="row" class="govuk-table__header"><a href="#">88675411</a></th>
-
-              <td class="govuk-table__cell">Margaret Blake</td>
-
-              <td class="govuk-table__cell">Hospitality</td>
-
-              <td class="govuk-table__cell">Sketching</td>
-
-              <td class="govuk-table__cell">9 May 2021</td>
-
-            </tr>
-
-            <tr class="govuk-table__row">
-
-              <th scope="row" class="govuk-table__header"><a href="#">44455453</a></th>
-
-              <td class="govuk-table__cell">John Smith</td>
+              <td class="govuk-table__cell">Innovation Ltd</td>
 
               <td class="govuk-table__cell">Engineering</td>
 
+              <td class="govuk-table__cell">Sketching</td>
+
+              <td class="govuk-table__cell">85%</td>
+
+            </tr>
+
+            <tr class="govuk-table__row">
+
+              <th scope="row" class="govuk-table__header"><a href="#">Collaboration expert</a></th>
+
+              <td class="govuk-table__cell">BEST solutions</td>
+
+              <td class="govuk-table__cell">Hospitality</td>
+
+              <td class="govuk-table__cell">Customer Service</td>
+
+              <td class="govuk-table__cell">82%</td>
+
+            </tr>
+
+            <tr class="govuk-table__row">
+
+              <th scope="row" class="govuk-table__header"><a href="#">Expert Hacker</a></th>
+
+              <td class="govuk-table__cell">Hack2Work</td>
+
+              <td class="govuk-table__cell">Design</td>
+
               <td class="govuk-table__cell">Programming</td>
 
-              <td class="govuk-table__cell">25 Jan 2021</td>
+              <td class="govuk-table__cell">78%</td>
 
             </tr>
 
-            <tr class="govuk-table__row">
-
-              <th scope="row" class="govuk-table__header"><a href="#">12323212</a></th>
-
-              <td class="govuk-table__cell">Warren Sutton</td>
-
-              <td class="govuk-table__cell">Design</td>
-
-              <td class="govuk-table__cell">Customer Service</td>
-
-              <td class="govuk-table__cell">25 Jan 2021</td>
-
-            </tr>
-
-            <tr class="govuk-table__row">
-
-              <th scope="row" class="govuk-table__header"><a href="#">45678765</a></th>
-
-              <td class="govuk-table__cell">Alan Jones</td>
-
-              <td class="govuk-table__cell">Design</td>
-
-              <td class="govuk-table__cell">Customer Service</td>
-
-              <td class="govuk-table__cell">9 May 2021</td>
-
-            </tr>
-
-            <tr class="govuk-table__row">
-
-              <th scope="row" class="govuk-table__header"><a href="#">12345678</a></th>
-
-              <td class="govuk-table__cell">Jennifer Langley</td>
-
-              <td class="govuk-table__cell">Design</td>
-
-              <td class="govuk-table__cell">Customer Service</td>
-
-              <td class="govuk-table__cell">9 May 2021</td>
-
-            </tr>
+            
 
           </tbody>
         </table>
