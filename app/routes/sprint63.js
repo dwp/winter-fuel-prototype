@@ -18,7 +18,7 @@ router.post('/sprint63/update-details-options', function(req, res) {
     res.redirect('date-of-death');
   }
     else if (req.session.data["update-details-options"] === "opt-out") {
-  res.redirect('opt-out');
+  res.redirect('stop-payments-reason');
   }
     else if (req.session.data["update-details-options"] === "immigration") {
   res.redirect('immigration');
@@ -158,6 +158,15 @@ router.post('/sprint63/update-details-changed', (req, res) => {
 });
 
 router.post('/sprint63/update-details', (req, res) => {
+  res.redirect('overview')
+});
+
+
+router.post('/sprint63/date-of-death', (req, res) => {
+  res.redirect('overview')
+});
+
+router.post('/sprint63/stop-payments-reason', (req, res) => {
   res.redirect('overview')
 });
 
