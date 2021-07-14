@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_blue_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+        {% include './_bar.html' %}
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
+
+          <form method="post">
+
+            <h1 class="govuk-heading-m">Details</h1>
+            
+            <table class="govuk-table">
+              <caption class="govuk-table__caption"></caption>
+
+              
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell">Should this be residential or care home address? <br>
+                  35 St Albans Close<br>
+                    ASHINGTON<br>
+                    NE63 9RU</td>
+                </tr>
+              </thead>
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date moved in</th>
+                  <td class="govuk-table__cell">7 January 1992</td>
+                </tr>
+              </thead>
+              
+            </table>
+
+            <br>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="dap-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                Do you need to update the address?
+                  </h1>
+                </legend>
+                <div id="dap-hint" class="govuk-hint">
+
+                </div>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dap" name="dap" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="dap">
+                    Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dap-2" name="dap" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="dap-2">
+                    No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}
