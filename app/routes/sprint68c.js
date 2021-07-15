@@ -95,15 +95,23 @@ router.post('/sprint68c/tasks-6', (req, res) => {
 });
 
 router.post('/sprint68c/13-week', function(req, res) {
-  if (req.session.data["dap"] === "yes") {
+  if (req.session.data["13-week"] === "yes") {
     res.redirect('/sprint68c/13-week-yes');
   } else {
     res.redirect('/sprint68c/13-week-no');
   }
 });
 
+router.post('/sprint68c/correspondance', function(req, res) {
+  if (req.session.data["13-week2"] === "yes") {
+    res.redirect('/sprint68c/tasks-6-yes');
+  } else {
+    res.redirect('/sprint68c/address2');
+  }
+});
+
 router.post('/sprint68c/13-week-no', (req, res) => {
-  res.redirect('/sprint68c/overview-no')
+  res.redirect('/sprint68c/tasks-6-no')
 });
 
 router.post('/sprint68c/13-week-yes', (req, res) => {
@@ -137,19 +145,59 @@ router.post('/sprint68c/address-search-result', function(req, res) {
   }
 });
 
+
+
+router.post('/sprint68c/address2', (req, res) => {
+  res.redirect('/sprint68c/address-1-2')
+});
+
+// Address select, yes or search address
+router.post('/sprint68c/address-1-2', function(req, res) {
+  if (req.body['address-change'] === '67 Station Road, NAILSEA, BS48 2LL') {
+    res.redirect('tasks-6-yes');
+  } else {
+    res.redirect('address-search-2');
+  }
+});
+
+// Address search
+router.post('/sprint68c/address-search-2', function(req, res) {
+  if (req.body['address-search-postcode'] === 'BS48 2LL') {
+    res.redirect('address-search-no-result-2');
+  } else {
+    res.redirect('address-search-result-2');
+  }
+});
+
+// Address search select, yes or search address
+router.post('/sprint68c/address-search-result-2', function(req, res) {
+  if (req.body['address-search-change'] === '67 Station Road, NAILSEA, BS48 2LL') {
+    res.redirect('tasks-6-yes');
+  } else {
+    res.redirect('TBC');
+  }
+});
+
+// Move date
+router.post('/sprint68c/move-date-2', (req, res) => {
+  res.redirect('/sprint68c/tasks-6-yes')
+});
+
+
+
+
+
 // Move date
 router.post('/sprint68c/move-date', (req, res) => {
   res.redirect('/sprint68c/correspondance')
 });
 
-router.post('/sprint68c/correspondance', function(req, res) {
-  if (req.body['correspondance'] === 'yes') {
-    res.redirect('/sprint68c/overview-yes');
-  } else {
-    res.redirect('/sprint68c/overview-yes-yes');
-  }
+router.post('/sprint68c/tasks-6-no', (req, res) => {
+  res.redirect('/sprint68c/13-week')
 });
 
-
+router.post('/sprint68c/tasks-6-yes', (req, res) => {
+  res.redirect('/sprint68c/13-week')
+});
 
 module.exports = router;

@@ -33,33 +33,50 @@ Winter Fuel Payments
 
             <form method="post">
 
-                  <h2 class="govuk-heading-l">Can (current) care home address be used for correspondance?</h2>
-
-<h2 class="govuk-heading-s">enter current care home address here? (what if it's not correct?) <br>
-
-</h2>
-
-<div class="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="dap" name="correspondance" type="radio" value="yes">
-                    <label class="govuk-label govuk-radios__label" for="dap">
-                    Yes
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="dap-2" name="correspondance" type="radio" value="no">
-                    <label class="govuk-label govuk-radios__label" for="dap-2">
-                    No
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
+                  <h2 class="govuk-heading-l">Which address would you like us to send your correspondance to?</h2>
 
 
-              <div class="govuk-form-group">
-                
-              </div>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+        <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in" name="13-week2" type="radio" value="yes" aria-describedby="sign-in-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sign-in">
+          Current address
+        </label>
+        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          Mary Spence Care Home, 130 Caradon Hill, UDNY GREEN, AB41 1JG</td>
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="13-week2" type="radio" value="yes" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sign-in-2">
+          Previous residential address
+        </label>
+        <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+          35 St Albans Close, ASHINGTON, NE63 9RU
+      </div>
+    </div>
+    <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="13-week2" type="radio" value="new" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sign-in-2">
+          A different address
+        </label>
+        <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+          Select this option to enter a different correspondance address e.g. a Power of Attorney's address
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+<div class="govuk-form-group">
+</div>
+
+<br>
+
+              
 
               <button type="submit" class="govuk-button">
                 Continue
