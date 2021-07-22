@@ -8,9 +8,6 @@
 Winter Fuel Payments
 {% endblock %}
 
-{% block beforeContent %}
-{% include './_blue_bar.html' %}
-{% endblock %}
 
 {% block content %}
 
@@ -36,10 +33,12 @@ Winter Fuel Payments
 
           <form method="post">
 
-            <h1 class="govuk-heading-m">Details of current address</h1>
-              <div id="event-name-hint" class="govuk-hint">
-              This address will be used to calculate entitlement during qualification week
-              </div>
+            <h1 class="govuk-heading-m">Current address</h1>
+            <div class="govuk-inset-text">
+              <p>This will be used as the qualifying week address.</p>
+          </div>  
+            
+            
 
             <table class="govuk-table">
               <caption class="govuk-table__caption"></caption>
@@ -63,10 +62,16 @@ Winter Fuel Payments
                   <td class="govuk-table__cell">20 August 2021</td>
                 </tr>
               </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Mobile phone</th>
+                  <td class="govuk-table__cell">07463990361</td>
+                </tr>
+              </thead>
               
             </table>
 
-            <br><br>Would phone number or contact details here be useful to the agent? or even POA contact details if applicable?
+           
 
             <br><br>
 
@@ -74,7 +79,7 @@ Winter Fuel Payments
               <fieldset class="govuk-fieldset" aria-describedby="dap-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                   <h1 class="govuk-fieldset__heading">
-                Has your occupancy status changed? / Do you need to update this address?
+                Do you need to use a different address for qualifying week?
                   </h1>
                 </legend>
                      
@@ -91,8 +96,7 @@ Winter Fuel Payments
           Yes
         </label>
         <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-          Select this option if you have moved from living with someone else at your previous residential address to not living with someone else at your current address
-          <br>or should this say something like 'Select this option if you need to enter a previous residential address'
+          Select this option if you need to enter the address the citizen lived in before moving into the care home.
         </div>
       </div>
       <div class="govuk-radios__item">
@@ -101,8 +105,7 @@ Winter Fuel Payments
           No
         </label>
         <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
-          Select this option if you have moved from not living with someone else in your previous address to not living with someone else in your current address
-          <br>or should this say something like 'Select this option if you do not need to enter a previous residential address'
+          Select this option if you do not need to enter a previous residential address.
         </div>
       </div>
     </div>
@@ -110,7 +113,8 @@ Winter Fuel Payments
   </fieldset>
 </div>
 
-            <br><br>
+<br><a href="next-task" class="govuk-link">Return this case to the queue</a>
+<br><br><br>
 
             <button type="submit" class="govuk-button">
               Continue
