@@ -98,7 +98,7 @@ router.post('/sprint68c/13-week', function(req, res) {
   if (req.session.data["13-week"] === "yes") {
     res.redirect('/sprint68c/13-week-yes');
   } else {
-    res.redirect('/sprint68c/13-week-no');
+    res.redirect('/sprint68c/tasks-6-no');
   }
 });
 
