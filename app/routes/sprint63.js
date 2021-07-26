@@ -90,9 +90,18 @@ router.post('/sprint63/living-with', function(req, res) {
   }
 });
 
-// Living with age back to contact
+
+
 router.post('/sprint63/living-with-age', (req, res) => {
-  res.redirect('/sprint63/living-with-date')
+  if (req.body['before-1954'] === 'Yes') {
+    res.redirect('living-with-over-80');
+  } else {
+    res.redirect('living-with-date');
+  }
+});
+
+router.post('/sprint63/living-with-over-80', (req, res) => {
+  res.redirect('living-with-date')
 });
 
 router.post('/sprint63/living-with-date', (req, res) => {
@@ -149,12 +158,22 @@ router.post('/sprint63/update-anything-else', (req, res) => {
   } 
 });
 
-router.post('/sprint63/declaration', (req, res) => {
-  res.redirect('update-details-changed')
+
+
+router.post('/sprint63/declaration', function(req, res) {
+  if (req.session.data['moveyear'] === "2018") {
+    res.redirect('multi-overpayment');
+  } else {
+    res.redirect('update-details-changed');
+  }
 });
 
 router.post('/sprint63/update-details-changed', (req, res) => {
   res.redirect('overview')
+});
+
+router.post('/sprint63/multi-overpayment', (req, res) => {
+  res.redirect('update-details-changed')
 });
 
 router.post('/sprint63/update-details', (req, res) => {

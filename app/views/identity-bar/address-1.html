@@ -1,6 +1,8 @@
 {% extends "layout.html" %}
 
-
+{% block header %}
+  {% include './_header.html' %}
+{% endblock %}
 
 {% block pageTitle %}
 GOV.UK Prototype Kit
@@ -94,7 +96,8 @@ GOV.UK Prototype Kit
                                     </div>
                                   </fieldset>
                                 </div>
-
+                                <a href="tasks-wa-returned" class="govuk-link">Return this case to the queue</a>
+                                <br><br><br>
                           <button type="submit" class="govuk-button">
                             Continue
                           </button>
