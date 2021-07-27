@@ -2,6 +2,10 @@ const express = require('express')
 const router = express.Router()
 
 // copy the const name and the file path to new version
+const eligibilitychecker = require('./routes/eligibility-checker');
+const payDeathArrears = require('./routes/tasks-pay-death-arrears');
+
+
 const sprint15 = require('./routes/sprint15');
 const sprint15b = require('./routes/sprint15b');
 const sprint17 = require('./routes/sprint17');
@@ -101,7 +105,6 @@ const sprint56 = require('./routes/sprint56');
 const sprint57 = require('./routes/sprint57');
 const sprint57b = require('./routes/sprint57b');
 const sprint57c = require('./routes/sprint57c');
-const eligibilitychecker = require('./routes/eligibility-checker');
 const sprint59 = require('./routes/sprint59');
 const sprint59b = require('./routes/sprint59b');
 const sprint59c = require('./routes/sprint59c');
@@ -130,6 +133,9 @@ const sprint68b = require('./routes/sprint68b');
 const sprint68c = require('./routes/sprint68c');
 
 //copy the router use and update the sprint version
+router.use(eligibilitychecker);
+router.use(payDeathArrears);
+
 router.use(sprint15);
 router.use(sprint15b);
 router.use(sprint17);
@@ -229,7 +235,6 @@ router.use(sprint56);
 router.use(sprint57);
 router.use(sprint57b);
 router.use(sprint57c);
-router.use(eligibilitychecker);
 router.use(sprint59);
 router.use(sprint59b);
 router.use(sprint59c);
