@@ -54,10 +54,18 @@ GOV.UK Prototype Kit
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                   <th scope="col" class="govuk-table__header">Address</th>
-                  <td class="govuk-table__cell">27 Kent Street<a href="/sprint63/address" <span class="govuk-link govuk-!-font-size-19" style="float:right">Change</span> </a><br>
+                  <td class="govuk-table__cell">
+                    {% if data['address-change'] %}
+                    27 KENT STREET<a href="address" <span class="govuk-link govuk-!-font-size-19" style="float:right">Change</span> </a><br>
                     AMBLE<br>
                     NE65 0LZ
-                    
+                  {% else %}
+                  
+                  
+                    87 OAKWELL AVE<a href="address" <span class="govuk-link govuk-!-font-size-19" style="float:right">Change</span> </a><br>
+                    ALNWICK<br>
+                    NE65 9TT
+                    {% endif %}  
                    
                   </td>
                     
@@ -66,13 +74,35 @@ GOV.UK Prototype Kit
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                   <th scope="col" class="govuk-table__header">Date moved in</th>
-                  <td class="govuk-table__cell">12 July 2019</td>
+                  <td class="govuk-table__cell">{% if data['moveday'] %}
+                    {{data['moveday']}}
+                    {% if (data['movemonth'] == '1') or (data['movemonth'] == '01') %} January 
+                {% elif (data['movemonth'] == '2') or (data['movemonth'] == '02') %} February 
+                {% elif (data['movemonth'] == '3') or (data['movemonth'] == '03') %} March 
+                {% elif (data['movemonth'] == '4') or (data['movemonth'] == '04') %} April 
+                {% elif (data['movemonth'] == '5') or (data['movemonth'] == '05') %} May 
+                {% elif (data['movemonth'] == '6') or (data['movemonth'] == '06') %} June 
+                {% elif (data['movemonth'] == '7') or (data['movemonth'] == '07') %} July 
+                {% elif (data['movemonth'] == '8') or (data['movemonth'] == '08') %} August 
+                {% elif (data['movemonth'] == '9') or (data['movemonth'] == '09') %} September 
+                {% elif data['movemonth'] == '10' %} October 
+                {% elif data['movemonth'] == '11' %} November 
+                {% elif data['movemonth'] == '12' %} December 
+                {% endif %}
+                    {{data['moveyear']}}
+                    {% else %}
+                    19 July 2019
+                    {% endif %}</td>
                 </tr>
               </thead>
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                   <th scope="col" class="govuk-table__header">Occupancy</th>
-                  <td class="govuk-table__cell">Lives with someone else who gets Winter Fuel Payment</td>
+                  <td class="govuk-table__cell">{% if data['living-with'] %}
+                    {{data['living-with']}}
+                    {% else %}
+                    Lives with someone else of State Pension age
+                    {% endif %}</td>
                 </tr>
               </thead>
               <thead class="govuk-table__head">
