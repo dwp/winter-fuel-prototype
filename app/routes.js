@@ -134,6 +134,7 @@ const sprint68c = require('./routes/sprint68c');
 const sprint69 = require('./routes/sprint69');
 const sprint69b = require('./routes/sprint69b');
 
+
 //copy the router use and update the sprint version
 router.use(eligibilitychecker);
 router.use(payDeathArrears);
@@ -264,6 +265,7 @@ router.use(sprint68);
 router.use(sprint68b);
 router.use(sprint68c);
 router.use(sprint69);
+router.use(sprint69b);
 router.use(sprint69b);
 
 router.use((req, res, next) => {
