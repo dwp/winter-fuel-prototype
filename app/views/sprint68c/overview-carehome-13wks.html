@@ -56,16 +56,10 @@ GOV.UK Prototype Kit
 
             </table>
 
-            <div class="govuk-warning-text">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong class="govuk-warning-text__text">
-                <span class="govuk-warning-text__assistive">Warning</span>
-                Previous address shown as needed to calculate correct payment.
-              </strong>
-            </div>
-          <br>
+            
+          <br><br>
 
-          <table class="govuk-table">
+          <table class="govuk-table" style="margin-bottom:0px">
             <h2 class="govuk-heading-m">Qualification details</h2>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
@@ -84,8 +78,8 @@ GOV.UK Prototype Kit
                 <td class="govuk-table__cell">9 August 1953</td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Address</th>
-                <td class="govuk-table__cell">
+                <th scope="row" class="govuk-table__header" style="border-bottom:none">Address</th>
+                <td class="govuk-table__cell" style="border-bottom: none;">
                   {% if data['address-change'] %}
                   {{data['address-change'].split(', ').join('<br />') | safe }}
                   {% elif data.address %}
@@ -99,6 +93,36 @@ GOV.UK Prototype Kit
                   {% endif %}
                 </td>
               </tr>
+            </tbody>
+          </table>
+
+
+          <table class="govuk-table" style="margin-bottom: 0px;">
+           
+            <tbody class="govuk-table__body">
+             
+              <tr class="govuk-table__row">
+                
+                <td class="govuk-table__cell">
+                  <div class="govuk-warning-text" style="margin-bottom: 0px;">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                      <span class="govuk-warning-text__assistive">Warning</span>
+                      Previous address shown above as needed to calculate correct payment.</strong><br>
+                      <span class="govuk-warning-text__text" style="font-weight: normal;">Current address is Mary Spence Care Home, 130 Caradon Hill, UDNY GREEN, AB41 1JG</span>
+                    
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <table class="govuk-table">
+           
+            <tbody class="govuk-table__body">
+             
+            
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Date they moved in</th>
                 <td class="govuk-table__cell">
