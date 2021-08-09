@@ -4,6 +4,7 @@ const router = express.Router()
 // copy the const name and the file path to new version
 const eligibilitychecker = require('./routes/eligibility-checker');
 const payDeathArrears = require('./routes/tasks-pay-death-arrears');
+const updateDetails = require('./routes/update-details');
 
 
 const sprint15 = require('./routes/sprint15');
@@ -138,6 +139,7 @@ const sprint69b = require('./routes/sprint69b');
 //copy the router use and update the sprint version
 router.use(eligibilitychecker);
 router.use(payDeathArrears);
+router.use(updateDetails);
 
 router.use(sprint15);
 router.use(sprint15b);
