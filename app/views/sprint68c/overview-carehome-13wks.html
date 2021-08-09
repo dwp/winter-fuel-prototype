@@ -78,8 +78,8 @@ GOV.UK Prototype Kit
                 <td class="govuk-table__cell">9 August 1953</td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="border-bottom:none">Address</th>
-                <td class="govuk-table__cell" style="border-bottom: none;">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
                   {% if data['address-change'] %}
                   {{data['address-change'].split(', ').join('<br />') | safe }}
                   {% elif data.address %}
@@ -93,6 +93,12 @@ GOV.UK Prototype Kit
                   {% endif %}
                 </td>
               </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date moved in</th>
+                <td class="govuk-table__cell">
+                  6 March 2021
+                </td>
+              </tr>
             </tbody>
           </table>
 
@@ -103,13 +109,13 @@ GOV.UK Prototype Kit
              
               <tr class="govuk-table__row">
                 
-                <td class="govuk-table__cell">
+                <td class="govuk-table__cell" style="border-bottom: none;">
                   <div class="govuk-warning-text" style="margin-bottom: 0px;">
                     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                     <strong class="govuk-warning-text__text">
                       <span class="govuk-warning-text__assistive">Warning</span>
                       Previous address shown above as needed to calculate correct payment.</strong><br>
-                      <span class="govuk-warning-text__text" style="font-weight: normal;">Current address is Mary Spence Care Home, 130 Caradon Hill, UDNY GREEN, AB41 1JG</span>
+                      <span class="govuk-warning-text__text" style="font-weight: normal;">Current address is:<br><b>Mary Spence Care Home, 130 Caradon Hill, UDNY GREEN, AB41 1JG</b><br><br>Moved into care home on:<br><b>15 August 2021</b></span>
                     
                   </div>
                 </td>
@@ -118,20 +124,7 @@ GOV.UK Prototype Kit
           </table>
 
 
-          <table class="govuk-table">
-           
-            <tbody class="govuk-table__body">
-             
-            
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Date they moved in</th>
-                <td class="govuk-table__cell">
-                  6 March 2021
-                </td>
-              </tr>
-             
-            </tbody>
-          </table>
+         
 
       </div>
 
