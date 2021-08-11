@@ -99,6 +99,7 @@ const sprint52c = require('./routes/sprint52c');
 const sprint52d = require('./routes/sprint52d');
 const sprint52e = require('./routes/sprint52e');
 const sprint52f = require('./routes/sprint52f');
+const sprint52g = require('./routes/sprint52g');
 const sprint53 = require('./routes/sprint53');
 const sprint55 = require('./routes/sprint55');
 const sprint55b = require('./routes/sprint55b');
