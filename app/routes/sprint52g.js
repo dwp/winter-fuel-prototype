@@ -170,7 +170,7 @@ router.post('/sprint52c/address-1', function(req, res) {
 
 // Care home address select, yes or search address
 router.post('/sprint52g/address-commercial', function(req, res) {
-  if (req.body['address-change'] === 'G06 Chorlton Mill, Cambridge Street, Manchester M1 5BY') {
+  if (req.body['address-change'] === 'G05 Chorlton Mill, Cambridge Street, Manchester M1 5BY') {
     res.redirect('not-commercial');
   } else {
     res.redirect('/sprint49/address');

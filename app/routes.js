@@ -234,6 +234,7 @@ router.use(sprint52c);
 router.use(sprint52d);
 router.use(sprint52e);
 router.use(sprint52f);
+router.use(sprint52g);
 router.use(sprint53);
 router.use(sprint55);
 router.use(sprint55b);
