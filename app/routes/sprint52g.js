@@ -179,9 +179,9 @@ router.post('/sprint52g/address-commercial', function(req, res) {
 
 router.post('/sprint52g/not-commercial', function(req, res) {
   if (req.body['care-home'] === 'yes') {
-    res.redirect('/sprint35d/overview-commercial');
-  } else {
     res.redirect('/sprint49/move-date');
+  } else {
+    res.redirect('/sprint35d/overview-commercial');
   }
 });
 
