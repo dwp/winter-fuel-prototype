@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
 {% block pageTitle %}
-GOV.UK Prototype Kit
+Winter Fuel Payments
 {% endblock %}
-
-{% block beforeContent %}
-{% include './_find-someone.html' %}
-{% endblock %}
-
 {% block content %}
 
 <div class="govuk-width-container">
@@ -16,6 +16,7 @@ GOV.UK Prototype Kit
       <div class="govuk-grid-column-two-thirds">
 
         <form method="post">
+
 
           <div>
             <h1 class="govuk-heading-xl">
@@ -53,7 +54,7 @@ GOV.UK Prototype Kit
 
 
             <h2 class="govuk-heading-m">Qualification details</h2>
-        <a href="address" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 80%">Update details</span>
+        <a href="address" <span class="govuk-link govuk-!-font-size-19" >Update details</span>
         </a>
             <thead class="govuk-table__head">
 
