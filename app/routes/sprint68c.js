@@ -102,7 +102,7 @@ router.post('/sprint68c/13-week', function(req, res) {
   }
 });
 
-router.post('/sprint68c/correspondance', function(req, res) {
+router.post('/sprint68c/correspondence', function(req, res) {
   if (req.session.data["13-week2"] === "yes") {
     res.redirect('/sprint68c/tasks-6-yes');
   } else {
@@ -189,7 +189,7 @@ router.post('/sprint68c/move-date-2', (req, res) => {
 
 // Move date
 router.post('/sprint68c/move-date', (req, res) => {
-  res.redirect('/sprint68c/correspondance')
+  res.redirect('/sprint68c/correspondence')
 });
 
 router.post('/sprint68c/tasks-6-no', (req, res) => {
