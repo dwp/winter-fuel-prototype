@@ -32,7 +32,7 @@ GOV.UK Prototype Kit
                     Dead
                   </strong>
               </div>
-              
+
 
             </div>
           </div>
@@ -64,15 +64,15 @@ GOV.UK Prototype Kit
                     AMBLE<br>
                     NE65 0LZ
                   {% else %}
-                  
-                  
+
+
                     87 OAKWELL AVE<br>
                     ALNWICK<br>
                     NE65 9TT
-                    {% endif %}  
-                   
+                    {% endif %}
+
                   </td>
-                    
+
                 </tr>
               </thead>
               <thead class="govuk-table__head">
@@ -80,18 +80,18 @@ GOV.UK Prototype Kit
                   <th scope="col" class="govuk-table__header">Date moved in</th>
                   <td class="govuk-table__cell">{% if data['moveday'] %}
                     {{data['moveday']}}
-                    {% if (data['movemonth'] == '1') or (data['movemonth'] == '01') %} January 
-                {% elif (data['movemonth'] == '2') or (data['movemonth'] == '02') %} February 
-                {% elif (data['movemonth'] == '3') or (data['movemonth'] == '03') %} March 
-                {% elif (data['movemonth'] == '4') or (data['movemonth'] == '04') %} April 
-                {% elif (data['movemonth'] == '5') or (data['movemonth'] == '05') %} May 
-                {% elif (data['movemonth'] == '6') or (data['movemonth'] == '06') %} June 
-                {% elif (data['movemonth'] == '7') or (data['movemonth'] == '07') %} July 
-                {% elif (data['movemonth'] == '8') or (data['movemonth'] == '08') %} August 
-                {% elif (data['movemonth'] == '9') or (data['movemonth'] == '09') %} September 
-                {% elif data['movemonth'] == '10' %} October 
-                {% elif data['movemonth'] == '11' %} November 
-                {% elif data['movemonth'] == '12' %} December 
+                    {% if (data['movemonth'] == '1') or (data['movemonth'] == '01') %} January
+                {% elif (data['movemonth'] == '2') or (data['movemonth'] == '02') %} February
+                {% elif (data['movemonth'] == '3') or (data['movemonth'] == '03') %} March
+                {% elif (data['movemonth'] == '4') or (data['movemonth'] == '04') %} April
+                {% elif (data['movemonth'] == '5') or (data['movemonth'] == '05') %} May
+                {% elif (data['movemonth'] == '6') or (data['movemonth'] == '06') %} June
+                {% elif (data['movemonth'] == '7') or (data['movemonth'] == '07') %} July
+                {% elif (data['movemonth'] == '8') or (data['movemonth'] == '08') %} August
+                {% elif (data['movemonth'] == '9') or (data['movemonth'] == '09') %} September
+                {% elif data['movemonth'] == '10' %} October
+                {% elif data['movemonth'] == '11' %} November
+                {% elif data['movemonth'] == '12' %} December
                 {% endif %}
                     {{data['moveyear']}}
                     {% else %}
@@ -116,7 +116,7 @@ GOV.UK Prototype Kit
                 </tr>
                 </thead>
             </table>
-            <a href="address" <span class="govuk-link govuk-!-font-size-19" >Update details</span>
+            <a href="address" <span class="govuk-link govuk-!-font-size-19" >Update details</span></a>
             <br><br><br>
 
             <div class="govuk-form-group">
