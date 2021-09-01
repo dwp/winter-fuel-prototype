@@ -109,7 +109,7 @@ router.post('/tasks/pay-death-arrears/living-with-q-week', function(req, res) {
 
 router.post('/tasks/pay-death-arrears/death-arrears-task-1', function(req, res) {
   if ( req.body['dap'] === 'yes' ) {
-    res.redirect('death-arrears-task-1-dap-name');
+    res.redirect('death-arrears-task-1-dap-type');
   } else if ( req.body['dap'] === 'cancel' ){
     res.redirect('death-arrears-task-1-cancel-check');
   } else {
@@ -134,6 +134,15 @@ router.post('/tasks/pay-death-arrears/death-arrears-task-1-nok', function(req, r
   }
 });
 
+
+router.post('/tasks/pay-death-arrears/death-arrears-task-1-dap-type', function(req, res) {
+  if ( req.body['type'] === 'person' ) {
+    res.redirect('death-arrears-task-1-dap-name');
+  } else {
+    res.redirect('death-arrears-task-1-company-name');
+  }
+});
+
 router.post('/tasks/pay-death-arrears/send-wfpf100', (req, res) => {
   res.redirect('/tasks/pay-death-arrears/tasks-5-2')
 })
@@ -147,8 +156,18 @@ router.post('/tasks/pay-death-arrears/death-arrears-task-1-dap-name', (req, res)
 })
 ;
 
+router.post('/tasks/pay-death-arrears/death-arrears-task-1-company-name', (req, res) => {
+  res.redirect('/tasks/pay-death-arrears/death-arrears-task-1-company-address')
+})
+;
+
 router.post('/tasks/pay-death-arrears/death-arrears-task-1-dap-address', (req, res) => {
   res.redirect('/tasks/pay-death-arrears/death-arrears-task-1-dap-bank-details')
+})
+;
+
+router.post('/tasks/pay-death-arrears/death-arrears-task-1-company-address', (req, res) => {
+  res.redirect('/tasks/pay-death-arrears/death-arrears-task-1-company-bank-details')
 })
 ;
 
@@ -159,8 +178,15 @@ router.post('/tasks/pay-death-arrears/death-arrears-task-1-dap-bank-details', fu
   } else {
     res.redirect('/tasks/pay-death-arrears/death-arrears-task-1-dap-make-payment');
   }
-}); 
+});
 
+router.post('/tasks/pay-death-arrears/death-arrears-task-1-company-bank-details', function(req, res) {
+  if ( req.body['bank-account-type'] === 'international-bank' ) {
+    res.redirect('/tasks/pay-death-arrears/request-sop5');
+  } else {
+    res.redirect('/tasks/pay-death-arrears/death-arrears-task-1-company-make-payment');
+  }
+});
 
 // record view bank type to payment or SOP5
 router.post('/tasks/pay-death-arrears/dap-bank-details', function(req, res) {
@@ -169,7 +195,7 @@ router.post('/tasks/pay-death-arrears/dap-bank-details', function(req, res) {
   } else {
     res.redirect('/tasks/pay-death-arrears/dap-make-payment');
   }
-}); 
+});
 
 // task view request sop5 to task list
 router.post('/tasks/pay-death-arrears/request-sop5', (req, res) => {
@@ -184,6 +210,11 @@ router.post('/tasks/pay-death-arrears/record-view-request-sop5', (req, res) => {
 ;
 
 router.post('/tasks/pay-death-arrears/death-arrears-task-1-dap-make-payment', (req, res) => {
+  res.redirect('/tasks/pay-death-arrears/tasks-5-2')
+})
+;
+
+router.post('/tasks/pay-death-arrears/death-arrears-task-1-company-make-payment', (req, res) => {
   res.redirect('/tasks/pay-death-arrears/tasks-5-2')
 })
 ;
