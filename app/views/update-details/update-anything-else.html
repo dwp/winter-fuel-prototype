@@ -30,19 +30,7 @@ Winter Fuel Payments
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="hospital-conditional-hint">
               
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="update-anything-else" name="update-anything-else" type="radio" value="no" data-aria-controls="conditional-hospital-conditional">
-                  <label class="govuk-label govuk-radios__label" for="hospital-conditional">
-                    No
-                  </label>
-                  
-               
-              </div><br>
-           
-
-
-          <div class="govuk-radios__divider">or</div><br>
+             
 
           {% if data['move-date-changed'] != 'true' %}
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
@@ -73,14 +61,30 @@ Winter Fuel Payments
                 </div>
             {% endif %}
 
-            {% if data['poa-changed'] != 'true' %}
+            <!--{% if data['poa-changed'] != 'true' %}
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="immigration" name="update-details-options" type="radio" value="poa" data-aria-controls="conditional-carehome-conditional-2">
                   <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
                     Power of attorney
                   </label>
                 </div>
-            {% endif %}
+            {% endif %}-->
+
+            <div class="govuk-radios__divider">or</div><br>
+
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="update-anything-else" name="update-anything-else" type="radio" value="no" data-aria-controls="conditional-hospital-conditional">
+                <label class="govuk-label govuk-radios__label" for="hospital-conditional">
+                  No more updates
+                </label>
+                
+             
+            </div>
+         
+
+
+       
 
               </div>
             </fieldset>
