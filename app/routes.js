@@ -7,6 +7,7 @@ const payDeathArrears = require('./routes/tasks-pay-death-arrears');
 const updateDetails = require('./routes/update-details');
 
 
+
 const sprint15 = require('./routes/sprint15');
 const sprint15b = require('./routes/sprint15b');
 const sprint17 = require('./routes/sprint17');
@@ -142,6 +143,7 @@ router.use(eligibilitychecker);
 router.use(payDeathArrears);
 router.use(updateDetails);
 
+
 router.use(sprint15);
 router.use(sprint15b);
 router.use(sprint17);
@@ -271,6 +273,16 @@ router.use(sprint68c);
 router.use(sprint69);
 router.use(sprint69b);
 router.use(sprint69b);
+
+router.post('*', function (req, res, next) {
+  console.log(req.body);
+
+  if (req.body['next-page']) {
+    res.redirect(req.body['next-page']);
+  } else {
+    next();
+  }
+});
 
 router.use((req, res, next) => {
   if (req.method === 'POST') {
