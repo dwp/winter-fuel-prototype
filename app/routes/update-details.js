@@ -169,19 +169,30 @@ router.post('/update-details/update-anything-else', (req, res) => {
 
 
 router.post('/update-details/declaration', function(req, res) {
-  if (req.session.data['moveyear'] === "2018") {
-    res.redirect('multi-overpayment');
+  if (req.session.data['movemonth'] === "07") {
+    res.redirect('over-payment');
+  } else if (req.session.data['movemonth'] === "7") {
+    res.redirect('over-payment');
+  } else if (req.session.data['movemonth'] === "08") {
+    res.redirect('make-payment');
+  } else if (req.session.data['movemonth'] === "8") {
+    res.redirect('make-payment');
   } else {
-    res.redirect('update-details-changed');
+    res.redirect('overview');
   }
+});
+
+// Make payment to contact
+router.post('/update-details/make-payment', (req, res) => {
+  res.redirect('/update-details/overview-topup')
 });
 
 router.post('/update-details/update-details-changed', (req, res) => {
   res.redirect('overview')
 });
 
-router.post('/update-details/multi-overpayment', (req, res) => {
-  res.redirect('update-details-changed')
+router.post('/update-details/over-payment', (req, res) => {
+  res.redirect('overview')
 });
 
 router.post('/update-details/update-details', (req, res) => {
