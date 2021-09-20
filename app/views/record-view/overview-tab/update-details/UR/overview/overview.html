@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-{% include './_header.html' %}
+{% include '../../_header.html' %}
 {% endblock %}
 
 
@@ -30,7 +30,7 @@ Winter Fuel Payments
 
   {% elif data['update-details-options']=='dlo'%}
 
-  {% include './_bar-dlo.html' %}
+  {% include '../../_bar-dlo.html' %}
             <div class="moj-banner moj-banner--success">
 
               <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
@@ -43,7 +43,7 @@ Winter Fuel Payments
 
 {% elif data['marked-as-dead']=='true'%}
 
-  {% include './_bar.html' %}
+  {% include '../../_bar.html' %}
             <div class="moj-banner moj-banner--success">
 
               <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
@@ -56,7 +56,7 @@ Winter Fuel Payments
 
 {% elif data['stop-payments']=='dead'%}
 
-  {% include './_bar.html' %}
+  {% include '../../_bar.html' %}
             <div class="moj-banner moj-banner--success">
 
               <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
@@ -67,29 +67,29 @@ Winter Fuel Payments
     
             </div>
 
-{% elif data['multi-overpayment']=='true'%}
-{% include './_bar.html' %}
+{% elif data['stop-payments']=='opted'%}
+{% include '../../_bar.html' %}
 <div class="moj-banner moj-banner--success">
 
   <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
 
   <div class="moj-banner__message">
-    <span class="moj-banner__assistive">Success</span>Details updated</div>
+    <span class="moj-banner__assistive">Success</span>Payments stopped - citizen has opted out</div>
 
 </div>
 {% else %}
-  {% include './_bar.html' %}
+  {% include '../../_bar.html' %}
 {% endif %}
 
-            {% include './_tab-overview.html' %}
+            {% include '../../_tab-overview.html' %}
 
             
             <br>
             <br>
 
         {%if data['stop-payments']== 'opted' %}
-            <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
+            <h2 class="govuk-heading-m">Winter 2021 to 2022</h2>
             <div class="govuk-warning-text">
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
               <strong class="govuk-warning-text__text">
@@ -99,7 +99,7 @@ Winter Fuel Payments
             </div>
 {% else %}
             <table class="govuk-table">
-            <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
+            <h2 class="govuk-heading-m">Winter 2021 to 2022</h2>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header"></th>
@@ -107,13 +107,14 @@ Winter Fuel Payments
               </tr>
             </thead>
               <tbody class="govuk-table__body">
+                
                 <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Payment date</th>
-                  <td class="govuk-table__cell">Monday, 4 November 2021</td>
+                  <th scope="row" class="govuk-table__header">Entitled to</th>
+                  <td class="govuk-table__cell">£100</td>
                 </tr>
                 <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Amount</th>
-                  <td class="govuk-table__cell">£100</td>
+                  <th scope="row" class="govuk-table__header">Reason</th>
+                  <td class="govuk-table__cell">Lives with someone 80 or over who also qualifies</td>
                 </tr>
               </tbody>
             </table>
@@ -179,7 +180,7 @@ Winter Fuel Payments
                     {% if data['living-with'] %}
                     {{data['living-with']}}
                       {% else %}
-                      Lives with someone else of State Pension age
+                      Lives with someone 80 or over who also qualifies
                     {% endif %}
                   </td>
                 </tr>
