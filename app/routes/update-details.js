@@ -190,11 +190,19 @@ router.post('/record-view/overview-tab/update-details/update-anything-else', (re
 router.post('/record-view/overview-tab/update-details/declaration', function(req, res) {
   if (req.session.data['movemonth'] === "07") {
     res.redirect('over-payment');
+  } else if (req.session.data['living-with-month'] === "7") {
+    res.redirect('over-payment');
   } else if (req.session.data['movemonth'] === "7") {
+    res.redirect('over-payment');
+  } else if (req.session.data['living-with-month'] === "7") {
     res.redirect('over-payment');
   } else if (req.session.data['movemonth'] === "08") {
     res.redirect('make-payment');
   } else if (req.session.data['movemonth'] === "8") {
+    res.redirect('make-payment');
+  } else if (req.session.data['living-with-month'] === "08") {
+    res.redirect('make-payment');
+  } else if (req.session.data['living-with-month'] === "8") {
     res.redirect('make-payment');
   } else {
     res.redirect('/record-view/overview-tab/overview');
