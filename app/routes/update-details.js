@@ -225,7 +225,7 @@ router.post('/record-view/overview-tab/update-details/update-details-changed', (
 });
 
 router.post('/record-view/overview-tab/update-details/over-payment', (req, res) => {
-  res.redirect('overview')
+  res.redirect('/record-view/overview-tab/overview')
 });
 
 router.post('/record-view/overview-tab/update-details/current-details', (req, res) => {
@@ -234,11 +234,11 @@ router.post('/record-view/overview-tab/update-details/current-details', (req, re
 
 
 router.post('/record-view/overview-tab/update-details/date-of-death', (req, res) => {
-  res.redirect('overview')
+  res.redirect('/record-view/overview-tab/overview')
 });
 
 router.post('/record-view/overview-tab/update-details/stop-payments-reason', (req, res) => {
-  res.redirect('overview')
+  res.redirect('/record-view/overview-tab/overview')
 });
 
 module.exports = router;
