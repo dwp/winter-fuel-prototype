@@ -174,8 +174,14 @@ router.post('/record-view/overview-tab/update-details/update-anything-else', (re
     res.redirect('living-with');
   } else if (req.body['update-details-options'] === 'home-phone') {
     res.redirect('homephone');
-  } else if (req.body['update-details-options'] === 'poa') {
-    res.redirect('poa');
+  } else if (req.body['update-details-options'] === 'mobile-phone') {
+    res.redirect('mobilephone');
+  } else if (req.body['update-details-options'] === 'work-phone') {
+    res.redirect('workphone');
+  } else if (req.body['update-details-options'] === 'email') {
+    res.redirect('email');
+  } else if (req.body['update-details-options'] === 'correspondence-address') {
+    res.redirect('correspondence-address');
   } 
 });
 
@@ -223,7 +229,7 @@ router.post('/record-view/overview-tab/update-details/over-payment', (req, res) 
 });
 
 router.post('/record-view/overview-tab/update-details/current-details', (req, res) => {
-  res.redirect('overview')
+  res.redirect('/record-view/overview-tab/overview')
 });
 
 

@@ -61,6 +61,42 @@ Winter Fuel Payments
                 </div>
             {% endif %}
 
+            {% if data['mobilephone-changed'] != 'true' %}
+            <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="opt-out" name="update-details-options" type="radio" value="mobile-phone" data-aria-controls="conditional-carehome-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
+                    Mobile phone
+                  </label>
+                </div>
+            {% endif %}
+
+            {% if data['workphone-changed'] != 'true' %}
+            <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="opt-out" name="update-details-options" type="radio" value="work-phone" data-aria-controls="conditional-carehome-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
+                    Work phone
+                  </label>
+                </div>
+            {% endif %}
+
+            {% if data['email-changed'] != 'true' %}
+            <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="opt-out" name="update-details-options" type="radio" value="email" data-aria-controls="conditional-carehome-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
+                    Email address
+                  </label>
+                </div>
+            {% endif %}
+
+            {% if data['correspondence-address-changed'] != 'true' %}
+            <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="opt-out" name="update-details-options" type="radio" value="correspondence-address" data-aria-controls="conditional-carehome-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
+                    Correspondence address
+                  </label>
+                </div>
+            {% endif %}
+
             <!--{% if data['poa-changed'] != 'true' %}
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="immigration" name="update-details-options" type="radio" value="poa" data-aria-controls="conditional-carehome-conditional-2">
