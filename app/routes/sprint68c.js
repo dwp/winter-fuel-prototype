@@ -193,7 +193,7 @@ router.post('/sprint68c/move-date-2', (req, res) => {
 
 // Move date
 router.post('/sprint68c/move-date', (req, res) => {
-  res.redirect('/sprint68c/13-week')
+  res.redirect('/sprint68c/tasks-6-yes')
 });
 
 router.post('/sprint68c/tasks-6-no', (req, res) => {
