@@ -16,7 +16,7 @@ Winter Fuel Payments
 
       <div class="govuk-grid-column-two-thirds">
 
-        <form method="post">
+        <form method="post" action="payment-returned">
 
 
           {% include './_bar.html' %}
@@ -34,13 +34,13 @@ Winter Fuel Payments
 
           <div class="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="returned" name="returned" type="radio" value="yes">
+        <input class="govuk-radios__input" id="returned" name="next-page" type="radio" value="payment-returned">
         <label class="govuk-label govuk-radios__label" for="returned">
             Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="returned-2" name="returned" type="radio" value="dead">
+        <input class="govuk-radios__input" id="returned-2" name="next-page" type="radio" value="../payments">
         <label class="govuk-label govuk-radios__label" for="returned-2">
           No
         </label>
