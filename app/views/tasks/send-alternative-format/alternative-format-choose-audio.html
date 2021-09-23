@@ -41,10 +41,10 @@ GOV.UK Prototype Kit
               </thead>
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
-                  <th scope="col" class="govuk-table__header">Correspondence address</th>
-                  <td class="govuk-table__cell"> 87 Oakwell Rise
-                    <br>Ecclefecchan
-                    <br>EC79 1FU</td>
+                  <th scope="col" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell"> 1 Victoria Road
+                    <br>FALKIRK
+                    <br>FK55 8XN</td>
                 </tr>
               </thead>
               <thead class="govuk-table__head">
@@ -92,17 +92,41 @@ GOV.UK Prototype Kit
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                   <th scope="col" class="govuk-table__header">Alternative format</th>
-                  <td class="govuk-table__cell">BSL (British Sign Language) MPEG</td>
+                  <td class="govuk-table__cell"><div class="govuk-form-group" style="margin-bottom:0px">
+                    <fieldset class="govuk-fieldset">
+                  
+                      <div class="govuk-radios govuk-radios--small">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                          <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            Audio - cassette
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+                          <label class="govuk-label govuk-radios__label" for="changed-name">
+                            Audio - CD
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                          <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            Audio - DVD
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                          <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            Audio - MP3
+                          </label>
+                        </div>
+                      </div>
+                  
+                    </fieldset>
+                  </div></td>
                 </tr>
               </thead>
-              <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                  <th scope="col" class="govuk-table__header">Preferred language</th>
-                  <td class="govuk-table__cell">Welsh</td>
-                </tr>
-              </thead>
-             
-
+              
             </table>
 
 
@@ -110,36 +134,36 @@ GOV.UK Prototype Kit
             <br>
 
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" aria-describedby="recoverable-hint">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                  <h1 class="govuk-fieldset__heading">
-                    Has Welsh alternative format reuqest been sent?
-                  </h1>
-                </legend>
-                <div id="recoverable-hint" class="govuk-hint">
-            
-                </div>
-                <div class="govuk-radios govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="recoverable" name="alt-format-sent" type="radio" value="yes">
-                    <label class="govuk-label govuk-radios__label" for="recoverable">
-                      Yes
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="recoverable2" name="alt-format-sent" type="radio" value="no">
-                    <label class="govuk-label govuk-radios__label" for="recoverable2">
-                      No - return to queue
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
-            <a href="next-task" class="govuk-link">Return this case to the queue</a>
-                    <br><br><br>
-                        <button type="submit" class="govuk-button">
-                          Continue
-                        </button>
+  <fieldset class="govuk-fieldset" aria-describedby="recoverable-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Has alternative format request been sent?
+      </h1>
+    </legend>
+    <div id="recoverable-hint" class="govuk-hint">
+
+    </div>
+    <div class="govuk-radios govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="recoverable" name="alt-format-sent" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="recoverable">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="recoverable2" name="alt-format-sent" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="recoverable2">
+          No - return to queue
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<a href="next-task" class="govuk-link">Return this case to the queue</a>
+        <br><br><br>
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
 
           </form>
 

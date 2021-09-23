@@ -41,10 +41,10 @@ GOV.UK Prototype Kit
               </thead>
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
-                  <th scope="col" class="govuk-table__header">Correspondence address</th>
-                  <td class="govuk-table__cell"> 87 Oakwell Rise
-                    <br>Ecclefecchan
-                    <br>EC79 1FU</td>
+                  <th scope="col" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell"> 1 Victoria Road
+                    <br>FALKIRK
+                    <br>FK55 8XN</td>
                 </tr>
               </thead>
               <thead class="govuk-table__head">
@@ -92,54 +92,59 @@ GOV.UK Prototype Kit
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                   <th scope="col" class="govuk-table__header">Alternative format</th>
-                  <td class="govuk-table__cell">BSL (British Sign Language) MPEG</td>
+                  <td class="govuk-table__cell">Large print</td>
                 </tr>
               </thead>
-              <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                  <th scope="col" class="govuk-table__header">Preferred language</th>
-                  <td class="govuk-table__cell">Welsh</td>
-                </tr>
-              </thead>
-             
-
+              
             </table>
-
+            <div class="govuk-form-group">
+              <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="cost">
+                  Which large print size should be used?
+                </label>
+              </h2>
+              <div id="account-number-hint" class="govuk-hint">
+                Must be 16, 18, 20, 22, 24 or 26
+              </div>
+              <div class="govuk-input__wrapper">
+                
+                <input class="govuk-input govuk-input--width-4" id="cost" name="cost" type="text" spellcheck="false">
+              </div>
+            </div>
 
 
             <br>
 
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" aria-describedby="recoverable-hint">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                  <h1 class="govuk-fieldset__heading">
-                    Has Welsh alternative format reuqest been sent?
-                  </h1>
-                </legend>
-                <div id="recoverable-hint" class="govuk-hint">
-            
-                </div>
-                <div class="govuk-radios govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="recoverable" name="alt-format-sent" type="radio" value="yes">
-                    <label class="govuk-label govuk-radios__label" for="recoverable">
-                      Yes
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="recoverable2" name="alt-format-sent" type="radio" value="no">
-                    <label class="govuk-label govuk-radios__label" for="recoverable2">
-                      No - return to queue
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
-            <a href="next-task" class="govuk-link">Return this case to the queue</a>
-                    <br><br><br>
-                        <button type="submit" class="govuk-button">
-                          Continue
-                        </button>
+  <fieldset class="govuk-fieldset" aria-describedby="recoverable-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Has alternative format request been sent?
+      </h1>
+    </legend>
+    <div id="recoverable-hint" class="govuk-hint">
+
+    </div>
+    <div class="govuk-radios govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="recoverable" name="alt-format-sent" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="recoverable">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="recoverable2" name="alt-format-sent" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="recoverable2">
+          No - return to queue
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<a href="next-task" class="govuk-link">Return this case to the queue</a>
+        <br><br><br>
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
 
           </form>
 
