@@ -21,6 +21,12 @@ router.post('/sprint69b/task-lists', (req, res) => {
 })
 ;
 
+// Referral to get next
+router.post('/sprint69b/alternative-format', (req, res) => {
+  res.redirect('/sprint69b/next-task')
+})
+;
+
 
   // Referral to get next
   router.post('/sprint69b/alternative-format-radio-paper', (req, res) => {
