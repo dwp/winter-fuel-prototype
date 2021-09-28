@@ -52,7 +52,7 @@ router.post('/sprint59e/death-arrears-task-1-dap-bank-details', function(req, re
   } else {
     res.redirect('/sprint59e/death-arrears-task-1-dap-make-payment');
   }
-}); 
+});
 
 
 // record view bank type to payment or SOP5
@@ -62,7 +62,7 @@ router.post('/sprint59e/dap-bank-details', function(req, res) {
   } else {
     res.redirect('/sprint59e/dap-make-payment');
   }
-}); 
+});
 
 // task view request sop5 to task list
 router.post('/sprint59e/request-sop5', (req, res) => {
@@ -277,5 +277,33 @@ router.post('/sprint59e/death-arrears-task-4-nok', function(req, res) {
     res.redirect('tasks-5-5');
   }
 });
+
+// RADIO BUTTON TASKS
+
+router.post('/sprint59e/tasks-radio-verify-addresses', (req, res) => {
+  res.redirect('/sprint59e/tasks-radio-verify-addresses')
+})
+;
+
+router.post('/sprint59e/tasks-radio-fix-account-details', (req, res) => {
+  res.redirect('/sprint59e/death-arrears-task-2-dap-bank-details')
+})
+;
+
+
+router.post('/sprint59e/tasks-radio-review-gsls', (req, res) => {
+  res.redirect('/sprint59e/death-arrears-task-2-dap-make-payment')
+})
+;
+
+router.post('/sprint59e/tasks-radio-review-overpayments', (req, res) => {
+  res.redirect('/sprint59e/tasks-5-3')
+})
+;
+
+router.post('/sprint59e/tasks-radio-pay-death-arrears', (req, res) => {
+  res.redirect('/sprint59e/death-arrears-task-3')
+})
+;
 
 module.exports = router;
