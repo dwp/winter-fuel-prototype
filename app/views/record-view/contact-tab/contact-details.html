@@ -19,7 +19,19 @@ Winter Fuel Payments
 
           {% include './_bar.html' %}
 
-          
+          {% if data['alt-format-changed'] == 'true' %}
+          <div class="moj-banner moj-banner--success">
+
+          <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+          <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+          </svg>
+
+          <div class="moj-banner__message">
+          <span class="moj-banner__assistive">Success</span>Details updated
+          </div>
+
+          </div>
+        {% endif %}
           
           
           {% include './_tab-contact.html' %}
@@ -81,7 +93,7 @@ Winter Fuel Payments
                   {% endif %}
                 </td>
                 <td class="govuk-table__cell">
-                  <a href="workphone">
+                  <a href="/record-view/contact-tab/work-phone/workphone.html">
                     {% if not data.worknumber %}
                     Add<span class="govuk-visually-hidden"> work number</span>
                     {% else %}
@@ -105,7 +117,7 @@ Winter Fuel Payments
 
                 </td>
                 <td class="govuk-table__cell">
-                  <a href="email">
+                  <a href="/record-view/contact-tab/email/email.html">
                    
                     {% if data['email'] or data['email3'] %}
                     Change<span class="govuk-visually-hidden">email</span>
@@ -130,7 +142,7 @@ Winter Fuel Payments
              
                 
                 <td class="govuk-table__cell">
-                  <a href="correspondence-address">
+                  <a href="/record-view/contact-tab/correspondence-address/correspondence-address.html">
                     {% if not data['correspondence-address-change'] %}
                     Add <span class="govuk-visually-hidden">contact preferences</span>
                     {% else %}
@@ -187,7 +199,7 @@ Winter Fuel Payments
               
 
                 <td class="govuk-table__cell">
-                  <a href="alt">
+                  <a href="/record-view/contact-tab/alt-formats/alt.html">
                   {% if data['alternative-format'] !== 'remove' %}  
                     {% if data['alternative-format'] %}
                     Change<span class="govuk-visually-hidden"> alternative format.</span>
