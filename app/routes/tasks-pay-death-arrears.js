@@ -109,7 +109,7 @@ router.post('/tasks/pay-death-arrears/living-with-q-week', function(req, res) {
 
 router.post('/tasks/pay-death-arrears/death-arrears-task-1', function(req, res) {
   if ( req.body['dap'] === 'yes' ) {
-    res.redirect('death-arrears-task-1-dap-type');
+    res.redirect('death-arrears-task-1-dap-name');
   } else if ( req.body['dap'] === 'cancel' ){
     res.redirect('death-arrears-task-1-cancel-check');
   } else {
