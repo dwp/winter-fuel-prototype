@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header-tasks.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <form method="post">
+
+          <h1 class="govuk-heading-xl">Review overpayments</h1>
+
+
+          <div id="govuk-checkboxes govuk-checkboxes--small">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+
+                <p><strong>Apply filter(s)</strong></p>
+
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      UK cases
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      International cases
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Urgent cases with less than 2 weeks remaining
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Dead
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Care home benefits
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      In a care home
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Multi household
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      In hospital
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Immigration control
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      In prison
+                    </label>
+                  </div>
+
+                </div>
+        </form>
+
+
+
+      </div>
+      <button class="govuk-button" data-module="govuk-button" button type=“submit”>
+        Get next overpayment case
+      </button>
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}
