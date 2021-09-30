@@ -7,6 +7,10 @@ module.exports = function (env) {
    */
   var filters = {}
 
+  filters.redirect = (location) => {
+		return `<script>window.location.href = '${location}';</script>`
+	}
+
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:
