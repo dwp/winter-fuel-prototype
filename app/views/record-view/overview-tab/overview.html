@@ -8,6 +8,7 @@
 {% block pageTitle %}
 Winter Fuel Payments
 {% endblock %}
+
 {% block content %}
 
 <div class="govuk-width-container">
@@ -99,7 +100,16 @@ Winter Fuel Payments
                 This person has opted out of receiving Winter Fuel payment. They can <a href="start-payments" class="govuk-link">opt back in</a> at any time.
               </strong>
             </div>
-{% else %}
+        {% elif data['alt-format-task']== 'yes' %}
+            <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                This person has an outstanding alternative format task. {% if data['wf-agent']== 'yes' %}<a href="../../tasks/send-alternative-format/alternative-format" class="govuk-link">Review task</a>{% endif %}
+              </strong>
+            </div>
+        {% else %}
             <table class="govuk-table">
             <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
             <thead class="govuk-table__head">
@@ -119,7 +129,7 @@ Winter Fuel Payments
                 </tr>
               </tbody>
             </table>
-
+        
 {% endif %}
 <br>
 
