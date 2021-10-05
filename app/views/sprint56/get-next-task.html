@@ -17,7 +17,7 @@ Winter Fuel Payments
         <form method="post">
 
           <h1 class="govuk-heading-xl">Tasks</h1>
-
+<!--
           <nav class="moj-sub-navigation" aria-label="Sub navigation">
 
           <ul class="moj-sub-navigation__list">
@@ -44,16 +44,16 @@ Winter Fuel Payments
           </ul>
 
           </nav>
-
+-->
           {% if data ['bank-details'] == 'return' %}
           <div class="moj-banner">
-            
+
             <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
             <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
             C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" /></svg>
-        
+
             <div class="moj-banner__message">
-           
+
               <span class="moj-banner__assistive">information</span>No account details available - case returned to queue
             </div>
 
@@ -62,28 +62,28 @@ Winter Fuel Payments
 
               <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
               <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
-  
+
               <div class="moj-banner__message">
-              
+
                 <span class="moj-banner__assistive">Success</span>SOP5 payment made - case removed from queue</div>
-             
+
              </div>
-            
+
              {% elif data ['bank-details'] == 'ineligible'%}
             <div class="moj-banner moj-banner--success">
 
               <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
               <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
-  
+
               <div class="moj-banner__message">
-              
+
                 <span class="moj-banner__assistive">Success</span>Citizen is ineligible for payment - case removed from queue</div>
-             
+
              </div>
-             
+
             {% endif %}
-            
-        
+
+
             </div>
 
 
