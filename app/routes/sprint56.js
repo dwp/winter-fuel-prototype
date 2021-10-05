@@ -17,7 +17,7 @@ router.post('/sprint56/bank-task', function(req, res) {
     else if (req.body['bank-details'] === 'ineligible') {
         res.redirect('confirm-remove');}
    else {
-    res.redirect('get-next-task');
+    res.redirect('bank-task');
   }
 });
 
