@@ -14,7 +14,7 @@
                                 XX 12 34 56
                               {% endif %}
                               <br>
-                              {% if data['marked-as-dead']=='true' %}
+                              {% if data['mark-as-dead']=='yes' and data['remove-dead'] !='yes' %}
 
                 <strong class="govuk-tag govuk-tag--grey">
                   Dead

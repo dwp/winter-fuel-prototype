@@ -15,7 +15,7 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-      <form method="post">
+      
 
         {% include './_bar.html' %}
 
@@ -66,5 +66,11 @@ Winter Fuel Payments
 
   </main>
   </div>
+
+  <script>
+    nextPageRoutes = {
+        'Yes': 'living-with-over-80',
+        'No': 'living-with-date',}
+  </script>
 
   {% endblock %}
