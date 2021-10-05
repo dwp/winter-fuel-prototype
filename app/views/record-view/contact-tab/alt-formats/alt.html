@@ -32,79 +32,79 @@
     </legend><br>
     <div class="govuk-radios govuk-radios--small">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="tape" name="next-page" type="radio" value="../contact-details">
+        <input class="govuk-radios__input" id="tape" name="alternative-format" type="radio" value="Audio - cassette tape">
         <label class="govuk-label govuk-radios__label" for="alternative-format">
           Audio - cassette tape
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="audio" name="next-page" type="radio" value="../contact-details">
+        <input class="govuk-radios__input" id="audio" name="alternative-format" type="radio" value="Audio - CD">
         <label class="govuk-label govuk-radios__label" for="alternative-format-2">
           Audio - CD
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="audio" name="next-page" type="radio" value="../contact-details">
+        <input class="govuk-radios__input" id="audio" name="alternative-format" type="radio" value="Audio - DVD">
         <label class="govuk-label govuk-radios__label" for="alternative-format-8">
           Audio - DVD
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="audio" name="next-page" type="radio" value="../contact-details">
+        <input class="govuk-radios__input" id="audio" name="alternative-format" type="radio" value="Audio - MP3">
         <label class="govuk-label govuk-radios__label" for="alternative-format-9">
           Audio - MP3
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="braille" name="next-page" type="radio" value="../contact-details">
+        <input class="govuk-radios__input" id="braille" name="alternative-format" type="radio" value="Braille Type 1">
         <label class="govuk-label govuk-radios__label" for="alternative-format-3">
           Braille Type 1
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="braille" name="next-page" type="radio" value="../contact-details">
+        <input class="govuk-radios__input" id="braille" name="alternative-format" type="radio" value="Braille Type 2">
         <label class="govuk-label govuk-radios__label" for="alternative-format-10">
           Braille Type 2
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="bsl" name="next-page" type="radio" value="../contact-details">
+        <input class="govuk-radios__input" id="bsl" name="alternative-format" type="radio" value="BSL (British Sign Language) - DVD">
         <label class="govuk-label govuk-radios__label" for="alternative-format-4">
           BSL (British Sign Language) - DVD
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="bsl" name="next-page" type="radio" value="../contact-details">
+        <input class="govuk-radios__input" id="bsl" name="alternative-format" type="radio" value="BSL (British Sign Language) - MPEG">
         <label class="govuk-label govuk-radios__label" for="alternative-format-11">
           BSL (British Sign Language) - MPEG
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="bsl" name="next-page" type="radio" value="paper">
+        <input class="govuk-radios__input" id="bsl" name="alternative-format" type="radio" value="Coloured paper">
         <label class="govuk-label govuk-radios__label" for="alternative-format-12">
           Coloured paper
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="bsl" name="next-page" type="radio" value="../contact-details">
+        <input class="govuk-radios__input" id="bsl" name="alternative-format" type="radio" value="Easy Read">
         <label class="govuk-label govuk-radios__label" for="alternative-format-12">
           Easy Read
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="large" name="next-page" type="radio" value="bold">
+        <input class="govuk-radios__input" id="large" name="alternative-format" type="radio" value="Large print (default - size 16)">
         <label class="govuk-label govuk-radios__label" for="alternative-format-13">
           Large print (default - size 16)
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="large" name="next-page" type="radio" value="large-print">
+        <input class="govuk-radios__input" id="large" name="alternative-format" type="radio" value="Large print (custom size)">
         <label class="govuk-label govuk-radios__label" for="alternative-format-5">
           Large print (custom size)
         </label>
       </div>
      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="large" name="next-page" type="radio" value="email2">
+        <input class="govuk-radios__input" id="large" name="alternative-format" type="radio" value="Web accessible PDF">
         <label class="govuk-label govuk-radios__label" for="alternative-format-14">
           Web accessible PDF
         </label>
@@ -138,5 +138,23 @@
         </div>
 
 </div>
+
+<script>
+    nextPageRoutes = {
+        'Audio - cassette tape': '/record-view/contact-tab/contact-details.html',
+        'Audio - CD': '/record-view/contact-tab/contact-details.html',
+        'Audio - DVD': '/record-view/contact-tab/contact-details.html',
+        'Audio - MP3': '/record-view/contact-tab/contact-details.html',
+        'Braille Type 1': '/record-view/contact-tab/contact-details.html',
+        'Braille Type 2': '/record-view/contact-tab/contact-details.html',
+        'BSL (British Sign Language) - DVD': '/record-view/contact-tab/contact-details.html',
+        'BSL (British Sign Language) - MPEG': '/record-view/contact-tab/contact-details.html',
+        'Coloured paper': 'paper',
+        'Easy Read': '/record-view/contact-tab/contact-details.html',
+        'Large print (default - size 16)': 'bold',
+        'Large print (custom size)': 'large-print',
+        'Web accessible PDF': 'email2',
+    }
+  </script>
 
 {% endblock %}

@@ -60,26 +60,26 @@ Winter Fuel Payments
               </tr>
               
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Mobile phone</th>
-                <td class="govuk-table__cell">
-                  {% if data.mobilenumber %}
-                  {{data.mobilenumber}}
-                  {% endif %}
-                  {% if data['mobilephone-remove'] === 'Yes' %}
-                  {% elseif data.mobilephone %}
-                  {{data.mobilephone}}
-                  {% endif %}
-                </td>
-                <td class="govuk-table__cell">
-                  <a href="/record-view/contact-tab/mobile-phone/mobilephone.html">
-                    {% if not data.mobilenumber %}
-                    Add<span class="govuk-visually-hidden"> mobile number</span>
-                    {% else %}
-                    Change<span class="govuk-visually-hidden"> mobile number</span>
-                    {% endif %}
-                  </a>
-                </td>
-              </tr>
+<th scope="row" class="govuk-table__header">Mobile phone</th>
+<td class="govuk-table__cell">
+{% if data.mobilenumber %}
+{{data.mobilenumber}}
+{% endif %}
+{% if data['mobilephone-remove'] === 'Yes' %}
+{% elseif data.mobilephone %}
+{{data.mobilephone}}
+{% endif %}
+</td>
+<td class="govuk-table__cell">
+<a href="/record-view/contact-tab/mobile-phone/mobilephone.html">
+{% if not data.mobilenumber %}
+Add<span class="govuk-visually-hidden"> mobile number</span>
+{% else %}
+Change<span class="govuk-visually-hidden"> mobile number</span>
+{% endif %}
+</a>
+</td>
+</tr>
 
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Work phone</th>
@@ -132,8 +132,8 @@ Winter Fuel Payments
                <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Correspondence address</th>
                 <td class="govuk-table__cell">
-                  {% if data['correspondence-address-change'] %}
-                  {{data['correspondence-address-change'].split(', ').join('<br />') | safe }}
+                  {% if data['correspondence address-search-change'] %}
+                  {{data['correspondence address-search-change'].split(', ').join('<br />') | safe }}
                   {% elif data.address %}
                   {{data.address.split(', ').join('<br />') | safe}}
                   {% else %}
@@ -142,7 +142,7 @@ Winter Fuel Payments
              
                 
                 <td class="govuk-table__cell">
-                  <a href="/record-view/contact-tab/correspondence-address/correspondence-address.html">
+                  <a href="/record-view/contact-tab/correspondence-address/correspondence-address-1.html">
                     {% if not data['correspondence-address-change'] %}
                     Add <span class="govuk-visually-hidden">contact preferences</span>
                     {% else %}
