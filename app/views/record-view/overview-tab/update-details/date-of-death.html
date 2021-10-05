@@ -15,7 +15,7 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-      <form method="post">
+    
 
           {% include './_bar.html' %}
 
@@ -29,7 +29,8 @@ Winter Fuel Payments
 
             
 
-            <form method="post">
+            <form method="post" action="confirm-dead">
+            
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -66,12 +67,17 @@ Winter Fuel Payments
               
                 </fieldset>
               </div>
+
+              {% if data['mark-as-dead']=='yes'and data['remove-dead'] !='yes' %}
+                <a href="confirm-not-dead">Remove date of death</a><br><br>
+              {% endif %}
               
 
               <button type="submit" class="govuk-button">
-                Update and stop payments
+                Continue
               </button>
-              <input type="hidden" name="marked-as-dead" value="true">
+
+              
             </form>
 
 

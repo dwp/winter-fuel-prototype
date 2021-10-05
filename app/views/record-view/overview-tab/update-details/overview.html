@@ -18,6 +18,7 @@ Winter Fuel Payments
       <form method="post">
 
         {% if data['top-up']== 'true' %}
+        {% include './_bar.html' %}
         <div class="moj-banner moj-banner--success">
 
           <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
@@ -30,6 +31,7 @@ Winter Fuel Payments
           </div>
 
 {% elif data['declared']== 'yes' %}
+{% include './_bar.html' %}
   <div class="moj-banner moj-banner--success">
 
     <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
@@ -53,7 +55,7 @@ Winter Fuel Payments
     
             </div>
 
-{% elif data['marked-as-dead']=='true'%}
+{% elif data['marked-as-dead']=='true' and data['remove-dead'] !='yes' %}
 
   {% include './_bar.html' %}
             <div class="moj-banner moj-banner--success">

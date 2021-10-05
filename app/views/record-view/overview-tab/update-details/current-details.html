@@ -23,7 +23,44 @@ Winter Fuel Payments
           <h2 class="govuk-heading-m">Current details</h2>
   
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            
+           
+          {% if data['mark-as-dead']=='yes' and data['remove-dead'] !='yes' %}
+
+             <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of death
+                </dt>
+                <dd class="govuk-summary-list__value">
+                 {{data['death-day']}}
+                    {% if (data['death-month'] == '1') or (data['death-month'] == '01') %} January 
+                    {% elif (data['death-month'] == '2') or (data['death-month'] == '02') %} February 
+                    {% elif (data['death-month'] == '3') or (data['death-month'] == '03') %} March 
+                    {% elif (data['death-month'] == '4') or (data['death-month'] == '04') %} April 
+                    {% elif (data['death-month'] == '5') or (data['death-month'] == '05') %} May 
+                    {% elif (data['death-month'] == '6') or (data['death-month'] == '06') %} June 
+                    {% elif (data['death-month'] == '7') or (data['death-month'] == '07') %} July 
+                    {% elif (data['death-month'] == '8') or (data['death-month'] == '08') %} August 
+                    {% elif (data['death-month'] == '9') or (data['death-month'] == '09') %} September 
+                    {% elif data['death-month'] == '10' %} October 
+                    {% elif data['death-month'] == '11' %} November 
+                    {% elif data['death-month'] == '12' %} December 
+                    {% endif %}
+                {{data['death-year']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  
+                  <a class="govuk-link" href="date-of-death">
+                    {% if (data['death-day']) %}
+                  
+                        Change<span class="govuk-visually-hidden"> date of death</span>
+                    {% else %}
+                      Add<span class="govuk-visually-hidden"> date of death</span>
+                    {% endif %}
+                  </a>
+                </dd>
+            </div>
+                
+            {% endif %}
             
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key" style="width:60%">
@@ -235,7 +272,7 @@ Winter Fuel Payments
   
         </div>
       </div>
-      <form method="post">
+      <form method="post" action="overview">
 
 
               <button class="govuk-button" data-module="govuk-button">
