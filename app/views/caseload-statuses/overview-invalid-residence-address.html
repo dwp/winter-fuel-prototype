@@ -1,4 +1,5 @@
-include
+{% extends "layout.html" %}
+
 {% block pageTitle %}
 GOV.UK Prototype Kit
 {% endblock %}
@@ -18,7 +19,7 @@ GOV.UK Prototype Kit
 
           <div>
             <h1 class="govuk-heading-xl">
-              Theodora Best<br>
+              Robin Bouvet<br>
               <span class="govuk-body-l">
                 {% if data['nino'] %}
                 {{data['nino']}}
@@ -26,9 +27,8 @@ GOV.UK Prototype Kit
                 XX 12 34 56
                 {% endif %}<br>
                 <strong class="govuk-tag govuk-tag--orange">
-                  Care home receiving benefits
+                  Invalid residence address
                 </strong>
-
               </span>
             </h1>
           </div>
@@ -43,10 +43,9 @@ GOV.UK Prototype Kit
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
               <span class="govuk-warning-text__assistive">Warning</span>
-              This person does not qualify because they live in a care home and receive Pension Credit.
+              This person cannot get a payment because their current residential address is unknown.
             </strong>
           </div>
-
 
           <br>
 
@@ -71,29 +70,7 @@ GOV.UK Prototype Kit
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Address</th>
                 <td class="govuk-table__cell">
-                  {% if data['address-change'] %}
-                  {{data['address-change'].split(', ').join('<br />') | safe }}
-                  {% elif data.address %}
-                  {{data.address.split(', ').join('<br />') | safe}}
-                  {% else %}
-                  Dolphin View Care Home<br>
-                  Harbour Road<br>
-                  Amble<br>
-                  Northumberland<br>
-                  NE65 0AP
-                  {% endif %}
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Date they moved in</th>
-                <td class="govuk-table__cell">
-                  6 March 2016
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Benefit details</th>
-                <td class="govuk-table__cell">
-                  Receiving Pension Credit
+                  Address unknown
                 </td>
               </tr>
             </tbody>

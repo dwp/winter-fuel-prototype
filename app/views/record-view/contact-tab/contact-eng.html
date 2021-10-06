@@ -53,7 +53,7 @@ Winter Fuel Payments
                   {% endif %}
                 </td>
                 <td class="govuk-table__cell">
-                  <a href="homephone">
+                  <a href="/record-view/contact-tab/home-phone/homephone.html">
                     Change<span class="govuk-visually-hidden"> home phone number</span>
                   </a>
                 </td>
@@ -71,7 +71,7 @@ Winter Fuel Payments
                   {% endif %}
                 </td>
                 <td class="govuk-table__cell">
-                  <a href="mobilephone">
+                  <a href="/record-view/contact-tab/mobile-phone/mobilephone.html">
                     {% if not data.mobilenumber %}
                     Add<span class="govuk-visually-hidden"> mobile number</span>
                     {% else %}
@@ -93,7 +93,7 @@ Winter Fuel Payments
                   {% endif %}
                 </td>
                 <td class="govuk-table__cell">
-                  <a href="workphone">
+                  <a href="/record-view/contact-tab/work-phone/workphone.html">
                     {% if not data.worknumber %}
                     Add<span class="govuk-visually-hidden"> work number</span>
                     {% else %}
@@ -117,7 +117,7 @@ Winter Fuel Payments
 
                 </td>
                 <td class="govuk-table__cell">
-                  <a href="email">
+                  <a href="/record-view/contact-tab/email/email.html">
                    
                     {% if data['email'] or data['email3'] %}
                     Change<span class="govuk-visually-hidden">email</span>
@@ -142,7 +142,7 @@ Winter Fuel Payments
              
                 
                 <td class="govuk-table__cell">
-                  <a href="correspondence-address">
+                  <a href="/record-view/contact-tab/correspondence-address/correspondence-address-1.html">
                     {% if not data['correspondence-address-change'] %}
                     Add <span class="govuk-visually-hidden">contact preferences</span>
                     {% else %}
@@ -199,7 +199,7 @@ Winter Fuel Payments
               
 
                 <td class="govuk-table__cell">
-                  <a href="alt">
+                  <a href="/record-view/contact-tab/alt-formats/alt.html">
                   {% if data['alternative-format'] !== 'remove' %}  
                     {% if data['alternative-format'] %}
                     Change<span class="govuk-visually-hidden"> alternative format.</span>

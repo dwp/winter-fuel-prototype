@@ -20,7 +20,7 @@ router.use((req, res, next) => {
 
   // Referral to get next
   router.post('/sprint47b/overpayment-referral', (req, res) => {
-    res.redirect('/sprint47b/next-task')
+    res.redirect('/print47b/overpayment-referral-2')
   })
   ;
 
@@ -30,7 +30,7 @@ router.use((req, res, next) => {
   ;
 
   router.post('/sprint47b/overpayment-referral-2', (req, res) => {
-    res.redirect('/sprint47b/next-task-2')
+    res.redirect('/sprint47b/overpayment-referral-2')
   })
   ;
 
