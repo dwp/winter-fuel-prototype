@@ -14,7 +14,11 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-      <form method="post" action="../contact-details">
+       {% if data['update-details']=='yes'%}
+        <form method="post" action="/record-view/overview-tab/update-details/update-anything-else">
+      {% else %}
+        <form method="post" action="/record-view/contact-tab/contact-details">
+      {% endif %}
 
             {% include './_bar.html' %}
 

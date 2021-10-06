@@ -20,8 +20,10 @@ Winter Fuel Payments
         <form method="post" action="over-payment">
       {% elif data['movemonth'] == '08' or data['movemonth'] == '8' or data['living-with-month'] == '08' or data['living-with-month'] == '8' %}
         <form method="post" action="make-payment">
+      {% elif data['from-contact-tab'] == 'true'%}
+        <form method="post" action="../../contact-tab/contact-details">
       {% else %}
-        <form method="post" action="overview">
+        <form method="post" action="../overview">
       {% endif %}
 
     
@@ -55,6 +57,7 @@ Winter Fuel Payments
 
             <button type="submit" class="govuk-button">
               <input type="hidden" name="declared" value="yes">
+              <input type="hidden" name="update-details" value="finished">
               Agreed - submit update
             </button>
 

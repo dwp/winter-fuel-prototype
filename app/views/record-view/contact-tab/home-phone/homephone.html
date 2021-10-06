@@ -10,18 +10,23 @@ Winter Fuel Payments
 {% endblock %}
 {% block content %}
 <div class="govuk-width-container">
+{{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-      <form method="post" action="../contact-details">
+      {% if data['update-details']=='yes'%}
+        <form method="post" action="/record-view/overview-tab/update-details/update-anything-else">
+      {% else %}
+        <form method="post" action="/record-view/contact-tab/contact-details">
+      {% endif %}
 
             {% include './_bar.html' %}
 
-            {{ govukBackLink({
-                text: "Back",
-                href: "javascript:history.go(-1)"
-              }) }}
+            
 
             <br>
             <br>
@@ -50,6 +55,7 @@ Winter Fuel Payments
             </button>
             <input type="hidden" name="homephone-changed" value="true">
             <input type="hidden" name="homephone-remove" value="No">
+            <input type="hidden" name="from-contact-tab" value="true">
             </form>
 
       </div>

@@ -15,7 +15,11 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-      <form method="post" action="../contact-details">
+       {% if data['update-details']=='yes'%}
+        <form method="post" action="/record-view/overview-tab/update-details/update-anything-else">
+      {% else %}
+        <form method="post" action="/record-view/contact-tab/contact-details">
+      {% endif %}
 
             {% include './_bar.html' %}
 
@@ -47,10 +51,19 @@ Winter Fuel Payments
               {% endif %}
            
 
-            <button type="submit" class="govuk-button">
+          {% if data['update-details']=='yes'%}
+             <button type="submit" class="govuk-button">
+              Continue
+            </button>
+          {% else %}
+             <button type="submit" class="govuk-button">
               Save
             </button>
+          {% endif %}
+           
             <input type="hidden" name="mobilephone-changed" value="true">
+            <input type="hidden" name="mobilephone-remove" value="No">
+            <input type="hidden" name="from-contact-tab" value="true">
           </form>
 
 
