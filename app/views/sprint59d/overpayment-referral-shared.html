@@ -25,7 +25,7 @@ GOV.UK Prototype Kit
 
           {% include './_bar-shared.html' %}
 
-          
+
 
           <form method="post">
 
@@ -90,7 +90,7 @@ GOV.UK Prototype Kit
               </thead>
 
             </table>
-            
+
 <br><br>
             <h1 class="govuk-heading-m">Current details</h1>
 
@@ -108,7 +108,7 @@ GOV.UK Prototype Kit
                   </td>
                 </tr>
                 <tr class="govuk-table__row">
-                 
+
                   <tr class="govuk-table__row">
                     <th scope="col" class="govuk-table__header govuk-!-width-one-third">Address</th>
                     <td class="govuk-table__cell">27 Kent Street<br>
@@ -137,8 +137,8 @@ GOV.UK Prototype Kit
 
             </table>
 
-           
-           
+
+
             <br>
 
             <div class="govuk-form-group">
@@ -165,8 +165,8 @@ GOV.UK Prototype Kit
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="recoverable-2" name="recoverable" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="recoverable-2">
+        <input class="govuk-radios__input" id="recoverable-2" name="recoverable" type="radio" value="common">
+        <label class="govuk-label govuk-radios__label" for="recoverable-3">
           Common Law - refer decision to Debt Management
         </label>
       </div>
@@ -178,6 +178,7 @@ GOV.UK Prototype Kit
               Continue
             </button>
 
+
           </form>
 
       </div>
@@ -188,5 +189,11 @@ GOV.UK Prototype Kit
 
 </main>
 </div>
-
+<script>
+    nextPageRoutes = {
+        'yes': '/sprint59e/tasks-review-overpayments-complete1.html',
+        'no': '/sprint59e/tasks-review-overpayments-complete1.html',
+        'common': '/tbc.html',
+    }
+</script>
 {% endblock %}

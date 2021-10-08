@@ -18,12 +18,27 @@ Winter Fuel Payments
 
           <h1 class="govuk-heading-xl">Review overpayments</h1>
 
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Success
+              </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+
+              <p class="govuk-body">Overpayment decision document downloaded - you should now upload this to CAM <br><a href="">Download overpayment decision document again</a></p>
+            </div>
+          </div>
+
+
+
+
 
           <div id="govuk-checkboxes govuk-checkboxes--small">
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
 
-                <p><strong>Apply filter(s)</strong></p>
+                <p><strong>Apply filter(s) to the next overpayment case</strong></p>
 
                 <div class="govuk-checkboxes govuk-checkboxes--small">
                   <div class="govuk-checkboxes__item">
@@ -38,21 +53,24 @@ Winter Fuel Payments
                       International cases
                     </label>
                   </div>
+
+
+
                 </div>
         </form>
+      </div>
 
-                </div>
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button" button type=“submit”>
+          Get next overpayment case
+        </button>
 
-        <div class="govuk-button-group">
-          <button class="govuk-button" data-module="govuk-button" button type=“submit”>
-            Get next overpayment case
-          </button>
+        <a class="govuk-button govuk-button--secondary" data-module="govuk-button" href="tasks-radio-small">
+          Return to all tasks list
+        </a>
+      </div>
 
-          <a class="govuk-button govuk-button--secondary" data-module="govuk-button" href="tasks-radio-small">
-            Return to all tasks list
-          </a>
-        </div>
-
+    </div>
 
 </div>
 
