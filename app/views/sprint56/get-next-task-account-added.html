@@ -14,7 +14,7 @@ Winter Fuel Payments
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <form method="post">
+        <form method="post" action="/sprint56/bank-task">
 
           <h1 class="govuk-heading-xl">Tasks</h1>
 
@@ -48,27 +48,54 @@ Winter Fuel Payments
           </nav>
 
 -->
-          <div class="moj-banner moj-banner--success">
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
 
-            <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
-            <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
-
-            <div class="moj-banner__message">
-
-              <span class="moj-banner__assistive">Success</span>Account details added</div>
-
-           </div>
+    <p class="govuk-body">Account details added</p>
+  </div>
+</div>
 
 
                     <h1 class="govuk-heading-l">Account details</h1>
 
-                    <h3 class="govuk-heading-l"> 290
-                      <p class="govuk-body govuk-!-font-size-24">cases</p>
-                    </h3>
+                    <div id="govuk-checkboxes govuk-checkboxes--small">
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
 
-                    <button class="govuk-button" data-module="govuk-button">
-                      Get next account details case
-                    </button>
+                          <p><strong>Apply optional filter(s) to the next account details case</strong></p>
+
+                          <div class="govuk-checkboxes govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="fix-account-details" name="fix-account-details" type="checkbox" value="international" checked="true">
+                              <label class="govuk-label govuk-checkboxes__label" for="fix-account-details">
+                                UK address with international bank account details - 399 cases
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="fix-account-details-2" name="fix-account-details" type="checkbox" value="other">
+                              <label class="govuk-label govuk-checkboxes__label" for="fix-account-details-2">
+                                Other bank account problems - 492 cases
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+                    <div class="govuk-button-group">
+                      <button class="govuk-button" data-module="govuk-button" button type=“submit”>
+                        Get next account details case
+                      </button>
+
+                      <a class="govuk-button govuk-button--secondary" data-module="govuk-button" href="/sprint59e/tasks-radio-small">
+                        Return to all tasks list
+                      </a>
+                    </div>
 
 
         </form>
