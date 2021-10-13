@@ -65,6 +65,18 @@ Winter Fuel Payments
     </div>
   </div>
 
+{% elif data['stop-payments']=='opted-out'%}
+
+  {% include './_bar.html' %}
+  <div class="moj-banner moj-banner--success">
+    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+  
+    <div class="moj-banner__message">
+      <span class="moj-banner__assistive">Success</span>Payments stopped - citizen has opted out of payments
+    </div>
+  </div>
+
 {% elif data['multi-overpayment']=='true'%}
 
   {% include './_bar.html' %}
@@ -102,7 +114,7 @@ Winter Fuel Payments
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
               <strong class="govuk-warning-text__text">
                 <span class="govuk-warning-text__assistive">Warning</span>
-                This person has an outstanding alternative format task. {% if data['wf-agent']== 'yes' %}<a href="../../tasks/send-alternative-format/alternative-format" class="govuk-link">Review task</a>{% endif %}
+                This person has an outstanding alternative format task. {% if data['wf-agent']== 'yes' %}<a href="/tasks/send-alternative-format/alternative-format" class="govuk-link">Review task</a>{% endif %}
               </strong>
             </div>
         {% else %}

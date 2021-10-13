@@ -15,7 +15,7 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-     
+      <form method="post">
 
           {% include './_bar.html' %}
 
@@ -27,38 +27,43 @@ Winter Fuel Payments
             <br>
             <br>
 
-            <h1 class="govuk-heading-l">Why do you want to stop payments?</h1>
+            <h1 class="govuk-heading-l">Are you sure you want to mark this address as DLO?</h1>
 
-            <form method="post" action="/record-view/overview-tab/overview">
+            <p style="padding-bottom:10px">{% if data['address-change'] === '27 Kent Street, Amble, NE65 0LZ' %}
+                27 Kent Street<br>Amble<br>NE65 0LZ
+                      {% else %}
+                      72 Guild Street<br>London<br>SE23 6FH
+                    {% endif %}
+            </p>
+
+            <form method="post">
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                   </legend>
                   <div class="govuk-radios govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="stop-payments-1" name="stop-payments" type="radio" value="opted-out">
+                      <input class="govuk-radios__input" id="mark-as-dead" name="mark-as-dlo" type="radio" value="yes">
                       <label class="govuk-label govuk-radios__label" for="stop-payments-1">
-                        Citizen wants to opt out
+                        Yes
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="stop-payments-2" name="stop-payments" type="radio" value="dead">
+                      <input class="govuk-radios__input" id="mark-as-dead" name="mark-as-dlo" type="radio" value="no">
                       <label class="govuk-label govuk-radios__label" for="stop-payments-2">
-                        Citizen has died
+                      No
                       </label>
                     </div>
                   </div>
                 </fieldset>
               </div>
               <div class="govuk-inset-text">
-                <p>If you continue, their future Winter Fuel Payments will be stopped.<br>
-                   If the citizen has opted out, you can restart payments again at any time.</p>
+                <p>If you select Yes, their future Winter Fuel Payments will be stopped.</p>
             </div>
 
               <button type="submit" class="govuk-button">
-                Stop payments and continue
+                Continue
               </button>
-            
             </form>
 
 
@@ -70,5 +75,14 @@ Winter Fuel Payments
 
   </main>
   </div>
+
+<script>
+    nextPageRoutes = {
+        'yes': '/record-view/overview-tab/overview',
+        'no': '/record-view/overview-tab/update-details/update-details-options',
+
+    }
+    
+</script>
 
   {% endblock %}

@@ -21,9 +21,9 @@ Winter Fuel Payments
       {% elif data['movemonth'] == '08' or data['movemonth'] == '8' or data['living-with-month'] == '08' or data['living-with-month'] == '8' %}
         <form method="post" action="make-payment">
       {% elif data['from-contact-tab'] == 'true'%}
-        <form method="post" action="../../contact-tab/contact-details">
+        <form method="post" action="/record-view/contact-tab/contact-details">
       {% else %}
-        <form method="post" action="../overview">
+        <form method="post" action="/record-view/overview-tab/overview">
       {% endif %}
 
     
@@ -58,6 +58,9 @@ Winter Fuel Payments
             <button type="submit" class="govuk-button">
               <input type="hidden" name="declared" value="yes">
               <input type="hidden" name="update-details" value="finished">
+              {% if data['mark-as-dlo'] == 'yes'%}
+                <input type="hidden" name="mark-as-dlo" value="no">
+              {% endif %}
               Agreed - submit update
             </button>
 
