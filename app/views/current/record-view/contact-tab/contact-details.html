@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-{% include './_header.html' %}
+{% include 'current/includes/_header.html' %}
 {% endblock %}
 
 
@@ -17,7 +17,7 @@ Winter Fuel Payments
 
         <form method="post">
 
-          {% include './_bar.html' %}
+          {% include 'current/includes/_bar.html' %}
 
           {% if data['alt-format-changed'] == 'true' %}
           <div class="moj-banner moj-banner--success">
@@ -34,7 +34,7 @@ Winter Fuel Payments
         {% endif %}
           
           
-          {% include './_tab-contact.html' %}
+          {% include 'current/includes/_tab-contact.html' %}
           <br><br>
 
           <table class="govuk-table">
@@ -236,11 +236,11 @@ Change<span class="govuk-visually-hidden"> mobile number</span>
       </div>
       {% if data['alt-format-changed'] == 'true' %}
         <div class="govuk-grid-column-one-third">
-          {% include './_history3.html' %}
+          {% include 'current/includes/_history3.html' %}
        </div>
       {% else %}
         <div class="govuk-grid-column-one-third">
-            {% include './_history.html' %}
+            {% include 'current/includes/_history.html' %}
         </div>
       {% endif %}
 

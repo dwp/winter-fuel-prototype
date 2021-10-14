@@ -23,7 +23,7 @@
 {% from "warning-text/macro.njk"  import govukWarningText %}
 
 {% block head %}
-  {% include "includes/head.html" %}
+  {% include "current/includes/head.html" %}
 {% endblock %}
 
 {% block pageTitle %}
@@ -31,7 +31,7 @@
 {% endblock %}
 
 {% block header %}
-  {% include "includes/cookie-banner.html" %}
+  {% include "current/includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
   {{ govukHeader({
     homepageUrl: "/",
@@ -39,7 +39,7 @@
     serviceUrl: "/",
     containerClasses: "govuk-width-container"
   }) }}
-  {% include "includes/index.html" %}
+  {% include "current/includes/index.html" %}
 {% endblock %}
 
 
@@ -61,7 +61,7 @@
 
 {% block bodyEnd %}
   {% block scripts %}
-    {% include "includes/scripts.html" %}
+    {% include "current/includes/scripts.html" %}
     {% block pageScripts %}{% endblock %}
   {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->

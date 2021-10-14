@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-{% include './_header.html' %}
+{% include 'current/includes/_header.html' %}
 {% endblock %}
 
 
@@ -31,7 +31,7 @@ Winter Fuel Payments
 
 {% elif data['update-details-options']=='dlo'%}
 
-  {% include './_bar-dlo.html' %}
+  {% include 'current/includes/_bar-dlo.html' %}
   <div class="moj-banner moj-banner--success">
     <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
@@ -43,7 +43,7 @@ Winter Fuel Payments
 
 {% elif data['marked-as-dead']=='true'%}
 
-  {% include './_bar.html' %}
+  {% include 'current/includes/_bar.html' %}
   <div class="moj-banner moj-banner--success">
     <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
@@ -55,7 +55,7 @@ Winter Fuel Payments
 
 {% elif data['stop-payments']=='dead'%}
 
-  {% include './_bar.html' %}
+  {% include 'current/includes/_bar.html' %}
   <div class="moj-banner moj-banner--success">
     <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
@@ -67,7 +67,7 @@ Winter Fuel Payments
 
 {% elif data['stop-payments']=='opted-out'%}
 
-  {% include './_bar.html' %}
+  {% include 'current/includes/_bar.html' %}
   <div class="moj-banner moj-banner--success">
     <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
@@ -79,7 +79,7 @@ Winter Fuel Payments
 
 {% elif data['multi-overpayment']=='true'%}
 
-  {% include './_bar.html' %}
+  {% include 'current/includes/_bar.html' %}
   <div class="moj-banner moj-banner--success">
 
   <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
@@ -90,10 +90,10 @@ Winter Fuel Payments
 
 </div>
 {% else %}
-  {% include './_bar.html' %}
+  {% include 'current/includes/_bar.html' %}
 {% endif %}
 
-            {% include './_tab-overview.html' %}
+            {% include 'current/includes/_tab-overview.html' %}
 
             
             <br>

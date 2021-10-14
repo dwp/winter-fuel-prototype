@@ -5,7 +5,7 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
-{% include "./cookie-banner.html" %}
+{% include "current/includes/cookie-banner.html" %}
 {# Set serviceName in config.js. #}
 {{ govukHeader({
   serviceName: serviceName,
@@ -13,7 +13,7 @@ GOV.UK Prototype Kit
 }) }}
 
 {% block headEnd %}
-{% include './remove-blue-bar.html' %}
+{% include 'current/includes/remove-blue-bar.html' %}
 {% endblock %}
 
 
@@ -29,7 +29,7 @@ GOV.UK Prototype Kit
         <div class="grid-row">
           <div class="column-full">
 
-            {% include './_bar.html' %}
+            {% include 'current/includes/_bar.html' %}
 
             <table class="govuk-table">
   <thead class="govuk-table__head">

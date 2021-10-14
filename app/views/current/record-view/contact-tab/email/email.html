@@ -5,7 +5,7 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-{% include './_find-someone.html' %}
+{% include 'current/includes/_find-someone.html' %}
 {% endblock %}
 
 {% block content %}
@@ -21,7 +21,7 @@ GOV.UK Prototype Kit
         <form method="post" action="/record-view/contact-tab/contact-details">
       {% endif %}
 
-          {% include './_bar.html' %}
+          {% include 'current/includes/_bar.html' %}
 
           {{ govukBackLink({
                 text: "Back",

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-{% include './_header.html' %}
+{% include 'current/includes/_header.html' %}
 {% endblock %}
 
 
@@ -18,7 +18,7 @@ Winter Fuel Payments
       <form method="post">
 
         {% if data['top-up']== 'true' %}
-        {% include './_bar.html' %}
+        {% include 'current/includes/_bar.html' %}
         <div class="moj-banner moj-banner--success">
 
           <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
@@ -31,7 +31,7 @@ Winter Fuel Payments
           </div>
 
 {% elif data['declared']== 'yes' %}
-{% include './_bar.html' %}
+{% include 'current/includes/_bar.html' %}
   <div class="moj-banner moj-banner--success">
 
     <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
@@ -44,7 +44,7 @@ Winter Fuel Payments
 
   {% elif data['update-details-options']=='dlo'%}
 
-  {% include './_bar-dlo.html' %}
+  {% include 'current/includes/_bar-dlo.html' %}
             <div class="moj-banner moj-banner--success">
 
               <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
@@ -57,7 +57,7 @@ Winter Fuel Payments
 
 {% elif data['marked-as-dead']=='true' and data['remove-dead'] !='yes' %}
 
-  {% include './_bar.html' %}
+  {% include 'current/includes/_bar.html' %}
             <div class="moj-banner moj-banner--success">
 
               <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
@@ -70,7 +70,7 @@ Winter Fuel Payments
 
 {% elif data['stop-payments']=='dead'%}
 
-  {% include './_bar.html' %}
+  {% include 'current/includes/_bar.html' %}
             <div class="moj-banner moj-banner--success">
 
               <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
@@ -82,7 +82,7 @@ Winter Fuel Payments
             </div>
 
 {% elif data['stop-payments']=='opted'%}
-{% include './_bar.html' %}
+{% include 'current/includes/_bar.html' %}
 <div class="moj-banner moj-banner--success">
 
   <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
@@ -93,10 +93,10 @@ Winter Fuel Payments
 
 </div>
 {% else %}
-  {% include './_bar.html' %}
+  {% include 'current/includes/_bar.html' %}
 {% endif %}
 
-            {% include './_tab-overview.html' %}
+            {% include 'current/includes/_tab-overview.html' %}
 
             
             <br>

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-  {% include './_header.html' %}
+  {% include 'current/includes/_header.html' %}
 {% endblock %}
 
 {% block pageTitle %}
@@ -9,7 +9,7 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-{% include './_blue_bar.html' %}
+{% include 'current/includes/_blue_bar.html' %}
 {% endblock %}
 
 {% block content %}
@@ -23,7 +23,7 @@ GOV.UK Prototype Kit
 
                   <form method="post">
 
-                    {% include './_bar.html' %}
+                    {% include 'current/includes/_bar.html' %}
 
                         {{ govukBackLink({
                             text: "Back",
