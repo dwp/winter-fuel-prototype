@@ -12,6 +12,8 @@ router.use((req, res, next) => {
 router.post('/sprint56/bank-task', function(req, res) {
   if (req.body['bank-details'] === 'add') {
     res.redirect('bank-details');}
+    else if (req.body['bank-details'] === 'return') {
+      res.redirect('case-returned');}    
     else if (req.body['bank-details'] === 'remove') {
       res.redirect('confirm-remove');}
     else if (req.body['bank-details'] === 'ineligible') {
