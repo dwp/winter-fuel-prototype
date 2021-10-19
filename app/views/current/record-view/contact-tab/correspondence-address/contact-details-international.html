@@ -32,8 +32,8 @@ Winter Fuel Payments
 
           </div>
         {% endif %}
-          
-          
+
+
           {% include 'current/includes/_tab-contact.html' %}
           <br><br>
 
@@ -43,7 +43,7 @@ Winter Fuel Payments
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header" style="width:235px">Home phone</th>
-                
+
                 <td class="govuk-table__cell" style="width: 255px">
                   {% if data['homephone-remove'] === 'Yes' %}
                   {% elseif data.homephone %}
@@ -58,7 +58,7 @@ Winter Fuel Payments
                   </a>
                 </td>
               </tr>
-              
+
               <tr class="govuk-table__row">
 <th scope="row" class="govuk-table__header">Mobile phone</th>
 <td class="govuk-table__cell">
@@ -106,25 +106,25 @@ Change<span class="govuk-visually-hidden"> mobile number</span>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Email address</th>
                 <td class="govuk-table__cell">
-                  
-                  
+
+
                   {% if data['email'] %}
                   {{data['email']}}
                   {% elseif data['email3'] %}
                   {{data['email3']}}
                   {% endif %}
-                 
+
 
                 </td>
                 <td class="govuk-table__cell">
                   <a href="/current/record-view/contact-tab/email/email.html">
-                   
+
                     {% if data['email'] or data['email3'] %}
                     Change<span class="govuk-visually-hidden">email</span>
                     {% else %}
                     Add<span class="govuk-visually-hidden">email</span>
                     {% endif %}
-                    
+
                   </a>
                 </td>
               </tr>
@@ -132,15 +132,15 @@ Change<span class="govuk-visually-hidden"> mobile number</span>
                <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Correspondence address</th>
                 <td class="govuk-table__cell">
-                  {% if data['correspondence address-search-change'] %}
-                  {{data['correspondence address-search-change'].split(', ').join('<br />') | safe }}
-                  {% elif data.address %}
-                  {{data.address.split(', ').join('<br />') | safe}}
-                  {% else %}
-                  {% endif %}
+                  315 Concell De Cent<br>
+                  Eixample<br>
+                  Barcelona<br>
+                  190008<br>
+                  SPAIN<br>
+
                 </td>
-             
-                
+
+
                 <td class="govuk-table__cell">
                   <a href="/current/record-view/contact-tab/correspondence-address/correspondence-address.html">
                     {% if not data['correspondence-address-change'] %}
@@ -156,15 +156,15 @@ Change<span class="govuk-visually-hidden"> mobile number</span>
 
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Alternative format</th>
-                
-              
+
+
                 <td class="govuk-table__cell">
-              {% if data['alternative-format'] !== 'remove' %}  
+              {% if data['alternative-format'] !== 'remove' %}
                   {% if data['alternative-format'] %}
                   {{data['alternative-format']}}
                 {% endif %}
-                            
-                {% if data['alternative-format'] === 'Welsh language' %}      
+
+                {% if data['alternative-format'] === 'Welsh language' %}
                 {% if data['large'] === 'Large print (default - size 16)' %}
                   <br>Large print (default - size 16)
                 {% if data['large-2'] === 'Large print (custom size)' %}
@@ -173,7 +173,7 @@ Change<span class="govuk-visually-hidden"> mobile number</span>
                 {% endif %}
                 {% endif %}
 
-                {% if data['alternative-format'] === 'Welsh language' or data['alternative-format'] === 'Large print (custom size)' %}            
+                {% if data['alternative-format'] === 'Welsh language' or data['alternative-format'] === 'Large print (custom size)' %}
                   {% if data['large-print'] %}
                   <br>{{data['large-print']}}
                 {% endif %}
@@ -192,15 +192,15 @@ Change<span class="govuk-visually-hidden"> mobile number</span>
                 {% endif %}
                 {% endif %}
 
-               
+
               {% endif %}
 
                 </td>
-              
+
 
                 <td class="govuk-table__cell">
                   <a href="/current/record-view/contact-tab/alt-formats/alt.html">
-                  {% if data['alternative-format'] !== 'remove' %}  
+                  {% if data['alternative-format'] !== 'remove' %}
                     {% if data['alternative-format'] %}
                     Change<span class="govuk-visually-hidden"> alternative format.</span>
                     {% else %}
@@ -218,17 +218,17 @@ Change<span class="govuk-visually-hidden"> mobile number</span>
                   <td class="govuk-table__cell">
                     English
                   </td>
-               
-                  
+
+
                   <td class="govuk-table__cell">
                     <a href="/current/record-view/contact-tab/preferred-language/confirm-change-language">
-                      
+
                         Change
-                      
-                   
+
+
                     </a>
                   </td>
-  
+
                 </tr>
             </tbody>
           </table>

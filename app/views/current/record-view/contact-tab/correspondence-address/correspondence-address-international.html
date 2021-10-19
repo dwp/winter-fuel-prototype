@@ -1,18 +1,13 @@
 {% extends "layout.html" %}
 
-{% block header %}
-
+{% block pageTitle %}
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-{% include './_name_bar.html' %}
+{% include 'current/includes/_find-someone.html' %}
 {% endblock %}
 
-
-
-{% block pageTitle %}
-Winter Fuel Payments
-{% endblock %}
 {% block content %}
 
 
@@ -21,6 +16,8 @@ Winter Fuel Payments
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+
+                  {% include 'current/includes/_bar.html' %}
 
         {{ govukBackLink({
             text: "Back",
@@ -31,7 +28,7 @@ Winter Fuel Payments
         <br>
 
         <h1 class="govuk-heading-xl">What is your address?</h1>
-        <form method="post">
+        <form method="post" action="contact-details-international">
 
           <fieldset class="govuk-fieldset">
             <div class="govuk-form-group">
