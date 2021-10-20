@@ -29,20 +29,20 @@ Winter Fuel Payments
 
             <h1 class="govuk-heading-l">Confirm preferred language</h1>
 
-            <form method="post" action="../contact">
+            <form method="post" action="/current/record-view/contact-tab/contact-details">
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                   </legend>
                   <div class="govuk-radios govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="stop-payments-1" name="next-page" type="radio" value="../contact-eng" data-value="Yes">
+                      <input class="govuk-radios__input" id="stop-payments-1" name="next-page" type="radio" value="/current/record-view/contact-tab/contact-eng" data-value="Yes">
                       <label class="govuk-label govuk-radios__label" for="stop-payments-1">
                         English
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="stop-payments-2" name="next-page" type="radio" value="../contact-welsh" data-value="No">
+                      <input class="govuk-radios__input" id="stop-payments-2" name="next-page" type="radio" value="/current/record-view/contact-tab/contact-welsh" data-value="No">
                       <label class="govuk-label govuk-radios__label" for="stop-payments-2">
                       Welsh
                       </label>
@@ -56,9 +56,9 @@ Winter Fuel Payments
                 Continue
               </button>
      
-            {% if data ['next-page'] =='../contact-eng' %}
+            {% if data ['next-page'] =='/current/record-view/contact-tab/contact-eng' %}
               <input type="hidden" name="preferred-language" value="English">
-            {% elif data ['next-page'] =='../contact-welsh' %}
+            {% elif data ['next-page'] =='/current/record-view/contact-tab/contact-welsh' %}
             <input type="hidden" name="preferred-language" value="Welsh">
             {% endif %}   
 

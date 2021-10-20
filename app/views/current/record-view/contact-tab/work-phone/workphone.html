@@ -15,9 +15,9 @@ Winter Fuel Payments
       <div class="govuk-grid-column-two-thirds">
 
        {% if data['update-details']=='yes'%}
-        <form method="post" action="/record-view/overview-tab/update-details/update-anything-else">
+        <form method="post" action="/current/record-view/overview-tab/update-details/update-anything-else">
       {% else %}
-        <form method="post" action="/record-view/contact-tab/contact-details">
+        <form method="post" action="/current/record-view/contact-tab/contact-details">
       {% endif %}
 
             {% include 'current/includes/_bar.html' %}
@@ -45,7 +45,7 @@ Winter Fuel Payments
                 <input class="govuk-input govuk-input--width-20" id="worknumber" name="worknumber" type="tel">
               </div>
 
-              <p><a href="/record-view/contact-tab/work-phone/workphone-remove" class="govuk-link">Delete number</a></p>
+              <p><a href="/current/record-view/contact-tab/work-phone/workphone-remove" class="govuk-link">Delete number</a></p>
 
               <button type="submit" class="govuk-button">
                 Save
