@@ -57,6 +57,11 @@ $govuk-assets-path: '/govuk/assets/';
   padding-left: 0;
 }
 
+// padding to push Change / Add links to right on tables
+.table-links-padding-left {
+  padding-left:30px;
+}
+
 
 
   // Use the universal selector and !important to *ALWAYS OVERRIDE* GDS Transport
