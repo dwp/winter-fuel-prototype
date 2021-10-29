@@ -10,6 +10,8 @@ Winter Fuel Payments
 {% endblock %}
 {% block content %}
 
+
+
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
@@ -44,6 +46,9 @@ Winter Fuel Payments
       <button disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled" data-module="govuk-button">
         Continue
       </button>
+
+
+
       </form>
     </div>
 
@@ -51,5 +56,34 @@ Winter Fuel Payments
 
 </main>
 </div>
+
+<script>
+  const checkboxes = [...document.querySelectorAll('[name=fix-account-details]')];
+  const submitbtn = document.querySelector('button.govuk-button');
+
+  function anyChecked() {
+    return checkboxes.some((checkbox) => checkbox.checked);
+  }
+
+  function disableButton(button) {
+    button.setAttribute('disabled', '');
+    button.classList.add('govuk-button--disabled');
+  }
+
+  function enableButton(button) {
+    button.removeAttribute('disabled');
+    button.classList.remove('govuk-button--disabled');
+  }
+
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener('click', () => {
+      anyChecked()
+        ? enableButton(submitbtn)
+        : disableButton(submitbtn)
+    });
+  });
+
+  anyChecked() ? enableButton(submitbtn) : disableButton(submitbtn);
+  </script>
 
 {% endblock %}
