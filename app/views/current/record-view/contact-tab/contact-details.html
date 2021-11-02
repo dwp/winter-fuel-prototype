@@ -84,12 +84,10 @@ Change<span class="govuk-visually-hidden"> mobile number</span>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Work phone</th>
                 <td class="govuk-table__cell">
-                  {% if data.worknumber %}
-                  {{data.worknumber}}
-                  {% endif %}
+                  
                   {% if data['workphone-remove'] === 'Yes' %}
-                  {% elseif data.workphone %}
-                  {{data.workphone}}
+                  {% elseif data.worknumber%}
+                  {{data.worknumber}}
                   {% endif %}
                 </td>
                 <td class="govuk-table__cell table-links-padding-left">
@@ -108,10 +106,9 @@ Change<span class="govuk-visually-hidden"> mobile number</span>
                 <td class="govuk-table__cell">
 
 
-                  {% if data['email'] %}
-                  {{data['email']}}
-                  {% elseif data['email3'] %}
-                  {{data['email3']}}
+                  {% if data['email-remove'] === 'Yes' %}
+                  {% elseif data.email%}
+                  {{data.email}}
                   {% endif %}
 
 

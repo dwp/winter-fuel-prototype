@@ -21,9 +21,9 @@ Winter Fuel Payments
       {% elif data['movemonth'] == '08' or data['movemonth'] == '8' or data['living-with-month'] == '08' or data['living-with-month'] == '8' %}
         <form method="post" action="make-payment">
       {% elif data['from-contact-tab'] == 'true'%}
-        <form method="post" action="/record-view/contact-tab/contact-details">
+        <form method="post" action="/current/record-view/contact-tab/contact-details">
       {% else %}
-        <form method="post" action="/record-view/overview-tab/overview">
+        <form method="post" action="/current/record-view/overview-tab/overview">
       {% endif %}
 
     
