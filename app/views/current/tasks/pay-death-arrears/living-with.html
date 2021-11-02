@@ -33,13 +33,10 @@ Winter Fuel Payments
           </div>
         </div>
 
-        {% if data['living-with'] == 'Lives with someone else who gets Winter Fuel Payment' %}
-          <form method="post" action="living-with-age">
-        {% else %}
-          <form method="post" action="living-with-date">
-        {% endif %}
-            
-
+      
+          <form method="post">
+      
+         
               <div class="govuk-form-group">
                 <h1 class="govuk-heading-l">Did they live with anyone?</h1>
                 <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -76,5 +73,12 @@ Winter Fuel Payments
 
   </main>
   </div>
+
+  <script>
+    nextPageRoutes = {
+        'Lives with someone else who gets Winter Fuel Payment': 'living-with-age',
+        'Does not live with someone else who gets Winter Fuel Payment': 'living-with-date',
+    }
+  </script>
 
   {% endblock %}

@@ -33,11 +33,9 @@ Winter Fuel Payments
           </div>
         </div>
 
-           {% if data['before-1954'] == 'Yes' %}
-          <form method="post" action="living-with-over-80">
-        {% else %}
-        <form method="post" action="living-with-date">
-        {% endif %}
+   
+          <form method="post" >
+      
 
         <h1 class="govuk-heading-l">Was anyone they lived with born before 6 October 1954?</h1>
 
@@ -76,5 +74,12 @@ Winter Fuel Payments
 
   </main>
   </div>
+
+  <script>
+    nextPageRoutes = {
+        'Yes': 'living-with-over-80',
+        'No': 'living-with-date',
+    }
+  </script>
 
   {% endblock %}

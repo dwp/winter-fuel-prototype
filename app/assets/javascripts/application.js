@@ -30,7 +30,7 @@ console.log("hello")
           nextPageField = $('#next-page')
         } else {
           nextPageField = $('<input type="hidden" id="next-page" name="next-page">')
-          $('button:not([type=button]), button:not([type=reset])').before(nextPageField)
+          $('form').append(nextPageField)
         }
         nextPageField.val(nextPageRoutes[checkboxValue])
         console.log('Next page destination has been set as "' + nextPageRoutes[checkboxValue] + '"')
