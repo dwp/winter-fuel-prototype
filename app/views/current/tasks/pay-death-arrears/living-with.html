@@ -15,7 +15,7 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-      <form method="post">
+     
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
@@ -33,7 +33,12 @@ Winter Fuel Payments
           </div>
         </div>
 
-            <form method="post">
+        {% if data['living-with'] == 'Lives with someone else who gets Winter Fuel Payment' %}
+          <form method="post" action="living-with-age">
+        {% else %}
+          <form method="post" action="living-with-date">
+        {% endif %}
+            
 
               <div class="govuk-form-group">
                 <h1 class="govuk-heading-l">Did they live with anyone?</h1>
