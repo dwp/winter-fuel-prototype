@@ -1,0 +1,26 @@
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  homepageUrl: "index",
+  serviceName: serviceName,
+  serviceUrl: "/index.html",
+  navigation: [
+  {
+    href: "/sprint37b/find",
+    text: "Find someone",
+        active: true
+  },
+  {
+    href: "/sprint35b/type-of-application",
+    text: "UK new claim"
+  },
+  {
+    href: "/sprint43/application-type",
+    text: "International new claim"
+  },
+  {
+    href: "/sprint43b/tasks",
+    text: "Tasks"
+  }
+  ]
+}) }}
