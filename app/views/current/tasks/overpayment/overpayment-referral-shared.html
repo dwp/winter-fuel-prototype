@@ -8,9 +8,6 @@
 GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-{% include 'current/includes/_blue_bar.html' %}
-{% endblock %}
 
 {% block content %}
 
@@ -174,6 +171,9 @@ GOV.UK Prototype Kit
   </fieldset>
 </div>
 
+<br><a href=“/current/tasks/tasks” class="govuk-link">Return this case to the queue</a>
+            <br><br><br>
+
             <button type="submit" class="govuk-button">
               Continue
             </button>
@@ -189,6 +189,8 @@ GOV.UK Prototype Kit
 
 </main>
 </div>
+
+
 <script>
     nextPageRoutes = {
         'yes': '/sprint59e/tasks-review-overpayments-complete1.html',
