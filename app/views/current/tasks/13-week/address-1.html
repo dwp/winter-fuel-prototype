@@ -58,7 +58,7 @@ Winter Fuel Payments
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="where-do-you-live" name="address-change" type="radio" value="35 St Albans Close, Ashington, NE63 9RU">
+                      <input class="govuk-radios__input" id="where-do-you-live" name="address-change" type="radio" value="3d St Albans Close, Ashington, NE63 9RU">
                       <label class="govuk-label govuk-radios__label" for="address">
                         3d St Albans Close, Ashington, NE63 9RU<br>
                         <strong class="govuk-tag govuk-tag--blue">
@@ -67,7 +67,7 @@ Winter Fuel Payments
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="where-do-you-live" name="address-change" type="radio" value="35 St Albans Close, Ashington, NE63 9RU">
+                      <input class="govuk-radios__input" id="where-do-you-live" name="address-change" type="radio" value="3c St Albans Close, Ashington, NE63 9RU">
                       <label class="govuk-label govuk-radios__label" for="address">
                         3c St Albans Close, Ashington, NE63 9RU<br>
                         <strong class="govuk-tag govuk-tag--blue">
@@ -76,7 +76,7 @@ Winter Fuel Payments
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="where-do-you-live" name="address-change" type="radio" value="35 St Albans Close, Ashington, NE63 9RU">
+                      <input class="govuk-radios__input" id="where-do-you-live" name="address-change" type="radio" value="9 St Albans Close, Ashington, NE63 9RU">
                       <label class="govuk-label govuk-radios__label" for="address">
                         9 St Albans Close, Ashington, NE63 9RU<br>
                         <strong class="govuk-tag govuk-tag--blue">
@@ -109,5 +109,15 @@ Winter Fuel Payments
 
   </main>
   </div>
+
+<script>
+    nextPageRoutes = {
+        '35 St Albans Close, Ashington, NE63 9RU': 'move-date',
+        '3d St Albans Close, Ashington, NE63 9RU': 'move-date',
+        '3c St Albans Close, Ashington, NE63 9RU': 'move-date',
+        '9 St Albans Close, Ashington, NE63 9RU': 'move-date',
+        'address not found': 'address-search',
+     }
+</script>
 
   {% endblock %}
