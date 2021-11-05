@@ -51,7 +51,7 @@ Winter Fuel Payments
               <fieldset class="govuk-fieldset">
                 <div class="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="where-do-you-live" name="address-search-change" type="radio" value="27 Kent Street, Amble, NE65 0LZ">
+                    <input class="govuk-radios__input" id="where-do-you-live" name="address-search-change" type="radio" value="35 St Albans Close, Ashington, NE63 9RU">
                     <label class="govuk-label govuk-radios__label" for="address-search">
                       35 St Albans Close, Ashington, NE63 9RU
                     </label>
@@ -83,5 +83,12 @@ Winter Fuel Payments
 
 </main>
 </div>
+
+<script>
+    nextPageRoutes = {
+        '35 St Albans Close, Ashington, NE63 9RU': 'move-date',
+        'address not found': 'TBC',
+     }
+</script>
 
 {% endblock %}
