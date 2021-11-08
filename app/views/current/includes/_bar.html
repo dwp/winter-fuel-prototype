@@ -6,21 +6,30 @@
         <div>
           <h1 class="govuk-heading-xl">
 
-            {% if data['nino'] === 'XX987654X' %}
-              Alfie Noakes
-            {% elif data['nino'] === 'xx987654x'%}
-              Alfie Noakes
-            {% else %}
+            
               Theodora Best
-            {% endif %}
+            
            <br>
             <span class="govuk-body-l">
-              {% if data['nino'] %}
-                {{data['nino']}}
-              {% else %}
+             
                 XX 12 34 56
-              {% endif %}
-           </span>
+             
+           </span><br>
+           {% if data['mark-as-dead']=='yes' %}
+              <strong class="govuk-tag govuk-tag--grey">
+                DEAD
+              </strong>
+            {% endif %}
+            {% if data['opt-out']=='yes' %}
+              <strong class="govuk-tag govuk-tag--yellow">
+                OPTED OUT
+              </strong>
+            {% endif %}
+             {% if data['mark-as-dlo']=='yes' %}
+              <strong class="govuk-tag govuk-tag--orange">
+                DLO ADDRESS
+              </strong>
+            {% endif %}
           </h1>
         </div>
 

@@ -10,15 +10,15 @@ Winter Fuel Payments
 {% endblock %}
 {% block content %}
 
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-
-        {{ govukBackLink({
-            text: "Back",
-            href: "javascript:history.go(-1)"
-          }) }}
 
         <br>
         <br>
@@ -147,12 +147,12 @@ Winter Fuel Payments
 
 <script>
     nextPageRoutes = {
-        'address': 'move-date.html',
-        'occupancy': 'move-date.html',
-        'home-phone': 'move-date.html',
-        'mobile-phone': 'move-date.html',
-        'work-phone': 'move-date.html',
-        'email': 'move-date.html',
+        'address': 'address',
+        'occupancy': 'living-with',
+        'home-phone': '../../contact-tab/home-phone/homephone',
+        'mobile-phone': '../../contact-tab/mobile-phone/mobilephone',
+        'work-phone': '../../contact-tab/work-phone/workphone',
+        'email': '../../contact-tab/email/email',
         'correspondence-address': 'move-date.html',
 
         'no': 'declaration.html',

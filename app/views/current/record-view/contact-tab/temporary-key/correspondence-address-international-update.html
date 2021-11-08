@@ -1,20 +1,16 @@
 {% extends "layout.html" %}
 
-{% block header %}
-{% include 'current/includes/_header.html' %}
-{% endblock %}
-
 {% block pageTitle %}
 GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+{% include 'current/includes/_find-someone.html' %}
+{% endblock %}
 
 {% block content %}
 
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:history.go(-1)"
-}) }}
+
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
@@ -22,6 +18,11 @@ GOV.UK Prototype Kit
       <div class="govuk-grid-column-two-thirds">
 
                   {% include 'current/includes/_bar.html' %}
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
 
         <br>
         <br>
@@ -78,6 +79,9 @@ GOV.UK Prototype Kit
 
           </fieldset>
 
+          <p><a href="/current/record-view/contact-tab/correspondence-address/correspondence-address-remove-barcelona" class="govuk-link">Remove correspondence address as a contact option</a></p>
+          <p><a href="correspondence-address" class="govuk-link">Enter a UK correspondence address</a></p>
+          <br>
 
           <button class="govuk-button" data-module="govuk-button">
             Continue

@@ -10,11 +10,6 @@ Winter Fuel Payments
 {% endblock %}
 {% block content %}
 
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:history.go(-1)"
-}) }}
-
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
@@ -47,9 +42,9 @@ Winter Fuel Payments
 
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width:235px">Home phone</th>
+                <th scope="row" class="govuk-table__header govuk-!-width-one-third">Home phone</th>
 
-                <td class="govuk-table__cell" style="width: 255px">
+                <td class="govuk-table__cell govuk-!-width-one-half">
                   {% if data['homephone-remove'] === 'Yes' %}
                   {% elseif data.homephone %}
                   {{data.homephone}}
@@ -57,7 +52,7 @@ Winter Fuel Payments
                   01632 960005
                   {% endif %}
                 </td>
-                <td class="govuk-table__cell">
+                <td class="govuk-table__cell table-links-padding-left">
                   <a href="/current/record-view/contact-tab/home-phone/homephone.html">
                     Change<span class="govuk-visually-hidden"> home phone number</span>
                   </a>
@@ -75,7 +70,7 @@ Winter Fuel Payments
 {{data.mobilephone}}
 {% endif %}
 </td>
-<td class="govuk-table__cell">
+<td class="govuk-table__cell table-links-padding-left">
 <a href="/current/record-view/contact-tab/mobile-phone/mobilephone.html">
 {% if not data.mobilenumber %}
 Add<span class="govuk-visually-hidden"> mobile number</span>
@@ -89,15 +84,13 @@ Change<span class="govuk-visually-hidden"> mobile number</span>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Work phone</th>
                 <td class="govuk-table__cell">
-                  {% if data.worknumber %}
+
+                  {% if data['workphone-remove'] === 'Yes' %}
+                  {% elseif data.worknumber%}
                   {{data.worknumber}}
                   {% endif %}
-                  {% if data['workphone-remove'] === 'Yes' %}
-                  {% elseif data.workphone %}
-                  {{data.workphone}}
-                  {% endif %}
                 </td>
-                <td class="govuk-table__cell">
+                <td class="govuk-table__cell table-links-padding-left">
                   <a href="/current/record-view/contact-tab/work-phone/workphone.html">
                     {% if not data.worknumber %}
                     Add<span class="govuk-visually-hidden"> work number</span>
@@ -113,15 +106,14 @@ Change<span class="govuk-visually-hidden"> mobile number</span>
                 <td class="govuk-table__cell">
 
 
-                  {% if data['email'] %}
-                  {{data['email']}}
-                  {% elseif data['email3'] %}
-                  {{data['email3']}}
+                  {% if data['email-remove'] === 'Yes' %}
+                  {% elseif data.email%}
+                  {{data.email}}
                   {% endif %}
 
 
                 </td>
-                <td class="govuk-table__cell">
+                <td class="govuk-table__cell table-links-padding-left">
                   <a href="/current/record-view/contact-tab/email/email.html">
 
                     {% if data['email'] or data['email3'] %}
@@ -135,14 +127,22 @@ Change<span class="govuk-visually-hidden"> mobile number</span>
               </tr>
 
                <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Correspondence address</th>
+                <th scope="row" class="govuk-table__header">Address</th>
                 <td class="govuk-table__cell">
+                  8 Front Street<br>
+                   Crownhill<br>
+                    PL6 6WJ<br>
                 </td>
 
 
-                <td class="govuk-table__cell">
-                  <a href="/current/record-view/contact-tab/correspondence-address/correspondence-address-no-remove.html">
-                    Add
+                <td class="govuk-table__cell table-links-padding-left">
+                  <a href="/current/record-view/contact-tab/temporary-key/temporary-address.html">
+                    {% if not data['correspondence-address-change'] %}
+                    Change <span class="govuk-visually-hidden">contact preferences</span>
+                    {% else %}
+                    Change <span class="govuk-visually-hidden">contact preferences</span>
+                    {% endif %}
+                    <span class="govuk-visually-hidden">Change address</span>
                   </a>
                 </td>
 
@@ -192,7 +192,7 @@ Change<span class="govuk-visually-hidden"> mobile number</span>
                 </td>
 
 
-                <td class="govuk-table__cell">
+                <td class="govuk-table__cell table-links-padding-left">
                   <a href="/current/record-view/contact-tab/alt-formats/alt.html">
                   {% if data['alternative-format'] !== 'remove' %}
                     {% if data['alternative-format'] %}
@@ -214,7 +214,7 @@ Change<span class="govuk-visually-hidden"> mobile number</span>
                   </td>
 
 
-                  <td class="govuk-table__cell">
+                  <td class="govuk-table__cell table-links-padding-left">
                     <a href="/current/record-view/contact-tab/preferred-language/confirm-change-language">
 
                         Change

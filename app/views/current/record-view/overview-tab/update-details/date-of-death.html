@@ -10,6 +10,11 @@ Winter Fuel Payments
 {% endblock %}
 {% block content %}
 
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
@@ -19,16 +24,10 @@ Winter Fuel Payments
 
           {% include 'current/includes/_bar.html' %}
 
-            {{ govukBackLink({
-                text: "Back",
-                href: "javascript:history.go(-1)"
-              }) }}
-
             <br>
             <br>
 
-            
-
+ 
             <form method="post" action="confirm-dead">
             
               <div class="govuk-form-group">
@@ -68,7 +67,7 @@ Winter Fuel Payments
                 </fieldset>
               </div>
 
-              {% if data['mark-as-dead']=='yes'and data['remove-dead'] !='yes' %}
+              {% if data['mark-as-dead']=='yes'%}
                 <a href="confirm-not-dead">Remove date of death</a><br><br>
               {% endif %}
               

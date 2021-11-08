@@ -29,7 +29,7 @@ Winter Fuel Payments
 
             <h1 class="govuk-heading-l">Why do you want to stop payments?</h1>
 
-            <form method="post" action="/record-view/overview-tab/overview">
+            <form method="post">
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -70,5 +70,12 @@ Winter Fuel Payments
 
   </main>
   </div>
+
+  <script>
+    nextPageRoutes = {
+        'opted-out': 'confirm-opt-out',
+        'dead': 'date-of-death',
+    }   
+</script>
 
   {% endblock %}
