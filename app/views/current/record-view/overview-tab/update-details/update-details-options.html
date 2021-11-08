@@ -50,18 +50,22 @@ Winter Fuel Payments
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="dead" name="update-details-options" type="radio" value="dead" data-aria-controls="conditional-carehome-conditional">
                   <label class="govuk-label govuk-radios__label" for="carehome-conditional">
-                    Mark citizen as DEAD
+                    {% if data['mark-as-dead']=='yes'%}
+                      Remove DEAD status
+                    {% else %}
+                      Mark citizen as DEAD
+                    {% endif %}
                   </label>
                 </div>
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="opt-out" name="update-details-options" type="radio" value="opt-out" data-aria-controls="conditional-carehome-conditional-2">
                   <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
-                    {% if data['stop-payments']=='opted-out'%}
-                    Opt back in for future payment(s)
-                  {% else %}
-                    Opt out of future payment(s)
-                  {% endif %}
+                    {% if data ['opt-out']=='yes' or data['stop-payments']=='dead'%}
+                      Opt back in for future payments
+                    {% else %}
+                      Opt out of future payments
+                    {% endif %}
                     
                   </label>
                 </div>
@@ -70,7 +74,7 @@ Winter Fuel Payments
                   <input class="govuk-radios__input" id="dlo" name="update-details-options" type="radio" value="dlo" data-aria-controls="conditional-carehome-conditional-2">
                   <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
                   {% if data['mark-as-dlo']=='yes'%}
-                    Remove DLO flag
+                    Remove DLO status
                   {% else %}
                     Mark residential address as DLO
                   {% endif %}
@@ -80,7 +84,7 @@ Winter Fuel Payments
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="immigration" name="update-details-options" type="radio" value="immigration" data-aria-controls="conditional-carehome-conditional-2">
                   <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
-                    Add immigration control flag
+                    Add immigration control status
                   </label>
                 </div>
 
@@ -110,16 +114,26 @@ Winter Fuel Payments
 </main>
 </div>
 
-{% if data ['mark-as-dlo']=='yes'%}
-  {% set nextDLOPage = '/current/record-view/overview-tab/update-details/address.html' %}
+{% if data ['mark-as-dead']=='yes'%}
+  {% set nextDeadPage = 'confirm-not-dead' %}
 {% else %}
-  {% set nextDLOPage = '/current/record-view/overview-tab/update-details/confirm-dlo.html' %}
+  {% set nextDeadPage = 'date-of-death' %}
+{% endif %}
+{% if data ['opt-out']=='yes' or data['stop-payments']=='dead'%}
+  {% set nextOptPage = 'confirm-opt-in' %}
+{% else %}
+  {% set nextOptPage = 'stop-payments-reason' %}
+{% endif %}
+{% if data ['mark-as-dlo']=='yes'%}
+  {% set nextDLOPage = 'address' %}
+{% else %}
+  {% set nextDLOPage = 'confirm-dlo' %}
 {% endif %}
     <script>
         nextPageRoutes = {
             'current-details': 'current-details.html',
-            'dead': 'date-of-death.html',
-            'opt-out': 'stop-payments-reason.html',
+            'dead': '{{nextDeadPage}}',
+            'opt-out': '{{nextOptPage}}',
             'dlo': '{{nextDLOPage}}',
             'immigration': 'immigration.html',
         }  

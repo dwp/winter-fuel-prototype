@@ -15,6 +15,9 @@ Winter Fuel Payments
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+        
+      {% include 'current/includes/_bar.html' %}
+
         <form method="post">
 
        
@@ -29,9 +32,9 @@ Winter Fuel Payments
     </div>
   </div>
 
-{% elif data['update-details-options']=='dlo'%}
+{% elif data['mark-as-dlo']=='yes'%}
 
-  {% include 'current/includes/_bar-dlo.html' %}
+ 
   <div class="moj-banner moj-banner--success">
     <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
@@ -43,7 +46,7 @@ Winter Fuel Payments
 
 {% elif data['marked-as-dead']=='true'%}
 
-  {% include 'current/includes/_bar.html' %}
+  
   <div class="moj-banner moj-banner--success">
     <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
@@ -55,7 +58,7 @@ Winter Fuel Payments
 
 {% elif data['stop-payments']=='dead'%}
 
-  {% include 'current/includes/_bar.html' %}
+  
   <div class="moj-banner moj-banner--success">
     <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
@@ -65,9 +68,9 @@ Winter Fuel Payments
     </div>
   </div>
 
-{% elif data['stop-payments']=='opted-out'%}
+{% elif data['opted-out']=='yes'%}
 
-  {% include 'current/includes/_bar.html' %}
+  
   <div class="moj-banner moj-banner--success">
     <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
@@ -79,7 +82,7 @@ Winter Fuel Payments
 
 {% elif data['multi-overpayment']=='true'%}
 
-  {% include 'current/includes/_bar.html' %}
+  
   <div class="moj-banner moj-banner--success">
 
   <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
@@ -90,7 +93,7 @@ Winter Fuel Payments
 
 </div>
 {% else %}
-  {% include 'current/includes/_bar.html' %}
+ 
 {% endif %}
 
             {% include 'current/includes/_tab-overview.html' %}
@@ -159,7 +162,7 @@ Winter Fuel Payments
                   <th scope="row" class="govuk-table__header">Date of birth</th>
                   <td class="govuk-table__cell">9 August 1953</td>
                 </tr>
-                {% if data['mark-as-dead']=='yes'%}
+                {% if data['mark-as-dead']=='yes' or data['stop-payments']=='dead'%}
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Date of death</th>
                   <td class="govuk-table__cell">{{data['death-day']}}
@@ -179,45 +182,7 @@ Winter Fuel Payments
                 {{data['death-year']}}</td>
                 </tr>
                 {% endif %}
-                {% if data['stop-payments']=='dead'%}
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Date of death</th>
-                  <td class="govuk-table__cell">12 September 2020</td>
-                </tr>
-                {% endif %}
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Address</th>
-                  <td class="govuk-table__cell">
-                    {% if data['address-change'] %}
-                    {{data['address-change'].split(', ').join('<br />') | safe }}
-                    {% elif data.address %}
-                    {{data.address.split(', ').join('<br />') | safe}}
-                    {% else %}
-                    1 Victoria Road<br>
-                    FALKIRK<br>
-                    FK55 8XN
-                    {% endif %}
-                    <br><br>
-                    since
-                  {% if data['move-date-changed'] == 'true' %}
-                {{data['moveday']}}
-                    {% if (data['movemonth'] == '1') or (data['movemonth'] == '01') %} January 
-                    {% elif (data['movemonth'] == '2') or (data['movemonth'] == '02') %} February 
-                    {% elif (data['movemonth'] == '3') or (data['movemonth'] == '03') %} March 
-                    {% elif (data['movemonth'] == '4') or (data['movemonth'] == '04') %} April 
-                    {% elif (data['movemonth'] == '5') or (data['movemonth'] == '05') %} May 
-                    {% elif (data['movemonth'] == '6') or (data['movemonth'] == '06') %} June 
-                    {% elif (data['movemonth'] == '7') or (data['movemonth'] == '07') %} July 
-                    {% elif (data['movemonth'] == '8') or (data['movemonth'] == '08') %} August 
-                    {% elif (data['movemonth'] == '9') or (data['movemonth'] == '09') %} September 
-                    {% elif data['movemonth'] == '10' %} October 
-                    {% elif data['movemonth'] == '11' %} November 
-                    {% elif data['movemonth'] == '12' %} December 
-                    {% endif %}
-                {{data['moveyear']}}
-                      {% else %}
-                      10 March 2016
-                      {% endif %}
+                
                   </td>
                 </tr>
                 <tr class="govuk-table__row">

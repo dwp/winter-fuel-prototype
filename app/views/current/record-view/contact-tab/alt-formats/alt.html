@@ -1,27 +1,27 @@
-{% extends 'layout.html' %}
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
 
 {% block pageTitle %}
-    Winter Fuel Payments
+Winter Fuel Payments
 {% endblock %}
-
-{% block beforeContent %}
-
-    {{ super() }}
-
-    {{ govukBackLink ({
-        text: 'Back',
-        href: 'javascript:history.back()'
-    }) }}
-
-{% endblock %}
-
 {% block content %}
 
-<div class="govuk-grid-row">
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
 
-        <div class="govuk-grid-column-two-thirds">
 
-            <form method="post">
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      {% include 'current/includes/_bar.html' %}
+
+      <form method="post">
 
                 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
@@ -135,9 +135,16 @@
 
             </form>
 
-        </div>
+      </div>
 
-</div>
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+ 
 
 <script>
     nextPageRoutes = {
