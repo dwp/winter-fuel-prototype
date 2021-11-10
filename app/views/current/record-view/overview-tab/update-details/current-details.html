@@ -149,7 +149,7 @@ Winter Fuel Payments
                       {% endif %}
                    </td>
                   <td class="govuk-table__cell">
-                   <a class="govuk-link" href="/current/record-view/contact-tab/home-phone/homephone">
+                   <a class="govuk-link" href="/current/record-view/contact-tab/home-phone/homephone?update-details=yes">
                     {% if (data.homephone) and data ['homephone-remove'] != 'Yes' %}
                   
                         Change<span class="govuk-visually-hidden"> home phone number</span>
@@ -167,7 +167,7 @@ Winter Fuel Payments
                       {% endif %}
                    </td>
                   <td class="govuk-table__cell">
-                   <a class="govuk-link" href="/current/record-view/contact-tab/home-phone/homephone">
+                   <a class="govuk-link" href="/current/record-view/contact-tab/mobile-phone/mobilephone?update-details=yes">
                     {% if (data.mobilenumber) and data ['mobilephone-remove'] != 'Yes' %}
                       Change<span class="govuk-visually-hidden"> mobile phone number</span>
                     {% else %}
@@ -186,7 +186,7 @@ Winter Fuel Payments
                        {% endif %}
                     </td>
                   <td class="govuk-table__cell">
-                    <a class="govuk-link" href="/current/record-view/contact-tab/work-phone/workphone.html">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/work-phone/workphone?update-details=yes">
                       {% if (data.worknumber) and data ['workphone-remove'] != 'Yes' %}
                         Change<span class="govuk-visually-hidden"> work phone number</span>
                       {% else %}
@@ -205,7 +205,7 @@ Winter Fuel Payments
                       {% endif %}
                     </td>
                   <td class="govuk-table__cell">
-                    <a class="govuk-link" href="/current/record-view/contact-tab/email/email.html">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/email/email?update-details=yes">
                       {% if (data.email) and data ['email-remove'] != 'Yes' %}
                        Change<span class="govuk-visually-hidden"> email address</span>
                       {% else %}
@@ -224,7 +224,7 @@ Winter Fuel Payments
                       {% endif %}
                     </td>
                   <td class="govuk-table__cell">
-                    <a class="govuk-link" href="/current/record-view/contact-tab/correspondence-address/correspondence-address.html">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/correspondence-address/correspondence-address?update-details=yes">
                       {% if data['correspondence-address-change'] %}
                         Change<span class="govuk-visually-hidden"> correspondence address</span>
                       {% else %}

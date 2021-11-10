@@ -45,7 +45,7 @@ Winter Fuel Payments
                 <th scope="row" class="govuk-table__header govuk-!-width-one-third">Home phone</th>
 
                 <td class="govuk-table__cell govuk-!-width-one-half">
-                  {% if data['homephone-remove'] === 'Yes' %}
+                  {% if data['homephone-remove'] === 'yes' %}
                   {% elseif data.homephone %}
                   {{data.homephone}}
                   {% else %}
@@ -60,32 +60,29 @@ Winter Fuel Payments
               </tr>
 
               <tr class="govuk-table__row">
-<th scope="row" class="govuk-table__header">Mobile phone</th>
-<td class="govuk-table__cell">
-{% if data.mobilenumber %}
-{{data.mobilenumber}}
-{% endif %}
-{% if data['mobilephone-remove'] === 'Yes' %}
-{% elseif data.mobilephone %}
-{{data.mobilephone}}
-{% endif %}
-</td>
-<td class="govuk-table__cell table-links-padding-left">
-<a href="/current/record-view/contact-tab/mobile-phone/mobilephone.html">
-{% if not data.mobilenumber %}
-Add<span class="govuk-visually-hidden"> mobile number</span>
-{% else %}
-Change<span class="govuk-visually-hidden"> mobile number</span>
-{% endif %}
-</a>
-</td>
-</tr>
+                <th scope="row" class="govuk-table__header">Mobile phone</th>
+                  <td class="govuk-table__cell">
+                    {% if data['mobilephone-remove'] === 'yes' %}
+                     {% elseif data.mobilephone %}
+                     {{data.mobilephone}}
+                    {% endif %}
+                  </td>
+                  <td class="govuk-table__cell table-links-padding-left">
+                    <a href="/current/record-view/contact-tab/mobile-phone/mobilephone.html">
+                      {% if not data.mobilenumber %}
+                      Add<span class="govuk-visually-hidden"> mobile number</span>
+                      {% else %}
+                        Change<span class="govuk-visually-hidden"> mobile number</span>
+                      {% endif %}
+                    </a>
+                  </td>
+              </tr>
 
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Work phone</th>
                 <td class="govuk-table__cell">
                   
-                  {% if data['workphone-remove'] === 'Yes' %}
+                  {% if data['workphone-remove'] === 'yes' %}
                   {% elseif data.worknumber%}
                   {{data.worknumber}}
                   {% endif %}
@@ -106,7 +103,7 @@ Change<span class="govuk-visually-hidden"> mobile number</span>
                 <td class="govuk-table__cell">
 
 
-                  {% if data['email-remove'] === 'Yes' %}
+                  {% if data['email-remove'] === 'yes' %}
                   {% elseif data.email%}
                   {{data.email}}
                   {% endif %}

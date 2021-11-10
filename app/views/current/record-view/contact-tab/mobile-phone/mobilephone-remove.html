@@ -20,7 +20,11 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-      <form method="post" action="../contact-details">
+      {% if data ['update-details'] == 'yes' %}
+         <form method="post" action="/current/record-view/overview-tab/update-details/update-anything-else">
+      {% else %}
+        <form method="post" action="/current/record-view/contact-tab/contact-details">
+      {% endif %}
 
             {% include 'current/includes/_bar.html' %}
 
@@ -38,13 +42,13 @@ Winter Fuel Payments
                 </legend>
                 <div class="govuk-radios govuk-radios--inline">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="changed-name-1" name="mobilephone-remove" type="radio" value="Yes">
+                    <input class="govuk-radios__input" id="changed-name-1" name="mobilephone-remove" type="radio" value="yes">
                     <label class="govuk-label govuk-radios__label" for="changed-name-1">
                       Yes
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="changed-name-2" name="mobilephone-remove" type="radio" value="No">
+                    <input class="govuk-radios__input" id="changed-name-2" name="mobilephone-remove" type="radio" value="no">
                     <label class="govuk-label govuk-radios__label" for="changed-name-2">
                       No
                     </label>

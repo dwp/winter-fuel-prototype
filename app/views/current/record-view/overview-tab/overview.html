@@ -18,23 +18,11 @@ Winter Fuel Payments
         
       {% include 'current/includes/_bar.html' %}
 
-        <form method="post">
+        <form method="post">      
 
-       
 
-{% if data['declared']== 'yes' %}
-  <div class="moj-banner moj-banner--success">
-    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
-    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
 
-    <div class="moj-banner__message">
-      <span class="moj-banner__assistive">Success</span>Details updated
-    </div>
-  </div>
-
-{% elif data['mark-as-dlo']=='yes'%}
-
- 
+{% if data['mark-as-dlo']=='yes'%}
   <div class="moj-banner moj-banner--success">
     <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
@@ -44,9 +32,17 @@ Winter Fuel Payments
     </div>
   </div>
 
-{% elif data['marked-as-dead']=='true'%}
+{% elif data['mark-as-dlo']=='no'%}
+  <div class="moj-banner moj-banner--success">
+    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+    
+    <div class="moj-banner__message">
+      <span class="moj-banner__assistive">Success</span>Payments restarted - DLO address status removed from citizen record
+    </div>
+  </div>
 
-  
+{% elif data['mark-as-dead']=='yes'%}
   <div class="moj-banner moj-banner--success">
     <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
@@ -57,8 +53,6 @@ Winter Fuel Payments
   </div>
 
 {% elif data['stop-payments']=='dead'%}
-
-  
   <div class="moj-banner moj-banner--success">
     <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
@@ -69,8 +63,6 @@ Winter Fuel Payments
   </div>
 
 {% elif data['opted-out']=='yes'%}
-
-  
   <div class="moj-banner moj-banner--success">
     <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
@@ -80,19 +72,35 @@ Winter Fuel Payments
     </div>
   </div>
 
-{% elif data['multi-overpayment']=='true'%}
-
-  
+  {% elif data['opted-out']=='no'%}
   <div class="moj-banner moj-banner--success">
-
-  <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+  
+    <div class="moj-banner__message">
+      <span class="moj-banner__assistive">Success</span>Payments restarted - citizen has opted back into future payments
+    </div>
+  </div>
 
-  <div class="moj-banner__message">
-    <span class="moj-banner__assistive">Success</span>Details updated</div>
+  {% elif data['remove-dead']=='yes'%}
+  <div class="moj-banner moj-banner--success">
+    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+  
+    <div class="moj-banner__message">
+      <span class="moj-banner__assistive">Success</span>Payments restarted - DEAD status removed from record
+    </div>
+  </div>
 
-</div>
-{% else %}
+  {% elif data['update-details']=='finished'%}
+  <div class="moj-banner moj-banner--success">
+    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+  
+    <div class="moj-banner__message">
+      <span class="moj-banner__assistive">Success</span>Details updated
+    </div>
+  </div>
  
 {% endif %}
 
@@ -222,7 +230,9 @@ Winter Fuel Payments
             </a>
 
       </div>
-
+      <div class="govuk-grid-column-one-third">
+        {% include 'current/includes/_history.html' %}
+      </div>
     </div>
 
   </div>
