@@ -21,7 +21,16 @@ Winter Fuel Payments
     <main class="govuk-main-wrapper " id="main-content" role="main">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds-from-desktop">
-          {% include 'current/includes/_bar.html' %}
+          
+          {% if data['mark-as-dead']=='yes' or data['stop-payments']=='dead'%}  
+            {% include 'current/includes/_bar-dead.html' %}
+          {% elif data['mark-as-dlo']=='yes'%}  
+            {% include 'current/includes/_bar-dlo.html' %}
+          {% elif data['opted-out']=='yes' %}  
+            {% include 'current/includes/_bar-optout.html' %}
+          {% else %}
+            {% include 'current/includes/_bar.html' %}
+          {% endif %}
 
           <table class="govuk-table"> 
             <h2 class="govuk-heading-m">Current details</h2>

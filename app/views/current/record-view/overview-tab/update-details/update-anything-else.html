@@ -45,7 +45,7 @@ Winter Fuel Payments
           {% if data['living-with-date-changed'] != 'true' %}
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="dead" name="update-details-options" type="radio" value="occupancy" data-aria-controls="conditional-carehome-conditional">
+                  <input class="govuk-radios__input" id="dead" name="update-anything-else" type="radio" value="occupancy" data-aria-controls="conditional-carehome-conditional">
                   <label class="govuk-label govuk-radios__label" for="carehome-conditional">
                     Occupancy
                   </label>
@@ -54,7 +54,7 @@ Winter Fuel Payments
 
             {% if data['homephone-changed'] != 'true' %}
             <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="opt-out" name="update-details-options" type="radio" value="home-phone" data-aria-controls="conditional-carehome-conditional-2">
+                  <input class="govuk-radios__input" id="opt-out" name="update-anything-else" type="radio" value="home-phone" data-aria-controls="conditional-carehome-conditional-2">
                   <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
                     Home phone
                   </label>
@@ -63,7 +63,7 @@ Winter Fuel Payments
 
             {% if data['mobilephone-changed'] != 'true' %}
             <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="opt-out" name="update-details-options" type="radio" value="mobile-phone" data-aria-controls="conditional-carehome-conditional-2">
+                  <input class="govuk-radios__input" id="opt-out" name="update-anything-else" type="radio" value="mobile-phone" data-aria-controls="conditional-carehome-conditional-2">
                   <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
                     Mobile phone
                   </label>
@@ -72,7 +72,7 @@ Winter Fuel Payments
 
             {% if data['workphone-changed'] != 'true' %}
             <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="opt-out" name="update-details-options" type="radio" value="work-phone" data-aria-controls="conditional-carehome-conditional-2">
+                  <input class="govuk-radios__input" id="opt-out" name="update-anything-else" type="radio" value="work-phone" data-aria-controls="conditional-carehome-conditional-2">
                   <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
                     Work phone
                   </label>
@@ -81,7 +81,7 @@ Winter Fuel Payments
 
             {% if data['email-changed'] != 'true' %}
             <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="opt-out" name="update-details-options" type="radio" value="email" data-aria-controls="conditional-carehome-conditional-2">
+                  <input class="govuk-radios__input" id="opt-out" name="update-anything-else" type="radio" value="email" data-aria-controls="conditional-carehome-conditional-2">
                   <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
                     Email address
                   </label>
@@ -90,21 +90,13 @@ Winter Fuel Payments
 
             {% if data['correspondence-address-changed'] != 'true' %}
             <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="opt-out" name="update-details-options" type="radio" value="correspondence-address" data-aria-controls="conditional-carehome-conditional-2">
+                  <input class="govuk-radios__input" id="opt-out" name="update-anything-else" type="radio" value="correspondence-address" data-aria-controls="conditional-carehome-conditional-2">
                   <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
                     Correspondence address
                   </label>
                 </div>
             {% endif %}
 
-            <!--{% if data['poa-changed'] != 'true' %}
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="immigration" name="update-details-options" type="radio" value="poa" data-aria-controls="conditional-carehome-conditional-2">
-                  <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
-                    Power of attorney
-                  </label>
-                </div>
-            {% endif %}-->
 
             <div class="govuk-radios__divider">or</div><br>
 
