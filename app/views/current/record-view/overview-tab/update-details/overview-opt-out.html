@@ -16,20 +16,36 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         
-      {% include 'current/includes/_bar.html' %}
+      {% if data['opted-out']=='yes' %}  
+        {% include 'current/includes/_bar-optout.html' %}
+      {% else %}
+        {% include 'current/includes/_bar.html' %}
+      {% endif %}
 
         <form method="post">      
 
-        {% if data['details-updated']=='yes'%}
-         <div class="moj-banner moj-banner--success">
-            <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
-            <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
-          
-            <div class="moj-banner__message">
-              <span class="moj-banner__assistive">Success</span>Details updated
-            </div>
-          </div>
-       {% endif %}
+  {% if data['opted-out']=='yes'%}
+  <div class="moj-banner moj-banner--success">
+    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+  
+    <div class="moj-banner__message">
+      <span class="moj-banner__assistive">Success</span>Payments stopped - citizen has opted out of future payments
+    </div>
+  </div>
+
+
+  {% elif data['opted-out']=='no'%}
+  <div class="moj-banner moj-banner--success">
+    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+  
+    <div class="moj-banner__message">
+      <span class="moj-banner__assistive">Success</span>Payments restarted - citizen has opted back in to future payments
+    </div>
+  </div>
+ 
+{% endif %}
 
             {% include 'current/includes/_tab-overview.html' %}
 
@@ -117,8 +133,8 @@ Winter Fuel Payments
                 {{data['death-year']}}</td>
                 </tr>
                 {% endif %}
-                
-                 <tr class="govuk-table__row">
+
+                <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Address</th>
                   <td class="govuk-table__cell">
                     {% if data['address-change'] %}
@@ -150,6 +166,9 @@ Winter Fuel Payments
                       {% else %}
                       10 March 2016
                     {% endif %}
+                  </td>
+                </tr>
+                
                   </td>
                 </tr>
                 <tr class="govuk-table__row">

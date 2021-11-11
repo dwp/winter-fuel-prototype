@@ -22,7 +22,7 @@ Winter Fuel Payments
 
      
 
-          {% include 'current/includes/_bar.html' %}
+          {% include 'current/includes/_bar-dead.html' %}
 
 
             <br>
@@ -74,8 +74,8 @@ Winter Fuel Payments
 
 <script>
     nextPageRoutes = {
-        'yes': '../overview?mark-as-dead=no&stop-payments=no&remove-dead=yes&mark-as-dlo=neither',
-        'no': '../overview',
+        'yes': '/current/record-view/overview-tab/update-details/overview-dead?mark-as-dead=no',
+        'no': '/current/record-view/overview-tab/update-details/overview-dead',
     }   
 </script>
 

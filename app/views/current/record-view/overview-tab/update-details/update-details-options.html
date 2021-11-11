@@ -50,7 +50,7 @@ Winter Fuel Payments
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="dead" name="update-details-options" type="radio" value="dead" data-aria-controls="conditional-carehome-conditional">
                   <label class="govuk-label govuk-radios__label" for="carehome-conditional">
-                    {% if data['mark-as-dead']=='yes'%}
+                    {% if data['mark-as-dead']=='yes' or data['stop-payments']=='dead'%}
                       Remove DEAD status
                     {% else %}
                       Mark citizen as DEAD
@@ -61,7 +61,7 @@ Winter Fuel Payments
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="opt-out" name="update-details-options" type="radio" value="opt-out" data-aria-controls="conditional-carehome-conditional-2">
                   <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
-                    {% if data ['opt-out']=='yes' or data['stop-payments']=='dead'%}
+                    {% if data ['opted-out']=='yes' or data['stop-payments']=='dead'%}
                       Opt back in for future payments
                     {% else %}
                       Opt out of future payments
@@ -81,12 +81,7 @@ Winter Fuel Payments
                   </label>
                 </div>
 
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="immigration" name="update-details-options" type="radio" value="immigration" data-aria-controls="conditional-carehome-conditional-2">
-                  <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
-                    Add immigration control status
-                  </label>
-                </div>
+                
 
 
               </div>
@@ -119,7 +114,7 @@ Winter Fuel Payments
 {% else %}
   {% set nextDeadPage = 'date-of-death' %}
 {% endif %}
-{% if data ['opt-out']=='yes' or data['stop-payments']=='dead'%}
+{% if data ['opted-out']=='yes' or data['stop-payments']=='dead'%}
   {% set nextOptPage = 'confirm-opt-in' %}
 {% else %}
   {% set nextOptPage = 'stop-payments-reason' %}
@@ -135,7 +130,7 @@ Winter Fuel Payments
             'dead': '{{nextDeadPage}}',
             'opt-out': '{{nextOptPage}}',
             'dlo': '{{nextDLOPage}}',
-            'immigration': 'immigration.html',
+            
         }  
     </script>
   
