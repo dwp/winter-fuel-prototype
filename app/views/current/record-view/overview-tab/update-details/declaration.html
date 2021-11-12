@@ -59,6 +59,10 @@ Winter Fuel Payments
             <button type="submit" class="govuk-button">
               Agreed - submit update
               <input type="hidden" name="details-updated" value="yes">
+               {% if data['mark-as-dlo']=='yes'%}  
+                <input type="hidden" name="mark-as-dlo" value="no">
+                <input type="hidden" name="prev-page" value="none">
+               {% endif %}
             </button>
 
           </div>

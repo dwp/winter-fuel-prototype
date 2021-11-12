@@ -20,16 +20,21 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-     
-
-{% include 'current/includes/_bar.html' %}
+      {% if data['mark-as-dlo']=='yes'%}  
+          {% include 'current/includes/_bar-dlo.html' %}
+        {% else %}
+          {% include 'current/includes/_bar.html' %}
+        {% endif %}
 
 
             <br>
             <br>
 
-            <form method="post" action="living-with">
-
+      {% if data['prev-page']=='change-move-date'%}
+        <form method="post" action="update-anything-else">
+      {% else %}
+        <form method="post" action="living-with">
+      {% endif %}
 
 
         <div class="govuk-form-group">

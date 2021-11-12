@@ -20,7 +20,11 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        {% include 'current/includes/_bar.html' %}
+         {% if data['mark-as-dlo']=='yes'%}  
+          {% include 'current/includes/_bar-dlo.html' %}
+        {% else %}
+          {% include 'current/includes/_bar.html' %}
+        {% endif %}
 
 
             <br>
@@ -29,7 +33,7 @@ Winter Fuel Payments
             <form method="post">
 
               <div class="govuk-form-group">
-                <h1 class="govuk-heading-l">Do you live with anyone?</h1>
+                <h1 class="govuk-heading-l">Do you live with anyone born before 27 September 1955?</h1>
                 <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                   </legend>
@@ -67,7 +71,7 @@ Winter Fuel Payments
 
   <script>
     nextPageRoutes = {
-        'Lives with someone else who gets Winter Fuel Payment': 'living-with-age',
+        'Lives with someone else who gets Winter Fuel Payment': 'living-with-over-80',
         'Does not live with someone else who gets Winter Fuel Payment': 'living-with-date',}
   </script>
 

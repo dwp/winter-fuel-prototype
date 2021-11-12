@@ -32,12 +32,22 @@ Winter Fuel Payments
               
              
 
-          {% if data['move-date-changed'] != 'true' %}
+          {% if data['address-changed'] != 'true' %}
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="dead" name="update-anything-else" type="radio" value="address" data-aria-controls="conditional-carehome-conditional">
                   <label class="govuk-label govuk-radios__label" for="carehome-conditional">
                     Address
+                  </label>
+                </div>
+          {% endif %}
+
+          {% if data['move-date-changed'] != 'true' %}
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="dead" name="update-anything-else" type="radio" value="move-date" data-aria-controls="conditional-carehome-conditional">
+                  <label class="govuk-label govuk-radios__label" for="carehome-conditional">
+                    Move date
                   </label>
                 </div>
           {% endif %}
@@ -140,6 +150,7 @@ Winter Fuel Payments
 <script>
     nextPageRoutes = {
         'address': 'address',
+        'move-date': 'move-date',
         'occupancy': 'living-with',
         'home-phone': '../../contact-tab/home-phone/homephone',
         'mobile-phone': '../../contact-tab/mobile-phone/mobilephone',

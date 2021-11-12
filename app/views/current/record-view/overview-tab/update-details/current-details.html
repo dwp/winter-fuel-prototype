@@ -22,7 +22,7 @@ Winter Fuel Payments
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds-from-desktop">
           
-          {% if data['mark-as-dead']=='yes' or data['stop-payments']=='dead'%}  
+          {% if data['mark-as-dead']=='yes'%}  
             {% include 'current/includes/_bar-dead.html' %}
           {% elif data['mark-as-dlo']=='yes'%}  
             {% include 'current/includes/_bar-dlo.html' %}
@@ -74,21 +74,25 @@ Winter Fuel Payments
                     </td>
                   </tr>
                 {% endif %}
-                {% if data['stop-payments']=='dead'%}
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Date of death</th>
-                    <td class="govuk-table__cell">12 September 2020</td>
-                  </tr>
-                {% endif %}
+                
                 <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Address</th>
-                  <td class="govuk-table__cell">
+                  <th scope="row" class="govuk-table__header" style="border-bottom:0px;">Address</th>
+                  <td class="govuk-table__cell" style="border-bottom:0px;">
                     {% if data['address-change'] === '27 Kent Street, Amble, NE65 0LZ' %}
                       27 Kent Street<br>Amble<br>NE65 0LZ
                       {% else %}
                       72 Guild Street<br>London<br>SE23 6FH
                     {% endif %}
-                   <br><br>
+                  </td>
+                  <td class="govuk-table__cell" style="border-bottom:0px;">
+                     <a class="govuk-link" href="address">
+                      Change<span class="govuk-visually-hidden"> address</span>
+                    </a>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"></th>
+                  <td class="govuk-table__cell">
                     since {% if data['move-date-changed'] == 'true' %}
                     {{data['moveday']}}
                     {% if (data['movemonth'] == '1') or (data['movemonth'] == '01') %} January 
@@ -110,8 +114,8 @@ Winter Fuel Payments
                      {% endif %}
                    </td>
                    <td class="govuk-table__cell">
-                     <a class="govuk-link" href="address">
-                      Change<span class="govuk-visually-hidden"> address</span>
+                     <a class="govuk-link" href="move-date?prev-page=change-move-date">
+                      Change<span class="govuk-visually-hidden"> move date</span>
                     </a>
                     </td>
                  </tr>

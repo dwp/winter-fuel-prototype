@@ -22,7 +22,11 @@ Winter Fuel Payments
 
       
 
-        {% include 'current/includes/_bar.html' %}
+        {% if data['mark-as-dlo']=='yes'%}  
+          {% include 'current/includes/_bar-dlo.html' %}
+        {% else %}
+          {% include 'current/includes/_bar.html' %}
+        {% endif %}
 
             <br>
             <br>

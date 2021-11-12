@@ -21,7 +21,11 @@ Winter Fuel Payments
       <div class="govuk-grid-column-two-thirds">
 
 
-        {% include 'current/includes/_bar.html' %}
+         {% if data['mark-as-dlo']=='yes'%}  
+          {% include 'current/includes/_bar-dlo.html' %}
+        {% else %}
+          {% include 'current/includes/_bar.html' %}
+        {% endif %}
 
 
             <form method="post" action="living-with-date">
@@ -34,7 +38,7 @@ Winter Fuel Payments
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
 
-                  <h1 class="govuk-heading-l">Was anyone you live with born before 28 September 1940?</h1>
+                  <h1 class="govuk-heading-l">Was anyone you live with born before 26 September 1941?</h1>
 
               <div class="govuk-radios govuk-radios--inline">
                 <div class="govuk-radios__item">

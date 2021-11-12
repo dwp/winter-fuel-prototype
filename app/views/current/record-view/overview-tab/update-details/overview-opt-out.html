@@ -35,7 +35,7 @@ Winter Fuel Payments
   </div>
 
 
-  {% elif data['opted-out']=='no'%}
+  {% elif data['opted-in']=='yes'%}
   <div class="moj-banner moj-banner--success">
     <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
@@ -53,13 +53,13 @@ Winter Fuel Payments
             <br>
             <br>
 
-        {%if data['stop-payments']== 'opted' %}
+        {%if data['opted-out']== 'yes' %}
             <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
             <div class="govuk-warning-text">
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
               <strong class="govuk-warning-text__text">
                 <span class="govuk-warning-text__assistive">Warning</span>
-                This person has opted out of receiving Winter Fuel payment. They can <a href="start-payments" class="govuk-link">opt back in</a> at any time.
+                This person has opted out of receiving Winter Fuel payment. They can <a href="confirm-opt-in" class="govuk-link">opt back in</a> at any time.
               </strong>
             </div>
         {% elif data['alt-format-task']== 'yes' %}
@@ -113,7 +113,7 @@ Winter Fuel Payments
                   <th scope="row" class="govuk-table__header">Date of birth</th>
                   <td class="govuk-table__cell">9 August 1953</td>
                 </tr>
-                {% if data['mark-as-dead']=='yes' or data['stop-payments']=='dead'%}
+                {% if data['mark-as-dead']=='yes' %}
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Date of death</th>
                   <td class="govuk-table__cell">{{data['death-day']}}

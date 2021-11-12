@@ -37,13 +37,13 @@ Winter Fuel Payments
                   </legend>
                   <div class="govuk-radios govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="mark-as-dead" name="opt-in" type="radio" value="yes">
+                      <input class="govuk-radios__input" id="mark-as-dead" name="opted-in" type="radio" value="yes">
                       <label class="govuk-label govuk-radios__label" for="stop-payments-1">
                         Yes
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="mark-as-dead" name="opt-in" type="radio" value="no">
+                      <input class="govuk-radios__input" id="mark-as-dead" name="opted-in" type="radio" value="no">
                       <label class="govuk-label govuk-radios__label" for="stop-payments-2">
                       No
                       </label>
@@ -73,8 +73,8 @@ Winter Fuel Payments
 
 <script>
     nextPageRoutes = {
-        'yes': '/current/record-view/overview-tab/update-details/overview-opt-out?stop-payments=no&mark-as-dead=no',
-        'no': '../overview',
+        'yes': '/current/record-view/overview-tab/update-details/overview-opt-out?stop-payments=no&mark-as-dead=no&opted-out=no',
+        'no': '/current/record-view/overview-tab/update-details/overview-opt-out',
 
     }
     

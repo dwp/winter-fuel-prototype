@@ -37,7 +37,7 @@ Winter Fuel Payments
             <br>
             <br>
 
-        {%if data['stop-payments']== 'opted' %}
+        {%if data['opted-in']== 'yes' %}
             <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
             <div class="govuk-warning-text">
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -97,7 +97,7 @@ Winter Fuel Payments
                   <th scope="row" class="govuk-table__header">Date of birth</th>
                   <td class="govuk-table__cell">9 August 1953</td>
                 </tr>
-                {% if data['mark-as-dead']=='yes' or data['stop-payments']=='dead'%}
+                {% if data['mark-as-dead']=='yes'%}
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Date of death</th>
                   <td class="govuk-table__cell">{{data['death-day']}}
