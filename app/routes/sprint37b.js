@@ -189,7 +189,7 @@ router.post('/sprint37b/address-search-result', function(req, res) {
   if (req.body['address-search-change'] === '27 Kent Street, Amble, NE65 0LZ') {
     res.redirect('move-date');
   } else {
-    res.redirect('TBC');
+    res.redirect('address-search2');
   }
 });
 
