@@ -20,11 +20,11 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-       {% if data['update-details']=='yes'%}
-        <form method="post" action="/current/record-view/overview-tab/update-details/update-anything-else">
-      {% else %}
-        <form method="post" action="/current/record-view/contact-tab/contact-details">
-      {% endif %}
+        {% if data['update-details']=='yes'%}
+          <form method="post" action="/current/record-view/overview-tab/update-details/update-anything-else">
+        {% else %}
+          <form method="post" action="/current/record-view/contact-tab/contact-details">
+        {% endif %}
 
             {% include 'current/includes/_bar.html' %}
 
@@ -46,7 +46,7 @@ Winter Fuel Payments
                 <input class="govuk-input govuk-input--width-20" id="worknumber" name="worknumber" type="tel">
               </div>
 
-              {% if (data.worknumber) and data ['workphone-remove'] != 'Yes' %}
+              {% if (data.worknumber) and data ['workphone-remove'] != 'yes' %}
             <div>
             <a href="workphone-remove" class="govuk-link govuk-!-font-size-19">Remove work phone as a contact option</a><br><br>
             </div>
@@ -54,10 +54,21 @@ Winter Fuel Payments
 
              
 
-              <button type="submit" class="govuk-button">
-                Save
-              </button>
-            </form>
+              {% if data['update-details']=='yes'%}
+             <button type="submit" class="govuk-button">
+              Continue
+            </button>
+          {% else %}
+             <button type="submit" class="govuk-button">
+              Save
+            </button>
+          {% endif %}
+           
+            <input type="hidden" name="workphone-changed" value="true">
+            <input type="hidden" name="workphone-remove" value="no">
+            <input type="hidden" name="contact-details-changed" value="true">
+            <input type="hidden" name="from-contact-tab" value="true">
+          </form>
 
       </div>
 
@@ -71,3 +82,5 @@ Winter Fuel Payments
 
 
   {% endblock %}
+
+ 

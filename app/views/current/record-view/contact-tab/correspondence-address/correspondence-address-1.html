@@ -22,7 +22,7 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-      <form method="post">
+    
 
         {% include 'current/includes/_bar.html' %}
 
@@ -146,6 +146,10 @@ GOV.UK Prototype Kit
               <button type="submit" class="govuk-button">
                 Continue
               </button>
+               <input type="hidden" name="correspondence-address-changed" value="true">
+                <input type="hidden" name="correspondence-address-remove" value="no">
+                <input type="hidden" name="contact-details-changed" value="true">
+                <input type="hidden" name="from-contact-tab" value="true">
 
             </form>
 
@@ -158,17 +162,22 @@ GOV.UK Prototype Kit
   </main>
   </div>
 
+  {% if data['update-details']=='yes' %}
+    {% set nextCorrespPage = '/current/record-view/overview-tab/update-details/update-anything-else' %}
+  {% else %}
+    {% set nextCorrespPage = '/current/record-view/contact-tab/contact-details' %}
+  {% endif %}
   <script>
     nextPageRoutes = {
-        '8 Front Street, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
-        '18 Front Street, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
-         '1 Front Street, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
-         '2 Front Street, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
-         '3 Front Street, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
-         '4 Front Street, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
-         '5 Front Street, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
-         '6 Front Street, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
-         'Made barbers, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
+        '8 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+        '18 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '1 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '2 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '3 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '4 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '5 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '6 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         'Made barbers, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
           'no address found': 'correspondence-address-search.html',
     }
   </script>

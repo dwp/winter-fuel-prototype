@@ -26,7 +26,7 @@ Winter Fuel Payments
             <br>
             <br>
             <h1 class="govuk-heading-l">Are you sure that you want to remove this phone number?</h1>
-            <p><strong>Work phone:</strong> 01665 720 871</p>
+            <p><strong>Work phone:</strong> {{data.worknumber}}</p>
 
             <form method="post" action="../contact-details">
                     <div class="govuk-form-group">
@@ -35,13 +35,13 @@ Winter Fuel Payments
                         </legend>
                         <div class="govuk-radios govuk-radios--inline">
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="workphone-change-yes" name="workphone-remove" type="radio" value="Yes">
+                            <input class="govuk-radios__input" id="workphone-change-yes" name="workphone-remove" type="radio" value="yes">
                             <label class="govuk-label govuk-radios__label" for="changed-workphone-1">
                               Yes
                             </label>
                           </div>
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="workphone-change-no" name="workphone-remove" type="radio" value="No">
+                            <input class="govuk-radios__input" id="workphone-change-no" name="workphone-remove" type="radio" value="no">
                             <label class="govuk-label govuk-radios__label" for="changed-workphone-2">
                               No
                             </label>
