@@ -20,9 +20,11 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-     
-
-          {% include 'current/includes/_bar.html' %}
+     {% if data['opted-out']=='yes' %}  
+        {% include 'current/includes/_bar-optout.html' %}
+      {% else %}
+        {% include 'current/includes/_bar.html' %}
+      {% endif %}
 
 
             <br>
