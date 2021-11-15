@@ -16,26 +16,12 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-      {% if data['immigration-control']=='yes' %}  
-        {% include 'current/includes/_bar-immigration-control.html' %}
-      {% else %}
         {% include 'current/includes/_bar.html' %}
-      {% endif %}
+    
         <form method="post">      
 
 
-
-{% if data['immigration-control']=='yes' and data['remove-immigration-control']!='no'%}
-  <div class="moj-banner moj-banner--success">
-    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
-    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
-  
-    <div class="moj-banner__message">
-      <span class="moj-banner__assistive">Success</span>Details updated - IMMIGRATION CONTROL status added
-    </div>
-  </div>
-
-  {% elif data['remove-immigration-control']=='yes'%}
+  {% if data['immigration-control']=='yes'%}
   <div class="moj-banner moj-banner--success">
     <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
