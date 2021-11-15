@@ -194,10 +194,7 @@ router.post('/sprint37b/address-search-result', function(req, res) {
 });
 
 
-// Move date
-router.post('/sprint37b/move-date', (req, res) => {
-  res.redirect('/sprint37b/living-with')
-});
+
 
 // Care home move date
 router.post('/sprint37b/carehome-move-date', (req, res) => {

@@ -19,8 +19,8 @@ Winter Fuel Payments
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
- 
-        {% if data['mark-as-dlo']=='yes'%}  
+
+        {% if data['mark-as-dlo']=='yes'%}
           {% include 'current/includes/_bar-dlo.html' %}
         {% else %}
           {% include 'current/includes/_bar.html' %}
@@ -86,8 +86,8 @@ Winter Fuel Payments
 <script>
     nextPageRoutes = {
         '27 Kent Street, Amble, NE65 0LZ': 'move-date.html',
-        'address not found': 'tbc.html',
-    }   
+        'address not found': 'address-search2.html',
+    }
 </script>
 
 {% endblock %}
