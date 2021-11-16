@@ -1,5 +1,7 @@
 const express = require('express')
 const router = express.Router()
+const radioButtonRedirect = require('radio-button-redirect')
+router.use(radioButtonRedirect)
 
 // copy the const name and the file path to new version
 const eligibilitychecker = require('./routes/eligibility-checker');
