@@ -18,7 +18,7 @@ Winter Fuel Payments
 
         <form method="post">
 
-          <a href="/sprint22b/residency-type" class="govuk-back-link">Back</a>
+          <a href="residency-type" class="govuk-back-link">Back</a>
           <br>
           <br>
 
@@ -55,5 +55,12 @@ Winter Fuel Payments
 
 </main>
 </div>
+
+<script>
+    nextPageRoutes = {
+        'yes': 'living-with',
+        'no': 'full-payment',
+        }
+</script>
 
 {% endblock %}
