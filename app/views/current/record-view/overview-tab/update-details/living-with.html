@@ -39,13 +39,13 @@ Winter Fuel Payments
                   </legend>
                   <div class="govuk-radios govuk-radios--inline">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="living-with" name="living-with" type="radio" value="Lives with someone else who gets Winter Fuel Payment">
+                      <input class="govuk-radios__input" id="living-with" name="living-with" type="radio" value="Lives with someone under 80 who qualifies">
                       <label class="govuk-label govuk-radios__label" for="living-with-1">
                         Yes
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="living-with" name="living-with" type="radio" value="Does not live with someone else who gets Winter Fuel Payment">
+                      <input class="govuk-radios__input" id="living-with" name="living-with" type="radio" value="Does not live with someone who qualifies">
                       <label class="govuk-label govuk-radios__label" for="living-with-2">
                         No
                       </label>
@@ -71,8 +71,8 @@ Winter Fuel Payments
 
   <script>
     nextPageRoutes = {
-        'Lives with someone else who gets Winter Fuel Payment': 'living-with-over-80',
-        'Does not live with someone else who gets Winter Fuel Payment': 'living-with-date',}
+        'Lives with someone under 80 who qualifies': 'living-with-over-80',
+        'Does not live with someone who qualifies': 'living-with-date',}
   </script>
 
   {% endblock %}
