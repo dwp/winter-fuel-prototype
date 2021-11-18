@@ -155,10 +155,12 @@ Winter Fuel Payments
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Occupancy</th>
                   <td class="govuk-table__cell">
-                    {% if data['living-with'] %}
+                    {% if data['live-with-age-over-80']=='yes' %}
+                      Lives with someone 80 or older who qualifies
+                    {% elif data['living-with'] %}
                     {{data['living-with']}}
                       {% else %}
-                      Lives with someone else of State Pension age
+                      Lives with someone under 80 who qualifies
                     {% endif %}
                     <br><br>
                 since {% if data['living-with-date-changed'] == 'true' %}

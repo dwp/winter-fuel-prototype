@@ -25,6 +25,8 @@ Winter Fuel Payments
         <form method="post" action="over-payment">
       {% elif data['movemonth'] == '08' or data['movemonth'] == '8' or data['living-with-month'] == '08' or data['living-with-month'] == '8' %}
         <form method="post" action="make-payment">
+      {% elif data['movemonth'] == '12' or data['living-with-month'] == '12' %}
+      <form method="post" action="payment-recalculated">
       {% elif data['update-details-options'] == 'dlo' %}
         <form method="post" action="/current/record-view/overview-tab/update-details/overview-dlo?mark-as-dlo">
       {% else %}
