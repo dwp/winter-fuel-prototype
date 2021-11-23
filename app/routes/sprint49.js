@@ -154,7 +154,7 @@ router.post('/sprint49/address', function(req, res) {
   } else if (req.body['postcode'] === "DH3 4AE") {
     res.redirect('/sprint52c/address-carehome');
   } else if (req.body['postcode'] === "M1 5BY") {
-    res.redirect('/sprint52g/address-commercial');    
+    res.redirect('/sprint52g/address-commercial2');    
   } else {
     res.redirect('address-1');
   }
