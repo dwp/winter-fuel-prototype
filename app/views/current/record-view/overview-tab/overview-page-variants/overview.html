@@ -18,6 +18,8 @@ Winter Fuel Payments
 
         {% if data['opted-out']== 'yes' %}
           {% include 'current/includes/_bar-optout.html' %}
+        {% elif data['dead-dap-cancelled']== 'yes' %}
+          {% include 'current/includes/_bar-dead.html' %}
         {% else %}
           {% include 'current/includes/_bar.html' %}
         {% endif %}
@@ -37,6 +39,15 @@ Winter Fuel Payments
               <strong class="govuk-warning-text__text">
                 <span class="govuk-warning-text__assistive">Warning</span>
                 This person has opted out of receiving Winter Fuel payment. They can <a href="/current/record-view/overview-tab/update-details/confirm-opt-in" class="govuk-link">opt back in</a> at any time.
+              </strong>
+            </div>
+        {% elif data['dead-dap-cancelled']== 'yes' %}
+            <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                This person's death arrears payment for winter 2020 to 2021 has been cancelled. You can still <a href="/current/tasks/pay-death-arrears/death-arrears-task-1" class="govuk-link">make this payment</a> until 13 December 2021.
               </strong>
             </div>
         {% elif data['alt-format-task']== 'yes' %}

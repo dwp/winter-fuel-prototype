@@ -21,24 +21,7 @@ GOV.UK Prototype Kit
 
         <form method="post" action="death-arrears-task-1-dap-address">
 
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-full">
-              <div>
-                <h1 class="govuk-heading-xl">
-                  XX 62 31 26 C<br>
-                  <span class="govuk-body-l">
-                    Meera Rudd
-                  </span><br>
-                  <strong class="govuk-tag govuk-tag--grey">
-                    Dead
-                  </strong>
-              </div>
-
-            </div>
-          </div>
-
-
-          <form method="post">
+          {% include 'current/includes/_bar-dead.html' %}  
 
             <h2 class="govuk-heading-l">Name of the death arrears payee</h2>
 
