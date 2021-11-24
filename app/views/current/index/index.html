@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments test
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-xl" style="margin-bottom: 3%;">Winter Fuel Payments prototype</h1>
+<br>
+
+
+<nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+  <ul class="moj-sub-navigation__list">
+    <li class="moj-sub-navigation__item" style="padding-left: 0%;">
+      <a class="moj-sub-navigation__link" aria-current="page" href="index" style="color: black">Agent</a>
+    </li>
+    <li class="moj-sub-navigation__item" style="padding-left: 0%;">
+      <a class="moj-sub-navigation__link"href="index-admin" style="color: #1D70B8; text-decoration: underline;" >Admin</a>
+    </li>
+    <li class="moj-sub-navigation__item" style="padding-left: 1%;">
+      <a class="moj-sub-navigation__link" href="index-govuk" style="color: #1D70B8; text-decoration: underline;" >GOV.UK</a>
+    </li>
+    <li class="moj-sub-navigation__item" style="padding-left: 1%;">
+      <a class="moj-sub-navigation__link" href="index-ur" style="color: #1D70B8; text-decoration: underline;" >User research</a>
+    </li>
+  </ul>
+
+</nav>
+
+
+
+ <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          International new claims
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+      <p class='govuk-body'>
+      title saying current version
+      <br>green button with current link, saying start journey
+      <br>title - what has iterated from the previous version
+      <br>bullet points - the changes are stated
+      <br>grey line
+      <br>title - the name of the previous version
+      <br>grey button  with link to the previous version, saying start journey
+      <br>title - what was iterated from the previous version
+      <br>bullet points - the changes are stated
+      <br>grey line
+      </p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+          UK new claims
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+      <p class='govuk-body'>content</p>
+    </div>
+  </div>
+  
+  </div>
+
+  <h3 class="govuk-heading-m">
+    <a href="#">Prototype section</a>
+</h3>
+
+{% set detailsContentHTML %}
+    <p>
+        Praesent molestie justo arcu, ac imperdiet ipsum lobortis vel. Quisque id tempus risus, sed congue arcu. Suspendisse potenti. Nullam euismod dolor vel nulla auctor, vel imperdiet ligula volutpat. Ut facilisis, magna at ultricies pellentesque, metus dui vehicula ante, et ullamcorper ante quam ac felis.
+    </p>
+    <p>
+        Vestibulum quis elit porta, tempor augue eu, rutrum justo. Integer sed ligula orci. Curabitur in pulvinar mauris, nec consequat lacus. Ut fermentum egestas nulla, vitae egestas augue lacinia ut. Pellentesque pellentesque convallis facilisis.
+    </p>
+{% endset %}
+                
+{{ govukDetails({
+    summaryText: 'Prototype section details',
+    html: detailsContentHTML
+}) }}
+                
+<hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+<!--   -->
+
+      {% endblock %}
+
+
