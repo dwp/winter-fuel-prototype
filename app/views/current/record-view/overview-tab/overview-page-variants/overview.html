@@ -18,6 +18,8 @@ Winter Fuel Payments
 
         {% if data['opted-out']== 'yes' %}
           {% include 'current/includes/_bar-optout.html' %}
+        {% elif data['dap']== 'yes' %}
+          {% include 'current/includes/_bar-dead.html' %}
         {% elif data['dap-cancelled']== 'yes' %}
           {% include 'current/includes/_bar-dead.html' %}
         {% elif data['dap-form-sent']== 'yes' %}
@@ -41,6 +43,15 @@ Winter Fuel Payments
               <strong class="govuk-warning-text__text">
                 <span class="govuk-warning-text__assistive">Warning</span>
                 This person has opted out of receiving Winter Fuel payment. They can <a href="/current/record-view/overview-tab/update-details/confirm-opt-in" class="govuk-link">opt back in</a> at any time.
+              </strong>
+            </div>
+        {% elif data['dap']== 'yes' %}
+            <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                This person qualified for a Winter Fuel payment of £150<br> <a href="/current/tasks/pay-death-arrears/death-arrears-task-1-dap-name" class="govuk-link">Enter death arrears payee information
               </strong>
             </div>
         {% elif data['dap-cancelled']== 'yes' %}
@@ -112,25 +123,35 @@ Winter Fuel Payments
                   <th scope="row" class="govuk-table__header">Date of birth</th>
                   <td class="govuk-table__cell">9 August 1953</td>
                 </tr>
-                {% if data['mark-as-dead']=='yes'%}
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Date of death</th>
-                  <td class="govuk-table__cell">{{data['death-day']}}
-                    {% if (data['death-month'] == '1') or (data['death-month'] == '01') %} January 
-                    {% elif (data['death-month'] == '2') or (data['death-month'] == '02') %} February 
-                    {% elif (data['death-month'] == '3') or (data['death-month'] == '03') %} March 
-                    {% elif (data['death-month'] == '4') or (data['death-month'] == '04') %} April 
-                    {% elif (data['death-month'] == '5') or (data['death-month'] == '05') %} May 
-                    {% elif (data['death-month'] == '6') or (data['death-month'] == '06') %} June 
-                    {% elif (data['death-month'] == '7') or (data['death-month'] == '07') %} July 
-                    {% elif (data['death-month'] == '8') or (data['death-month'] == '08') %} August 
-                    {% elif (data['death-month'] == '9') or (data['death-month'] == '09') %} September 
-                    {% elif data['death-month'] == '10' %} October 
-                    {% elif data['death-month'] == '11' %} November 
-                    {% elif data['death-month'] == '12' %} December 
-                    {% endif %}
-                {{data['death-year']}}</td>
-                </tr>
+                {% if data['dap']== 'yes'
+                    or data['dap-cancelled']== 'yes'
+                    or data['dap-form-sent']== 'yes'
+                %}
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Date of death</th>
+                    {% if data['death-day']%}
+                      <td class="govuk-table__cell">{{data['death-day']}}
+                        {% if (data['death-month'] == '1') or (data['death-month'] == '01') %} January 
+                        {% elif (data['death-month'] == '2') or (data['death-month'] == '02') %} February 
+                        {% elif (data['death-month'] == '3') or (data['death-month'] == '03') %} March 
+                        {% elif (data['death-month'] == '4') or (data['death-month'] == '04') %} April 
+                        {% elif (data['death-month'] == '5') or (data['death-month'] == '05') %} May 
+                        {% elif (data['death-month'] == '6') or (data['death-month'] == '06') %} June 
+                        {% elif (data['death-month'] == '7') or (data['death-month'] == '07') %} July 
+                        {% elif (data['death-month'] == '8') or (data['death-month'] == '08') %} August 
+                        {% elif (data['death-month'] == '9') or (data['death-month'] == '09') %} September 
+                        {% elif data['death-month'] == '10' %} October 
+                        {% elif data['death-month'] == '11' %} November 
+                        {% elif data['death-month'] == '12' %} December 
+                        {% endif %}
+                    {{data['death-year']}}
+                      </td>
+                      {% else %}
+                      <td class="govuk-table__cell">
+                          23 June 2021
+                      </td>
+                      {% endif %}
+                  </tr>
                 {% endif %}
                 
                  <tr class="govuk-table__row">

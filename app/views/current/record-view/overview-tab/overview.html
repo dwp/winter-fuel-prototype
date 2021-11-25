@@ -129,24 +129,31 @@ Winter Fuel Payments
                   <td class="govuk-table__cell">9 August 1953</td>
                 </tr>
                 {% if data['mark-as-dead']=='yes'%}
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Date of death</th>
-                  <td class="govuk-table__cell">{{data['death-day']}}
-                    {% if (data['death-month'] == '1') or (data['death-month'] == '01') %} January 
-                    {% elif (data['death-month'] == '2') or (data['death-month'] == '02') %} February 
-                    {% elif (data['death-month'] == '3') or (data['death-month'] == '03') %} March 
-                    {% elif (data['death-month'] == '4') or (data['death-month'] == '04') %} April 
-                    {% elif (data['death-month'] == '5') or (data['death-month'] == '05') %} May 
-                    {% elif (data['death-month'] == '6') or (data['death-month'] == '06') %} June 
-                    {% elif (data['death-month'] == '7') or (data['death-month'] == '07') %} July 
-                    {% elif (data['death-month'] == '8') or (data['death-month'] == '08') %} August 
-                    {% elif (data['death-month'] == '9') or (data['death-month'] == '09') %} September 
-                    {% elif data['death-month'] == '10' %} October 
-                    {% elif data['death-month'] == '11' %} November 
-                    {% elif data['death-month'] == '12' %} December 
-                    {% endif %}
-                {{data['death-year']}}</td>
-                </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Date of death</th>
+                    {% if data['death-day']%}
+                      <td class="govuk-table__cell">{{data['death-day']}}
+                        {% if (data['death-month'] == '1') or (data['death-month'] == '01') %} January 
+                        {% elif (data['death-month'] == '2') or (data['death-month'] == '02') %} February 
+                        {% elif (data['death-month'] == '3') or (data['death-month'] == '03') %} March 
+                        {% elif (data['death-month'] == '4') or (data['death-month'] == '04') %} April 
+                        {% elif (data['death-month'] == '5') or (data['death-month'] == '05') %} May 
+                        {% elif (data['death-month'] == '6') or (data['death-month'] == '06') %} June 
+                        {% elif (data['death-month'] == '7') or (data['death-month'] == '07') %} July 
+                        {% elif (data['death-month'] == '8') or (data['death-month'] == '08') %} August 
+                        {% elif (data['death-month'] == '9') or (data['death-month'] == '09') %} September 
+                        {% elif data['death-month'] == '10' %} October 
+                        {% elif data['death-month'] == '11' %} November 
+                        {% elif data['death-month'] == '12' %} December 
+                        {% endif %}
+                    {{data['death-year']}}
+                      </td>
+                      {% else %}
+                      <td class="govuk-table__cell">
+                          23 June 2021
+                      </td>
+                      {% endif %}
+                  </tr>
                 {% endif %}
                 
                  <tr class="govuk-table__row">
