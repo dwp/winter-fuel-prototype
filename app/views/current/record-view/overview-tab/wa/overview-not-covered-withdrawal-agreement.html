@@ -1,3 +1,4 @@
+
 {% extends "layout.html" %}
 
 {% block header %}
@@ -16,15 +17,9 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        {% if data['opted-out']== 'yes' %}
-          {% include 'current/includes/_bar-optout.html' %}
-        {% elif data['dap-cancelled']== 'yes' %}
-          {% include 'current/includes/_bar-dead.html' %}
-        {% elif data['dap-form-sent']== 'yes' %}
-          {% include 'current/includes/_bar-dead.html' %}
-        {% else %}
-          {% include 'current/includes/_bar.html' %}
-        {% endif %}
+       
+        {% include 'current/includes/_bar-withdrawal-agreement-not-covered.html' %}
+       
 
         <form method="post">  
 
@@ -34,65 +29,17 @@ Winter Fuel Payments
             <br>
             <br>
 
-        {% if data['opted-out']== 'yes' %}
-            <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
-            <div class="govuk-warning-text">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong class="govuk-warning-text__text">
-                <span class="govuk-warning-text__assistive">Warning</span>
-                This person has opted out of receiving Winter Fuel payment. They can <a href="/current/record-view/overview-tab/update-details/confirm-opt-in" class="govuk-link">opt back in</a> at any time.
-              </strong>
-            </div>
-        {% elif data['dap-cancelled']== 'yes' %}
-            <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
-            <div class="govuk-warning-text">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong class="govuk-warning-text__text">
-                <span class="govuk-warning-text__assistive">Warning</span>
-                This person's death arrears payment for winter 2020 to 2021 has been cancelled. You can still <a href="/current/tasks/pay-death-arrears/death-arrears-task-1" class="govuk-link">make this payment</a> until 13 December 2021.
-              </strong>
-            </div>
-        {% elif data['dap-form-sent']== 'yes' %}
-            <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
-            <div class="govuk-warning-text">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong class="govuk-warning-text__text">
-                <span class="govuk-warning-text__assistive">Warning</span>
-                WFPF001 and WFPL004 have been sent to D. Ward
-              </strong>
-            </div>
-        {% elif data['alt-format-task']== 'yes' %}
-            <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
-            <div class="govuk-warning-text">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong class="govuk-warning-text__text">
-                <span class="govuk-warning-text__assistive">Warning</span>
-                This person has an outstanding alternative format task. {% if data['wf-agent']== 'yes' %}<a href="/tasks/send-alternative-format/alternative-format" class="govuk-link">Review task</a>{% endif %}
-              </strong>
-            </div>
-        {% else %}
-            <table class="govuk-table">
-            <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header"></th>
-                <th scope="col" class="govuk-table__header"></th>
-              </tr>
-            </thead>
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header govuk-!-width-one-third">Payment date</th>
-                  <td class="govuk-table__cell">Monday, 4 November 2021</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Amount</th>
-                  <td class="govuk-table__cell">£100</td>
-                </tr>
-              </tbody>
-            </table>
         
-{% endif %}
-<br>
+            <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                  This person does not qualify because they are not covered by the Withdrawal Agreement.
+              </strong>
+            </div>
+        
+            <br>
 
             <table class="govuk-table">
               <h2 class="govuk-heading-m">Current details</h2>
@@ -112,26 +59,33 @@ Winter Fuel Payments
                   <th scope="row" class="govuk-table__header">Date of birth</th>
                   <td class="govuk-table__cell">9 August 1953</td>
                 </tr>
-                {% if data['mark-as-dead']=='yes'%}
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Date of death</th>
-                  <td class="govuk-table__cell">{{data['death-day']}}
-                    {% if (data['death-month'] == '1') or (data['death-month'] == '01') %} January 
-                    {% elif (data['death-month'] == '2') or (data['death-month'] == '02') %} February 
-                    {% elif (data['death-month'] == '3') or (data['death-month'] == '03') %} March 
-                    {% elif (data['death-month'] == '4') or (data['death-month'] == '04') %} April 
-                    {% elif (data['death-month'] == '5') or (data['death-month'] == '05') %} May 
-                    {% elif (data['death-month'] == '6') or (data['death-month'] == '06') %} June 
-                    {% elif (data['death-month'] == '7') or (data['death-month'] == '07') %} July 
-                    {% elif (data['death-month'] == '8') or (data['death-month'] == '08') %} August 
-                    {% elif (data['death-month'] == '9') or (data['death-month'] == '09') %} September 
-                    {% elif data['death-month'] == '10' %} October 
-                    {% elif data['death-month'] == '11' %} November 
-                    {% elif data['death-month'] == '12' %} December 
-                    {% endif %}
-                {{data['death-year']}}</td>
-                </tr>
-                {% endif %}
+                
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Date of death</th>
+                    {% if data['death-day']%}
+                      <td class="govuk-table__cell">{{data['death-day']}}
+                        {% if (data['death-month'] == '1') or (data['death-month'] == '01') %} January 
+                        {% elif (data['death-month'] == '2') or (data['death-month'] == '02') %} February 
+                        {% elif (data['death-month'] == '3') or (data['death-month'] == '03') %} March 
+                        {% elif (data['death-month'] == '4') or (data['death-month'] == '04') %} April 
+                        {% elif (data['death-month'] == '5') or (data['death-month'] == '05') %} May 
+                        {% elif (data['death-month'] == '6') or (data['death-month'] == '06') %} June 
+                        {% elif (data['death-month'] == '7') or (data['death-month'] == '07') %} July 
+                        {% elif (data['death-month'] == '8') or (data['death-month'] == '08') %} August 
+                        {% elif (data['death-month'] == '9') or (data['death-month'] == '09') %} September 
+                        {% elif data['death-month'] == '10' %} October 
+                        {% elif data['death-month'] == '11' %} November 
+                        {% elif data['death-month'] == '12' %} December 
+                        {% endif %}
+                    {{data['death-year']}}
+                      </td>
+                      {% else %}
+                      <td class="govuk-table__cell">
+                          23 June 2021
+                      </td>
+                      {% endif %}
+                  </tr>
+               
                 
                  <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Address</th>
@@ -217,3 +171,4 @@ Winter Fuel Payments
   </div>
 
   {% endblock %}
+

@@ -12,31 +12,25 @@ Winter Fuel Payments
 {% endblock %}
 {% block content %}
 
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
 <form method="post">
 
       
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">
-                  Nicholas Higgins<br>
-                  <span class="govuk-body-l">
-                    XX 12 34 56 A
-                  </span>
-              </div>
-            </div>
-   
 
-            {{ govukBackLink({
-                text: "Back",
-                href: "javascript:history.go(-1)"
-              }) }}
+    {% include 'current/includes/_bar-withdrawal-agreement-not-reviewed.html' %}
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
 
             <br>
 
-              <h1 class="govuk-heading-l">Is Nicholas Higgins covered by the Withdrawal Agreement?</h1>
+              <h1 class="govuk-heading-l">Is Theodora Best covered by the Withdrawal Agreement?</h1>
 
               
 
@@ -78,8 +72,8 @@ Winter Fuel Payments
 
   <script>
     nextPageRoutes = {
-        'yes': 'overview-updated',
-        'no': 'overview-updated-2',
+        'yes': '/current/record-view/overview-tab/overview?details-updated=yes',
+        'no': 'overview-not-covered-withdrawal-agreement',
        }
 </script>
 
