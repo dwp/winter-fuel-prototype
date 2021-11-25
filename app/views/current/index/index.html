@@ -33,64 +33,83 @@ Winter Fuel Payments test
 
 
 
- <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-  <div class="govuk-accordion__section ">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-          International new claims
-        </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-      <p class='govuk-body'>
-      title saying current version
-      <br>green button with current link, saying start journey
-      <br>title - what has iterated from the previous version
-      <br>bullet points - the changes are stated
-      <br>grey line
-      <br>title - the name of the previous version
-      <br>grey button  with link to the previous version, saying start journey
-      <br>title - what was iterated from the previous version
-      <br>bullet points - the changes are stated
-      <br>grey line
-      </p>
-    </div>
-  </div>
-  <div class="govuk-accordion__section ">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
-          UK new claims
-        </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
-      <p class='govuk-body'>content</p>
-    </div>
-  </div>
-  
-  </div>
-
   <h3 class="govuk-heading-m">
-    <a href="#">Prototype section</a>
+    <a href="#">International new claims (most recent version)</a>
 </h3>
 
-{% set detailsContentHTML %}
+{% set detailsContentHTML1 %}
+    
+    
     <p>
-        Praesent molestie justo arcu, ac imperdiet ipsum lobortis vel. Quisque id tempus risus, sed congue arcu. Suspendisse potenti. Nullam euismod dolor vel nulla auctor, vel imperdiet ligula volutpat. Ut facilisis, magna at ultricies pellentesque, metus dui vehicula ante, et ullamcorper ante quam ac felis.
+       
+        <h3 class="govuk-heading-l">Current version</h3>
+        
+            <a href="https://winterfuel.herokuapp.com/current/new-claims/international/application-type"><button class="govuk-button" data-module="govuk-button">
+              Start prototype
+            </button></a>
+
+            <a href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367455929908&cot=14"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Start journey map
+            </button></a>
+
+                <h3 class="govuk-heading-s">Tickets worked on in this version</h3>
+
+                    <a class="govuk-link" href="#">
+                      SPAY-1112<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to add alternative format
+             
+
+                <br><a class="govuk-link" href="#">
+                      SPAY-1111<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to update address
+             
     </p>
+
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+    
+    
+    
     <p>
-        Vestibulum quis elit porta, tempor augue eu, rutrum justo. Integer sed ligula orci. Curabitur in pulvinar mauris, nec consequat lacus. Ut fermentum egestas nulla, vitae egestas augue lacinia ut. Pellentesque pellentesque convallis facilisis.
+        
+        <h3 class="govuk-heading-l">Previous version - V1</h3>
+        
+            <a href="https://winterfuel.herokuapp.com/current/new-claims/international/application-type"><button class="govuk-button" data-module="govuk-button">
+              Start prototype
+            </button></a>
+
+                <h3 class="govuk-heading-s">Tickets worked on in this version</h3>
+
+                    <a class="govuk-link" href="#">
+                      SPAY-1110<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to change language to Welsh
+             
+
+                <br><a class="govuk-link" href="#">
+                      SPAY-1109<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to tag someone as dead
+         
+        
     </p>
+    
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+
+
+
 {% endset %}
                 
 {{ govukDetails({
-    summaryText: 'Prototype section details',
-    html: detailsContentHTML
+    summaryText: 'International new claims details',
+    html: detailsContentHTML1
 }) }}
                 
 <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+
 
 <!--   -->
 
