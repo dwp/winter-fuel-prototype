@@ -11,3 +11,5 @@ public
 node_modules/*
 .tmuxp.*
 package-lock.json
+app/views/legacy/development/accessible-autocomplete.js
+app/views/legacy/development/autocomplete-configuration.js
