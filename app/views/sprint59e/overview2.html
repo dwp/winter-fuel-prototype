@@ -24,7 +24,7 @@ Winter Fuel Payments
           <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
 
           <div class="moj-banner__message">
-          <span class="moj-banner__assistive">Success</span>Address approved and stored
+          <span class="moj-banner__assistive">Success</span>Citizen was denied payment. No address is stored.
           </div>
 
           </div>
@@ -184,10 +184,7 @@ Winter Fuel Payments
                     {% elif data.address %}
                     {{data.address.split(', ').join('<br />') | safe}}
                     {% else %}
-                    24 Sycamore Avenue, <br>
-                    Newcastle, <br>
-                    Tyne and Wear, <br>
-                    NE1 4AT
+
                     {% endif %}
                     <br><br>
                 since {% if data['move-date-changed'] == 'true' %}
@@ -207,7 +204,7 @@ Winter Fuel Payments
                 {% endif %}
                 {{data['moveyear']}}
                       {% else %}
-                      2 December 2021
+
                     {% endif %}
                   </td>
                 </tr>
@@ -215,11 +212,11 @@ Winter Fuel Payments
                   <th scope="row" class="govuk-table__header">Occupancy</th>
                   <td class="govuk-table__cell">
                     {% if data['live-with-age-over-80']=='yes' %}
-                      Lives with someone 80 or older who qualifies
+
                     {% elif data['living-with'] %}
                     {{data['living-with']}}
                       {% else %}
-                      Lives with someone under 80 who qualifies
+
                     {% endif %}
                     <br><br>
                 since {% if data['living-with-date-changed'] == 'true' %}
@@ -239,7 +236,7 @@ Winter Fuel Payments
                 {% endif %}
                 {{data['living-with-year']}}
                       {% else %}
-                      10 March 2016
+
                     {% endif %}
                   </td>
                 </tr>
