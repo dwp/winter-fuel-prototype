@@ -10,13 +10,21 @@ Winter Fuel Payments
 {% block content %}
 
 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+{{ govukBackLink ({
+  text: 'Back',
+  href: 'javascript:history.back()'
+}) }}
+            <br>
+            <br>
+
 <h1 class="govuk-heading-xl" style="margin-bottom: 3%;">Winter Fuel Payments prototype</h1>
 <br>
 
-
-<h2 class="govuk-heading-l">Record view variations</h2>
+<strong class="govuk-tag" style="background-color:#003078">Record View variations</strong><br><br><br>
             
 
                 <ul class="govuk-list govuk-list--bullet">
