@@ -5,7 +5,7 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-{% include './_find-someone.html' %}
+{% include 'current/includes/_find-someone.html' %}
 {% endblock %}
 
 {% block content %}
@@ -17,9 +17,9 @@ GOV.UK Prototype Kit
 
         <form method="post">
 
-          {% include './_bar-optout.html' %}
+          {% include 'current/includes/_bar-optout.html' %}
 
-          {% include './_tab-payment-opted-out.html' %}
+          {% include 'current/includes/_tab-payment-opted-out.html' %}
 
           <br>
           <br>
