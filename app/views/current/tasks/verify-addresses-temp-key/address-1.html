@@ -116,7 +116,15 @@ GOV.UK Prototype Kit
                   <p> <a href="cannot-verify-1" class="govuk-link">This address cannot be verified</a> </p>
                   <br>
 
-
+                  <script>
+                      nextPageRoutes = {
+                          '104D Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+                          '104A Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+                          '104B Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+                          '104C Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+                          'Address not found': 'verify-address-manual-1.html',
+                       }
+                    </script>
 
 
 
@@ -125,9 +133,6 @@ GOV.UK Prototype Kit
                       Continue
                     </button>
 
-                    <button href="verify-address-rejected" button class="govuk-button govuk-button--warning" data-module="govuk-button">
-                      Reject address as fraudulent
-                    </button>
                   </div>
 
                 </div>
