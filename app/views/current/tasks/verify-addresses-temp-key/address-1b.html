@@ -6,7 +6,7 @@ GOV.UK Prototype Kit
 
 
 {% block beforeContent %}
-{% include 'current/includes/_blue_bar.html' %}
+
 {% endblock %}
 
 {% block content %}
@@ -24,12 +24,19 @@ GOV.UK Prototype Kit
       <div class="govuk-grid-column-two-thirds">
                       <form method="post">
 
-                              <h2 class="govuk-heading-m">Unverified address</h2>
-                              <p>Flat D<br>
-                              104 Boundary Lane<br>
-                              Hulme<br>
-                              Manchester<br>
-                              M15 6FD</p>
+                        <h2 class="govuk-heading-m">Unverified address</h2>
+                        <p class="govuk-body govuk-!-font-size-24">
+                          Flat D<br>
+                          104 Boundary Lane<br>
+                          Hulme<br>
+                          Manchester<br>
+                          M15 6FD</p>
+
+                          <h2 class="govuk-heading-m">Contact numbers</h2>
+                          <p><strong>Home phone:</strong> 01324 800 900<br>
+                            <strong>Mobile phone:</strong> 07771 900 900<br>
+                            <strong>Work phone:</strong> 01324 400 500</p>
+
 
                               <h2 class="govuk-heading-m">Select a verified address</h2>
                                 <div class="govuk-form-group">
@@ -38,7 +45,8 @@ GOV.UK Prototype Kit
                                       <div class="govuk-radios__item">
                                         <input class="govuk-radios__input" id="address-fix-1" name="address-fix-1" type="radio" value="104D Boundary Lane, Manchester, M15 6FD">
                                         <label class="govuk-label govuk-radios__label" for="address">
-                                          104D Boundary Lane<br>
+                                          The West Penthouse D <br>
+                                          104 Boundary Lane<br>
                                           Manchester<br>
                                           M15 6FD<br>
                                           <strong class="govuk-tag govuk-tag--blue">
@@ -66,12 +74,7 @@ GOV.UK Prototype Kit
                         </form>
       </div>
 
-      <div class="govuk-grid-column-one-third">
-        <h2 class="govuk-heading-m">Contact numbers</h2>
-        <p><strong>Home phone:</strong> 01324 800 900<br>
-        <strong>Mobile phone:</strong> 07771 900 900<br>
-        <strong>Work phone:</strong> 01324 400 500</p>
-      </div>
+
 
     </div>
 
