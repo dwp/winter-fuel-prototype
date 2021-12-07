@@ -48,12 +48,12 @@
  
 
 
-router.post('/sprint15/international/pagename', (req, res) => { // router name
+router.post('/legacy/sprint15/international/pagename', (req, res) => { // router name
   console.log(req.body) // name of data / id name
 
   if (req.body.nameorid === 'value') { // name of data / + answer
-    res.redirect('/sprint15/international/pageredirect')
+    res.redirect('/legacy/sprint15/international/pageredirect')
   } else {
-    res.redirect('/sprint15/international/pageredirect')
+    res.redirect('/legacy/sprint15/international/pageredirect')
   }
 })
