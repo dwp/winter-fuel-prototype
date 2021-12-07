@@ -9,7 +9,7 @@ router.use((req, res, next) => {
 })
 
 // Query
-router.post('/sprint52/not-care-home', function(req, res) {
+router.post('/legacy/sprint52/not-care-home', function(req, res) {
   if (req.body['care-home'] === 'yes') {
     res.redirect('overview');
   } else {

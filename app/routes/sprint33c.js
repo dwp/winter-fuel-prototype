@@ -9,17 +9,17 @@ router.use((req, res, next) => {
   })
 
   // Find someone to find result
-  router.post('/sprint33c/address', (req, res) => {
-    res.redirect('/sprint33c/address-1')
+  router.post('/legacy/sprint33c/address', (req, res) => {
+    res.redirect('/legacy/sprint33c/address-1')
   })
   ;
 
 // Verifying the address
-router.post('/sprint33c/address-1', function(req, res) {
+router.post('/legacy/sprint33c/address-1', function(req, res) {
 if ( req.body['address-fix-1'] === 'search address' ) {
-  res.redirect('/sprint33c/verify-address-manual-1');
+  res.redirect('/legacy/sprint33c/verify-address-manual-1');
 } else {
-  res.redirect('/sprint33c/overview');
+  res.redirect('/legacy/sprint33c/overview');
 }
 });
 ;

@@ -10,18 +10,18 @@ router.use((req, res, next) => {
 
   // Query
 
-  router.post('/sprint27b/query', function(req, res) {
+  router.post('/legacy/sprint27b/query', function(req, res) {
   if ( req.body['query'] === 'eligibility' ) {
     res.redirect('date-of-birth');
   } else {
-    res.redirect('/sprint27b/find');
+    res.redirect('/legacy/sprint27b/find');
   }
   });
 
 
 
-  router.post('/sprint27b/frequency', (req, res) => {
-    res.redirect('/sprint27b/payment')
+  router.post('/legacy/sprint27b/frequency', (req, res) => {
+    res.redirect('/legacy/sprint27b/payment')
   })
   ;
 
@@ -32,8 +32,8 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint27b/bankdetails', (req, res) => {
-    res.redirect('/sprint27b/payment')
+  router.post('/legacy/sprint27b/bankdetails', (req, res) => {
+    res.redirect('/legacy/sprint27b/payment')
   })
   ;
 
@@ -44,8 +44,8 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint27b/workphone', (req, res) => {
-    res.redirect('/sprint27b/overview')
+  router.post('/legacy/sprint27b/workphone', (req, res) => {
+    res.redirect('/legacy/sprint27b/overview')
   })
   ;
 
@@ -56,8 +56,8 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint27b/mobilephone', (req, res) => {
-    res.redirect('/sprint27b/overview')
+  router.post('/legacy/sprint27b/mobilephone', (req, res) => {
+    res.redirect('/legacy/sprint27b/overview')
   })
   ;
 
@@ -68,8 +68,8 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint27b/email', (req, res) => {
-    res.redirect('/sprint27b/overview')
+  router.post('/legacy/sprint27b/email', (req, res) => {
+    res.redirect('/legacy/sprint27b/overview')
   })
   ;
 
@@ -80,8 +80,8 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint27b/homephone', (req, res) => {
-    res.redirect('/sprint27b/contact')
+  router.post('/legacy/sprint27b/homephone', (req, res) => {
+    res.redirect('/legacy/sprint27b/contact')
   })
   ;
 
@@ -92,19 +92,19 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint27b/find', (req, res) => {
-    res.redirect('/sprint27b/find-1')
+  router.post('/legacy/sprint27b/find', (req, res) => {
+    res.redirect('/legacy/sprint27b/find-1')
   })
   ;
 
-  router.post('/sprint27b/find-1', (req, res) => {
-    res.redirect('/sprint27b/security')
+  router.post('/legacy/sprint27b/find-1', (req, res) => {
+    res.redirect('/legacy/sprint27b/security')
   })
   ;
 
 
-  router.post('/sprint27b/security', (req, res) => {
-    res.redirect('/sprint27b/overview-security')
+  router.post('/legacy/sprint27b/security', (req, res) => {
+    res.redirect('/legacy/sprint27b/overview-security')
   })
   ;
 
@@ -117,19 +117,19 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint27b/address', (req, res) => {
-    res.redirect('/sprint27b/address-1')
+  router.post('/legacy/sprint27b/address', (req, res) => {
+    res.redirect('/legacy/sprint27b/address-1')
   })
   ;
 
-  router.post('/sprint27b/address-1', (req, res) => {
-    res.redirect('/sprint27b/living-with')
+  router.post('/legacy/sprint27b/address-1', (req, res) => {
+    res.redirect('/legacy/sprint27b/living-with')
   })
   ;
 
 
   // Living with
-  router.post('/sprint27b/living-with', function(req, res) {
+  router.post('/legacy/sprint27b/living-with', function(req, res) {
     if ( req.body['living-with'] === 'Yes' ) {
       res.redirect('living-with-age');
     } else {
@@ -138,13 +138,13 @@ router.use((req, res, next) => {
   });
 
   // Living with age
-  router.post('/sprint27b/living-with-age', (req, res) => {
-    res.redirect('/sprint27b/contact-left-hospital')
+  router.post('/legacy/sprint27b/living-with-age', (req, res) => {
+    res.redirect('/legacy/sprint27b/contact-left-hospital')
   })
   ;
 
   // Change of address and home phone number
-  router.post('/sprint27b/homephone-address', function(req, res) {
+  router.post('/legacy/sprint27b/homephone-address', function(req, res) {
     if ( req.body['homephone-address'] === 'Yes' ) {
       res.redirect('homephone');
     } else {
@@ -153,7 +153,7 @@ router.use((req, res, next) => {
   });
 
   // Home phone number removal
-  router.post('/sprint27b/homephone-remove', function(req, res) {
+  router.post('/legacy/sprint27b/homephone-remove', function(req, res) {
     if ( req.body['homephone-remove'] === 'Yes' ) {
       res.redirect('overview');
     } else {
@@ -163,7 +163,7 @@ router.use((req, res, next) => {
 
 
   // Mobile phone number removal
-  router.post('/sprint27b/mobilephone-remove', function(req, res) {
+  router.post('/legacy/sprint27b/mobilephone-remove', function(req, res) {
     if ( req.body['mobilephone-remove'] === 'yes' ) {
       res.redirect('overview');
     } else {
@@ -172,7 +172,7 @@ router.use((req, res, next) => {
   });
 
   // Work phone number removal & change
-  router.post('/sprint27b/workphone-remove', function(req, res) {
+  router.post('/legacy/sprint27b/workphone-remove', function(req, res) {
     if ( req.body['workphone-remove'] === 'Yes' ) {
       res.redirect('overview');
     } else {
@@ -180,13 +180,13 @@ router.use((req, res, next) => {
     }
   });
 
-  router.post('/sprint27b/workphone', (req, res) => {
-    res.redirect('/sprint27b/contact')
+  router.post('/legacy/sprint27b/workphone', (req, res) => {
+    res.redirect('/legacy/sprint27b/contact')
   })
   ;
 
   // Email removal
-  router.post('/sprint27b/email-remove', function(req, res) {
+  router.post('/legacy/sprint27b/email-remove', function(req, res) {
     if ( req.body['email-remove'] === 'yes' ) {
       res.redirect('overview');
     } else {
@@ -195,68 +195,68 @@ router.use((req, res, next) => {
   });
 
   // Marital status change
-  router.post('/sprint27b/marital-status', (req, res) => {
-    res.redirect('/sprint27b/marriage-details')
+  router.post('/legacy/sprint27b/marital-status', (req, res) => {
+    res.redirect('/legacy/sprint27b/marriage-details')
   })
   ;
 
-  router.post('/sprint27b/marriage-details', (req, res) => {
-    res.redirect('/sprint27b/marriage-certificate')
+  router.post('/legacy/sprint27b/marriage-details', (req, res) => {
+    res.redirect('/legacy/sprint27b/marriage-certificate')
   })
   ;
 
   // Contact preferences
-  router.post('/sprint27b/contact-preferences', (req, res) => {
-    res.redirect('/sprint27b/contact')
+  router.post('/legacy/sprint27b/contact-preferences', (req, res) => {
+    res.redirect('/legacy/sprint27b/contact')
   })
   ;
 
   // Removing occupants, underpayment
-  router.post('/sprint27b/occupants', (req, res) => {
-    res.redirect('/sprint27b/reason-removed1')
+  router.post('/legacy/sprint27b/occupants', (req, res) => {
+    res.redirect('/legacy/sprint27b/reason-removed1')
   })
   ;
 
-  router.post('/sprint27b/reason-removed1', (req, res) => {
-    res.redirect('/sprint27b/move-date')
+  router.post('/legacy/sprint27b/reason-removed1', (req, res) => {
+    res.redirect('/legacy/sprint27b/move-date')
   })
   ;
 
-  router.post('/sprint27b/move-date', (req, res) => {
-    res.redirect('/sprint27b/reason-removed2')
+  router.post('/legacy/sprint27b/move-date', (req, res) => {
+    res.redirect('/legacy/sprint27b/reason-removed2')
   })
   ;
 
-  router.post('/sprint27b/reason-removed2', (req, res) => {
-    res.redirect('/sprint27b/check-underpayment')
+  router.post('/legacy/sprint27b/reason-removed2', (req, res) => {
+    res.redirect('/legacy/sprint27b/check-underpayment')
   })
   ;
 
-  router.post('/sprint27b/check-underpayment', (req, res) => {
-    res.redirect('/sprint27b/evidence-request')
+  router.post('/legacy/sprint27b/check-underpayment', (req, res) => {
+    res.redirect('/legacy/sprint27b/evidence-request')
   })
   ;
 
-  router.post('/sprint27b/evidence-request', (req, res) => {
-    res.redirect('/sprint27b/overview-awaiting-verification')
+  router.post('/legacy/sprint27b/evidence-request', (req, res) => {
+    res.redirect('/legacy/sprint27b/overview-awaiting-verification')
   })
   ;
 
-  router.post('/sprint27b/evidence-verification', (req, res) => {
-    res.redirect('/sprint27b/overview-evidence-received')
+  router.post('/legacy/sprint27b/evidence-verification', (req, res) => {
+    res.redirect('/legacy/sprint27b/overview-evidence-received')
   })
   ;
 
 
   // Hospital leave date to address
-  router.post('/sprint27b/left-hospital', (req, res) => {
-    res.redirect('/sprint27b/address')
+  router.post('/legacy/sprint27b/left-hospital', (req, res) => {
+    res.redirect('/legacy/sprint27b/address')
   })
   ;
 
 
   // Stopping payments
-  router.post('/sprint27b/prevent-payments', function(req, res) {
+  router.post('/legacy/sprint27b/prevent-payments', function(req, res) {
     if ( req.body['stopped-reason'] === 'dead' ) {
       res.redirect('death-date');
     } else {

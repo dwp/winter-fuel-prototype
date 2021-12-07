@@ -20,31 +20,31 @@ router.use((req, res, next) => {
 
 // Start to DOB
 
-router.post('/sprint35e/start', (req, res) => {
-  res.redirect('/sprint35e/date-of-birth')
+router.post('/legacy/sprint35e/start', (req, res) => {
+  res.redirect('/legacy/sprint35e/date-of-birth')
 })
 ;
 
 
   // Date of birth
 
-  router.post('/sprint35e/date-of-birth', (req, res) => {
-    res.redirect('/sprint35e/residency')
+  router.post('/legacy/sprint35e/date-of-birth', (req, res) => {
+    res.redirect('/legacy/sprint35e/residency')
   })
   ;
 
 
   // Living
 
-  router.post('/sprint35e/residency', (req, res) => {
-    res.redirect('/sprint35e/residency-type')
+  router.post('/legacy/sprint35e/residency', (req, res) => {
+    res.redirect('/legacy/sprint35e/residency-type')
   })
   ;
 
 
   // Residency type SP
 
-  router.post('/sprint35e/residency-type', function(req, res) {
+  router.post('/legacy/sprint35e/residency-type', function(req, res) {
     if ( req.body['where-were-you-living'] === 'hospital' ) {
       res.redirect('hospital');
     } else if ( req.body['where-were-you-living'] === 'carehome' ) {
@@ -61,7 +61,7 @@ router.post('/sprint35e/start', (req, res) => {
 
   // Pension Credit
 
-  router.post('/sprint35e/pension-credit', function(req, res) {
+  router.post('/legacy/sprint35e/pension-credit', function(req, res) {
     if ( req.body['pension-credit'] === 'yes' ) {
       res.redirect('pension-credit-payment');
     } else {
@@ -72,15 +72,15 @@ router.post('/sprint35e/start', (req, res) => {
 
   // State Pension
 
-  router.post('/sprint35e/state-pension', (req, res) => {
-    res.redirect('/sprint35e/who')
+  router.post('/legacy/sprint35e/state-pension', (req, res) => {
+    res.redirect('/legacy/sprint35e/who')
   })
   ;
 
 
   // Living with anybody
 
-  router.post('/sprint35e/who', function(req, res) {
+  router.post('/legacy/sprint35e/who', function(req, res) {
     if ( req.body['who-do-you-live-with'] === 'yes' ) {
       res.redirect('living-with');
     } else {
@@ -91,7 +91,7 @@ router.post('/sprint35e/start', (req, res) => {
 
   // Living with (age)
 
-    router.post('/sprint35e/living-with', function(req, res) {
+    router.post('/legacy/sprint35e/living-with', function(req, res) {
       if ( req.body['live-with-age'] === 'yes' ) {
         res.redirect('shared-payment');
       } else {
@@ -105,7 +105,7 @@ router.post('/sprint35e/start', (req, res) => {
 
 // Hospital
 
-router.post('/sprint35e/hospital', function(req, res) {
+router.post('/legacy/sprint35e/hospital', function(req, res) {
   if ( req.body['hospital-admission'] === 'yes' ) {
     res.redirect('pension-credit');
   } else {
@@ -117,7 +117,7 @@ router.post('/sprint35e/hospital', function(req, res) {
 
 //-----HOMELESS-----
 
-router.post('/sprint35e/benefits', function(req, res) {
+router.post('/legacy/sprint35e/benefits', function(req, res) {
   if ( req.body['benefits'] === 'yes' ) {
     res.redirect('full-payment');
   } else {
@@ -129,7 +129,7 @@ router.post('/sprint35e/benefits', function(req, res) {
 
 //-----CAREHOME-----
 
-router.post('/sprint35e/care-home', function(req, res) {
+router.post('/legacy/sprint35e/care-home', function(req, res) {
   if ( req.body['care-home-admission'] === 'yes' ) {
     res.redirect('pension-credit');
   } else {
@@ -138,7 +138,7 @@ router.post('/sprint35e/care-home', function(req, res) {
 });
 
 
-router.post('/sprint35e/pension-credit-ch', function(req, res) {
+router.post('/legacy/sprint35e/pension-credit-ch', function(req, res) {
   if ( req.body['pension-credit-ch'] === 'yes' ) {
     res.redirect('care-home-over-pc');
   } else {
@@ -148,14 +148,14 @@ router.post('/sprint35e/pension-credit-ch', function(req, res) {
 
 
 // full payment to find someone
-router.post('/sprint35e/full-payment', (req, res) => {
-  res.redirect('/sprint39c/find')
+router.post('/legacy/sprint35e/full-payment', (req, res) => {
+  res.redirect('/legacy/sprint39c/find')
 })
 ;
 
 // shared payment to find someone
-router.post('/sprint35e/shared-payment', (req, res) => {
-  res.redirect('/sprint39c/find')
+router.post('/legacy/sprint35e/shared-payment', (req, res) => {
+  res.redirect('/legacy/sprint39c/find')
 })
 ;
 

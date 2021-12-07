@@ -10,12 +10,12 @@ router.use((req, res, next) => {
 
 
 // Teleclaim or postal claim to find
-router.post('/sprint43/application-type', (req, res) => {
-  res.redirect('/sprint43/find')
+router.post('/legacy/sprint43/application-type', (req, res) => {
+  res.redirect('/legacy/sprint43/find')
 });
 
 // Find to name
-router.post('/sprint43/find', function(req, res) {
+router.post('/legacy/sprint43/find', function(req, res) {
   if (req.session.data["nino"] === "HU 12 34 57") {
     res.redirect('date-of-birth');
   } else {
@@ -25,7 +25,7 @@ router.post('/sprint43/find', function(req, res) {
 
 
 // Confirm name to DOB/international record/address
-router.post('/sprint43/confirm-name', function(req, res) {
+router.post('/legacy/sprint43/confirm-name', function(req, res) {
   if (req.session.data["nino"] === "AB 12 34 57") {
     res.redirect('international-record');
   } else if (req.session.data['nino'] === "HU 12 34 57") {
@@ -36,7 +36,7 @@ router.post('/sprint43/confirm-name', function(req, res) {
 });
 
 // Date of birth to address/too young
-router.post('/sprint43/date-of-birth', function(req, res) {
+router.post('/legacy/sprint43/date-of-birth', function(req, res) {
   if (req.session.data["dob-year"] === "1965") {
     res.redirect('too-young-post');
   } else if (req.session.data['dob-year'] === "1964") {
@@ -47,18 +47,18 @@ router.post('/sprint43/date-of-birth', function(req, res) {
 });
 
 // Address to move date
-router.post('/sprint43/address', (req, res) => {
-  res.redirect('/sprint43/move-date')
+router.post('/legacy/sprint43/address', (req, res) => {
+  res.redirect('/legacy/sprint43/move-date')
 });
 
 // Address - If living with someone go to living with details. If Move date is after Q week, ask about prev add.
-router.post('/sprint43/move-date', (req, res) => {
-  res.redirect('/sprint43/living-with')
+router.post('/legacy/sprint43/move-date', (req, res) => {
+  res.redirect('/legacy/sprint43/living-with')
 });
 
 
 // Living with details to contact or q week address
-router.post('/sprint43/living-with', function(req, res) {
+router.post('/legacy/sprint43/living-with', function(req, res) {
   if (req.session.data['move-month'] === "9") {
     res.redirect('address-q-week');
   } else {
@@ -68,25 +68,25 @@ router.post('/sprint43/living-with', function(req, res) {
 
 
 // Address Q week to contact details
-router.post('/sprint43/address-q-week', (req, res) => {
-  res.redirect('/sprint43/wf-payment')
+router.post('/legacy/sprint43/address-q-week', (req, res) => {
+  res.redirect('/legacy/sprint43/wf-payment')
 });
 
 
 // Contact details to bank details
-router.post('/sprint43/wf-payment', (req, res) => {
-  res.redirect('/sprint43/contact')
+router.post('/legacy/sprint43/wf-payment', (req, res) => {
+  res.redirect('/legacy/sprint43/contact')
 });
 
 
 // Contact details to bank details
-router.post('/sprint43/contact', (req, res) => {
-  res.redirect('/sprint43/bank-details')
+router.post('/legacy/sprint43/contact', (req, res) => {
+  res.redirect('/legacy/sprint43/bank-details')
 });
 
 // Bank details to UK bank Q or countries lived in details
 
-router.post('/sprint43/bank-details', function(req, res) {
+router.post('/legacy/sprint43/bank-details', function(req, res) {
   if (req.session.data["bank-account-type"] === "uk-bank") {
     res.redirect('lived-worked');
   } else {
@@ -96,79 +96,79 @@ router.post('/sprint43/bank-details', function(req, res) {
 
 
 // UK bank account Q to countries lived in details
-router.post('/sprint43/uk-bank', (req, res) => {
-  res.redirect('/sprint43/lived-worked')
+router.post('/legacy/sprint43/uk-bank', (req, res) => {
+  res.redirect('/legacy/sprint43/lived-worked')
 });
 
 // Lived and worked to UK national
-router.post('/sprint43/lived-worked', (req, res) => {
-  res.redirect('/sprint43/uk-national')
+router.post('/legacy/sprint43/lived-worked', (req, res) => {
+  res.redirect('/legacy/sprint43/uk-national')
 });
 
 // UK national to property in the UK
-router.post('/sprint43/uk-national', (req, res) => {
-  res.redirect('/sprint43/uk-property')
+router.post('/legacy/sprint43/uk-national', (req, res) => {
+  res.redirect('/legacy/sprint43/uk-property')
 });
 
 // UK property to UK business
-router.post('/sprint43/uk-property', (req, res) => {
-  res.redirect('/sprint43/uk-business')
+router.post('/legacy/sprint43/uk-property', (req, res) => {
+  res.redirect('/legacy/sprint43/uk-business')
 });
 
 // UK business to UK family
-router.post('/sprint43/uk-business', (req, res) => {
-  res.redirect('/sprint43/uk-family')
+router.post('/legacy/sprint43/uk-business', (req, res) => {
+  res.redirect('/legacy/sprint43/uk-family')
 });
 
 // UK family to UK healthcare professional
-router.post('/sprint43/uk-family', (req, res) => {
-  res.redirect('/sprint43/uk-healthcare')
+router.post('/legacy/sprint43/uk-family', (req, res) => {
+  res.redirect('/legacy/sprint43/uk-healthcare')
 });
 
 // UK healthcare to returning to the UK in past 3 years
-router.post('/sprint43/uk-healthcare', (req, res) => {
-  res.redirect('/sprint43/returning-to-uk')
+router.post('/legacy/sprint43/uk-healthcare', (req, res) => {
+  res.redirect('/legacy/sprint43/returning-to-uk')
 });
 
 // Returning to the UK in past 3 years to
-router.post('/sprint43/returning-to-uk', (req, res) => {
-  res.redirect('/sprint43/other-nationalities')
+router.post('/legacy/sprint43/returning-to-uk', (req, res) => {
+  res.redirect('/legacy/sprint43/other-nationalities')
 });
 
 // Returning to the UK in past 3 years to
-router.post('/sprint43/other-nationalities', (req, res) => {
-  res.redirect('/sprint43/benefits-outside')
+router.post('/legacy/sprint43/other-nationalities', (req, res) => {
+  res.redirect('/legacy/sprint43/benefits-outside')
 });
 
 // Benefits outside the UK to questions about qualifying week
-router.post('/sprint43/benefits-outside', (req, res) => {
-  res.redirect('/sprint43/qualifying-week')
+router.post('/legacy/sprint43/benefits-outside', (req, res) => {
+  res.redirect('/legacy/sprint43/qualifying-week')
 });
 
 
 // Questions about qualifying week to any other links to the UK?
-router.post('/sprint43/qualifying-week', (req, res) => {
-  res.redirect('/sprint43/any-other-links')
+router.post('/legacy/sprint43/qualifying-week', (req, res) => {
+  res.redirect('/legacy/sprint43/any-other-links')
 });
 
 // Any other links to declaration
-router.post('/sprint43/any-other-links', (req, res) => {
-  res.redirect('/sprint43/check-change')
+router.post('/legacy/sprint43/any-other-links', (req, res) => {
+  res.redirect('/legacy/sprint43/check-change')
 });
 
 // Any other links to declaration
-router.post('/sprint43/check-change', (req, res) => {
-  res.redirect('/sprint43/declaration')
+router.post('/legacy/sprint43/check-change', (req, res) => {
+  res.redirect('/legacy/sprint43/declaration')
 });
 
 // Declaration to THE END!
-router.post('/sprint43/declaration', (req, res) => {
-  res.redirect('/sprint43/complete')
+router.post('/legacy/sprint43/declaration', (req, res) => {
+  res.redirect('/legacy/sprint43/complete')
 });
 
 // THE END back to the start!
-router.post('/sprint43/complete', (req, res) => {
-  res.redirect('/sprint43/application-type')
+router.post('/legacy/sprint43/complete', (req, res) => {
+  res.redirect('/legacy/sprint43/application-type')
 });
 
 

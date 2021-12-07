@@ -19,14 +19,14 @@ router.use((req, res, next) => {
 
   // Date of birth
 
-  router.post('/sprint55/date-of-birth', (req, res) => {
-    res.redirect('/sprint55/residency')
+  router.post('/legacy/sprint55/date-of-birth', (req, res) => {
+    res.redirect('/legacy/sprint55/residency')
   })
   ;
 
 
   // Living
-  router.post('/sprint55/residency', function(req, res) {
+  router.post('/legacy/sprint55/residency', function(req, res) {
     if ( req.body['living'] === 'united-kingdom' ) {
       res.redirect('pension-credit');
     } else {
@@ -37,7 +37,7 @@ router.use((req, res, next) => {
 
   // Residency type SP
 
-  router.post('/sprint55/residency-type', function(req, res) {
+  router.post('/legacy/sprint55/residency-type', function(req, res) {
     if ( req.body['where-were-you-living'] === 'hospital' ) {
       res.redirect('hospital');
     } else if ( req.body['where-were-you-living'] === 'carehome' ) {
@@ -54,7 +54,7 @@ router.use((req, res, next) => {
 
   // Pension Credit
 
-  router.post('/sprint55/pension-credit', function(req, res) {
+  router.post('/legacy/sprint55/pension-credit', function(req, res) {
     if ( req.body['pension-credit'] === 'yes' ) {
       res.redirect('pension-credit-payment');
     } else {
@@ -65,7 +65,7 @@ router.use((req, res, next) => {
 
   // State Pension
 
-  router.post('/sprint55/state-pension', function(req, res) {
+  router.post('/legacy/sprint55/state-pension', function(req, res) {
     if ( req.body['state-pension'] === 'yes' ) {
       res.redirect('residency-type');
     } else {
@@ -74,7 +74,7 @@ router.use((req, res, next) => {
   });
   // Living with anybody
 
-  router.post('/sprint55/who', function(req, res) {
+  router.post('/legacy/sprint55/who', function(req, res) {
     if ( req.body['who-do-you-live-with'] === 'yes' ) {
       res.redirect('living-with');
     } else {
@@ -85,7 +85,7 @@ router.use((req, res, next) => {
 
   // Living with (age)
 
-    router.post('/sprint55/living-with', function(req, res) {
+    router.post('/legacy/sprint55/living-with', function(req, res) {
       if ( req.body['live-with-age'] === 'yes' ) {
         res.redirect('shared-payment');
       } else {
@@ -97,7 +97,7 @@ router.use((req, res, next) => {
 
 // Hospital
 
-router.post('/sprint55/hospital', function(req, res) {
+router.post('/legacy/sprint55/hospital', function(req, res) {
   if ( req.body['hospital-admission'] === 'yes' ) {
     res.redirect('who');
   } else {
@@ -109,7 +109,7 @@ router.post('/sprint55/hospital', function(req, res) {
 
 //-----HOMELESS-----
 
-router.post('/sprint55/benefits', function(req, res) {
+router.post('/legacy/sprint55/benefits', function(req, res) {
   if ( req.body['benefits'] === 'yes' ) {
     res.redirect('full-payment');
   } else {
@@ -121,7 +121,7 @@ router.post('/sprint55/benefits', function(req, res) {
 
 //-----CAREHOME-----
 
-router.post('/sprint55/care-home', function(req, res) {
+router.post('/legacy/sprint55/care-home', function(req, res) {
   if ( req.body['care-home-admission'] === 'yes' ) {
     res.redirect('under-80-care-home-full');
   } else {
@@ -130,7 +130,7 @@ router.post('/sprint55/care-home', function(req, res) {
 });
 
 
-router.post('/sprint55/pension-credit-ch', function(req, res) {
+router.post('/legacy/sprint55/pension-credit-ch', function(req, res) {
   if ( req.body['pension-credit-ch'] === 'yes' ) {
     res.redirect('care-home-over-pc');
   } else {
@@ -140,14 +140,14 @@ router.post('/sprint55/pension-credit-ch', function(req, res) {
 
 
 // full payment to find someone
-router.post('/sprint55/full-payment', (req, res) => {
-  res.redirect('/sprint39c/find')
+router.post('/legacy/sprint55/full-payment', (req, res) => {
+  res.redirect('/legacy/sprint39c/find')
 })
 ;
 
 // shared payment to find someone
-router.post('/sprint55/shared-payment', (req, res) => {
-  res.redirect('/sprint39c/find')
+router.post('/legacy/sprint55/shared-payment', (req, res) => {
+  res.redirect('/legacy/sprint39c/find')
 })
 ;
 

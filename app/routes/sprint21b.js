@@ -10,27 +10,27 @@ router.use((req, res, next) => {
 
 
 // Pension credit/State Pension
-router.post('/sprint21b/receiving-sp', (req, res) => {
+router.post('/legacy/sprint21b/receiving-sp', (req, res) => {
   if (req.body.pension.includes('pc')) {
-    res.redirect('/sprint21b/full-payment')
+    res.redirect('/legacy/sprint21b/full-payment')
   }
   else if (req.body.pension.includes('sp')) {
-    res.redirect('/sprint21b/residency-type');
+    res.redirect('/legacy/sprint21b/residency-type');
   } else {
-    res.redirect('/sprint21b/claimed')
+    res.redirect('/legacy/sprint21b/claimed')
   }
 })
 
   // Date of birth
 
-  router.post('/sprint21b/date-of-birth', (req, res) => {
-    res.redirect('/sprint21b/residency')
+  router.post('/legacy/sprint21b/date-of-birth', (req, res) => {
+    res.redirect('/legacy/sprint21b/residency')
   })
   ;
 
   // Claimed Winter Fuel Payment
 
-  router.post('/sprint21b/claimed', function(req, res) {
+  router.post('/legacy/sprint21b/claimed', function(req, res) {
     if ( req.body['claimed'] === 'yes' ) {
       res.redirect('benefits');
     } else {
@@ -40,7 +40,7 @@ router.post('/sprint21b/receiving-sp', (req, res) => {
 
   // Living
 
-  router.post('/sprint21b/residency', function(req, res) {
+  router.post('/legacy/sprint21b/residency', function(req, res) {
     if ( req.body['living'] === 'united-kingdom' ) {
       res.redirect('receiving-sp');
     } else {
@@ -51,7 +51,7 @@ router.post('/sprint21b/receiving-sp', (req, res) => {
 
   // Benefits
 
-router.post('/sprint21b/benefits', function(req, res) {
+router.post('/legacy/sprint21b/benefits', function(req, res) {
   if ( req.body['benefits'] === 'yes' ) {
     res.redirect('receiving-benefits');
   } else {
@@ -63,7 +63,7 @@ router.post('/sprint21b/benefits', function(req, res) {
 
   // Residency type
 
-  router.post('/sprint21b/residency-type', function(req, res) {
+  router.post('/legacy/sprint21b/residency-type', function(req, res) {
     if ( req.body['where-were-you-living'] === 'hospital' ) {
       res.redirect('hospital');
     } else if ( req.body['where-were-you-living'] === 'carehome' ) {
@@ -80,7 +80,7 @@ router.post('/sprint21b/benefits', function(req, res) {
 
   // Hospital
 
-  router.post('/sprint21b/hospital', function(req, res) {
+  router.post('/legacy/sprint21b/hospital', function(req, res) {
     if ( req.body['hospital-admission'] === 'yes' ) {
       res.redirect('who');
     } else {
@@ -91,7 +91,7 @@ router.post('/sprint21b/benefits', function(req, res) {
 
   // Care or nursing home
 
-    router.post('/sprint21b/care-home', function(req, res) {
+    router.post('/legacy/sprint21b/care-home', function(req, res) {
       if ( req.body['care-home-admission'] === 'yes' ) {
         res.redirect('who');
       } else {
@@ -101,7 +101,7 @@ router.post('/sprint21b/benefits', function(req, res) {
 
     // Who (Living with)
 
-      router.post('/sprint21b/who', function(req, res) {
+      router.post('/legacy/sprint21b/who', function(req, res) {
         if ( req.body['who-do-you-live-with'] === 'yes' ) {
           res.redirect('live-with-carehome');
         } else {
@@ -111,43 +111,43 @@ router.post('/sprint21b/benefits', function(req, res) {
 
       // Shared payment to ref
 
-      router.post('/sprint21b/shared-payment', (req, res) => {
-        res.redirect('/sprint21b/find')
+      router.post('/legacy/sprint21b/shared-payment', (req, res) => {
+        res.redirect('/legacy/sprint21b/find')
       })
       ;
 
       // Full payment
 
-      router.post('/sprint21b/full-payment', (req, res) => {
-        res.redirect('/sprint21b/find')
+      router.post('/legacy/sprint21b/full-payment', (req, res) => {
+        res.redirect('/legacy/sprint21b/find')
       })
       ;
 
       // Find a person
 
-      router.post('/sprint21b/find', (req, res) => {
-        res.redirect('/sprint21b/find-result')
+      router.post('/legacy/sprint21b/find', (req, res) => {
+        res.redirect('/legacy/sprint21b/find-result')
       })
       ;
 
       // Found person to security
 
-      router.post('/sprint21b/find-result', (req, res) => {
-        res.redirect('/sprint21b/security')
+      router.post('/legacy/sprint21b/find-result', (req, res) => {
+        res.redirect('/legacy/sprint21b/security')
       })
       ;
 
       // Found person to security
 
-      router.post('/sprint21b/security', (req, res) => {
-        res.redirect('/sprint21b/address-check')
+      router.post('/legacy/sprint21b/security', (req, res) => {
+        res.redirect('/legacy/sprint21b/address-check')
       })
       ;
 
 
 // Who (Care home during Q week)
 
-router.post('/sprint21b/live-with-carehome', function(req, res) {
+router.post('/legacy/sprint21b/live-with-carehome', function(req, res) {
   if ( req.body['live-with-carehome'] === 'yes' ) {
     res.redirect('live-with-carehome-13weeks');
   } else {
@@ -155,7 +155,7 @@ router.post('/sprint21b/live-with-carehome', function(req, res) {
   }
 });
 
-router.post('/sprint21b/live-with-carehome-13weeks', function(req, res) {
+router.post('/legacy/sprint21b/live-with-carehome-13weeks', function(req, res) {
   if ( req.body['carehome-13weeks'] === 'yes' ) {
     res.redirect('shared-payment');
   } else {
@@ -165,7 +165,7 @@ router.post('/sprint21b/live-with-carehome-13weeks', function(req, res) {
 
 // Current address
 
-router.post('/sprint21b/address-check', function(req, res) {
+router.post('/legacy/sprint21b/address-check', function(req, res) {
   if ( req.body['address-match'] === 'yes' ) {
     res.redirect('poa');
   } else {
@@ -176,58 +176,58 @@ router.post('/sprint21b/address-check', function(req, res) {
 
 // Power of attorney
 
-router.post('/sprint21b/poa', (req, res) => {
-  res.redirect('/sprint21b/check')
+router.post('/legacy/sprint21b/poa', (req, res) => {
+  res.redirect('/legacy/sprint21b/check')
 })
 ;
 
 // Postcode
 
-router.post('/sprint21b/postcode', (req, res) => {
-  res.redirect('/sprint21b/select-address')
+router.post('/legacy/sprint21b/postcode', (req, res) => {
+  res.redirect('/legacy/sprint21b/select-address')
 })
 ;
 
 // Check
 
-router.post('/sprint21b/postcode', (req, res) => {
-  res.redirect('/sprint21b/select-address')
+router.post('/legacy/sprint21b/postcode', (req, res) => {
+  res.redirect('/legacy/sprint21b/select-address')
 })
 ;
 
 // Select address to check
 
-router.post('/sprint21b/select-address', (req, res) => {
-  res.redirect('/sprint21b/move-date')
+router.post('/legacy/sprint21b/select-address', (req, res) => {
+  res.redirect('/legacy/sprint21b/move-date')
 })
 ;
 
 // Select address to check
 
-router.post('/sprint21b/move-date', (req, res) => {
-  res.redirect('/sprint21b/poa')
+router.post('/legacy/sprint21b/move-date', (req, res) => {
+  res.redirect('/legacy/sprint21b/poa')
 })
 ;
 
 
 // Occupants
 
-router.post('/sprint21b/occupants', (req, res) => {
-  res.redirect('/sprint21b/check')
+router.post('/legacy/sprint21b/occupants', (req, res) => {
+  res.redirect('/legacy/sprint21b/check')
 })
 ;
 
 // Check to declaration
 
-router.post('/sprint21b/check', (req, res) => {
-  res.redirect('/sprint21b/declaration')
+router.post('/legacy/sprint21b/check', (req, res) => {
+  res.redirect('/legacy/sprint21b/declaration')
 })
 ;
 
 // Check to declaration
 
-router.post('/sprint21b/declaration', (req, res) => {
-  res.redirect('/sprint21b/confirmation')
+router.post('/legacy/sprint21b/declaration', (req, res) => {
+  res.redirect('/legacy/sprint21b/confirmation')
 })
 ;
 

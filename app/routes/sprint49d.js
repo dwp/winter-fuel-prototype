@@ -9,11 +9,11 @@ router.use((req, res, next) => {
 })
 
 // Query
-router.post('/sprint49d/query', function(req, res) {
+router.post('/legacy/sprint49d/query', function(req, res) {
   if (req.body['query'] === 'eligibility') {
     res.redirect('date-of-birth');
   } else {
-    res.redirect('/sprint49d/find');
+    res.redirect('/legacy/sprint49d/find');
   }
 });
 
@@ -22,33 +22,33 @@ router.post('/sprint49d/query', function(req, res) {
 
 
 // Find someone to find result
-router.post('/sprint49d/find', function(req, res) {
+router.post('/legacy/sprint49d/find', function(req, res) {
   if (req.body['nino'] === 'XX987654X') {
-    res.redirect('/sprint49d/find-2');
+    res.redirect('/legacy/sprint49d/find-2');
   } else if (req.body['nino'] === 'xx987654x') {
-    res.redirect('/sprint49d/find-2');
+    res.redirect('/legacy/sprint49d/find-2');
   } else {
-    res.redirect('/sprint49d/find-1');
+    res.redirect('/legacy/sprint49d/find-1');
   }
 });
 
 
 // Find result to security
-router.post('/sprint49d/find-1', (req, res) => {
-  res.redirect('/sprint49d/security')
+router.post('/legacy/sprint49d/find-1', (req, res) => {
+  res.redirect('/legacy/sprint49d/security')
 });
 // Find result to security
-router.post('/sprint49d/find-2', (req, res) => {
-  res.redirect('/sprint49d/security-2')
+router.post('/legacy/sprint49d/find-2', (req, res) => {
+  res.redirect('/legacy/sprint49d/security-2')
 });
 
 
-router.post('/sprint49d/security', (req, res) => {
-  res.redirect('/sprint49d/overview-returned')
+router.post('/legacy/sprint49d/security', (req, res) => {
+  res.redirect('/legacy/sprint49d/overview-returned')
 });
 
-router.post('/sprint49d/security-2', (req, res) => {
-  res.redirect('/sprint49d/overview-2')
+router.post('/legacy/sprint49d/security-2', (req, res) => {
+  res.redirect('/legacy/sprint49d/overview-2')
 });
 
 // THIS IS WHAT YOU NEED TO CHANGE BACK!!!!!! ---------------------------
@@ -56,19 +56,19 @@ router.post('/sprint49d/security-2', (req, res) => {
 
 
 //
-router.post('/sprint49d/contact-preferences', (req, res) => {
-  res.redirect('/sprint49d/overview')
+router.post('/legacy/sprint49d/contact-preferences', (req, res) => {
+  res.redirect('/legacy/sprint49d/overview')
 });
 
 // CONTACT CHANGES -----------------------------------------------------------
 
 // Correspondence address to address found
-router.post('/sprint49d/correspondence-address', (req, res) => {
-  res.redirect('/sprint49d/correspondence-address-1')
+router.post('/legacy/sprint49d/correspondence-address', (req, res) => {
+  res.redirect('/legacy/sprint49d/correspondence-address-1')
 });
 
 // Correspondence address to address found
-router.post('/sprint49d/correspondence-address-1', function(req, res) {
+router.post('/legacy/sprint49d/correspondence-address-1', function(req, res) {
   if (req.body['correspondence-address-change'] === 'no address found') {
     res.redirect('correspondence-address-search');
   } else {
@@ -76,21 +76,21 @@ router.post('/sprint49d/correspondence-address-1', function(req, res) {
   }
 });
 
-router.post('/sprint49d/correspondence-address-search', (req, res) => {
-  res.redirect('/sprint49d/correspondence-address-search-result')
+router.post('/legacy/sprint49d/correspondence-address-search', (req, res) => {
+  res.redirect('/legacy/sprint49d/correspondence-address-search-result')
 });
 
-router.post('/sprint49d/correspondence-address-search-result', (req, res) => {
-  res.redirect('/sprint49d/contact')
+router.post('/legacy/sprint49d/correspondence-address-search-result', (req, res) => {
+  res.redirect('/legacy/sprint49d/contact')
 });
 
 // Home phone number change back to contact
-router.post('/sprint49d/homephone', (req, res) => {
-  res.redirect('/sprint49d/contact')
+router.post('/legacy/sprint49d/homephone', (req, res) => {
+  res.redirect('/legacy/sprint49d/contact')
 });
 
 // Home phone number removal
-router.post('/sprint49d/homephone-remove', function(req, res) {
+router.post('/legacy/sprint49d/homephone-remove', function(req, res) {
   if (req.body['homephone-remove'] === 'Yes') {
     res.redirect('contact');
   } else {
@@ -99,12 +99,12 @@ router.post('/sprint49d/homephone-remove', function(req, res) {
 });
 
 // Work phone number change back to contact
-router.post('/sprint49d/workphone', (req, res) => {
-  res.redirect('/sprint49d/contact')
+router.post('/legacy/sprint49d/workphone', (req, res) => {
+  res.redirect('/legacy/sprint49d/contact')
 });
 
 // Work phone number removal
-router.post('/sprint49d/workphone-remove', function(req, res) {
+router.post('/legacy/sprint49d/workphone-remove', function(req, res) {
   if (req.body['workphone-remove'] === 'Yes') {
     res.redirect('contact');
   } else {
@@ -113,12 +113,12 @@ router.post('/sprint49d/workphone-remove', function(req, res) {
 });
 
 // Mobile phone number change back to contact
-router.post('/sprint49d/mobilephone', (req, res) => {
-  res.redirect('/sprint49d/contact')
+router.post('/legacy/sprint49d/mobilephone', (req, res) => {
+  res.redirect('/legacy/sprint49d/contact')
 });
 
 // Mobile phone number removal
-router.post('/sprint49d/mobilephone-remove', function(req, res) {
+router.post('/legacy/sprint49d/mobilephone-remove', function(req, res) {
   if (req.body['mobilephone-remove'] === 'yes') {
     res.redirect('contact');
   } else {
@@ -127,12 +127,12 @@ router.post('/sprint49d/mobilephone-remove', function(req, res) {
 });
 
 // Email address change back to contact
-router.post('/sprint49d/email', (req, res) => {
-  res.redirect('/sprint49d/contact')
+router.post('/legacy/sprint49d/email', (req, res) => {
+  res.redirect('/legacy/sprint49d/contact')
 });
 
 // Email removal
-router.post('/sprint49d/email-remove', function(req, res) {
+router.post('/legacy/sprint49d/email-remove', function(req, res) {
   if (req.body['email-remove'] === 'yes') {
     res.redirect('contact');
   } else {
@@ -141,12 +141,12 @@ router.post('/sprint49d/email-remove', function(req, res) {
 });
 
 // Contact preference change back to contact
-router.post('/sprint49d/contact-preferences', (req, res) => {
-  res.redirect('/sprint49d/contact')
+router.post('/legacy/sprint49d/contact-preferences', (req, res) => {
+  res.redirect('/legacy/sprint49d/contact')
 });
 
 // Address -------------------------------------------------------------------
-router.post('/sprint49d/address', function(req, res) {
+router.post('/legacy/sprint49d/address', function(req, res) {
   if (req.body['postcode'] === 'NE2 1YL') {
     res.redirect('address-no-result');
   } else if (req.body['postcode'] === "NE65 0AP") {
@@ -157,7 +157,7 @@ router.post('/sprint49d/address', function(req, res) {
 });
 
 // Address select, yes or search address
-router.post('/sprint49d/address-1', function(req, res) {
+router.post('/legacy/sprint49d/address-1', function(req, res) {
   if (req.body['address-change'] === '27 Kent Street, Amble, NE65 0LZ') {
     res.redirect('move-date');
   } else {
@@ -167,7 +167,7 @@ router.post('/sprint49d/address-1', function(req, res) {
 
 
 // Care home address select, yes or search address
-router.post('/sprint49d/address-carehome', function(req, res) {
+router.post('/legacy/sprint49d/address-carehome', function(req, res) {
   if (req.body['address-change'] === 'Dolphin View Care Home, Harbour Road, Amble, NE65 0AP') {
     res.redirect('carehome-move-date');
   } else {
@@ -176,7 +176,7 @@ router.post('/sprint49d/address-carehome', function(req, res) {
 });
 
 // Address search
-router.post('/sprint49d/address-search', function(req, res) {
+router.post('/legacy/sprint49d/address-search', function(req, res) {
   if (req.body['address-search-postcode'] === 'NE2 1YL') {
     res.redirect('address-search-no-result');
   } else {
@@ -185,7 +185,7 @@ router.post('/sprint49d/address-search', function(req, res) {
 });
 
 // Address search select, yes or search address
-router.post('/sprint49d/address-search-result', function(req, res) {
+router.post('/legacy/sprint49d/address-search-result', function(req, res) {
   if (req.body['address-search-change'] === '27 Kent Street, Amble, NE65 0LZ') {
     res.redirect('move-date');
   } else {
@@ -195,17 +195,17 @@ router.post('/sprint49d/address-search-result', function(req, res) {
 
 
 // Move date
-router.post('/sprint49d/move-date', (req, res) => {
-  res.redirect('/sprint49d/living-with')
+router.post('/legacy/sprint49d/move-date', (req, res) => {
+  res.redirect('/legacy/sprint49d/living-with')
 });
 
 // Care home move date
-router.post('/sprint49d/carehome-move-date', (req, res) => {
-  res.redirect('/sprint49d/declaration')
+router.post('/legacy/sprint49d/carehome-move-date', (req, res) => {
+  res.redirect('/legacy/sprint49d/declaration')
 });
 
 
-router.post('/sprint49d/homephone-address', function(req, res) {
+router.post('/legacy/sprint49d/homephone-address', function(req, res) {
     if (req.body["homephone-address"] === "Yes") {
       res.redirect('homephone-address-change');
     }
@@ -221,7 +221,7 @@ router.post('/sprint49d/homephone-address', function(req, res) {
 });
 
 
-router.post('/sprint49d/homephone-address-change', function(req, res) {
+router.post('/legacy/sprint49d/homephone-address-change', function(req, res) {
     if (req.session.data["movemonth"] === "08") {
       res.redirect('living-with-q-week');
     } else if (req.session.data["movemonth"] === "07") {
@@ -236,7 +236,7 @@ router.post('/sprint49d/homephone-address-change', function(req, res) {
 
 
 // Living with anyone at address change
-router.post('/sprint49d/living-with', function(req, res) {
+router.post('/legacy/sprint49d/living-with', function(req, res) {
   if (req.body['living-with'] === 'Lives with someone else who gets Winter Fuel Payment') {
     res.redirect('living-with-age');
   } else {
@@ -244,13 +244,13 @@ router.post('/sprint49d/living-with', function(req, res) {
   }
 });
 
-router.post('/sprint49d/living-with-date', (req, res) => {
-  res.redirect('/sprint49d/homephone-address')
+router.post('/legacy/sprint49d/living-with-date', (req, res) => {
+  res.redirect('/legacy/sprint49d/homephone-address')
 });
 
 
 // Living with anyone at address change
-router.post('/sprint49d/living-with-q-week', function(req, res) {
+router.post('/legacy/sprint49d/living-with-q-week', function(req, res) {
   if (req.body['living-with-q-week'] === 'Lives with someone else who gets Winter Fuel Payment') {
     res.redirect('living-with-age-q-week');
   } else {
@@ -259,7 +259,7 @@ router.post('/sprint49d/living-with-q-week', function(req, res) {
 });
 
 // Power of attourney
-router.post('/sprint49d/poa', function(req, res) {
+router.post('/legacy/sprint49d/poa', function(req, res) {
   if (req.body['poa'] === 'Yes') {
     res.redirect('poa-people');
   } else {
@@ -267,13 +267,13 @@ router.post('/sprint49d/poa', function(req, res) {
   }
 });
 
-router.post('/sprint49d/poa-people', (req, res) => {
-  res.redirect('/sprint49d/declaration')
+router.post('/legacy/sprint49d/poa-people', (req, res) => {
+  res.redirect('/legacy/sprint49d/declaration')
 });
 
 // Declaration
 
-router.post('/sprint49d/declaration', function(req, res) {
+router.post('/legacy/sprint49d/declaration', function(req, res) {
     if (req.session.data["movemonth"] === "08") {
       res.redirect('make-payment');
     } else if (req.session.data["movemonth"] === "8") {
@@ -295,42 +295,42 @@ router.post('/sprint49d/declaration', function(req, res) {
 
 
 // Overpayment recoverable?
-router.post('/sprint49d/over-payment', (req, res) => {
-  res.redirect('/sprint49d/overview-changed')
+router.post('/legacy/sprint49d/over-payment', (req, res) => {
+  res.redirect('/legacy/sprint49d/overview-changed')
 })
 ;
 
 // Overpayment recoverable?
-router.post('/sprint49d/over-payment-2', (req, res) => {
-  res.redirect('/sprint49d/overview-changed')
+router.post('/legacy/sprint49d/over-payment-2', (req, res) => {
+  res.redirect('/legacy/sprint49d/overview-changed')
 })
 ;
 
 // Check to payments
-router.post('/sprint49d/recoverable-payment', (req, res) => {
-  res.redirect('/sprint49d/overview-recoverable')
+router.post('/legacy/sprint49d/recoverable-payment', (req, res) => {
+  res.redirect('/legacy/sprint49d/overview-recoverable')
 });
 
 // Check to payments
-router.post('/sprint49d/check', (req, res) => {
-  res.redirect('/sprint49d/make-payment')
+router.post('/legacy/sprint49d/check', (req, res) => {
+  res.redirect('/legacy/sprint49d/make-payment')
 });
 
 // Make payment to contact
-router.post('/sprint49d/make-payment', (req, res) => {
-  res.redirect('/sprint49d/overview-topup-1')
+router.post('/legacy/sprint49d/make-payment', (req, res) => {
+  res.redirect('/legacy/sprint49d/overview-topup-1')
 });
 
 
 
 // Living with age back to contact
-router.post('/sprint49d/living-with-age', (req, res) => {
-  res.redirect('/sprint49d/living-with-date')
+router.post('/legacy/sprint49d/living-with-age', (req, res) => {
+  res.redirect('/legacy/sprint49d/living-with-date')
 });
 
 // Living with age back to contact
-router.post('/sprint49d/living-with-age-q-week', (req, res) => {
-  res.redirect('/sprint49d/poa')
+router.post('/legacy/sprint49d/living-with-age-q-week', (req, res) => {
+  res.redirect('/legacy/sprint49d/poa')
 });
 
 
@@ -339,12 +339,12 @@ router.post('/sprint49d/living-with-age-q-week', (req, res) => {
 // PAYMENT CHANGES -----------------------------------------------------------
 
 // Bank details change to bank confirm
-router.post('/sprint49d/bankdetails', (req, res) => {
-  res.redirect('/sprint49d/confirm-bank')
+router.post('/legacy/sprint49d/bankdetails', (req, res) => {
+  res.redirect('/legacy/sprint49d/confirm-bank')
 });
 
 // Bank confirm to payment
-router.post('/sprint49d/confirm-bank', function(req, res) {
+router.post('/legacy/sprint49d/confirm-bank', function(req, res) {
   if (req.body['bank-name'] === 'Yes') {
     res.redirect('payment');
   } else {
@@ -354,7 +354,7 @@ router.post('/sprint49d/confirm-bank', function(req, res) {
 
 
 // Bank type to input
-router.post('/sprint49d/reissue-bank-type', function(req, res) {
+router.post('/legacy/sprint49d/reissue-bank-type', function(req, res) {
   if (req.body['bank-account-type'] === 'uk') {
     res.redirect('reissue-bank-uk');
   } else {
@@ -363,27 +363,27 @@ router.post('/sprint49d/reissue-bank-type', function(req, res) {
 });
 
 // Bank details to reissue
-router.post('/sprint49d/reissue-bank-uk', (req, res) => {
-  res.redirect('/sprint49d/reissue-payment-uk')
+router.post('/legacy/sprint49d/reissue-bank-uk', (req, res) => {
+  res.redirect('/legacy/sprint49d/reissue-payment-uk')
 });
 
-router.post('/sprint49d/reissue-bank-ig', (req, res) => {
-  res.redirect('/sprint49d/reissue-payment-ig')
+router.post('/legacy/sprint49d/reissue-bank-ig', (req, res) => {
+  res.redirect('/legacy/sprint49d/reissue-payment-ig')
 });
 
 // Reissue payment to payment with confirmation and updated
-router.post('/sprint49d/reissue-payment-uk', (req, res) => {
-  res.redirect('/sprint49d/payment-reissued-1')
+router.post('/legacy/sprint49d/reissue-payment-uk', (req, res) => {
+  res.redirect('/legacy/sprint49d/payment-reissued-1')
 });
 
-router.post('/sprint49d/reissue-payment-ig', (req, res) => {
-  res.redirect('/sprint49d/payment-reissued-1')
+router.post('/legacy/sprint49d/reissue-payment-ig', (req, res) => {
+  res.redirect('/legacy/sprint49d/payment-reissued-1')
 });
 
 
 
 // RETURNED PAYMENTS ---------------------------------------------------------
-router.post('/sprint49d/change-payment-status', function(req, res) {
+router.post('/legacy/sprint49d/change-payment-status', function(req, res) {
   if (req.body['returned'] === 'yes') {
     res.redirect('payment-returned-1');
   } else {
@@ -392,7 +392,7 @@ router.post('/sprint49d/change-payment-status', function(req, res) {
 });
 
 // STOP PAYMENTS - OPTED OUT ---------------------------------------------------------
-router.post('/sprint49d/stop-payments', function(req, res) {
+router.post('/legacy/sprint49d/stop-payments', function(req, res) {
   if (req.body['stop-payments'] === 'yes') {
     res.redirect('payment-opted-out');
   } else {
@@ -401,7 +401,7 @@ router.post('/sprint49d/stop-payments', function(req, res) {
 });
 
 // START PAYMENTS - OPTED IN ---------------------------------------------------------
-router.post('/sprint49d/start-payments', function(req, res) {
+router.post('/legacy/sprint49d/start-payments', function(req, res) {
   if (req.body['start-payments'] === 'yes') {
     res.redirect('payment-opted-in');
   } else {

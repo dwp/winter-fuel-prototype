@@ -8,34 +8,34 @@ router.use((req, res, next) => {
   next()
 })
 
-router.post('/sprint57/move-date', (req, res) => {
+router.post('/legacy/sprint57/move-date', (req, res) => {
   res.redirect('declaration')
 })
 ;
 
-router.post('/sprint57/declaration', (req, res) => {
-  res.redirect('/sprint50b/over-payment')
+router.post('/legacy/sprint57/declaration', (req, res) => {
+  res.redirect('/legacy/sprint50b/over-payment')
 })
 ;
 
-router.post('/sprint50b/over-payment', (req, res) => {
+router.post('/legacy/sprint50b/over-payment', (req, res) => {
   res.redirect('overpayment-referral')
 })
 ;
 
 
 
-router.post('/sprint57/move-date-multi', (req, res) => {
+router.post('/legacy/sprint57/move-date-multi', (req, res) => {
   res.redirect('multi-year-details')
 })
 ;
 
-router.post('/sprint57/multi-year-details', (req, res) => {
+router.post('/legacy/sprint57/multi-year-details', (req, res) => {
   res.redirect('declaration-multi')
 })
 ;
 
-router.post('/sprint57/declaration-multi', (req, res) => {
+router.post('/legacy/sprint57/declaration-multi', (req, res) => {
   res.redirect('overpayment-referral-multi')
 })
 ;
@@ -43,7 +43,7 @@ router.post('/sprint57/declaration-multi', (req, res) => {
 
 
 
-router.post('/sprint57/overpayment-referral-multi', function(req, res) {
+router.post('/legacy/sprint57/overpayment-referral-multi', function(req, res) {
   if (req.body['recoverable-year-2018'] === '2018'){
     res.redirect('overpayment-select-recoverable');} 
   else if (req.body['recoverable-year-2019'] === '2019'){
@@ -55,16 +55,16 @@ router.post('/sprint57/overpayment-referral-multi', function(req, res) {
   }
 });
 
-router.post('/sprint57/overpayment-referral-more-detail', function(req, res) {
+router.post('/legacy/sprint57/overpayment-referral-more-detail', function(req, res) {
   if (req.body['recoverable'] === 'yes'){
-    res.redirect('/sprint47b/next-task');} 
+    res.redirect('/legacy/sprint47b/next-task');} 
     else {
-    res.redirect('/sprint47b/next-task-2');
+    res.redirect('/legacy/sprint47b/next-task-2');
   }
 });
 
 // Referral to get next
-router.post('/sprint57/overpayment-select-recoverable', (req, res) => {
+router.post('/legacy/sprint57/overpayment-select-recoverable', (req, res) => {
   res.redirect('next-task')
 })
 ;

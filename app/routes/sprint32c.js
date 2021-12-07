@@ -8,7 +8,7 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint32c/comparison-filter', function(req, res) {
+  router.post('/legacy/sprint32c/comparison-filter', function(req, res) {
   if ( req.body['filter-by'] === 'file-type' ) {
     res.redirect('comparison-filter-file');
   } else {
@@ -17,7 +17,7 @@ router.use((req, res, next) => {
   });
   ;
 
-  router.post('/sprint32c/comparison-filter-eligibility', function(req, res) {
+  router.post('/legacy/sprint32c/comparison-filter-eligibility', function(req, res) {
   if ( req.body['eligibility'] === 'eligible' ) {
     res.redirect('comparison-filter-eligible');
   } else {
@@ -26,88 +26,88 @@ router.use((req, res, next) => {
   });
   ;
 
-  router.post('/sprint32c/comparison-filter-eligible', (req, res) => {
-    res.redirect('/sprint32c/results-eligible')
+  router.post('/legacy/sprint32c/comparison-filter-eligible', (req, res) => {
+    res.redirect('/legacy/sprint32c/results-eligible')
   })
   ;
 
 
 //
-  router.post('/sprint32c/comparison-filter-ineligible', (req, res) => {
-    res.redirect('/sprint32c/results-ineligible')
+  router.post('/legacy/sprint32c/comparison-filter-ineligible', (req, res) => {
+    res.redirect('/legacy/sprint32c/results-ineligible')
   })
   ;
 
 
 // Scenario 1
 
-  router.post('/sprint32c/verify-address', (req, res) => {
-    res.redirect('/sprint32c/address-1')
+  router.post('/legacy/sprint32c/verify-address', (req, res) => {
+    res.redirect('/legacy/sprint32c/address-1')
   })
   ;
 
-  router.post('/sprint32c/address-1', function(req, res) {
+  router.post('/legacy/sprint32c/address-1', function(req, res) {
   if ( req.body['address-fix-1'] === 'Address not found' ) {
-    res.redirect('/sprint32c/verify-address-manual-1');
+    res.redirect('/legacy/sprint32c/verify-address-manual-1');
   } else {
-    res.redirect('/sprint32c/verify-address-fixed');
+    res.redirect('/legacy/sprint32c/verify-address-fixed');
   }
   });
   ;
 
-  router.post('/sprint32c/verify-address-manual-1', (req, res) => {
-    res.redirect('/sprint32c/address-1b')
+  router.post('/legacy/sprint32c/verify-address-manual-1', (req, res) => {
+    res.redirect('/legacy/sprint32c/address-1b')
   })
   ;
 
-  router.post('/sprint32c/address-1b', function(req, res) {
+  router.post('/legacy/sprint32c/address-1b', function(req, res) {
   if ( req.body['address-fix-1'] === 'Address not found' ) {
-    res.redirect('/sprint32c/verify-address-not-fixed');
+    res.redirect('/legacy/sprint32c/verify-address-not-fixed');
   } else {
-    res.redirect('/sprint32c/verify-address-fixed');
+    res.redirect('/legacy/sprint32c/verify-address-fixed');
   }
   });
   ;
 
 
-  router.post('/sprint32c/return-queue', (req, res) => {
-    res.redirect('/sprint32c/verify-address')
+  router.post('/legacy/sprint32c/return-queue', (req, res) => {
+    res.redirect('/legacy/sprint32c/verify-address')
   })
   ;
 
 
 // Scenario 2
 
-    router.post('/sprint32c/verify-address-fixed', (req, res) => {
-      res.redirect('/sprint32c/address-2')
+    router.post('/legacy/sprint32c/verify-address-fixed', (req, res) => {
+      res.redirect('/legacy/sprint32c/address-2')
     })
     ;
 
-    router.post('/sprint32c/verify-address-not-fixed', (req, res) => {
-      res.redirect('/sprint32c/address-2')
+    router.post('/legacy/sprint32c/verify-address-not-fixed', (req, res) => {
+      res.redirect('/legacy/sprint32c/address-2')
     })
     ;
 
 
-    router.post('/sprint32c/address-2', function(req, res) {
+    router.post('/legacy/sprint32c/address-2', function(req, res) {
     if ( req.body['address-fix-2'] === 'Address not found' ) {
-      res.redirect('/sprint32c/verify-address-manual-2');
+      res.redirect('/legacy/sprint32c/verify-address-manual-2');
     } else {
-      res.redirect('/sprint32c/verify-address-fixed-2');
+      res.redirect('/legacy/sprint32c/verify-address-fixed-2');
     }
     });
     ;
 
-    router.post('/sprint32c/verify-address-manual-2', (req, res) => {
-      res.redirect('/sprint32c/address-2b')
+    router.post('/legacy/sprint32c/verify-address-manual-2', (req, res) => {
+      res.redirect('/legacy/sprint32c/address-2b')
     })
     ;
 
-    router.post('/sprint32c/address-2b', function(req, res) {
+    router.post('/legacy/sprint32c/address-2b', function(req, res) {
     if ( req.body['address-fix-2'] === 'Address not found' ) {
-      res.redirect('/sprint32c/verify-address-not-fixed-2');
+      res.redirect('/legacy/sprint32c/verify-address-not-fixed-2');
     } else {
-      res.redirect('/sprint32c/verify-address-fixed-2');
+      res.redirect('/legacy/sprint32c/verify-address-fixed-2');
     }
     });
     ;
@@ -115,126 +115,126 @@ router.use((req, res, next) => {
 
 // Scenario 3
 
-router.post('/sprint32c/verify-address-fixed-2', (req, res) => {
-  res.redirect('/sprint32c/address-3')
+router.post('/legacy/sprint32c/verify-address-fixed-2', (req, res) => {
+  res.redirect('/legacy/sprint32c/address-3')
 })
 ;
 
-router.post('/sprint32c/verify-address-not-fixed-2', (req, res) => {
-  res.redirect('/sprint32c/address-3')
+router.post('/legacy/sprint32c/verify-address-not-fixed-2', (req, res) => {
+  res.redirect('/legacy/sprint32c/address-3')
 })
 ;
 
 
-router.post('/sprint32c/address-3', function(req, res) {
+router.post('/legacy/sprint32c/address-3', function(req, res) {
 if ( req.body['address-fix-3'] === 'Address not found' ) {
-  res.redirect('/sprint32c/verify-address-manual-3');
+  res.redirect('/legacy/sprint32c/verify-address-manual-3');
 } else {
-  res.redirect('/sprint32c/verify-address-fixed-3');
+  res.redirect('/legacy/sprint32c/verify-address-fixed-3');
 }
 });
 ;
 
-router.post('/sprint32c/verify-address-manual-3', (req, res) => {
-  res.redirect('/sprint32c/address-3b')
+router.post('/legacy/sprint32c/verify-address-manual-3', (req, res) => {
+  res.redirect('/legacy/sprint32c/address-3b')
 })
 ;
 
-router.post('/sprint32c/address-3b', function(req, res) {
+router.post('/legacy/sprint32c/address-3b', function(req, res) {
 if ( req.body['address-fix-3'] === 'Address not found' ) {
-  res.redirect('/sprint32c/verify-address-not-fixed-3');
+  res.redirect('/legacy/sprint32c/verify-address-not-fixed-3');
 } else {
-  res.redirect('/sprint32c/verify-address-fixed-3');
+  res.redirect('/legacy/sprint32c/verify-address-fixed-3');
 }
 });
 ;
 
 // Scenario 4
-    router.post('/sprint32c/verify-address-fixed-3', (req, res) => {
-      res.redirect('/sprint32c/address-4')
+    router.post('/legacy/sprint32c/verify-address-fixed-3', (req, res) => {
+      res.redirect('/legacy/sprint32c/address-4')
     })
     ;
 
-    router.post('/sprint32c/verify-address-not-fixed-3', (req, res) => {
-      res.redirect('/sprint32c/address-4')
+    router.post('/legacy/sprint32c/verify-address-not-fixed-3', (req, res) => {
+      res.redirect('/legacy/sprint32c/address-4')
     })
     ;
 
-    router.post('/sprint32c/address-4', function(req, res) {
+    router.post('/legacy/sprint32c/address-4', function(req, res) {
     if ( req.body['address-fix-4'] === 'Address not found' ) {
-      res.redirect('/sprint32c/verify-address-manual-4');
+      res.redirect('/legacy/sprint32c/verify-address-manual-4');
     } else {
-      res.redirect('/sprint32c/verify-address-fixed-4');
+      res.redirect('/legacy/sprint32c/verify-address-fixed-4');
     }
     });
     ;
 
-    router.post('/sprint32c/verify-address-manual-4', (req, res) => {
-      res.redirect('/sprint32c/address-4b')
+    router.post('/legacy/sprint32c/verify-address-manual-4', (req, res) => {
+      res.redirect('/legacy/sprint32c/address-4b')
     })
     ;
 
-    router.post('/sprint32c/address-4b', function(req, res) {
+    router.post('/legacy/sprint32c/address-4b', function(req, res) {
     if ( req.body['address-fix-4'] === 'Address not found' ) {
-      res.redirect('/sprint32c/verify-address-not-fixed-4');
+      res.redirect('/legacy/sprint32c/verify-address-not-fixed-4');
     } else {
-      res.redirect('/sprint32c/verify-address-fixed-4');
+      res.redirect('/legacy/sprint32c/verify-address-fixed-4');
     }
     });
     ;
 
   // See cases, eligible or ineligible
 
-  router.post('/sprint32c/comparison-filter-eligibility', (req, res) => {
+  router.post('/legacy/sprint32c/comparison-filter-eligibility', (req, res) => {
     const eligibility = req.body.eligibility|| []
     if (eligibility.includes('eligible')) {
-      res.redirect('/sprint32c/comparison-filter-eligible')
+      res.redirect('/legacy/sprint32c/comparison-filter-eligible')
     }
     else if (pension.includes('ineligible')) {
-      res.redirect('/sprint32c/comparison-filter-ineligible');
+      res.redirect('/legacy/sprint32c/comparison-filter-ineligible');
     } else {
-      res.redirect('/sprint23/deferral')
+      res.redirect('/legacy/sprint23/deferral')
     }
   })
 
   // GySP filter
 
-  router.post('/sprint32c/gysp-filter', (req, res) => {
+  router.post('/legacy/sprint32c/gysp-filter', (req, res) => {
     const eligibility = req.body.eligibility|| []
     if (eligibility.includes('eligible')) {
-      res.redirect('/sprint32c/gysp-eligible-filter')
+      res.redirect('/legacy/sprint32c/gysp-eligible-filter')
     }
     else if (pension.includes('ineligible')) {
-      res.redirect('/sprint32c/gysp-ineligible-filter');
+      res.redirect('/legacy/sprint32c/gysp-ineligible-filter');
     } else {
-      res.redirect('/sprint23/deferral')
+      res.redirect('/legacy/sprint23/deferral')
     }
   })
 
 
   // GySP filter to results
-  router.post('/sprint32c/gysp-eligible-filter', (req, res) => {
-    res.redirect('/sprint32c/gysp-results')
+  router.post('/legacy/sprint32c/gysp-eligible-filter', (req, res) => {
+    res.redirect('/legacy/sprint32c/gysp-results')
   })
   ;
 
   // Find case to find result
-  router.post('/sprint32c/find-case', (req, res) => {
-    res.redirect('/sprint32c/overview')
+  router.post('/legacy/sprint32c/find-case', (req, res) => {
+    res.redirect('/legacy/sprint32c/overview')
   })
   ;
 
 
 
     // Payments to stop payments
-    router.post('/sprint32c/payments', (req, res) => {
-      res.redirect('/sprint32c/stop-payments')
+    router.post('/legacy/sprint32c/payments', (req, res) => {
+      res.redirect('/legacy/sprint32c/stop-payments')
     })
     ;
 
 // Letters to stop letters
-router.post('/sprint32c/letters', (req, res) => {
-  res.redirect('/sprint32c/stop-letters')
+router.post('/legacy/sprint32c/letters', (req, res) => {
+  res.redirect('/legacy/sprint32c/stop-letters')
 })
 ;
 

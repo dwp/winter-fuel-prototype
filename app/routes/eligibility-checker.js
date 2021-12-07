@@ -86,7 +86,7 @@ router.post('/eligibility-checker/query', function(req, res) {
 if ( req.body['query'] === 'eligibility' ) {
   res.redirect('date-of-birth');
 } else {
-  res.redirect('/sprint29b/find');
+  res.redirect('/legacy/sprint29b/find');
 }
 });
 

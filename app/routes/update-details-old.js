@@ -40,7 +40,7 @@ router.post('/record-view/overview-tab/update-details/address', function(req, re
   } else if (req.body['postcode'] === "NE65 0AP") {
     res.redirect('address-carehome');
   } else if (req.body['postcode'] === "DH3 4AE") {
-    res.redirect('/sprint52c/address-carehome');
+    res.redirect('/legacy/sprint52c/address-carehome');
   } else {
     res.redirect('address-search-results');
   }

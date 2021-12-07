@@ -12,20 +12,20 @@ router.use((req, res, next) => {
   // FIND SOMEONE AND SECURITY -------------------------------------------------
 
   // Find someone to find result
-  router.post('/sprint31b/find', (req, res) => {
-    res.redirect('/sprint31b/find-1')
+  router.post('/legacy/sprint31b/find', (req, res) => {
+    res.redirect('/legacy/sprint31b/find-1')
   })
   ;
 
   // Find result to security
-  router.post('/sprint31b/find-1', (req, res) => {
-    res.redirect('/sprint31b/security')
+  router.post('/legacy/sprint31b/find-1', (req, res) => {
+    res.redirect('/legacy/sprint31b/security')
   })
   ;
 
   // Security into record with se curity confirmation box
-  router.post('/sprint31b/security', (req, res) => {
-    res.redirect('/sprint31b/overview-security-topup')
+  router.post('/legacy/sprint31b/security', (req, res) => {
+    res.redirect('/legacy/sprint31b/overview-security-topup')
   })
   ;
 

@@ -9,38 +9,38 @@ router.use((req, res, next) => {
   })
 
   // Address to address found
-  router.post('/sprint35d/fix-po-box', (req, res) => {
-    res.redirect('/sprint35d/overview-po-box')
+  router.post('/legacy/sprint35d/fix-po-box', (req, res) => {
+    res.redirect('/legacy/sprint35d/overview-po-box')
   });
 
   // Address to address found
-  router.post('/sprint35d/address', (req, res) => {
-    res.redirect('/sprint35d/address-1')
+  router.post('/legacy/sprint35d/address', (req, res) => {
+    res.redirect('/legacy/sprint35d/address-1')
   });
 
   // Home phone number change to living with q
-  router.post('/sprint35d/approve-po-box', (req, res) => {
-    res.redirect('/sprint35d/living-with-po')
+  router.post('/legacy/sprint35d/approve-po-box', (req, res) => {
+    res.redirect('/legacy/sprint35d/living-with-po')
   });
 
 
   // Address found to move date
-  router.post('/sprint35d/address-1', (req, res) => {
-    res.redirect('/sprint35d/move-date')
+  router.post('/legacy/sprint35d/address-1', (req, res) => {
+    res.redirect('/legacy/sprint35d/move-date')
   });
 
   // Move date to home phone number change
-  router.post('/sprint35d/move-date', (req, res) => {
-    res.redirect('/sprint35d/homephone-address')
+  router.post('/legacy/sprint35d/move-date', (req, res) => {
+    res.redirect('/legacy/sprint35d/homephone-address')
   });
 
   // Home phone number change to living with q
-  router.post('/sprint35d/homephone-address', (req, res) => {
-    res.redirect('/sprint35d/living-with')
+  router.post('/legacy/sprint35d/homephone-address', (req, res) => {
+    res.redirect('/legacy/sprint35d/living-with')
   });
 
   // Living with anyone at address change
-  router.post('/sprint35d/living-with', function(req, res) {
+  router.post('/legacy/sprint35d/living-with', function(req, res) {
     if (req.body['living-with'] === 'Lives with someone else of State Pension age') {
       res.redirect('living-with-age');
     } else {
@@ -49,7 +49,7 @@ router.use((req, res, next) => {
   });
 
   // Living with anyone at PO box
-  router.post('/sprint35d/living-with-po', function(req, res) {
+  router.post('/legacy/sprint35d/living-with-po', function(req, res) {
     if (req.body['living-with'] === 'Lives with someone else of State Pension age') {
       res.redirect('living-with-age-po');
     } else {
@@ -59,23 +59,23 @@ router.use((req, res, next) => {
 
 
   // Living with age to POA
-  router.post('/sprint35d/living-with-age-po', (req, res) => {
-    res.redirect('/sprint35d/poa-po')
+  router.post('/legacy/sprint35d/living-with-age-po', (req, res) => {
+    res.redirect('/legacy/sprint35d/poa-po')
   });
 
   // Living with age to POA
-  router.post('/sprint35d/living-with-age', (req, res) => {
-    res.redirect('/sprint35d/poa')
+  router.post('/legacy/sprint35d/living-with-age', (req, res) => {
+    res.redirect('/legacy/sprint35d/poa')
   });
 
   // Declaration to overview
-  router.post('/sprint35d/declaration', (req, res) => {
-    res.redirect('/sprint35d/overview-changed')
+  router.post('/legacy/sprint35d/declaration', (req, res) => {
+    res.redirect('/legacy/sprint35d/overview-changed')
   });
 
 
   // Power of attourney
-  router.post('/sprint35d/poa', function(req, res) {
+  router.post('/legacy/sprint35d/poa', function(req, res) {
     if (req.body['poa'] === 'Yes') {
       res.redirect('poa-people');
     } else {
@@ -84,19 +84,19 @@ router.use((req, res, next) => {
   });
 
   // POA to
-  router.post('/sprint35d/poa-po', (req, res) => {
-    res.redirect('/sprint35d/declaration-po')
+  router.post('/legacy/sprint35d/poa-po', (req, res) => {
+    res.redirect('/legacy/sprint35d/declaration-po')
   });
 
   // POA to
-  router.post('/sprint35d/declaration-po', (req, res) => {
-    res.redirect('/sprint35d/overview-po-box-approved')
+  router.post('/legacy/sprint35d/declaration-po', (req, res) => {
+    res.redirect('/legacy/sprint35d/overview-po-box-approved')
   });
 
 
   // Cannot fix PO now
-  router.post('/sprint35d/cannot-fix-po', (req, res) => {
-    res.redirect('/sprint35d/fix-po-box-not-fixed')
+  router.post('/legacy/sprint35d/cannot-fix-po', (req, res) => {
+    res.redirect('/legacy/sprint35d/fix-po-box-not-fixed')
   });
 
 

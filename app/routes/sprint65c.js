@@ -11,8 +11,8 @@ router.use((req, res, next) => {
 
 
 // Living with age back to contact
-router.post('/sprint65c/living-with-over-80', (req, res) => {
-  res.redirect('/sprint49/living-with-date')
+router.post('/legacy/sprint65c/living-with-over-80', (req, res) => {
+  res.redirect('/legacy/sprint49/living-with-date')
 });
 
 

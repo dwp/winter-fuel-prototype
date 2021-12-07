@@ -11,7 +11,7 @@ router.use((req, res, next) => {
 
 
 
-router.post('/sprint63/update-details-options', function(req, res) {
+router.post('/legacy/sprint63/update-details-options', function(req, res) {
   if (req.session.data["update-details-options"] === "update-details") {
     res.redirect('update-details');
   } else if (req.session.data["update-details-options"] === "dead") {
@@ -26,20 +26,20 @@ router.post('/sprint63/update-details-options', function(req, res) {
 });
 
 // Address -------------------------------------------------------------------
-router.post('/sprint63/address', function(req, res) {
+router.post('/legacy/sprint63/address', function(req, res) {
   if (req.body['postcode'] === 'NE2 1YL') {
     res.redirect('address-no-result');
   } else if (req.body['postcode'] === "NE65 0AP") {
     res.redirect('address-carehome');
   } else if (req.body['postcode'] === "DH3 4AE") {
-    res.redirect('/sprint52c/address-carehome');
+    res.redirect('/legacy/sprint52c/address-carehome');
   } else {
     res.redirect('address-1');
   }
 });
 
 // Address select, yes or search address
-router.post('/sprint63/address-1', function(req, res) {
+router.post('/legacy/sprint63/address-1', function(req, res) {
   if (req.body['address-change'] === '27 Kent Street, Amble, NE65 0LZ') {
     res.redirect('move-date');
   } else {
@@ -49,7 +49,7 @@ router.post('/sprint63/address-1', function(req, res) {
 
 
 // Care home address select, yes or search address
-router.post('/sprint63/address-carehome', function(req, res) {
+router.post('/legacy/sprint63/address-carehome', function(req, res) {
   if (req.body['address-change'] === 'Dolphin View Care Home, Harbour Road, Amble, NE65 0AP') {
     res.redirect('carehome-move-date');
   } else {
@@ -58,7 +58,7 @@ router.post('/sprint63/address-carehome', function(req, res) {
 });
 
 // Address search
-router.post('/sprint63/address-search', function(req, res) {
+router.post('/legacy/sprint63/address-search', function(req, res) {
   if (req.body['address-search-postcode'] === 'NE2 1YL') {
     res.redirect('address-search-no-result');
   } else {
@@ -67,7 +67,7 @@ router.post('/sprint63/address-search', function(req, res) {
 });
 
 // Address search select, yes or search address
-router.post('/sprint63/address-search-result', function(req, res) {
+router.post('/legacy/sprint63/address-search-result', function(req, res) {
   if (req.body['address-search-change'] === '27 Kent Street, Amble, NE65 0LZ') {
     res.redirect('move-date');
   } else {
@@ -77,12 +77,12 @@ router.post('/sprint63/address-search-result', function(req, res) {
 
 
 // Move date
-router.post('/sprint63/move-date', (req, res) => {
+router.post('/legacy/sprint63/move-date', (req, res) => {
   res.redirect('living-with')
 });
 
 // Living with anyone at address change
-router.post('/sprint63/living-with', function(req, res) {
+router.post('/legacy/sprint63/living-with', function(req, res) {
   if (req.body['living-with'] === 'Lives with someone else who gets Winter Fuel Payment') {
     res.redirect('living-with-age');
   } else {
@@ -92,7 +92,7 @@ router.post('/sprint63/living-with', function(req, res) {
 
 
 
-router.post('/sprint63/living-with-age', (req, res) => {
+router.post('/legacy/sprint63/living-with-age', (req, res) => {
   if (req.body['before-1954'] === 'Yes') {
     res.redirect('living-with-over-80');
   } else {
@@ -100,17 +100,17 @@ router.post('/sprint63/living-with-age', (req, res) => {
   }
 });
 
-router.post('/sprint63/living-with-over-80', (req, res) => {
+router.post('/legacy/sprint63/living-with-over-80', (req, res) => {
   res.redirect('living-with-date')
 });
 
-router.post('/sprint63/living-with-date', (req, res) => {
+router.post('/legacy/sprint63/living-with-date', (req, res) => {
   res.redirect('update-anything-else')
 });
 
 
 // Living with anyone at address change
-router.post('/sprint63/living-with-q-week', function(req, res) {
+router.post('/legacy/sprint63/living-with-q-week', function(req, res) {
   if (req.body['living-with-q-week'] === 'Lives with someone else who gets Winter Fuel Payment') {
     res.redirect('living-with-age-q-week');
   } else {
@@ -118,12 +118,12 @@ router.post('/sprint63/living-with-q-week', function(req, res) {
   }
 });
 
-router.post('/sprint63/homephone', (req, res) => {
+router.post('/legacy/sprint63/homephone', (req, res) => {
   res.redirect('update-anything-else')
 });
 
 // Home phone number removal
-router.post('/sprint63/homephone-remove', function(req, res) {
+router.post('/legacy/sprint63/homephone-remove', function(req, res) {
   if (req.body['homephone-remove'] === 'Yes') {
     res.redirect('update-anything-else');
   } else {
@@ -132,7 +132,7 @@ router.post('/sprint63/homephone-remove', function(req, res) {
 });
 
 // Power of attourney
-router.post('/sprint63/poa', function(req, res) {
+router.post('/legacy/sprint63/poa', function(req, res) {
   if (req.body['poa'] === 'Yes') {
     res.redirect('poa-people');
   } else {
@@ -140,11 +140,11 @@ router.post('/sprint63/poa', function(req, res) {
   }
 });
 
-router.post('/sprint63/poa-people', (req, res) => {
+router.post('/legacy/sprint63/poa-people', (req, res) => {
   res.redirect('update-anything-else')
 });
 
-router.post('/sprint63/update-anything-else', (req, res) => {
+router.post('/legacy/sprint63/update-anything-else', (req, res) => {
   if (req.body['update-details-options'] === 'no') {
    res.redirect('declaration')
   } else if (req.body['update-details-options'] === 'address') {
@@ -160,7 +160,7 @@ router.post('/sprint63/update-anything-else', (req, res) => {
 
 
 
-router.post('/sprint63/declaration', function(req, res) {
+router.post('/legacy/sprint63/declaration', function(req, res) {
   if (req.session.data['moveyear'] === "2018") {
     res.redirect('multi-overpayment');
   } else {
@@ -168,24 +168,24 @@ router.post('/sprint63/declaration', function(req, res) {
   }
 });
 
-router.post('/sprint63/update-details-changed', (req, res) => {
+router.post('/legacy/sprint63/update-details-changed', (req, res) => {
   res.redirect('overview')
 });
 
-router.post('/sprint63/multi-overpayment', (req, res) => {
+router.post('/legacy/sprint63/multi-overpayment', (req, res) => {
   res.redirect('update-details-changed')
 });
 
-router.post('/sprint63/update-details', (req, res) => {
+router.post('/legacy/sprint63/update-details', (req, res) => {
   res.redirect('overview')
 });
 
 
-router.post('/sprint63/date-of-death', (req, res) => {
+router.post('/legacy/sprint63/date-of-death', (req, res) => {
   res.redirect('overview')
 });
 
-router.post('/sprint63/stop-payments-reason', (req, res) => {
+router.post('/legacy/sprint63/stop-payments-reason', (req, res) => {
   res.redirect('overview')
 });
 

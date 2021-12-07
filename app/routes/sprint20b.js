@@ -14,14 +14,14 @@ router.use((req, res, next) => {
 
   // Date of birth
 
-  router.post('/sprint20b/date-of-birth', (req, res) => {
-    res.redirect('/sprint20b/residency')
+  router.post('/legacy/sprint20b/date-of-birth', (req, res) => {
+    res.redirect('/legacy/sprint20b/residency')
   })
   ;
 
   // Living
 
-  router.post('/sprint20b/residency', function(req, res) {
+  router.post('/legacy/sprint20b/residency', function(req, res) {
     if ( req.body['living'] === 'united-kingdom' ) {
       res.redirect('benefits');
     } else {
@@ -32,7 +32,7 @@ router.use((req, res, next) => {
 
   // Benefits
 
-router.post('/sprint20b/benefits', function(req, res) {
+router.post('/legacy/sprint20b/benefits', function(req, res) {
   if ( req.body['benefits'] === 'yes' ) {
     res.redirect('receiving-benefits');
   } else {
@@ -43,7 +43,7 @@ router.post('/sprint20b/benefits', function(req, res) {
 
   // Residency type
 
-  router.post('/sprint20b/residency-type', function(req, res) {
+  router.post('/legacy/sprint20b/residency-type', function(req, res) {
     if ( req.body['where-were-you-living'] === 'hospital' ) {
       res.redirect('hospital');
     } else if ( req.body['where-were-you-living'] === 'carehome' ) {
@@ -60,7 +60,7 @@ router.post('/sprint20b/benefits', function(req, res) {
 
   // Hospital
 
-  router.post('/sprint20b/hospital', function(req, res) {
+  router.post('/legacy/sprint20b/hospital', function(req, res) {
     if ( req.body['hospital-admission'] === 'yes' ) {
       res.redirect('who');
     } else {
@@ -71,7 +71,7 @@ router.post('/sprint20b/benefits', function(req, res) {
 
   // Care or nursing home
 
-    router.post('/sprint20b/care-home', function(req, res) {
+    router.post('/legacy/sprint20b/care-home', function(req, res) {
       if ( req.body['care-home-admission'] === 'yes' ) {
         res.redirect('who');
       } else {
@@ -81,7 +81,7 @@ router.post('/sprint20b/benefits', function(req, res) {
 
     // Who (Living with)
 
-      router.post('/sprint20b/who', function(req, res) {
+      router.post('/legacy/sprint20b/who', function(req, res) {
         if ( req.body['who-do-you-live-with'] === 'yes' ) {
           res.redirect('shared-payment');
         } else {

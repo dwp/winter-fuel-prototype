@@ -8,8 +8,8 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint19/frequency', (req, res) => {
-    res.redirect('/sprint19/payment')
+  router.post('/legacy/sprint19/frequency', (req, res) => {
+    res.redirect('/legacy/sprint19/payment')
   })
   ;
 
@@ -20,8 +20,8 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint19/bankdetails', (req, res) => {
-    res.redirect('/sprint19/reissue-payment')
+  router.post('/legacy/sprint19/bankdetails', (req, res) => {
+    res.redirect('/legacy/sprint19/reissue-payment')
   })
   ;
 
@@ -32,8 +32,8 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint19/workphone', (req, res) => {
-    res.redirect('/sprint19/overview')
+  router.post('/legacy/sprint19/workphone', (req, res) => {
+    res.redirect('/legacy/sprint19/overview')
   })
   ;
 
@@ -44,8 +44,8 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint19/mobilephone', (req, res) => {
-    res.redirect('/sprint19/overview')
+  router.post('/legacy/sprint19/mobilephone', (req, res) => {
+    res.redirect('/legacy/sprint19/overview')
   })
   ;
 
@@ -56,8 +56,8 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint19/email', (req, res) => {
-    res.redirect('/sprint19/overview')
+  router.post('/legacy/sprint19/email', (req, res) => {
+    res.redirect('/legacy/sprint19/overview')
   })
   ;
 
@@ -68,8 +68,8 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint19/homephone', (req, res) => {
-    res.redirect('/sprint19/overview')
+  router.post('/legacy/sprint19/homephone', (req, res) => {
+    res.redirect('/legacy/sprint19/overview')
   })
   ;
 
@@ -80,8 +80,8 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint19/find', (req, res) => {
-    res.redirect('/sprint19/find-1')
+  router.post('/legacy/sprint19/find', (req, res) => {
+    res.redirect('/legacy/sprint19/find-1')
   })
   ;
 
@@ -92,18 +92,18 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint19/address', (req, res) => {
-    res.redirect('/sprint19/address-1')
+  router.post('/legacy/sprint19/address', (req, res) => {
+    res.redirect('/legacy/sprint19/address-1')
   })
   ;
 
-  router.post('/sprint19/address-1', (req, res) => {
-    res.redirect('/sprint19/new-move-date')
+  router.post('/legacy/sprint19/address-1', (req, res) => {
+    res.redirect('/legacy/sprint19/new-move-date')
   })
   ;
 
   // Change of address and home phone number
-  router.post('/sprint19/homephone-address', function(req, res) {
+  router.post('/legacy/sprint19/homephone-address', function(req, res) {
     if ( req.body['homephone-address'] === 'Yes' ) {
       res.redirect('homephone');
     } else {
@@ -112,7 +112,7 @@ router.use((req, res, next) => {
   });
 
   // Home phone number removal
-  router.post('/sprint19/homephone-remove', function(req, res) {
+  router.post('/legacy/sprint19/homephone-remove', function(req, res) {
     if ( req.body['homephone-remove'] === 'Yes' ) {
       res.redirect('overview');
     } else {
@@ -122,7 +122,7 @@ router.use((req, res, next) => {
 
 
   // Mobile phone number removal
-  router.post('/sprint19/mobilephone-remove', function(req, res) {
+  router.post('/legacy/sprint19/mobilephone-remove', function(req, res) {
     if ( req.body['mobilephone-remove'] === 'yes' ) {
       res.redirect('overview');
     } else {
@@ -131,7 +131,7 @@ router.use((req, res, next) => {
   });
 
   // Work phone number removal & change
-  router.post('/sprint19/workphone-remove', function(req, res) {
+  router.post('/legacy/sprint19/workphone-remove', function(req, res) {
     if ( req.body['workphone-remove'] === 'Yes' ) {
       res.redirect('overview');
     } else {
@@ -139,13 +139,13 @@ router.use((req, res, next) => {
     }
   });
 
-  router.post('/sprint19/workphone', (req, res) => {
-    res.redirect('/sprint19/overview')
+  router.post('/legacy/sprint19/workphone', (req, res) => {
+    res.redirect('/legacy/sprint19/overview')
   })
   ;
 
   // Email removal
-  router.post('/sprint19/email-remove', function(req, res) {
+  router.post('/legacy/sprint19/email-remove', function(req, res) {
     if ( req.body['email-remove'] === 'yes' ) {
       res.redirect('overview');
     } else {
@@ -154,52 +154,52 @@ router.use((req, res, next) => {
   });
 
   // Marital status change
-  router.post('/sprint19/marital-status', (req, res) => {
-    res.redirect('/sprint19/marriage-details')
+  router.post('/legacy/sprint19/marital-status', (req, res) => {
+    res.redirect('/legacy/sprint19/marriage-details')
   })
   ;
 
-  router.post('/sprint19/marriage-details', (req, res) => {
-    res.redirect('/sprint19/marriage-certificate')
+  router.post('/legacy/sprint19/marriage-details', (req, res) => {
+    res.redirect('/legacy/sprint19/marriage-certificate')
   })
   ;
 
   // Contact preferences
-  router.post('/sprint19/contact-preferences', (req, res) => {
-    res.redirect('/sprint19/contact')
+  router.post('/legacy/sprint19/contact-preferences', (req, res) => {
+    res.redirect('/legacy/sprint19/contact')
   })
   ;
 
   // Removing occupants, underpayment
-  router.post('/sprint19/occupants', (req, res) => {
-    res.redirect('/sprint19/reason-removed1')
+  router.post('/legacy/sprint19/occupants', (req, res) => {
+    res.redirect('/legacy/sprint19/reason-removed1')
   })
   ;
 
-  router.post('/sprint19/occupants1', function(req, res) {
+  router.post('/legacy/sprint19/occupants1', function(req, res) {
     if ( req.body['correct-address'] === 'yes' ) {
-      res.redirect('/sprint19/correct-address');
+      res.redirect('/legacy/sprint19/correct-address');
     } else {
-      res.redirect('/sprint19/address');
+      res.redirect('/legacy/sprint19/address');
     }
   });
 
 
-  router.post('/sprint19/correct-address', function(req, res) {
+  router.post('/legacy/sprint19/correct-address', function(req, res) {
     if ( req.body['sp-age'] === 'yes' ) {
-      res.redirect('/sprint19/other-occupants2');
+      res.redirect('/legacy/sprint19/other-occupants2');
     } else {
-      res.redirect('/sprint19/other-occupants');
+      res.redirect('/legacy/sprint19/other-occupants');
     }
   });
 
-  router.post('/sprint19/reason-removed1', (req, res) => {
-    res.redirect('/sprint19/searchlight-check')
+  router.post('/legacy/sprint19/reason-removed1', (req, res) => {
+    res.redirect('/legacy/sprint19/searchlight-check')
   })
   ;
 
 
-  router.post('/sprint19/searchlight-check', function(req, res) {
+  router.post('/legacy/sprint19/searchlight-check', function(req, res) {
     if ( req.body['searchlight'] === 'yes' ) {
       res.redirect('evidence-request');
     } else {
@@ -207,34 +207,34 @@ router.use((req, res, next) => {
     }
   });
 
-  router.post('/sprint19/move-date', (req, res) => {
-    res.redirect('/sprint19/confirm-top-up')
+  router.post('/legacy/sprint19/move-date', (req, res) => {
+    res.redirect('/legacy/sprint19/confirm-top-up')
   })
   ;
 
-  router.post('/sprint19/confirm-top-up', (req, res) => {
-    res.redirect('/sprint19/overview-evidence-received')
+  router.post('/legacy/sprint19/confirm-top-up', (req, res) => {
+    res.redirect('/legacy/sprint19/overview-evidence-received')
   })
   ;
 
-  router.post('/sprint19/check-underpayment', (req, res) => {
-    res.redirect('/sprint19/evidence-request')
+  router.post('/legacy/sprint19/check-underpayment', (req, res) => {
+    res.redirect('/legacy/sprint19/evidence-request')
   })
   ;
 
-  router.post('/sprint19/evidence-request', (req, res) => {
-    res.redirect('/sprint19/overview-awaiting-verification')
+  router.post('/legacy/sprint19/evidence-request', (req, res) => {
+    res.redirect('/legacy/sprint19/overview-awaiting-verification')
   })
   ;
 
-  router.post('/sprint19/evidence-verification', (req, res) => {
-    res.redirect('/sprint19/confirm-top-up')
+  router.post('/legacy/sprint19/evidence-verification', (req, res) => {
+    res.redirect('/legacy/sprint19/confirm-top-up')
   })
   ;
 
 
   // Stopping payments
-  router.post('/sprint19/prevent-payments', function(req, res) {
+  router.post('/legacy/sprint19/prevent-payments', function(req, res) {
     if ( req.body['stopped-reason'] === 'dead' ) {
       res.redirect('death-date');
     } else {
@@ -243,27 +243,27 @@ router.use((req, res, next) => {
   });
 
 
-  router.post('/sprint19/move-date1', function(req, res) {
+  router.post('/legacy/sprint19/move-date1', function(req, res) {
     if ( req.body['sp-age'] === 'yes' ) {
-      res.redirect('/sprint19/move-date');
+      res.redirect('/legacy/sprint19/move-date');
     } else {
-      res.redirect('/sprint19/move-date3');
+      res.redirect('/legacy/sprint19/move-date3');
     }
   });
 
-  router.post('/sprint19/move-date3', function(req, res) {
+  router.post('/legacy/sprint19/move-date3', function(req, res) {
     if ( req.body['sp-age'] === 'yes' ) {
-      res.redirect('/sprint19/confirm-top-up');
+      res.redirect('/legacy/sprint19/confirm-top-up');
     } else {
-      res.redirect('/sprint19/confirm-no-top-up');
+      res.redirect('/legacy/sprint19/confirm-no-top-up');
     }
   });
 
-  router.post('/sprint19/list-of-reasons', function(req, res) {
+  router.post('/legacy/sprint19/list-of-reasons', function(req, res) {
     if ( req.body['sp-age'] === 'yes' ) {
-      res.redirect('/sprint19/move-date3');
+      res.redirect('/legacy/sprint19/move-date3');
     } else {
-      res.redirect('/sprint19/move-date3');
+      res.redirect('/legacy/sprint19/move-date3');
     }
   });
 

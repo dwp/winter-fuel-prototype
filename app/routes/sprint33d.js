@@ -9,8 +9,8 @@ router.use((req, res, next) => {
   })
 
   // Address to address select
-  router.post('/sprint33d/address', (req, res) => {
-    res.redirect('/sprint33d/address-1')
+  router.post('/legacy/sprint33d/address', (req, res) => {
+    res.redirect('/legacy/sprint33d/address-1')
   })
   ;
 

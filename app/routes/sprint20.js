@@ -14,14 +14,14 @@ router.use((req, res, next) => {
 
   // Date of birth
 
-  router.post('/sprint1-21/sprint20/date-of-birth', (req, res) => {
-    res.redirect('/sprint1-21/sprint20/residency')
+  router.post('/legacy/sprint1-21/sprint20/date-of-birth', (req, res) => {
+    res.redirect('/legacy/sprint1-21/sprint20/residency')
   })
   ;
 
   // Living
 
-  router.post('/sprint1-21/sprint20/residency', function(req, res) {
+  router.post('/legacy/sprint1-21/sprint20/residency', function(req, res) {
     if ( req.body['living'] === 'united-kingdom' ) {
       res.redirect('benefits');
     } else {
@@ -32,7 +32,7 @@ router.use((req, res, next) => {
 
   // Benefits
 
-router.post('/sprint1-21/sprint20/benefits', function(req, res) {
+router.post('/legacy/sprint1-21/sprint20/benefits', function(req, res) {
   if ( req.body['benefits'] === 'yes' ) {
     res.redirect('receiving-benefits');
   } else {
@@ -44,7 +44,7 @@ router.post('/sprint1-21/sprint20/benefits', function(req, res) {
 
   // Residency type
 
-  router.post('/sprint1-21/sprint20/residency-type', function(req, res) {
+  router.post('/legacy/sprint1-21/sprint20/residency-type', function(req, res) {
     if ( req.body['where-were-you-living'] === 'hospital' ) {
       res.redirect('hospital');
     } else if ( req.body['where-were-you-living'] === 'carehome' ) {
@@ -61,7 +61,7 @@ router.post('/sprint1-21/sprint20/benefits', function(req, res) {
 
   // Hospital
 
-  router.post('/sprint1-21/sprint20/hospital', function(req, res) {
+  router.post('/legacy/sprint1-21/sprint20/hospital', function(req, res) {
     if ( req.body['hospital-admission'] === 'yes' ) {
       res.redirect('who');
     } else {
@@ -72,7 +72,7 @@ router.post('/sprint1-21/sprint20/benefits', function(req, res) {
 
   // Care or nursing home
 
-    router.post('/sprint1-21/sprint20/care-home', function(req, res) {
+    router.post('/legacy/sprint1-21/sprint20/care-home', function(req, res) {
       if ( req.body['care-home-admission'] === 'yes' ) {
         res.redirect('who');
       } else {
@@ -82,7 +82,7 @@ router.post('/sprint1-21/sprint20/benefits', function(req, res) {
 
     // Who (Living with)
 
-      router.post('/sprint1-21/sprint20/who', function(req, res) {
+      router.post('/legacy/sprint1-21/sprint20/who', function(req, res) {
         if ( req.body['who-do-you-live-with'] === 'yes' ) {
           res.redirect('live-with-carehome');
         } else {
@@ -92,7 +92,7 @@ router.post('/sprint1-21/sprint20/benefits', function(req, res) {
 
 // Who (Care home during Q week)
 
-router.post('/sprint1-21/sprint20/live-with-carehome', function(req, res) {
+router.post('/legacy/sprint1-21/sprint20/live-with-carehome', function(req, res) {
   if ( req.body['live-with-carehome'] === 'yes' ) {
     res.redirect('live-with-carehome-13weeks');
   } else {
@@ -100,7 +100,7 @@ router.post('/sprint1-21/sprint20/live-with-carehome', function(req, res) {
   }
 });
 
-router.post('/sprint1-21/sprint20/live-with-carehome-13weeks', function(req, res) {
+router.post('/legacy/sprint1-21/sprint20/live-with-carehome-13weeks', function(req, res) {
   if ( req.body['carehome-13weeks'] === 'yes' ) {
     res.redirect('shared-payment');
   } else {

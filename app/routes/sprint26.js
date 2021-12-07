@@ -8,21 +8,21 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint26/get-underpayment', (req, res) => {
-    res.redirect('/sprint26/top-up')
+  router.post('/legacy/sprint26/get-underpayment', (req, res) => {
+    res.redirect('/legacy/sprint26/top-up')
   })
   ;
 
   // OVERPAYMENT
 
-    router.post('/sprint26/get-overpayment', (req, res) => {
-      res.redirect('/sprint26/overpayment')
+    router.post('/legacy/sprint26/get-overpayment', (req, res) => {
+      res.redirect('/legacy/sprint26/overpayment')
     })
     ;
 
   // Overpayment referral to confirmation or no payment
 
-  router.post('/sprint26/overpayment', function(req, res) {
+  router.post('/legacy/sprint26/overpayment', function(req, res) {
     if ( req.body['overpayment-payment'] === 'yes' ) {
       res.redirect('overpayment-confirmation');
     } else {
@@ -32,8 +32,8 @@ router.use((req, res, next) => {
 
   // Overpayment confirmation to get another
 
-  router.post('/sprint26/overpayment-confirmation', (req, res) => {
-    res.redirect('/sprint26/get-nopayment')
+  router.post('/legacy/sprint26/overpayment-confirmation', (req, res) => {
+    res.redirect('/legacy/sprint26/get-nopayment')
   })
   ;
 
@@ -42,7 +42,7 @@ router.use((req, res, next) => {
   // UNDERPAYMENT
   // Top up referral to confirmation or no payment
 
-  router.post('/sprint26/top-up', function(req, res) {
+  router.post('/legacy/sprint26/top-up', function(req, res) {
     if ( req.body['topup-payment'] === 'yes' ) {
       res.redirect('top-up-confirmation');
     } else {
@@ -52,15 +52,15 @@ router.use((req, res, next) => {
 
   // Top up payment to referral
 
-  router.post('/sprint26/top-up-payment', (req, res) => {
-    res.redirect('/sprint26/top-up-confirmation')
+  router.post('/legacy/sprint26/top-up-payment', (req, res) => {
+    res.redirect('/legacy/sprint26/top-up-confirmation')
   })
   ;
 
   // Top up confirmation to get another
 
-  router.post('/sprint26/top-up-confirmation', (req, res) => {
-    res.redirect('/sprint26/get-underpayment')
+  router.post('/legacy/sprint26/top-up-confirmation', (req, res) => {
+    res.redirect('/legacy/sprint26/get-underpayment')
   })
   ;
 
@@ -68,13 +68,13 @@ router.use((req, res, next) => {
   // NO PAYMENT
   // Get next referral (No payment)
 
-  router.post('/sprint26/get-nopayment', (req, res) => {
-    res.redirect('/sprint26/nopayment')
+  router.post('/legacy/sprint26/get-nopayment', (req, res) => {
+    res.redirect('/legacy/sprint26/nopayment')
   })
   ;
 
   // Make payment or do not make payment... (No payment)
-  router.post('/sprint26/nopayment', function(req, res) {
+  router.post('/legacy/sprint26/nopayment', function(req, res) {
     if ( req.body['nopayment-payment'] === 'yes' ) {
       res.redirect('nopayment-confirmation');
     } else {
@@ -84,8 +84,8 @@ router.use((req, res, next) => {
 
   // No payment payment confirmation to get no payment
 
-  router.post('/sprint26/nopayment-confirmation', (req, res) => {
-    res.redirect('/sprint26/get-nopayment')
+  router.post('/legacy/sprint26/nopayment-confirmation', (req, res) => {
+    res.redirect('/legacy/sprint26/get-nopayment')
   })
   ;
 

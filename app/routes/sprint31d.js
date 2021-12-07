@@ -9,11 +9,11 @@ router.use((req, res, next) => {
   })
 
   // Query
-  router.post('/sprint31d/query', function(req, res) {
+  router.post('/legacy/sprint31d/query', function(req, res) {
   if ( req.body['query'] === 'eligibility' ) {
     res.redirect('date-of-birth');
   } else {
-    res.redirect('/sprint31d/find');
+    res.redirect('/legacy/sprint31d/find');
   }
   });
 
@@ -21,33 +21,33 @@ router.use((req, res, next) => {
   // FIND SOMEONE AND SECURITY -------------------------------------------------
 
   // Find someone to find result
-  router.post('/sprint31d/find', (req, res) => {
-    res.redirect('/sprint31d/find-1')
+  router.post('/legacy/sprint31d/find', (req, res) => {
+    res.redirect('/legacy/sprint31d/find-1')
   })
   ;
 
   // Find result to security
-  router.post('/sprint31d/find-1', (req, res) => {
-    res.redirect('/sprint31d/security')
+  router.post('/legacy/sprint31d/find-1', (req, res) => {
+    res.redirect('/legacy/sprint31d/security')
   })
   ;
 
   // Security into record with security confirmation box
-  router.post('/sprint31d/security', (req, res) => {
-    res.redirect('/sprint31d/overview-security')
+  router.post('/legacy/sprint31d/security', (req, res) => {
+    res.redirect('/legacy/sprint31d/overview-security')
   })
   ;
 
   // CONTACT CHANGES -----------------------------------------------------------
 
   // Home phone number change back to contact
-  router.post('/sprint31d/homephone', (req, res) => {
-    res.redirect('/sprint31d/contact')
+  router.post('/legacy/sprint31d/homephone', (req, res) => {
+    res.redirect('/legacy/sprint31d/contact')
   })
   ;
 
   // Home phone number removal
-  router.post('/sprint31d/homephone-remove', function(req, res) {
+  router.post('/legacy/sprint31d/homephone-remove', function(req, res) {
     if ( req.body['homephone-remove'] === 'Yes' ) {
       res.redirect('contact');
     } else {
@@ -56,13 +56,13 @@ router.use((req, res, next) => {
   });
 
   // Work phone number change back to contact
-  router.post('/sprint31d/workphone', (req, res) => {
-    res.redirect('/sprint31d/contact')
+  router.post('/legacy/sprint31d/workphone', (req, res) => {
+    res.redirect('/legacy/sprint31d/contact')
   })
   ;
 
   // Work phone number removal
-  router.post('/sprint31d/workphone-remove', function(req, res) {
+  router.post('/legacy/sprint31d/workphone-remove', function(req, res) {
     if ( req.body['workphone-remove'] === 'Yes' ) {
       res.redirect('contact');
     } else {
@@ -71,13 +71,13 @@ router.use((req, res, next) => {
   });
 
   // Mobile phone number change back to contact
-  router.post('/sprint31d/mobilephone', (req, res) => {
-    res.redirect('/sprint31d/contact')
+  router.post('/legacy/sprint31d/mobilephone', (req, res) => {
+    res.redirect('/legacy/sprint31d/contact')
   })
   ;
 
   // Mobile phone number removal
-  router.post('/sprint31d/mobilephone-remove', function(req, res) {
+  router.post('/legacy/sprint31d/mobilephone-remove', function(req, res) {
     if ( req.body['mobilephone-remove'] === 'yes' ) {
       res.redirect('contact');
     } else {
@@ -86,13 +86,13 @@ router.use((req, res, next) => {
   });
 
   // Email address change back to contact
-  router.post('/sprint31d/email', (req, res) => {
-    res.redirect('/sprint31d/contact')
+  router.post('/legacy/sprint31d/email', (req, res) => {
+    res.redirect('/legacy/sprint31d/contact')
   })
   ;
 
   // Email removal
-  router.post('/sprint31d/email-remove', function(req, res) {
+  router.post('/legacy/sprint31d/email-remove', function(req, res) {
     if ( req.body['email-remove'] === 'yes' ) {
       res.redirect('contact');
     } else {
@@ -101,32 +101,32 @@ router.use((req, res, next) => {
   });
 
   // Contact preference change back to contact
-  router.post('/sprint31d/contact-preferences', (req, res) => {
-    res.redirect('/sprint31d/contact')
+  router.post('/legacy/sprint31d/contact-preferences', (req, res) => {
+    res.redirect('/legacy/sprint31d/contact')
   })
   ;
 
   // Address -----------------------------
 
-  router.post('/sprint31d/address', (req, res) => {
-    res.redirect('/sprint31d/address-1')
+  router.post('/legacy/sprint31d/address', (req, res) => {
+    res.redirect('/legacy/sprint31d/address-1')
   })
   ;
 
-  router.post('/sprint31d/address-1', (req, res) => {
-    res.redirect('/sprint31d/move-date')
+  router.post('/legacy/sprint31d/address-1', (req, res) => {
+    res.redirect('/legacy/sprint31d/move-date')
   })
   ;
 
-  router.post('/sprint31d/move-date', (req, res) => {
-    res.redirect('/sprint31d/living-with')
+  router.post('/legacy/sprint31d/move-date', (req, res) => {
+    res.redirect('/legacy/sprint31d/living-with')
   })
   ;
 
 
 
   // Change of address and home phone number
-  router.post('/sprint31d/homephone-address', function(req, res) {
+  router.post('/legacy/sprint31d/homephone-address', function(req, res) {
     if ( req.body['homephone-address'] === 'Yes' ) {
       res.redirect('homephone');
     } else {
@@ -135,7 +135,7 @@ router.use((req, res, next) => {
   });
 
   // Living with anyone at address change
-  router.post('/sprint31d/living-with', function(req, res) {
+  router.post('/legacy/sprint31d/living-with', function(req, res) {
     if ( req.body['living-with'] === 'Living with someone else of State Pension age' ) {
       res.redirect('contact');
     } else {
@@ -143,28 +143,28 @@ router.use((req, res, next) => {
     }
   });
 
-  router.post('/sprint31d/declaration', (req, res) => {
-    res.redirect('/sprint31d/make-payment')
+  router.post('/legacy/sprint31d/declaration', (req, res) => {
+    res.redirect('/legacy/sprint31d/make-payment')
   })
   ;
 
   // Check to payments
-  router.post('/sprint31d/check', (req, res) => {
-    res.redirect('/sprint31d/make-payment')
+  router.post('/legacy/sprint31d/check', (req, res) => {
+    res.redirect('/legacy/sprint31d/make-payment')
   })
   ;
 
   // Make payment to contact
-  router.post('/sprint31d/make-payment', (req, res) => {
-    res.redirect('/sprint31d/contact-1')
+  router.post('/legacy/sprint31d/make-payment', (req, res) => {
+    res.redirect('/legacy/sprint31d/contact-1')
   })
   ;
 
 
 
   // Living with age back to contact
-  router.post('/sprint31d/living-with-age', (req, res) => {
-    res.redirect('/sprint31d/contact')
+  router.post('/legacy/sprint31d/living-with-age', (req, res) => {
+    res.redirect('/legacy/sprint31d/contact')
   })
   ;
 
@@ -172,13 +172,13 @@ router.use((req, res, next) => {
   // PAYMENT CHANGES -----------------------------------------------------------
 
   // Bank details change to bank confirm
-  router.post('/sprint31d/bankdetails', (req, res) => {
-    res.redirect('/sprint31d/confirm-bank')
+  router.post('/legacy/sprint31d/bankdetails', (req, res) => {
+    res.redirect('/legacy/sprint31d/confirm-bank')
   })
   ;
 
   // Bank confirm to payment
-  router.post('/sprint31d/confirm-bank', function(req, res) {
+  router.post('/legacy/sprint31d/confirm-bank', function(req, res) {
     if ( req.body['bank-name'] === 'Yes' ) {
       res.redirect('payment');
     } else {
@@ -187,14 +187,14 @@ router.use((req, res, next) => {
   });
 
   // Reissue payment to payment with confirmation and updated
-  router.post('/sprint31d/reissue-payment', (req, res) => {
-    res.redirect('/sprint31d/payment-confirmation')
+  router.post('/legacy/sprint31d/reissue-payment', (req, res) => {
+    res.redirect('/legacy/sprint31d/payment-confirmation')
   })
   ;
 
 
   // Stopping payments
-  router.post('/sprint31d/stop-payments', function(req, res) {
+  router.post('/legacy/sprint31d/stop-payments', function(req, res) {
     if ( req.body['stop-payments'] === 'Yes' ) {
       res.redirect('payment-stopped');
     } else {
@@ -203,7 +203,7 @@ router.use((req, res, next) => {
   });
 
   // Starting payments
-  router.post('/sprint31d/start-payments', function(req, res) {
+  router.post('/legacy/sprint31d/start-payments', function(req, res) {
     if ( req.body['start-payments'] === 'Yes' ) {
       res.redirect('payment');
     } else {

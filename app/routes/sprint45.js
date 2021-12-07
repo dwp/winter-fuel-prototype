@@ -9,13 +9,13 @@ router.use((req, res, next) => {
 })
 
 
-router.post('/sprint45/verify-dob', (req, res) => {
-  res.redirect('/sprint45/verify-dob-confirm')
+router.post('/legacy/sprint45/verify-dob', (req, res) => {
+  res.redirect('/legacy/sprint45/verify-dob-confirm')
 });
 
 
-router.post('/sprint45/dob-nv-request', (req, res) => {
-  res.redirect('/sprint41b/type-of-application')
+router.post('/legacy/sprint45/dob-nv-request', (req, res) => {
+  res.redirect('/legacy/sprint41b/type-of-application')
 });
 
 

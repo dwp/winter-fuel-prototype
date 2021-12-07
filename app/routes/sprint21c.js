@@ -10,8 +10,8 @@ router.use((req, res, next) => {
 
   // Date of birth
 
-  router.post('/sprint21c/date-of-birth', (req, res) => {
-    res.redirect('/sprint21c/too-young')
+  router.post('/legacy/sprint21c/date-of-birth', (req, res) => {
+    res.redirect('/legacy/sprint21c/too-young')
   })
   ;
 

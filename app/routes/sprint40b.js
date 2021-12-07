@@ -9,48 +9,48 @@ router.use((req, res, next) => {
   })
 
   // Find to find result
-  router.post('/sprint40b/find', (req, res) => {
-    res.redirect('/sprint40b/find-1')
+  router.post('/legacy/sprint40b/find', (req, res) => {
+    res.redirect('/legacy/sprint40b/find-1')
   });
 
   // Find to find result
-  router.post('/sprint40b/find-1', (req, res) => {
-    res.redirect('/sprint40b/security')
+  router.post('/legacy/sprint40b/find-1', (req, res) => {
+    res.redirect('/legacy/sprint40b/security')
   });
 
   // Find to find result
-  router.post('/sprint40b/security', (req, res) => {
-    res.redirect('/sprint40b/overview-po-box')
+  router.post('/legacy/sprint40b/security', (req, res) => {
+    res.redirect('/legacy/sprint40b/overview-po-box')
   });
 
   // Fix PO box to PO box fixed
-  router.post('/sprint40b/fix-po-box', (req, res) => {
-    res.redirect('/sprint40b/overview-po-box')
+  router.post('/legacy/sprint40b/fix-po-box', (req, res) => {
+    res.redirect('/legacy/sprint40b/overview-po-box')
   });
 
   // Address to address found
-  router.post('/sprint40b/address', (req, res) => {
-    res.redirect('/sprint40b/address-1')
+  router.post('/legacy/sprint40b/address', (req, res) => {
+    res.redirect('/legacy/sprint40b/address-1')
   });
 
   // Home phone number change to living with q
-  router.post('/sprint40b/approve-po-box', (req, res) => {
-    res.redirect('/sprint40b/living-with-po')
+  router.post('/legacy/sprint40b/approve-po-box', (req, res) => {
+    res.redirect('/legacy/sprint40b/living-with-po')
   });
 
 
   // Address found to move date
-  router.post('/sprint40b/address-1', (req, res) => {
-    res.redirect('/sprint40b/move-date')
+  router.post('/legacy/sprint40b/address-1', (req, res) => {
+    res.redirect('/legacy/sprint40b/move-date')
   });
 
   // Move date to home phone number change
-  router.post('/sprint40b/move-date', (req, res) => {
-    res.redirect('/sprint40b/homephone-address')
+  router.post('/legacy/sprint40b/move-date', (req, res) => {
+    res.redirect('/legacy/sprint40b/homephone-address')
   });
 
   // Home phone number change
-  router.post('/sprint40b/homephone-address', function(req, res) {
+  router.post('/legacy/sprint40b/homephone-address', function(req, res) {
     if (req.body['homephone-address'] === 'Yes') {
       res.redirect('homephone-address-change');
     } else {
@@ -58,12 +58,12 @@ router.use((req, res, next) => {
     }
   });
 
-  router.post('/sprint40b/homephone-address-change', (req, res) => {
-    res.redirect('/sprint40b/living-with')
+  router.post('/legacy/sprint40b/homephone-address-change', (req, res) => {
+    res.redirect('/legacy/sprint40b/living-with')
   });
 
   // Living with anyone at address change
-  router.post('/sprint40b/living-with', function(req, res) {
+  router.post('/legacy/sprint40b/living-with', function(req, res) {
     if (req.body['living-with'] === 'Lives with someone else of State Pension age') {
       res.redirect('living-with-age');
     } else {
@@ -72,7 +72,7 @@ router.use((req, res, next) => {
   });
 
   // Living with anyone at PO box
-  router.post('/sprint40b/living-with-po', function(req, res) {
+  router.post('/legacy/sprint40b/living-with-po', function(req, res) {
     if (req.body['living-with'] === 'Lives with someone else of State Pension age') {
       res.redirect('living-with-age-po');
     } else {
@@ -82,23 +82,23 @@ router.use((req, res, next) => {
 
 
   // Living with age to POA
-  router.post('/sprint40b/living-with-age-po', (req, res) => {
-    res.redirect('/sprint40b/poa-po')
+  router.post('/legacy/sprint40b/living-with-age-po', (req, res) => {
+    res.redirect('/legacy/sprint40b/poa-po')
   });
 
   // Living with age to POA
-  router.post('/sprint40b/living-with-age', (req, res) => {
-    res.redirect('/sprint40b/poa')
+  router.post('/legacy/sprint40b/living-with-age', (req, res) => {
+    res.redirect('/legacy/sprint40b/poa')
   });
 
   // Declaration to overview
-  router.post('/sprint40b/declaration', (req, res) => {
-    res.redirect('/sprint40b/make-payment')
+  router.post('/legacy/sprint40b/declaration', (req, res) => {
+    res.redirect('/legacy/sprint40b/make-payment')
   });
 
 
   // Power of attourney
-  router.post('/sprint40b/poa', function(req, res) {
+  router.post('/legacy/sprint40b/poa', function(req, res) {
     if (req.body['poa'] === 'Yes') {
       res.redirect('poa-people');
     } else {
@@ -107,18 +107,18 @@ router.use((req, res, next) => {
   });
 
   // POA to
-  router.post('/sprint40b/poa-po', (req, res) => {
-    res.redirect('/sprint40b/declaration-po')
+  router.post('/legacy/sprint40b/poa-po', (req, res) => {
+    res.redirect('/legacy/sprint40b/declaration-po')
   });
 
   // POA to
-  router.post('/sprint40b/declaration-po', (req, res) => {
-    res.redirect('/sprint40b/make-payment')
+  router.post('/legacy/sprint40b/declaration-po', (req, res) => {
+    res.redirect('/legacy/sprint40b/make-payment')
   });
 
 // Make the payment back to view of the record
-router.post('/sprint40b/make-payment', (req, res) => {
-  res.redirect('/sprint40b/overview-changed')
+router.post('/legacy/sprint40b/make-payment', (req, res) => {
+  res.redirect('/legacy/sprint40b/overview-changed')
 });
 
 

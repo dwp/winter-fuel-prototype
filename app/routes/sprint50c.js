@@ -11,12 +11,12 @@ router.use((req, res, next) => {
 
 // Get next task to the task
 
-router.post('/sprint50c/debt-management-task', (req, res) => {
-  res.redirect('/sprint50c/debt-management-task-1')
+router.post('/legacy/sprint50c/debt-management-task', (req, res) => {
+  res.redirect('/legacy/sprint50c/debt-management-task-1')
 })
 ;
 
-router.post('/sprint50c/debt-management-task-1', function(req, res) {
+router.post('/legacy/sprint50c/debt-management-task-1', function(req, res) {
   if (req.body['task'] === 'complete') {
     res.redirect('get-debt-management-task-2-complete');
   } else {

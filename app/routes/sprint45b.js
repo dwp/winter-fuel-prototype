@@ -15,35 +15,35 @@ router.use((req, res, next) => {
 
 // Address to move date
 
-router.post('/sprint45b/address', (req, res) => {
-  res.redirect('/sprint45b/move-date')
+router.post('/legacy/sprint45b/address', (req, res) => {
+  res.redirect('/legacy/sprint45b/move-date')
 })
 ;
 
 // Move date to living with
 
-router.post('/sprint45b/move-date', (req, res) => {
-  res.redirect('/sprint45b/living-with')
+router.post('/legacy/sprint45b/move-date', (req, res) => {
+  res.redirect('/legacy/sprint45b/living-with')
 })
 ;
 
 // Move date to living with
 
-router.post('/sprint45b/living-with', (req, res) => {
-  res.redirect('/sprint45b/living-with-date')
+router.post('/legacy/sprint45b/living-with', (req, res) => {
+  res.redirect('/legacy/sprint45b/living-with-date')
 })
 ;
 
 
 // Living with to
-router.post('/sprint45b/living-with-date', (req, res) => {
+router.post('/legacy/sprint45b/living-with-date', (req, res) => {
   res.redirect('declaration')
 })
 ;
 
 
 // Home phone number removal
-router.post('/sprint45b/homephone-remove', function(req, res) {
+router.post('/legacy/sprint45b/homephone-remove', function(req, res) {
   if (req.body['homephone-remove'] === 'Yes') {
     res.redirect('declaration');
   } else {
@@ -53,13 +53,13 @@ router.post('/sprint45b/homephone-remove', function(req, res) {
 
 // Declaration to confirmation
 
-router.post('/sprint45b/declaration', (req, res) => {
-  res.redirect('/sprint45b/overview-changed')
+router.post('/legacy/sprint45b/declaration', (req, res) => {
+  res.redirect('/legacy/sprint45b/overview-changed')
 })
 ;
 
 // Bank type to bank details
-router.post('/sprint45b/bank-type', function(req, res) {
+router.post('/legacy/sprint45b/bank-type', function(req, res) {
   if (req.body['bank-account-type'] === 'uk') {
     res.redirect('bank-details-uk');
   } else {
@@ -68,14 +68,14 @@ router.post('/sprint45b/bank-type', function(req, res) {
 });
 
 // Bank details to payment
-router.post('/sprint45b/bank-details-uk', (req, res) => {
-  res.redirect('/sprint45b/payment-changed')
+router.post('/legacy/sprint45b/bank-details-uk', (req, res) => {
+  res.redirect('/legacy/sprint45b/payment-changed')
 })
 ;
 
 // Bank details to payment
-router.post('/sprint45b/bank-details-ig', (req, res) => {
-  res.redirect('/sprint45b/payment-changed')
+router.post('/legacy/sprint45b/bank-details-ig', (req, res) => {
+  res.redirect('/legacy/sprint45b/payment-changed')
 })
 ;
 

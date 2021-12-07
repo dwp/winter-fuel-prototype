@@ -19,24 +19,24 @@ router.use((req, res, next) => {
 
 
   // Referral to get next
-  router.post('/sprint47b/overpayment-referral', (req, res) => {
+  router.post('/legacy/sprint47b/overpayment-referral', (req, res) => {
     res.redirect('/print47b/overpayment-referral-2')
   })
   ;
 
-  router.post('/sprint47b/next-task', (req, res) => {
-    res.redirect('/sprint47b/overpayment-referral-2')
+  router.post('/legacy/sprint47b/next-task', (req, res) => {
+    res.redirect('/legacy/sprint47b/overpayment-referral-2')
   })
   ;
 
-  router.post('/sprint47b/overpayment-referral-2', (req, res) => {
-    res.redirect('/sprint47b/overpayment-referral-2')
+  router.post('/legacy/sprint47b/overpayment-referral-2', (req, res) => {
+    res.redirect('/legacy/sprint47b/overpayment-referral-2')
   })
   ;
 
   // Referral to get next
-  router.post('/sprint47b/next-task-2', (req, res) => {
-    res.redirect('/sprint47b/overpayment-referral-3')
+  router.post('/legacy/sprint47b/next-task-2', (req, res) => {
+    res.redirect('/legacy/sprint47b/overpayment-referral-3')
   })
   ;
 

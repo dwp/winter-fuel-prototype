@@ -9,21 +9,21 @@ router.use((req, res, next) => {
   })
 
   // Prototype mode
-  router.post('/sprint41b/mode', (req, res) => {
-    res.redirect('/sprint41b/type-of-application')
+  router.post('/legacy/sprint41b/mode', (req, res) => {
+    res.redirect('/legacy/sprint41b/type-of-application')
   })
   ;
 
 
   // Teleclaim or postal claim
-  router.post('/sprint41b/type-of-application', (req, res) => {
-    res.redirect('/sprint41b/find')
+  router.post('/legacy/sprint41b/type-of-application', (req, res) => {
+    res.redirect('/legacy/sprint41b/find')
   })
   ;
 
 
 // Benefits to find someone
-router.post('/sprint41b/benefits', function(req, res) {
+router.post('/legacy/sprint41b/benefits', function(req, res) {
   if ( req.body['benefits'] === 'yes' ) {
     res.redirect('no-claim');
   } else {
@@ -33,7 +33,7 @@ router.post('/sprint41b/benefits', function(req, res) {
 
 // Find someone to confirm full name
 
-  router.post('/sprint41b/find', function(req, res) {
+  router.post('/legacy/sprint41b/find', function(req, res) {
     if (req.session.data['nino'] === 'PX 12 24 32 A') {
       res.redirect('date-of-birth');
     } else if (req.session.data['nino'] === "PX122432A") {
@@ -48,7 +48,7 @@ router.post('/sprint41b/benefits', function(req, res) {
   });
 
 // Confirm full name to security questions
-  router.post('/sprint41b/find-1', function(req, res) {
+  router.post('/legacy/sprint41b/find-1', function(req, res) {
       if ( req.session.data['phone-post'] === 'post' ) {
         res.redirect('date-of-birth');
       } else {
@@ -57,7 +57,7 @@ router.post('/sprint41b/benefits', function(req, res) {
   });
 
   // DOB (letter) to address or too young
-    router.post('/sprint41b/date-of-birth', function(req, res) {
+    router.post('/legacy/sprint41b/date-of-birth', function(req, res) {
         if ( req.session.data['dob-year'] === '1959' ) {
           res.redirect('too-young-letter');
         } else {
@@ -68,7 +68,7 @@ router.post('/sprint41b/benefits', function(req, res) {
 
 
 // Security questions to house number and postcode
-  router.post('/sprint41b/security', function(req, res) {
+  router.post('/legacy/sprint41b/security', function(req, res) {
       if ( req.session.data['nino'] === 'PX 12 43 56' ) {
         res.redirect('overview');
       } else {
@@ -79,7 +79,7 @@ router.post('/sprint41b/benefits', function(req, res) {
 
 // Address
 
-router.post('/sprint41b/address', function(req, res) {
+router.post('/legacy/sprint41b/address', function(req, res) {
   if (req.body['postcode'] === 'NE2 1YL') {
     res.redirect('address-no-result');
   } else if (req.body['postcode'] === "NE65 0AP") {
@@ -96,53 +96,53 @@ router.post('/sprint41b/address', function(req, res) {
 });
 
 // Address for letters to address for letters results
-  router.post('/sprint41b/address-carehome', (req, res) => {
-    res.redirect('/sprint41b/carehome-move-date')
+  router.post('/legacy/sprint41b/address-carehome', (req, res) => {
+    res.redirect('/legacy/sprint41b/carehome-move-date')
   })
   ;
 
   // Carehome move date to contact
-    router.post('/sprint41b/carehome-move-date', (req, res) => {
-      res.redirect('/sprint41b/contact')
+    router.post('/legacy/sprint41b/carehome-move-date', (req, res) => {
+      res.redirect('/legacy/sprint41b/contact')
     })
     ;
 
   // No permanent address to address for letters
-  router.post('/sprint41b/no-permanent-address', function(req, res) {
+  router.post('/legacy/sprint41b/no-permanent-address', function(req, res) {
     if ( req.body['address-for-letters'] === 'yes' ) {
-      res.redirect('/sprint41b/address-for-letters');
+      res.redirect('/legacy/sprint41b/address-for-letters');
     } else {
       res.redirect('no-address-for-letters');
     }
   });
 
   // Address for letters to address for letters results
-    router.post('/sprint41b/address-for-letters', (req, res) => {
-      res.redirect('/sprint41b/address-for-letters-1')
+    router.post('/legacy/sprint41b/address-for-letters', (req, res) => {
+      res.redirect('/legacy/sprint41b/address-for-letters-1')
     })
     ;
 
     // Address look up to confirm the first line of the address
-      router.post('/sprint41b/address-for-letters-1', (req, res) => {
-        res.redirect('/sprint41b/contact')
+      router.post('/legacy/sprint41b/address-for-letters-1', (req, res) => {
+        res.redirect('/legacy/sprint41b/contact')
       })
       ;
 
 // Confirm first line of address to move date
-  router.post('/sprint41b/address-1', (req, res) => {
-    res.redirect('/sprint41b/move-date')
+  router.post('/legacy/sprint41b/address-1', (req, res) => {
+    res.redirect('/legacy/sprint41b/move-date')
   })
   ;
 
 // Move date to living with
-  router.post('/sprint41b/move-date', (req, res) => {
-    res.redirect('/sprint41b/living-with')
+  router.post('/legacy/sprint41b/move-date', (req, res) => {
+    res.redirect('/legacy/sprint41b/living-with')
   })
   ;
 
 
   //
-  router.post('/sprint41b/living-with', function(req, res) {
+  router.post('/legacy/sprint41b/living-with', function(req, res) {
     if ( req.body['living-with'] === 'yes' ) {
       res.redirect('living-with-age');
     } else {
@@ -151,47 +151,47 @@ router.post('/sprint41b/address', function(req, res) {
   });
 
   // Confirm first line of address to move date
-    router.post('/sprint41b/living-with-age', (req, res) => {
-      res.redirect('/sprint41b/contact')
+    router.post('/legacy/sprint41b/living-with-age', (req, res) => {
+      res.redirect('/legacy/sprint41b/contact')
     })
     ;
 
 
     // Care home date to contact details
-      router.post('/sprint41b/carehome', (req, res) => {
-        res.redirect('/sprint41b/contact')
+      router.post('/legacy/sprint41b/carehome', (req, res) => {
+        res.redirect('/legacy/sprint41b/contact')
       })
       ;
 
 
     // Prison date to contact details
-      router.post('/sprint41b/prison', (req, res) => {
-        res.redirect('/sprint41b/contact')
+      router.post('/legacy/sprint41b/prison', (req, res) => {
+        res.redirect('/legacy/sprint41b/contact')
       })
       ;
 
 
       // Hospital date to contact details
-        router.post('/sprint41b/hospital', (req, res) => {
-          res.redirect('/sprint41b/contact')
+        router.post('/legacy/sprint41b/hospital', (req, res) => {
+          res.redirect('/legacy/sprint41b/contact')
         })
         ;
 
 // Phone number & email to contact requirements
-  router.post('/sprint41b/contact', (req, res) => {
-    res.redirect('/sprint41b/bank-details')
+  router.post('/legacy/sprint41b/contact', (req, res) => {
+    res.redirect('/legacy/sprint41b/bank-details')
   })
   ;
 
 
   // Bank details to declaration
-    router.post('/sprint41b/bank-details', (req, res) => {
-      res.redirect('/sprint41b/declaration')
+    router.post('/legacy/sprint41b/bank-details', (req, res) => {
+      res.redirect('/legacy/sprint41b/declaration')
     })
     ;
 
   // Declaration to completion
-  router.post('/sprint41b/declaration', function(req, res) {
+  router.post('/legacy/sprint41b/declaration', function(req, res) {
       if ( req.session.data['address-change'] === 'Dolphin View, Harbour Road, Amble, NE65 0AP' ) {
         res.redirect('complete-carehome-successful-pre');
       } else {
@@ -200,20 +200,20 @@ router.post('/sprint41b/address', function(req, res) {
   });
 
   // Start again back to beginning
-  router.post('/sprint41b/start-again', (req, res) => {
-    res.redirect('/sprint41b/type-of-application')
+  router.post('/legacy/sprint41b/start-again', (req, res) => {
+    res.redirect('/legacy/sprint41b/type-of-application')
   })
   ;
 
   // Start again back to beginning
-  router.post('/sprint41b/too-young-letter', (req, res) => {
-    res.redirect('/sprint41b/type-of-application-letter-sent')
+  router.post('/legacy/sprint41b/too-young-letter', (req, res) => {
+    res.redirect('/legacy/sprint41b/type-of-application-letter-sent')
   })
   ;
 
   // Start new claim button on confirmation page back to beginning
-router.post('/sprint41b/complete-pre', (req, res) => {
-  res.redirect('/sprint41b/type-of-application')
+router.post('/legacy/sprint41b/complete-pre', (req, res) => {
+  res.redirect('/legacy/sprint41b/type-of-application')
 });
 
 

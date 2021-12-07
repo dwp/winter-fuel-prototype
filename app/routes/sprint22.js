@@ -8,7 +8,7 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint22/comparison-filter', function(req, res) {
+  router.post('/legacy/sprint22/comparison-filter', function(req, res) {
   if ( req.body['filter-by'] === 'file-type' ) {
     res.redirect('comparison-filter-file');
   } else {
@@ -17,7 +17,7 @@ router.use((req, res, next) => {
   });
   ;
 
-  router.post('/sprint22/comparison-filter-eligibility', function(req, res) {
+  router.post('/legacy/sprint22/comparison-filter-eligibility', function(req, res) {
   if ( req.body['eligibility'] === 'eligible' ) {
     res.redirect('comparison-filter-eligible');
   } else {
@@ -26,55 +26,55 @@ router.use((req, res, next) => {
   });
   ;
 
-  router.post('/sprint22/comparison-filter-eligible', (req, res) => {
-    res.redirect('/sprint22/results-eligible')
+  router.post('/legacy/sprint22/comparison-filter-eligible', (req, res) => {
+    res.redirect('/legacy/sprint22/results-eligible')
   })
   ;
 
-  router.post('/sprint22/comparison-filter-ineligible', (req, res) => {
-    res.redirect('/sprint22/results-ineligible')
+  router.post('/legacy/sprint22/comparison-filter-ineligible', (req, res) => {
+    res.redirect('/legacy/sprint22/results-ineligible')
   })
   ;
 
 
   // See cases, eligible or ineligible
 
-  router.post('/sprint22/comparison-filter-eligibility', (req, res) => {
+  router.post('/legacy/sprint22/comparison-filter-eligibility', (req, res) => {
     const eligibility = req.body.eligibility|| []
     if (eligibility.includes('eligible')) {
-      res.redirect('/sprint22/comparison-filter-eligible')
+      res.redirect('/legacy/sprint22/comparison-filter-eligible')
     }
     else if (pension.includes('ineligible')) {
-      res.redirect('/sprint22/comparison-filter-ineligible');
+      res.redirect('/legacy/sprint22/comparison-filter-ineligible');
     } else {
-      res.redirect('/sprint23/deferral')
+      res.redirect('/legacy/sprint23/deferral')
     }
   })
 
   // GySP filter
 
-  router.post('/sprint22/gysp-filter', (req, res) => {
+  router.post('/legacy/sprint22/gysp-filter', (req, res) => {
     const eligibility = req.body.eligibility|| []
     if (eligibility.includes('eligible')) {
-      res.redirect('/sprint22/gysp-eligible-filter')
+      res.redirect('/legacy/sprint22/gysp-eligible-filter')
     }
     else if (pension.includes('ineligible')) {
-      res.redirect('/sprint22/gysp-ineligible-filter');
+      res.redirect('/legacy/sprint22/gysp-ineligible-filter');
     } else {
-      res.redirect('/sprint23/deferral')
+      res.redirect('/legacy/sprint23/deferral')
     }
   })
 
 
   // GySP filter to results
-  router.post('/sprint22/gysp-eligible-filter', (req, res) => {
-    res.redirect('/sprint22/gysp-results')
+  router.post('/legacy/sprint22/gysp-eligible-filter', (req, res) => {
+    res.redirect('/legacy/sprint22/gysp-results')
   })
   ;
 
   // Find case to find result
-  router.post('/sprint22/find-case', (req, res) => {
-    res.redirect('/sprint22/gysp-record')
+  router.post('/legacy/sprint22/find-case', (req, res) => {
+    res.redirect('/legacy/sprint22/gysp-record')
   })
   ;
 

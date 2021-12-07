@@ -15,25 +15,25 @@ router.use((req, res, next) => {
 
 // Address to move date
 
-router.post('/sprint68/address', (req, res) => {
-  res.redirect('/sprint68/move-date')
+router.post('/legacy/sprint68/address', (req, res) => {
+  res.redirect('/legacy/sprint68/move-date')
 })
 ;
 
-router.post('/sprint68/address-uk', (req, res) => {
-  res.redirect('/sprint68/move-date')
+router.post('/legacy/sprint68/address-uk', (req, res) => {
+  res.redirect('/legacy/sprint68/move-date')
 })
 ;
 
 // Move date to living with
 
-router.post('/sprint68/move-date', (req, res) => {
-  res.redirect('/sprint68/living-with')
+router.post('/legacy/sprint68/move-date', (req, res) => {
+  res.redirect('/legacy/sprint68/living-with')
 })
 ;
 
 // Living with anyone at address change
-router.post('/sprint68/living-with', function(req, res) {
+router.post('/legacy/sprint68/living-with', function(req, res) {
   if (req.body['living-with'] === 'Lives with someone else who gets Winter Fuel Payment') {
     res.redirect('living-with-age');
   } else {
@@ -41,7 +41,7 @@ router.post('/sprint68/living-with', function(req, res) {
   }
 });
 
-router.post('/sprint68/living-with-age', function(req, res) {
+router.post('/legacy/sprint68/living-with-age', function(req, res) {
   if (req.body['before-1954'] === 'Yes') {
     res.redirect('living-with-over-80');
   } else {
@@ -50,19 +50,19 @@ router.post('/sprint68/living-with-age', function(req, res) {
 });
 
 // Living with age back to contact
-router.post('/sprint68/living-with-over-80', (req, res) => {
-  res.redirect('/sprint68/living-with-date')
+router.post('/legacy/sprint68/living-with-over-80', (req, res) => {
+  res.redirect('/legacy/sprint68/living-with-date')
 });
 
 // Living with to
-router.post('/sprint68/living-with-date', (req, res) => {
+router.post('/legacy/sprint68/living-with-date', (req, res) => {
   res.redirect('declaration')
 })
 ;
 
 
 // Home phone number removal
-router.post('/sprint68/homephone-remove', function(req, res) {
+router.post('/legacy/sprint68/homephone-remove', function(req, res) {
   if (req.body['homephone-remove'] === 'Yes') {
     res.redirect('declaration');
   } else {
@@ -74,7 +74,7 @@ router.post('/sprint68/homephone-remove', function(req, res) {
 
 
 
-router.post('/sprint68/declaration', function(req, res) {
+router.post('/legacy/sprint68/declaration', function(req, res) {
   if (req.session.data["move-month"] === "01") {
     res.redirect('overview-residency-ineligible-eea');
   } else if (req.session.data["move-month"] === "02") {
@@ -96,31 +96,31 @@ router.post('/sprint68/declaration', function(req, res) {
 
 
 // make new claim to overview
-router.post('/sprint68/make-new-claim', (req, res) => {
-  res.redirect('/sprint68/overview-new-claim')
+router.post('/legacy/sprint68/make-new-claim', (req, res) => {
+  res.redirect('/legacy/sprint68/overview-new-claim')
 })
 ;
 
 // do not qualify for wfp - overview
-router.post('/sprint68/over-payment-3', (req, res) => {
-  res.redirect('/sprint68/overview-dnq')
+router.post('/legacy/sprint68/over-payment-3', (req, res) => {
+  res.redirect('/legacy/sprint68/overview-dnq')
 })
 ;
 
 // underpayment to overview
-router.post('/sprint68/make-payment', (req, res) => {
-  res.redirect('/sprint68/overview-make-payment')
+router.post('/legacy/sprint68/make-payment', (req, res) => {
+  res.redirect('/legacy/sprint68/overview-make-payment')
 })
 ;
 
 // underpayment to overview
-router.post('/sprint68/over-payment-2', (req, res) => {
-  res.redirect('/sprint68/make-new-claim')
+router.post('/legacy/sprint68/over-payment-2', (req, res) => {
+  res.redirect('/legacy/sprint68/make-new-claim')
 })
 ;
 
 // Bank type to bank details
-router.post('/sprint68/bank-type', function(req, res) {
+router.post('/legacy/sprint68/bank-type', function(req, res) {
   if (req.body['bank-account-type'] === 'uk') {
     res.redirect('bank-details-uk');
   } else {
@@ -129,14 +129,14 @@ router.post('/sprint68/bank-type', function(req, res) {
 });
 
 // Bank details to payment
-router.post('/sprint68/bank-details-uk', (req, res) => {
-  res.redirect('/sprint68/payment-changed')
+router.post('/legacy/sprint68/bank-details-uk', (req, res) => {
+  res.redirect('/legacy/sprint68/payment-changed')
 })
 ;
 
 // Bank details to payment
-router.post('/sprint68/bank-details-ig', (req, res) => {
-  res.redirect('/sprint68/payment-changed')
+router.post('/legacy/sprint68/bank-details-ig', (req, res) => {
+  res.redirect('/legacy/sprint68/payment-changed')
 })
 ;
 

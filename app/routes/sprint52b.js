@@ -11,7 +11,7 @@ router.use((req, res, next) => {
 
 
 // Reissueto same bank account?
-router.post('/sprint52b/reissue-account', function(req, res) {
+router.post('/legacy/sprint52b/reissue-account', function(req, res) {
   if (req.body['reissue-account'] === 'yes') {
     res.redirect('reissue-payment');
   } else {
@@ -21,18 +21,18 @@ router.post('/sprint52b/reissue-account', function(req, res) {
 
 
 // New bank details to account details origin
-router.post('/sprint52b/reissue-bank-details', (req, res) => {
-  res.redirect('/sprint52b/account-details-origin')
+router.post('/legacy/sprint52b/reissue-bank-details', (req, res) => {
+  res.redirect('/legacy/sprint52b/account-details-origin')
 });
 
 // Account details origin to reissue payment
-router.post('/sprint52b/account-details-origin', (req, res) => {
-  res.redirect('/sprint52b/reissue-payment')
+router.post('/legacy/sprint52b/account-details-origin', (req, res) => {
+  res.redirect('/legacy/sprint52b/reissue-payment')
 });
 
 // Reissue payment to payment with confirmation and updated
-router.post('/sprint52b/reissue-payment', (req, res) => {
-  res.redirect('/sprint52b/payment-reissued-banner')
+router.post('/legacy/sprint52b/reissue-payment', (req, res) => {
+  res.redirect('/legacy/sprint52b/payment-reissued-banner')
 });
 
 

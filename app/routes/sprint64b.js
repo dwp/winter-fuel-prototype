@@ -16,22 +16,22 @@ router.use((req, res, next) => {
 
 
 // Referral to get next
-router.post('/sprint64b/task-lists', (req, res) => {
-  res.redirect('/sprint64b/alternative-format')
+router.post('/legacy/sprint64b/task-lists', (req, res) => {
+  res.redirect('/legacy/sprint64b/alternative-format')
 })
 ;
 
 
   // Referral to get next
-  router.post('/sprint64b/alternative-format-radio-audio', (req, res) => {
-    res.redirect('/sprint64b/next-task')
+  router.post('/legacy/sprint64b/alternative-format-radio-audio', (req, res) => {
+    res.redirect('/legacy/sprint64b/next-task')
   })
   ;
 
 
 
 // confirm reove from queue
-router.post('/sprint64b/confirm-remove', function(req, res) {
+router.post('/legacy/sprint64b/confirm-remove', function(req, res) {
   if (req.body['delete'] === 'No') {
     res.redirect('alternative-format-radio-audio');
   } else {

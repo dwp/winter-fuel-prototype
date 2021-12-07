@@ -9,7 +9,7 @@ router.use((req, res, next) => {
 })
 
 // alt format to contact
-  router.post('/sprint63d/alt', function(req, res) {
+  router.post('/legacy/sprint63d/alt', function(req, res) {
     if (req.body['alternative-format'] === 'Welsh language') {
       res.redirect('large');
     } else if (req.body['alternative-format'] === 'Large print (custom size)') {
@@ -24,13 +24,13 @@ router.use((req, res, next) => {
   });
 
   // email capture to contact
-  router.post('/sprint63d/email2', (req, res) => {
+  router.post('/legacy/sprint63d/email2', (req, res) => {
     res.redirect('contact')
   });
   
 
 // large YES to size, NO to bold
-router.post('/sprint63d/large', function(req, res) {
+router.post('/legacy/sprint63d/large', function(req, res) {
   if (req.body['large-2'] === 'Large print (custom size)') {
     res.redirect('large-print');
   } else {
@@ -41,12 +41,12 @@ router.post('/sprint63d/large', function(req, res) {
 
 
 // large print to bold
-router.post('/sprint63d/large-print', (req, res) => {
+router.post('/legacy/sprint63d/large-print', (req, res) => {
   res.redirect('bold')
 });
 
 // Bold to contact
-router.post('/sprint63d/bold', (req, res) => {
+router.post('/legacy/sprint63d/bold', (req, res) => {
   res.redirect('contact')
 });
 

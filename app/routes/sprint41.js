@@ -8,8 +8,8 @@ router.use((req, res, next) => {
     next()
   })
 
-  router.post('/sprint41/new-claims', (req, res) => {
-    res.redirect('/sprint41/type-of-application')
+  router.post('/legacy/sprint41/new-claims', (req, res) => {
+    res.redirect('/legacy/sprint41/type-of-application')
   })
   ;
 

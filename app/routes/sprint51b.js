@@ -9,7 +9,7 @@ router.use((req, res, next) => {
 })
 
 // Query
-router.post('/sprint51b/bank-task', function(req, res) {
+router.post('/legacy/sprint51b/bank-task', function(req, res) {
   if (req.body['bank-details'] === 'yes') {
     res.redirect('bank-details');
   } else {
@@ -19,13 +19,13 @@ router.post('/sprint51b/bank-task', function(req, res) {
 
 
 // Find result to security
-router.post('/sprint51b/bank-details', (req, res) => {
-  res.redirect('/sprint51b/get-next-task-account-added')
+router.post('/legacy/sprint51b/bank-details', (req, res) => {
+  res.redirect('/legacy/sprint51b/get-next-task-account-added')
 });
 
 // get next account details case to case page
-router.post('/sprint51b/get-next-task', (req, res) => {
-  res.redirect('/sprint51b/bank-task')
+router.post('/legacy/sprint51b/get-next-task', (req, res) => {
+  res.redirect('/legacy/sprint51b/bank-task')
 });
 
 

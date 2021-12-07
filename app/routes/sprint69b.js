@@ -16,28 +16,28 @@ router.use((req, res, next) => {
 
 
 // Referral to get next
-router.post('/sprint69b/task-lists', (req, res) => {
-  res.redirect('/sprint69b/alternative-format')
+router.post('/legacy/sprint69b/task-lists', (req, res) => {
+  res.redirect('/legacy/sprint69b/alternative-format')
 })
 ;
 
 // Referral to get next
-router.post('/sprint69b/alternative-format', (req, res) => {
-  res.redirect('/sprint69b/next-task')
+router.post('/legacy/sprint69b/alternative-format', (req, res) => {
+  res.redirect('/legacy/sprint69b/next-task')
 })
 ;
 
 
   // Referral to get next
-  router.post('/sprint69b/alternative-format-radio-paper', (req, res) => {
-    res.redirect('/sprint69b/next-task')
+  router.post('/legacy/sprint69b/alternative-format-radio-paper', (req, res) => {
+    res.redirect('/legacy/sprint69b/next-task')
   })
   ;
 
 
 
 // confirm remove from queue
-router.post('/sprint69b/confirm-remove', function(req, res) {
+router.post('/legacy/sprint69b/confirm-remove', function(req, res) {
   if (req.body['delete'] === 'No') {
     res.redirect('alternative-format-radio-paper');
   } else {
