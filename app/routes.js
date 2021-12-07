@@ -8,270 +8,270 @@ const payDeathArrears = require('./routes/tasks-pay-death-arrears');
 
 
 
-const sprint15 = require('./routes/sprint15');
-const sprint15b = require('./routes/sprint15b');
-const sprint17 = require('./routes/sprint17');
-const sprint18 = require('./routes/sprint18');
-const sprint18b = require('./routes/sprint18b');
-const sprint18c = require('./routes/sprint18c');
-const sprint19 = require('./routes/sprint19');
-const sprint19b = require('./routes/sprint19b');
-const sprint20 = require('./routes/sprint20');
-const sprint20b = require('./routes/sprint20b');
-const sprint20c = require('./routes/sprint20c');
-const sprint21 = require('./routes/sprint21');
-const sprint21b = require('./routes/sprint21b');
-const sprint21c = require('./routes/sprint21c');
-const sprint21d = require('./routes/sprint21d');
-const sprint22a = require('./routes/sprint22a');
-const sprint22 = require('./routes/sprint22');
-const sprint22b = require('./routes/sprint22b');
-const sprint22c = require('./routes/sprint22c');
-const sprint22d = require('./routes/sprint22d');
-const sprint23 = require('./routes/sprint23');
-const sprint23b = require('./routes/sprint23b');
-const sprint24 = require('./routes/sprint24');
-const sprint24b = require('./routes/sprint24b');
+const legacy/sprint15 = require('./routes/legacy/sprint15');
+const legacy/sprint15b = require('./routes/legacy/sprint15b');
+const legacy/sprint17 = require('./routes/legacy/sprint17');
+const legacy/sprint18 = require('./routes/legacy/sprint18');
+const legacy/sprint18b = require('./routes/legacy/sprint18b');
+const legacy/sprint18c = require('./routes/legacy/sprint18c');
+const legacy/sprint19 = require('./routes/legacy/sprint19');
+const legacy/sprint19b = require('./routes/legacy/sprint19b');
+const legacy/sprint20 = require('./routes/legacy/sprint20');
+const legacy/sprint20b = require('./routes/legacy/sprint20b');
+const legacy/sprint20c = require('./routes/legacy/sprint20c');
+const legacy/sprint21 = require('./routes/legacy/sprint21');
+const legacy/sprint21b = require('./routes/legacy/sprint21b');
+const legacy/sprint21c = require('./routes/legacy/sprint21c');
+const legacy/sprint21d = require('./routes/legacy/sprint21d');
+const legacy/sprint22a = require('./routes/legacy/sprint22a');
+const legacy/sprint22 = require('./routes/legacy/sprint22');
+const legacy/sprint22b = require('./routes/legacy/sprint22b');
+const legacy/sprint22c = require('./routes/legacy/sprint22c');
+const legacy/sprint22d = require('./routes/legacy/sprint22d');
+const legacy/sprint23 = require('./routes/legacy/sprint23');
+const legacy/sprint23b = require('./routes/legacy/sprint23b');
+const legacy/sprint24 = require('./routes/legacy/sprint24');
+const legacy/sprint24b = require('./routes/legacy/sprint24b');
 const returnedpayment = require('./routes/returnedpayment');
-const sprint26 = require('./routes/sprint26');
-const sprint27 = require('./routes/sprint27');
-const sprint27b = require('./routes/sprint27b');
-const sprint27c = require('./routes/sprint27c');
-const sprint28 = require('./routes/sprint28');
-const sprint28b = require('./routes/sprint28b');
-const sprint28c = require('./routes/sprint28c');
-const sprint29b = require('./routes/sprint29b');
-const sprint30a = require('./routes/sprint30a');
-const sprint30b = require('./routes/sprint30b');
-const sprint30c = require('./routes/sprint30c');
-const sprint31a = require('./routes/sprint31a');
-const sprint31b = require('./routes/sprint31b');
-const sprint31c = require('./routes/sprint31c');
-const sprint31d = require('./routes/sprint31d');
-const sprint32a = require('./routes/sprint32a');
-const sprint32b = require('./routes/sprint32b');
-const sprint32c = require('./routes/sprint32c');
-const sprint32d = require('./routes/sprint32d');
-const sprint32e = require('./routes/sprint32e');
-const sprint32f = require('./routes/sprint32f');
-const sprint33a = require('./routes/sprint33a');
-const sprint33b = require('./routes/sprint33b');
-const sprint33c = require('./routes/sprint33c');
-const sprint33d = require('./routes/sprint33d');
-const sprint35 = require('./routes/sprint35');
-const sprint35b = require('./routes/sprint35b');
-const sprint35c = require('./routes/sprint35c');
-const sprint35d = require('./routes/sprint35d');
-const sprint35e = require('./routes/sprint35e');
+const legacy/sprint26 = require('./routes/legacy/sprint26');
+const legacy/sprint27 = require('./routes/legacy/sprint27');
+const legacy/sprint27b = require('./routes/legacy/sprint27b');
+const legacy/sprint27c = require('./routes/legacy/sprint27c');
+const legacy/sprint28 = require('./routes/legacy/sprint28');
+const legacy/sprint28b = require('./routes/legacy/sprint28b');
+const legacy/sprint28c = require('./routes/legacy/sprint28c');
+const legacy/sprint29b = require('./routes/legacy/sprint29b');
+const legacy/sprint30a = require('./routes/legacy/sprint30a');
+const legacy/sprint30b = require('./routes/legacy/sprint30b');
+const legacy/sprint30c = require('./routes/legacy/sprint30c');
+const legacy/sprint31a = require('./routes/legacy/sprint31a');
+const legacy/sprint31b = require('./routes/legacy/sprint31b');
+const legacy/sprint31c = require('./routes/legacy/sprint31c');
+const legacy/sprint31d = require('./routes/legacy/sprint31d');
+const legacy/sprint32a = require('./routes/legacy/sprint32a');
+const legacy/sprint32b = require('./routes/legacy/sprint32b');
+const legacy/sprint32c = require('./routes/legacy/sprint32c');
+const legacy/sprint32d = require('./routes/legacy/sprint32d');
+const legacy/sprint32e = require('./routes/legacy/sprint32e');
+const legacy/sprint32f = require('./routes/legacy/sprint32f');
+const legacy/sprint33a = require('./routes/legacy/sprint33a');
+const legacy/sprint33b = require('./routes/legacy/sprint33b');
+const legacy/sprint33c = require('./routes/legacy/sprint33c');
+const legacy/sprint33d = require('./routes/legacy/sprint33d');
+const legacy/sprint35 = require('./routes/legacy/sprint35');
+const legacy/sprint35b = require('./routes/legacy/sprint35b');
+const legacy/sprint35c = require('./routes/legacy/sprint35c');
+const legacy/sprint35d = require('./routes/legacy/sprint35d');
+const legacy/sprint35e = require('./routes/legacy/sprint35e');
 const emergencypayments = require('./routes/emergencypayments');
-const sprint37 = require('./routes/sprint37');
-const sprint37b = require('./routes/sprint37b');
-const sprint38 = require('./routes/sprint38');
-const sprint39c = require('./routes/sprint39c');
-const sprint40a = require('./routes/sprint40a');
-const sprint40b = require('./routes/sprint40b');
-const sprint41 = require('./routes/sprint41');
-const sprint41b = require('./routes/sprint41b');
-const sprint42b = require('./routes/sprint42b');
-const sprint42c = require('./routes/sprint42c');
-const sprint43 = require('./routes/sprint43');
-const sprint43b = require('./routes/sprint43b');
-const sprint43d = require('./routes/sprint43d');
-const sprint45 = require('./routes/sprint45');
-const sprint45b = require('./routes/sprint45b');
-const sprint46 = require('./routes/sprint46');
-const sprint46b = require('./routes/sprint46b');
-const sprint47b = require('./routes/sprint47b');
-const sprint49 = require('./routes/sprint49');
-const sprint49b = require('./routes/sprint49b');
-const sprint49c = require('./routes/sprint49c');
-const sprint49d = require('./routes/sprint49d');
-const sprint50 = require('./routes/sprint50');
-const sprint50b = require('./routes/sprint50b');
-const sprint50c = require('./routes/sprint50c');
-const sprint49e = require('./routes/sprint49e');
-const sprint51 = require('./routes/sprint51');
-const sprint51b = require('./routes/sprint51b');
-const sprint51c = require('./routes/sprint51c');
-const sprint51d = require('./routes/sprint51d');
-const sprint52 = require('./routes/sprint52');
-const sprint52b = require('./routes/sprint52b');
-const sprint52c = require('./routes/sprint52c');
-const sprint52d = require('./routes/sprint52d');
-const sprint52e = require('./routes/sprint52e');
-const sprint52f = require('./routes/sprint52f');
-const sprint52g = require('./routes/sprint52g');
-const sprint53 = require('./routes/sprint53');
-const sprint55 = require('./routes/sprint55');
-const sprint55b = require('./routes/sprint55b');
-const sprint56 = require('./routes/sprint56');
-const sprint57 = require('./routes/sprint57');
-const sprint57b = require('./routes/sprint57b');
-const sprint57c = require('./routes/sprint57c');
-const sprint59 = require('./routes/sprint59');
-const sprint59b = require('./routes/sprint59b');
-const sprint59c = require('./routes/sprint59c');
-const sprint59d = require('./routes/sprint59d');
-const sprint59e = require('./routes/sprint59e');
-const sprint59f = require('./routes/sprint59f');
-const sprint60 = require('./routes/sprint60');
-const sprint60b = require('./routes/sprint60b');
-const sprint60c = require('./routes/sprint60c');
-const sprint62 = require('./routes/sprint62');
-const sprint62b = require('./routes/sprint62b');
-const sprint62c = require('./routes/sprint62c');
-const sprint63 = require('./routes/sprint63');
-const sprint63c = require('./routes/sprint63c');
-const sprint63d = require('./routes/sprint63d');
-const sprint63e = require('./routes/sprint63e');
-const sprint63f = require('./routes/sprint63f');
-const sprint64 = require('./routes/sprint64');
-const sprint64b = require('./routes/sprint64b');
-const sprint65 = require('./routes/sprint65');
-const sprint65c = require('./routes/sprint65c');
-const sprint66 = require('./routes/sprint66');
-const sprint66b = require('./routes/sprint66b');
-const sprint68 = require('./routes/sprint68');
-const sprint68b = require('./routes/sprint68b');
-const sprint68c = require('./routes/sprint68c');
-const sprint69 = require('./routes/sprint69');
-const sprint69b = require('./routes/sprint69b');
+const legacy/sprint37 = require('./routes/legacy/sprint37');
+const legacy/sprint37b = require('./routes/legacy/sprint37b');
+const legacy/sprint38 = require('./routes/legacy/sprint38');
+const legacy/sprint39c = require('./routes/legacy/sprint39c');
+const legacy/sprint40a = require('./routes/legacy/sprint40a');
+const legacy/sprint40b = require('./routes/legacy/sprint40b');
+const legacy/sprint41 = require('./routes/legacy/sprint41');
+const legacy/sprint41b = require('./routes/legacy/sprint41b');
+const legacy/sprint42b = require('./routes/legacy/sprint42b');
+const legacy/sprint42c = require('./routes/legacy/sprint42c');
+const legacy/sprint43 = require('./routes/legacy/sprint43');
+const legacy/sprint43b = require('./routes/legacy/sprint43b');
+const legacy/sprint43d = require('./routes/legacy/sprint43d');
+const legacy/sprint45 = require('./routes/legacy/sprint45');
+const legacy/sprint45b = require('./routes/legacy/sprint45b');
+const legacy/sprint46 = require('./routes/legacy/sprint46');
+const legacy/sprint46b = require('./routes/legacy/sprint46b');
+const legacy/sprint47b = require('./routes/legacy/sprint47b');
+const legacy/sprint49 = require('./routes/legacy/sprint49');
+const legacy/sprint49b = require('./routes/legacy/sprint49b');
+const legacy/sprint49c = require('./routes/legacy/sprint49c');
+const legacy/sprint49d = require('./routes/legacy/sprint49d');
+const legacy/sprint50 = require('./routes/legacy/sprint50');
+const legacy/sprint50b = require('./routes/legacy/sprint50b');
+const legacy/sprint50c = require('./routes/legacy/sprint50c');
+const legacy/sprint49e = require('./routes/legacy/sprint49e');
+const legacy/sprint51 = require('./routes/legacy/sprint51');
+const legacy/sprint51b = require('./routes/legacy/sprint51b');
+const legacy/sprint51c = require('./routes/legacy/sprint51c');
+const legacy/sprint51d = require('./routes/legacy/sprint51d');
+const legacy/sprint52 = require('./routes/legacy/sprint52');
+const legacy/sprint52b = require('./routes/legacy/sprint52b');
+const legacy/sprint52c = require('./routes/legacy/sprint52c');
+const legacy/sprint52d = require('./routes/legacy/sprint52d');
+const legacy/sprint52e = require('./routes/legacy/sprint52e');
+const legacy/sprint52f = require('./routes/legacy/sprint52f');
+const legacy/sprint52g = require('./routes/legacy/sprint52g');
+const legacy/sprint53 = require('./routes/legacy/sprint53');
+const legacy/sprint55 = require('./routes/legacy/sprint55');
+const legacy/sprint55b = require('./routes/legacy/sprint55b');
+const legacy/sprint56 = require('./routes/legacy/sprint56');
+const legacy/sprint57 = require('./routes/legacy/sprint57');
+const legacy/sprint57b = require('./routes/legacy/sprint57b');
+const legacy/sprint57c = require('./routes/legacy/sprint57c');
+const legacy/sprint59 = require('./routes/legacy/sprint59');
+const legacy/sprint59b = require('./routes/legacy/sprint59b');
+const legacy/sprint59c = require('./routes/legacy/sprint59c');
+const legacy/sprint59d = require('./routes/legacy/sprint59d');
+const legacy/sprint59e = require('./routes/legacy/sprint59e');
+const legacy/sprint59f = require('./routes/legacy/sprint59f');
+const legacy/sprint60 = require('./routes/legacy/sprint60');
+const legacy/sprint60b = require('./routes/legacy/sprint60b');
+const legacy/sprint60c = require('./routes/legacy/sprint60c');
+const legacy/sprint62 = require('./routes/legacy/sprint62');
+const legacy/sprint62b = require('./routes/legacy/sprint62b');
+const legacy/sprint62c = require('./routes/legacy/sprint62c');
+const legacy/sprint63 = require('./routes/legacy/sprint63');
+const legacy/sprint63c = require('./routes/legacy/sprint63c');
+const legacy/sprint63d = require('./routes/legacy/sprint63d');
+const legacy/sprint63e = require('./routes/legacy/sprint63e');
+const legacy/sprint63f = require('./routes/legacy/sprint63f');
+const legacy/sprint64 = require('./routes/legacy/sprint64');
+const legacy/sprint64b = require('./routes/legacy/sprint64b');
+const legacy/sprint65 = require('./routes/legacy/sprint65');
+const legacy/sprint65c = require('./routes/legacy/sprint65c');
+const legacy/sprint66 = require('./routes/legacy/sprint66');
+const legacy/sprint66b = require('./routes/legacy/sprint66b');
+const legacy/sprint68 = require('./routes/legacy/sprint68');
+const legacy/sprint68b = require('./routes/legacy/sprint68b');
+const legacy/sprint68c = require('./routes/legacy/sprint68c');
+const legacy/sprint69 = require('./routes/legacy/sprint69');
+const legacy/sprint69b = require('./routes/legacy/sprint69b');
 
 
-//copy the router use and update the sprint version
+//copy the router use and update the legacy/sprint version
 router.use(eligibilitychecker);
 router.use(payDeathArrears);
 
 
 
-router.use(sprint15);
-router.use(sprint15b);
-router.use(sprint17);
-router.use(sprint18);
-router.use(sprint18b);
-router.use(sprint18c);
-router.use(sprint19);
-router.use(sprint19b);
-router.use(sprint20);
-router.use(sprint20b);
-router.use(sprint20c);
-router.use(sprint21);
-router.use(sprint21b);
-router.use(sprint21c);
-router.use(sprint21d);
-router.use(sprint22);
-router.use(sprint22a);
-router.use(sprint22b);
-router.use(sprint22c);
-router.use(sprint22d);
-router.use(sprint23);
-router.use(sprint23b);
-router.use(sprint24);
-router.use(sprint24b);
+router.use(legacy/sprint15);
+router.use(legacy/sprint15b);
+router.use(legacy/sprint17);
+router.use(legacy/sprint18);
+router.use(legacy/sprint18b);
+router.use(legacy/sprint18c);
+router.use(legacy/sprint19);
+router.use(legacy/sprint19b);
+router.use(legacy/sprint20);
+router.use(legacy/sprint20b);
+router.use(legacy/sprint20c);
+router.use(legacy/sprint21);
+router.use(legacy/sprint21b);
+router.use(legacy/sprint21c);
+router.use(legacy/sprint21d);
+router.use(legacy/sprint22);
+router.use(legacy/sprint22a);
+router.use(legacy/sprint22b);
+router.use(legacy/sprint22c);
+router.use(legacy/sprint22d);
+router.use(legacy/sprint23);
+router.use(legacy/sprint23b);
+router.use(legacy/sprint24);
+router.use(legacy/sprint24b);
 router.use(returnedpayment);
-router.use(sprint26);
-router.use(sprint27);
-router.use(sprint27b);
-router.use(sprint27c);
-router.use(sprint28);
-router.use(sprint28b);
-router.use(sprint28c);
-router.use(sprint29b);
-router.use(sprint30a);
-router.use(sprint30b);
-router.use(sprint30c);
-router.use(sprint31a);
-router.use(sprint31b);
-router.use(sprint31c);
-router.use(sprint31d);
-router.use(sprint32a);
-router.use(sprint32b);
-router.use(sprint32c);
-router.use(sprint32d);
-router.use(sprint32e);
-router.use(sprint32f);
-router.use(sprint33a);
-router.use(sprint33b);
-router.use(sprint33c);
-router.use(sprint33d);
-router.use(sprint35);
-router.use(sprint35b);
-router.use(sprint35c);
-router.use(sprint35d);
-router.use(sprint35e);
+router.use(legacy/sprint26);
+router.use(legacy/sprint27);
+router.use(legacy/sprint27b);
+router.use(legacy/sprint27c);
+router.use(legacy/sprint28);
+router.use(legacy/sprint28b);
+router.use(legacy/sprint28c);
+router.use(legacy/sprint29b);
+router.use(legacy/sprint30a);
+router.use(legacy/sprint30b);
+router.use(legacy/sprint30c);
+router.use(legacy/sprint31a);
+router.use(legacy/sprint31b);
+router.use(legacy/sprint31c);
+router.use(legacy/sprint31d);
+router.use(legacy/sprint32a);
+router.use(legacy/sprint32b);
+router.use(legacy/sprint32c);
+router.use(legacy/sprint32d);
+router.use(legacy/sprint32e);
+router.use(legacy/sprint32f);
+router.use(legacy/sprint33a);
+router.use(legacy/sprint33b);
+router.use(legacy/sprint33c);
+router.use(legacy/sprint33d);
+router.use(legacy/sprint35);
+router.use(legacy/sprint35b);
+router.use(legacy/sprint35c);
+router.use(legacy/sprint35d);
+router.use(legacy/sprint35e);
 router.use(emergencypayments);
-router.use(sprint37);
-router.use(sprint37b);
-router.use(sprint38);
-router.use(sprint39c);
-router.use(sprint40a);
-router.use(sprint40b);
-router.use(sprint41);
-router.use(sprint41b);
-router.use(sprint42b);
-router.use(sprint42c);
-router.use(sprint43);
-router.use(sprint43b);
-router.use(sprint43d);
-router.use(sprint45);
-router.use(sprint45b);
-router.use(sprint46);
-router.use(sprint46b);
-router.use(sprint47b);
-router.use(sprint49);
-router.use(sprint49b);
-router.use(sprint49c);
-router.use(sprint49d);
-router.use(sprint50);
-router.use(sprint50b);
-router.use(sprint50c);
-router.use(sprint49e);
-router.use(sprint51);
-router.use(sprint51b);
-router.use(sprint51c);
-router.use(sprint51d);
-router.use(sprint52);
-router.use(sprint52b);
-router.use(sprint52c);
-router.use(sprint52d);
-router.use(sprint52e);
-router.use(sprint52f);
-router.use(sprint52g);
-router.use(sprint53);
-router.use(sprint55);
-router.use(sprint55b);
-router.use(sprint56);
-router.use(sprint57);
-router.use(sprint57b);
-router.use(sprint57c);
-router.use(sprint59);
-router.use(sprint59b);
-router.use(sprint59c);
-router.use(sprint59d);
-router.use(sprint59e);
-router.use(sprint59f);
-router.use(sprint60);
-router.use(sprint60b);
-router.use(sprint60c);
-router.use(sprint62);
-router.use(sprint62b);
-router.use(sprint62c);
-router.use(sprint63);
-router.use(sprint63c);
-router.use(sprint63d);
-router.use(sprint63e);
-router.use(sprint63f);
-router.use(sprint64);
-router.use(sprint64b);
-router.use(sprint65);
-router.use(sprint65c);
-router.use(sprint66);
-router.use(sprint66b);
-router.use(sprint68);
-router.use(sprint68b);
-router.use(sprint68c);
-router.use(sprint69);
-router.use(sprint69b);
+router.use(legacy/sprint37);
+router.use(legacy/sprint37b);
+router.use(legacy/sprint38);
+router.use(legacy/sprint39c);
+router.use(legacy/sprint40a);
+router.use(legacy/sprint40b);
+router.use(legacy/sprint41);
+router.use(legacy/sprint41b);
+router.use(legacy/sprint42b);
+router.use(legacy/sprint42c);
+router.use(legacy/sprint43);
+router.use(legacy/sprint43b);
+router.use(legacy/sprint43d);
+router.use(legacy/sprint45);
+router.use(legacy/sprint45b);
+router.use(legacy/sprint46);
+router.use(legacy/sprint46b);
+router.use(legacy/sprint47b);
+router.use(legacy/sprint49);
+router.use(legacy/sprint49b);
+router.use(legacy/sprint49c);
+router.use(legacy/sprint49d);
+router.use(legacy/sprint50);
+router.use(legacy/sprint50b);
+router.use(legacy/sprint50c);
+router.use(legacy/sprint49e);
+router.use(legacy/sprint51);
+router.use(legacy/sprint51b);
+router.use(legacy/sprint51c);
+router.use(legacy/sprint51d);
+router.use(legacy/sprint52);
+router.use(legacy/sprint52b);
+router.use(legacy/sprint52c);
+router.use(legacy/sprint52d);
+router.use(legacy/sprint52e);
+router.use(legacy/sprint52f);
+router.use(legacy/sprint52g);
+router.use(legacy/sprint53);
+router.use(legacy/sprint55);
+router.use(legacy/sprint55b);
+router.use(legacy/sprint56);
+router.use(legacy/sprint57);
+router.use(legacy/sprint57b);
+router.use(legacy/sprint57c);
+router.use(legacy/sprint59);
+router.use(legacy/sprint59b);
+router.use(legacy/sprint59c);
+router.use(legacy/sprint59d);
+router.use(legacy/sprint59e);
+router.use(legacy/sprint59f);
+router.use(legacy/sprint60);
+router.use(legacy/sprint60b);
+router.use(legacy/sprint60c);
+router.use(legacy/sprint62);
+router.use(legacy/sprint62b);
+router.use(legacy/sprint62c);
+router.use(legacy/sprint63);
+router.use(legacy/sprint63c);
+router.use(legacy/sprint63d);
+router.use(legacy/sprint63e);
+router.use(legacy/sprint63f);
+router.use(legacy/sprint64);
+router.use(legacy/sprint64b);
+router.use(legacy/sprint65);
+router.use(legacy/sprint65c);
+router.use(legacy/sprint66);
+router.use(legacy/sprint66b);
+router.use(legacy/sprint68);
+router.use(legacy/sprint68b);
+router.use(legacy/sprint68c);
+router.use(legacy/sprint69);
+router.use(legacy/sprint69b);
 
 
 router.post('*', function (req, res, next) {
@@ -300,31 +300,31 @@ router.get('/', function (req, res) {
 // Add your routes here - above the module.exports line
 // Branching
 
-router.get('/sprint3/qq123456c_main2', function (req, res) {
+router.get('/legacy/sprint3/qq123456c_main2', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
   var dob = req.query.dob
 
   if (dob === 'false') {
     // Redirect to the relevant page
-    res.redirect('/sprint3/qq123456c_dob')
+    res.redirect('/legacy/sprint3/qq123456c_dob')
   }
 
   else {
     // If over18 is any other value (or is missing) render the page requested
-    res.render('sprint3/qq123456c_main2')
+    res.render('legacy/sprint3/qq123456c_main2')
   }
 })
 
-router.get('/sprint3/qq123456c_dob2', function (req, res) {
+router.get('/legacy/sprint3/qq123456c_dob2', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
   var dob2 = req.query.dob2
 
   if (dob2 === 'false') {
     // Redirect to the relevant page
-    res.redirect('/sprint3/qq123456c_evidence')
+    res.redirect('/legacy/sprint3/qq123456c_evidence')
   } else {
 
-    res.render('sprint3/qq123456c_dob2')
+    res.render('legacy/sprint3/qq123456c_dob2')
   }
 })
 
@@ -339,14 +339,14 @@ router.post(`/development/payment-letter-router`, (req, res) => { // router name
 })
 
 
-///// Sprint 17 routes ////
+///// legacy/sprint 17 routes ////
 
-router.get('/sprint17/', function(req, res) {
-  res.render('./sprint17/whattodo')
+router.get('/legacy/sprint17/', function(req, res) {
+  res.render('./legacy/sprint17/whattodo')
 })
 
-router.post('/sprint15/international/declaration', function(req, res) {
-  res.redirect('/sprint15/international/applicationcomplete')
+router.post('/legacy/sprint15/international/declaration', function(req, res) {
+  res.redirect('/legacy/sprint15/international/applicationcomplete')
 }) 
 
 module.exports = router
