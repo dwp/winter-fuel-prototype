@@ -13,6 +13,11 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
+  {{ govukBackLink({
+            text: "Back",
+            href: "payments"
+          }) }}
+          
     <br>
     <br>
     <h1 class="govuk-heading-xl">Manage Winter Fuel Payments</h1>
@@ -50,10 +55,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
 
-          {{ govukBackLink({
-            text: "Back",
-            href: "payments"
-          }) }}
+        
 
           <br>
           <br>

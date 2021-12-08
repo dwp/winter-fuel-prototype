@@ -17,6 +17,15 @@ Winter Fuel Payments
 
       <form method="post">
 
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
         <div>
           <h1 class="govuk-heading-xl">
             Joyce Burris<br>
@@ -35,13 +44,6 @@ Winter Fuel Payments
           </h1>
         </div>
 
-            {{ govukBackLink({
-                text: "Back",
-                href: "javascript:history.go(-1)"
-              }) }}
-
-            <br>
-            <br>
 
             <form method="post">
 

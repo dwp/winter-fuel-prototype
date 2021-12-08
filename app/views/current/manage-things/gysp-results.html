@@ -3,15 +3,15 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
     <h2 class="govuk-heading-xl">Get your State Pension cases</h2>
 
     <nav class="moj-pagination" id="pagination-label">
 
-      {{ govukBackLink({
-          text: "Back",
-          href: "javascript:history.go(-1)"
-        }) }}
+      
 
       <p class="govuk-visually-hidden" aria-labelledby="pagination-label"></p>
 

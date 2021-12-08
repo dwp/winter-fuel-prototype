@@ -13,6 +13,11 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
+{{ govukBackLink({
+                  text: "Back",
+                  href: "javascript:history.go(-1)"
+                }) }}
+                
     <br>
     <br>
 
@@ -54,10 +59,7 @@
 
         <div class="govuk-grid-column-full">
 
-              {{ govukBackLink({
-                  text: "Back",
-                  href: "javascript:history.go(-1)"
-                }) }}
+              
 
 <br>
 <br>

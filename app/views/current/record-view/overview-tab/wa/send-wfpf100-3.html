@@ -23,6 +23,14 @@ GOV.UK Prototype Kit
 
         <form method="post">
 
+        {{ govukBackLink({
+                  text: "Back",
+                  href: "javascript:history.go(-1)"
+                }) }}
+
+                <br>
+                <br>
+
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
               <div>
@@ -36,13 +44,7 @@ GOV.UK Prototype Kit
             </div>
           </div>
 
-              {{ govukBackLink({
-                  text: "Back",
-                  href: "javascript:history.go(-1)"
-                }) }}
-
-                <br>
-                <br>
+              
 
                 <h1 class="govuk-heading-l">Request death arrears payee details</h1>
 
