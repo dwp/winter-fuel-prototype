@@ -17,7 +17,7 @@ Winter Fuel Payments
       <div class="govuk-grid-column-two-thirds">
 
       {% if data['gsl-disallowed']=='yes' %}  
-        {% include 'current/includes/_bar-gsl.html' %}
+        {% include 'current/includes/_bar-gsl-disallowed.html' %}
       {% else %}
         {% include 'current/includes/_bar.html' %}
       {% endif %}
