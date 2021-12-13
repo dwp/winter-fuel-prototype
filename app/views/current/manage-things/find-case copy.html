@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-  {% include 'current/includes/_header-find.html' %}
+  {% include './_header-find.html' %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,11 +16,11 @@
 
     <h1 class="govuk-heading-xl">Find a case</h1>
 
-    <form method="post" action="/current/record-view/overview-tab/overview">
+    <form method="post">
 
       <div class="moj-search">
 
-    
+      <form method="post">
 
       <div class="govuk-form-group">
 

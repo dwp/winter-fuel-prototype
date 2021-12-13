@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-{% include './_header.html' %}
+{% include 'current/includes/_header.html' %}
 {% endblock %}
 
 
@@ -17,7 +17,7 @@ Winter Fuel security
       <br>
 
 
-      <form method="post">
+      <form method="post" action="/current/record-view/overview-tab/overview">
 
                 <h1 class="govuk-heading-xl">Security questions</h1>
 
@@ -29,7 +29,7 @@ Winter Fuel security
         </button>
 
 <br>
-                      <p>  <a href="/legacy/sprint41b/type-of-application" class="govuk-link">Start again</a></p>
+                      <p>  <a href="/current/new-claims/uk/type-of-application" class="govuk-link">Start again</a></p>
 
       </form>
 
