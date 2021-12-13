@@ -1,29 +1,21 @@
 {% extends "layout.html" %}
 
-{% block pageTitle %}
-GOV.UK Prototype Kit
-{% endblock %}
-
 {% block header %}
-{% include "current/includes/cookie-banner.html" %}
-{# Set serviceName in config.js. #}
-{{ govukHeader({
-  serviceName: serviceName,
-  serviceUrl: "/"
-}) }}
-
-{% block headEnd %}
-{% include 'current/includes/remove-blue-bar.html' %}
+{% include 'current/includes/_header.html' %}
 {% endblock %}
 
 
-<div class="govuk-width-container">
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
 
-  <main class="govuk-main-wrapper">
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.go(-1)"
+    }) }}
 
-    <div class="govuk-grid-column-two-thirds">
-
-      <a href="exceptions-result" class="govuk-back-link">Back</a>
+<br>
+<br>
 
       <main id="content" role="main">
         <div class="grid-row">
@@ -115,11 +107,7 @@ GOV.UK Prototype Kit
   </main>
 </div>
 <!-- </div> -->
-{% endblock %}
 
-{% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
 
   </div>
 </div>
