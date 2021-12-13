@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-full">
+          {% include 'current/includes/_bar.html' %}
+
+          <h2 class="govuk-heading-l">Duplicate entry found</h2>
+
+
+
+
+                <p>More than one address exists for this entry. Select the correct one.</p>
+
+
+
+    </div>
+
+      <div class="govuk-grid-column-two-thirds">
+
+
+
+          <form method="post">
+
+            <h2 class="govuk-heading-m">Unverified address</h2>
+            <p class="govuk-body govuk-!-font-size-24">
+              Flat D<br>
+              104 Boundary Lane<br>
+              Hulme<br>
+              Manchester<br>
+              M15 6FD</p>
+
+
+
+
+                  <h2 class="govuk-heading-m">Select a verified address</h2>
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                        <div class="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="address-fix-1" name="address-fix-1" type="radio" value="104D Boundary Lane, Manchester, M15 6FD">
+                            <label class="govuk-label govuk-radios__label" for="address">
+
+                              104C Boundary Lane<br>
+                              Manchester<br>
+                              M15 6FD<br>
+                              <strong class="govuk-tag govuk-tag--blue">
+                                Residential
+                              </strong>
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="address-fix-1" name="address-fix-1" type="radio" value="104D Boundary Lane, Manchester, M15 6FD">
+                            <label class="govuk-label govuk-radios__label" for="address">
+                              104D Boundary Lane<br>
+                              Manchester<br>
+                              M15 6FD<br>
+                              <strong class="govuk-tag govuk-tag--blue">
+                                Residential
+                              </strong>
+                            </label>
+                          </div>
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="address-fix-2" name="address-fix-1" type="radio" value="Address not found">
+                            <label class="govuk-label govuk-radios__label" for="address-1">
+                              Add a new address into the database
+                            </label>
+                          </div>
+                        </div>
+
+                      </fieldset>
+                    </div>
+
+
+                    <br>
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+
+            </form>
+
+
+          <br>
+      </div>
+
+      <script>
+        nextPageRoutes = {
+            'Apartment D, 104 Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+            '104D Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+            'Address not found': 'enter-address.html',
+         }
+      </script>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

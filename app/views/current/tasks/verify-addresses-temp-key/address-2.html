@@ -5,7 +5,7 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-{% include 'current/includes/_blue_bar.html' %}
+
 {% endblock %}
 
 {% block content %}
@@ -23,9 +23,17 @@ GOV.UK Prototype Kit
       <div class="govuk-grid-column-two-thirds">
                   <form method="post">
                           <h2 class="govuk-heading-m">Unverified address</h2>
-                          <p>The Beeches<br>
+                          <p class="govuk-body govuk-!-font-size-24">
+                          The Beeches<br>
                           Lower Heyford<br>
                           Oxford</p>
+
+
+                          <h2 class="govuk-heading-m">Contact numbers</h2>
+                          <p><strong>Home phone:</strong> 01324 800 900<br>
+                            <strong>Mobile phone:</strong> 07771 900 900<br>
+                            <strong>Work phone:</strong> 01324 400 500</p>
+
 
                               <h2 class="govuk-heading-m">Select a verified address</h2>
                                 <div class="govuk-form-group">
@@ -66,10 +74,7 @@ GOV.UK Prototype Kit
       </div>
 
 
-      <div class="govuk-grid-column-one-third">
-        <h2 class="govuk-heading-m">Contact number</h2>
-        <p><strong>Mobile phone:</strong> 07771 900 900</p>
-      </div>
+
 
   </div>
 
