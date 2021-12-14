@@ -1,19 +1,15 @@
 {% extends "layout.html" %}
 
-{% block pageTitle %}
-GOV.UK Prototype Kit
+{% block header %}
+{% include 'current/includes/_header.html' %}
 {% endblock %}
 
-{% block beforeContent %}
-
-{% if data['phone-post'] === 'phone' %}
-{% include 'current/includes/_blue_bar.html' %}
-{% else %}
-{% include 'current/includes/_blue_bar-2.html' %}
-{% endif %}
-
+{% block pageTitle %}
+Winter Fuel Payments
 {% endblock %}
 {% block content %}
+
+
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
@@ -41,7 +37,7 @@ GOV.UK Prototype Kit
               <button type="submit" class="govuk-button">
                 Continue
               </button>
-
+<br><a href="next-task" class="govuk-link">Return this case to the queue</a>
             </form>
 
       </div>

@@ -1,12 +1,14 @@
 {% extends "layout.html" %}
 
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
 {% block pageTitle %}
 GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-  {% include 'current/includes/_blue_bar.html' %}
-{% endblock %}
+
 
 {% block content %}
 
