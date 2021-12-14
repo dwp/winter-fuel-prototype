@@ -1,20 +1,14 @@
 {% extends "layout.html" %}
 
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
 {% block pageTitle %}
-GOV.UK Prototype Kit
+Winter Fuel Payments
 {% endblock %}
-
-{% block beforeContent %}
-
-{% if data['phone-post'] === 'phone' %}
-{% include 'current/includes/_blue_bar.html' %}
-{% else %}
-{% include 'current/includes/_blue_bar-2.html' %}
-{% endif %}
-
-{% endblock %}
-
 {% block content %}
+
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
