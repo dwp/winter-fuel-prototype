@@ -5,6 +5,7 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+{% include 'current/includes/_bar-telephone.html' %}
 
 {% endblock %}
 
@@ -16,7 +17,7 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-row">
 
       <div class="govuk-grid-column-full">
-          {% include 'current/includes/_bar.html' %}
+
 
           <h2 class="govuk-heading-l">Duplicate entry found</h2>
 
@@ -43,10 +44,6 @@ GOV.UK Prototype Kit
               Manchester<br>
               M15 6FD</p>
 
-              <h2 class="govuk-heading-m">Contact numbers</h2>
-              <p><strong>Home phone:</strong> 01324 800 900<br>
-                <strong>Mobile phone:</strong> 07771 900 900<br>
-                <strong>Work phone:</strong> 01324 400 500</p>
 
 
                   <h2 class="govuk-heading-m">Select a verified address</h2>
