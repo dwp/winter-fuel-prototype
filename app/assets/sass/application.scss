@@ -808,7 +808,11 @@ padding: 0;
 .dwp-key-details-bar {
 background-color: #1d70b8;
 color: #fff;
-font-family: Arial, sans-serif;
+font-family: "GDS Transport", sans-serif;
+}
+
+.dwp-key-details-bar__nino {
+  margin-left: 10px;
 }
 
 .dwp-key-details-bar .dwp-key-details-bar__key-details {
