@@ -44,8 +44,8 @@ Winter Fuel Payments
                         <h2 class="govuk-heading-m">2019 payment</h2>
                         <tbody class="govuk-table__body">
                           <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">Payment date</th>
-                            <td class="govuk-table__cell">4 November 2020</td>
+                            <th scope="row" class="govuk-table__header govuk-!-width-one-third">Payment date</th>
+                            <td class="govuk-table__cell govuk-!-width-one-half">4 November 2020</td>
                           </tr>
                           <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Amount</th>
@@ -59,26 +59,21 @@ Winter Fuel Payments
 
             <table class="govuk-table">
                   <h2 class="govuk-heading-m">Current details</h2>
-              <a href="address" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 80%">Update details</span>
+              <a href="address"> <span class="govuk-link govuk-!-font-size-19" style="margin-left: 80%">Update details</span>
               </a>
-              <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                  <th scope="col" class="govuk-table__header"></th>
-                  <th scope="col" class="govuk-table__header"></th>
-                </tr>
-              </thead>
+              
               <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Age</th>
-                  <td class="govuk-table__cell">66</td>
-                  <td class="govuk-table__cell"></td>
+                  <th scope="row" class="govuk-table__header govuk-!-width-one-third">Age</th>
+                  <td class="govuk-table__cell govuk-!-width-one-half">66</td>
+                  
                 </tr>
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Date of birth</th>
                   <td class="govuk-table__cell">9 August 1953</td>
                 </tr>
                 <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Address</th>
+                  <th scope="row" class="govuk-table__header govuk-!-width-one-third">Address</th>
                   <td class="govuk-table__cell">
                     {% if data['address-change'] %}
                     {{data['address-change'].split(', ').join('<br />') | safe }}
