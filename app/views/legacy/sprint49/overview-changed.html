@@ -27,7 +27,7 @@ Winter Fuel Payments
         {% else %}
           <span class="moj-banner__assistive">Success</span>Details updated</div>
         {% endif %}
-        
+
 
         </div>
 
@@ -92,6 +92,16 @@ Winter Fuel Payments
                   </td>
                 </tr>
                 <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Correspondence address</th>
+                  <td class="govuk-table__cell">
+
+                    1 Victoria Road<br>
+                    FALKIRK<br>
+                    FK55 8XN
+
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Date moved in</th>
                   <td class="govuk-table__cell">
                     {% if data['moveday'] %}
@@ -100,7 +110,7 @@ Winter Fuel Payments
                       15 July 2020
                     {% endif %}
                   </td>
-                  </td>
+
                 </tr>
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Occupancy</th>
@@ -114,7 +124,7 @@ Winter Fuel Payments
                     {% endif %}
                   </td>
                 </tr>
-                
+
               </tbody>
             </table>
 
