@@ -46,7 +46,7 @@ GOV.UK Prototype Kit
               <fieldset class="govuk-fieldset" aria-describedby="nok-details-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   <h1 class="govuk-fieldset__heading">
-                    Is this your residential address?
+                    Do you want to make this their correspondence address?
                   </h1>
                 </legend>
 
@@ -72,11 +72,20 @@ GOV.UK Prototype Kit
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="care-home-no" name="care-home" type="radio" value="no" data-aria-controls="conditional-contact">
                         <label class="govuk-label govuk-radios__label" for="contact">
-                          No
+                          No - I have confirmed it is a commercial address
                         </label>
                       </div>
-                  </div>
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                         <div class="govuk-form-group">
+                           <div class="govuk-warning-text">
+                         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                         <strong class="govuk-warning-text__text">
+                           <span class="govuk-warning-text__assistive">Warning</span>
+                           The citizen cannot get a payment
+                         </strong>
+                       </div>
 
+                       </div>
               </fieldset>
             </div>
             <button type="submit" class="govuk-button">
@@ -93,5 +102,11 @@ GOV.UK Prototype Kit
 
 </main>
 </div>
+<script>
+  nextPageRoutes = {
+      'yes': '/legacy/sprint49/address2.html',
+      'no': 'overview-changed-commercial.html',
+   }
+</script>
 
 {% endblock %}

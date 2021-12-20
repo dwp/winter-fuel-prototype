@@ -183,7 +183,7 @@ router.post('/legacy/sprint52g/not-commercial', function(req, res) {
   if (req.body['care-home'] === 'yes') {
     res.redirect('/legacy/sprint49/move-date');
   } else {
-    res.redirect('/legacy/sprint35d/overview-commercial');
+    res.redirect('/legacy/sprint52g/address-fork');
   }
 });
 
