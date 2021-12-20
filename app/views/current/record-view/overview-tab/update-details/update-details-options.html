@@ -106,7 +106,12 @@ Winter Fuel Payments
                   </label>
                 </div>
 
-
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="dlo" name="update-details-options" type="radio" value="in-prison" data-aria-controls="conditional-carehome-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
+                    Remove IN PRISON status
+                  </label>
+                </div>
 
 
               </div>
@@ -163,6 +168,7 @@ Winter Fuel Payments
             'gsl': '{{nextGSLPage}}',
             'immig-control': 'confirm-immigration-control',
             'benefit-flag': 'choose-benefit-flag',
+            'in-prison': 'confirm-remove-prison-flag',
         }
     </script>
 

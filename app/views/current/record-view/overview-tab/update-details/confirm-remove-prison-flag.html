@@ -22,13 +22,13 @@ Winter Fuel Payments
 
       
 
-          {% include 'current/includes/_bar-immigration-control.html' %}
+          {% include 'current/includes/_bar-prison.html' %}
 
 
             <br>
             <br>
 
-            <h1 class="govuk-heading-l">Are you sure you want to remove the IMMIGRATION CONTROL status from this citizen?</h1>
+            <h1 class="govuk-heading-l">Are you sure you want to remove the IN PRISON status from this citizen?</h1>
 
             <form method="post">
               <div class="govuk-form-group">
@@ -37,13 +37,13 @@ Winter Fuel Payments
                   </legend>
                   <div class="govuk-radios govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="mark-as-dead" name="immigration-control" type="radio" value="yes">
+                      <input class="govuk-radios__input" id="mark-as-dead" name="remove-in-prison-flag" type="radio" value="yes">
                       <label class="govuk-label govuk-radios__label" for="stop-payments-1">
                         Yes
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="mark-as-dead" name="immigration-control" type="radio" value="no">
+                      <input class="govuk-radios__input" id="mark-as-dead" name="remove-in-prison-flag" type="radio" value="no">
                       <label class="govuk-label govuk-radios__label" for="stop-payments-2">
                       No
                       </label>
@@ -72,8 +72,8 @@ Winter Fuel Payments
 
 <script>
     nextPageRoutes = {
-        'yes': '/current/record-view/overview-tab/update-details/overview-immigration-control',
-        'no': '/current/record-view/overview-tab/ineligible/overview-immigration-control',
+        'yes': '/current/record-view/overview-tab/update-details/overview-remove-in-prison',
+        'no': '/current/record-view/overview-tab/ineligible/overview-prison',
 
     }
     
