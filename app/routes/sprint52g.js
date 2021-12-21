@@ -175,15 +175,15 @@ router.post('/legacy/sprint52g/address-commercial2', function(req, res) {
   if (req.body['address-change'] === 'G05 Chorlton Mill, Cambridge Street, Manchester M1 5BY') {
     res.redirect('not-commercial');
   } else {
-    res.redirect('/legacy/sprint49/address');
+    res.redirect('/current/record-view/overview-tab/update-details/move-date?prev-page=change-move-date');
   }
 });
 
 router.post('/legacy/sprint52g/not-commercial', function(req, res) {
   if (req.body['care-home'] === 'yes') {
-    res.redirect('/legacy/sprint49/move-date');
+    res.redirect('/current/record-view/overview-tab/update-details/move-date?prev-page=change-move-date');
   } else {
-    res.redirect('/legacy/sprint35d/overview-commercial');
+    res.redirect('/legacy/sprint52g/address-fork');
   }
 });
 

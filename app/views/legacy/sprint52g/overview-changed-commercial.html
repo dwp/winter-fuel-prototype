@@ -25,7 +25,7 @@ Winter Fuel Payments
           {% if data['recoverable'] === 'yes' %}
           <span class="moj-banner__assistive">Success</span>Record of decision downloaded - you should now upload this to CAM<br><a href="">Download record of decision again</a></div>
         {% else %}
-          <span class="moj-banner__assistive">Success</span>Details updated</div>
+          <span class="moj-banner__assistive">Success</span>Details updated. The citizen cannot get a payment.</div>
         {% endif %}
 
 
@@ -89,16 +89,10 @@ Winter Fuel Payments
                     FALKIRK<br>
                     FK55 8XN
                     {% endif %}
-                  </td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Correspondence address</th>
-                  <td class="govuk-table__cell">
-
-                    1 Victoria Road<br>
-                    FALKIRK<br>
-                    FK55 8XN
-
+                    <br>
+                    <strong class="govuk-tag govuk-tag--red">
+                      COMMERCIAL
+                    </strong>
                   </td>
                 </tr>
                 <tr class="govuk-table__row">

@@ -33,7 +33,7 @@ Winter Fuel Payments
 
 
 
-<p><b>5</b> addresses found for <b>"{% if data['house-number'] %}
+<p><b>6</b> addresses found for <b>"{% if data['house-number'] %}
                     {{data['house-number']}}
                   {% else %}
                  G05
@@ -48,40 +48,48 @@ Winter Fuel Payments
                 <fieldset class="govuk-fieldset">
                   <div class="govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="address-change-1" name="address-change" type="radio" value="G04 Chorlton Mill, Cambridge Street, Manchester M1 5BY">
+                      <input class="govuk-radios__input" id="address-change-1" name="address-change" type="radio" value="G01 Chorlton Mill, Cambridge Street, Manchester M1 5BY">
                       <label class="govuk-label govuk-radios__label" for="address">G01 Chorlton Mill, Cambridge Street, Manchester M1 5BY<br>
-                        <strong class="govuk-tag govuk-tag--blue">
-                          residential
+                        <strong class="govuk-tag govuk-tag--red">
+                          COMMERCIAL
                         </strong>
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="address-change-1" name="address-change" type="radio" value="G04 Chorlton Mill, Cambridge Street, Manchester M1 5BY">
+                      <input class="govuk-radios__input" id="address-change-1" name="address-change" type="radio" value="G02 Chorlton Mill, Cambridge Street, Manchester M1 5BY">
                       <label class="govuk-label govuk-radios__label" for="address">G02 Chorlton Mill, Cambridge Street, Manchester M1 5BY<br>
-                        <strong class="govuk-tag govuk-tag--blue">
-                          residential
+                        <strong class="govuk-tag govuk-tag--red">
+                          COMMERCIAL
                         </strong>
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="address-change-1" name="address-change" type="radio" value="G04 Chorlton Mill, Cambridge Street, Manchester M1 5BY">
+                      <input class="govuk-radios__input" id="address-change-1" name="address-change" type="radio" value="G03 Chorlton Mill, Cambridge Street, Manchester M1 5BY">
                       <label class="govuk-label govuk-radios__label" for="address">G03 Chorlton Mill, Cambridge Street, Manchester M1 5BY<br>
-                        <strong class="govuk-tag govuk-tag--blue">
-                          residential
+                        <strong class="govuk-tag govuk-tag--red">
+                          COMMERCIAL
                         </strong>
                       </label>
                     </div>
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="address-change-1" name="address-change" type="radio" value="G04 Chorlton Mill, Cambridge Street, Manchester M1 5BY">
                       <label class="govuk-label govuk-radios__label" for="address">G04 Chorlton Mill, Cambridge Street, Manchester M1 5BY<br>
-                        <strong class="govuk-tag govuk-tag--blue">
-                          residential
+                        <strong class="govuk-tag govuk-tag--red">
+                          COMMERCIAL
                         </strong>
                       </label>
                     </div>
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="address-change-2" name="address-change" type="radio" value="G05 Chorlton Mill, Cambridge Street, Manchester M1 5BY">
                       <label class="govuk-label govuk-radios__label" for="address-2">G05 Chorlton Mill, Cambridge Street, Manchester M1 5BY<br>
+                        <strong class="govuk-tag govuk-tag--red">
+                          COMMERCIAL
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-change-2" name="address-change" type="radio" value="G06 Chorlton Mill, Cambridge Street, Manchester M1 5BY">
+                      <label class="govuk-label govuk-radios__label" for="address-2">G06 Chorlton Mill, Cambridge Street, Manchester M1 5BY<br>
                         <strong class="govuk-tag govuk-tag--blue">
                           residential
                         </strong>
@@ -111,5 +119,15 @@ Winter Fuel Payments
 
   </main>
   </div>
-
+  <script>
+      nextPageRoutes = {
+          'G01 Chorlton Mill, Cambridge Street, Manchester M1 5BY': 'not-commercial.html',
+          'G02 Chorlton Mill, Cambridge Street, Manchester M1 5BY': 'not-commercial.html',
+          'G03 Chorlton Mill, Cambridge Street, Manchester M1 5BY': 'not-commercial.html',
+          'G04 Chorlton Mill, Cambridge Street, Manchester M1 5BY': 'not-commercial.html',
+          'G05 Chorlton Mill, Cambridge Street, Manchester M1 5BY': 'not-commercial.html',
+          'G06 Chorlton Mill, Cambridge Street, Manchester M1 5BY': 'not-commercial.html',
+          'address not found': '/legacy/sprint49/address.html',
+       }
+    </script>
   {% endblock %}
