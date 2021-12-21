@@ -151,7 +151,7 @@ router.post('/legacy/sprint49/address', function(req, res) {
     res.redirect('address-no-result');
   } else if (req.body['postcode'] === "NE65 0AP") {
     res.redirect('address-carehome');
-  } else if (req.body['postcode'] === "DH3 4AE") {
+  } else if (req.body['postcode'] === "DH3 3HD") {
     res.redirect('/legacy/sprint52c/address-carehome');
   } else if (req.body['postcode'] === "M1 5BY") {
     res.redirect('/legacy/sprint52g/address-commercial2');    

@@ -151,7 +151,7 @@ router.post('/legacy/sprint52c/address', function(req, res) {
     res.redirect('address-no-result');
   } else if (req.body['postcode'] === "NE65 0AP") {
     res.redirect('address-carehome');
-  } else if (req.body['postcode'] === "DH3 4AE") {
+  } else if (req.body['postcode'] === "DH3 3HD") {
     res.redirect('/legacy/sprint52c/address-carehome');
   } else {
     res.redirect('address-1');
@@ -170,7 +170,7 @@ router.post('/legacy/sprint52c/address-1', function(req, res) {
 
 // Care home address select, yes or search address
 router.post('/legacy/sprint52c/address-carehome', function(req, res) {
-  if (req.body['address-change'] === 'Flat 15, Rickleton Retirement Village, Chester-le-Street, DH3 4AE') {
+  if (req.body['address-change'] === 'Flat 15, Rickleton Retirement Village, Chester-le-Street, DH3 3HD') {
     res.redirect('not-care-home');
   } else {
     res.redirect('address-search');
