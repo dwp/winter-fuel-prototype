@@ -92,7 +92,7 @@ Winter Fuel Payments
                   {% if data['accountnumber'] %}
                   {{data['accountnumber']}}
                   {% else %}
-                  ****5678
+                  12345678
                   {% endif %}
                 </td>
               </tr>
@@ -128,7 +128,7 @@ Winter Fuel Payments
                 <td class="govuk-table__cell">
                   {% if data.reissued %}
                   Reissued
-                  {% elseif data.returnedreason %}
+                  {% elseif data.returnedreason or data['mark-as-returned'] == 'yes' %}
                   Returned
                   {% else %}
                   Sent

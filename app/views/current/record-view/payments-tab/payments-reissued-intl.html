@@ -101,7 +101,7 @@ Winter Fuel Payments
                 <td class="govuk-table__cell">Monday, 4 November 2021</td>
                 <td class="govuk-table__cell">£200</td>
                 <td class="govuk-table__cell">
-                  {% if data.reissued %}
+                  {% if data.reissued or data['payment-reissued'] == 'yes'%}
                   Reissued
                   {% elseif data.returnedreason %}
                   Returned
