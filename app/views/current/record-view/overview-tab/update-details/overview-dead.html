@@ -107,9 +107,8 @@ Winter Fuel Payments
                 {% if data['mark-as-dead']=='yes' %}
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Date of death</th>
-                  <td class="govuk-table__cell">
-                    {% if data['death-day'] %}
-                      {{data['death-day']}}
+                  {% if data['death-day']%}
+                    <td class="govuk-table__cell">{{data['death-day']}}
                       {% if (data['death-month'] == '1') or (data['death-month'] == '01') %} January 
                       {% elif (data['death-month'] == '2') or (data['death-month'] == '02') %} February 
                       {% elif (data['death-month'] == '3') or (data['death-month'] == '03') %} March 
@@ -123,8 +122,13 @@ Winter Fuel Payments
                       {% elif data['death-month'] == '11' %} November 
                       {% elif data['death-month'] == '12' %} December 
                       {% endif %}
-                     {{data['death-year']}}
-                    {% else %}19 October 2021{% endif %}</td>
+                  {{data['death-year']}}
+                    </td>
+                    {% else %}
+                    <td class="govuk-table__cell">
+                        23 June 2021
+                    </td>
+                    {% endif %}
                 </tr>
                 {% endif %}
 
