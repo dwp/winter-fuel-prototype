@@ -15,26 +15,22 @@ Winter Fuel Payments
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
 
-      <div class="govuk-grid-column-full">
-
-                    <h1 class="govuk-heading-l">Verify an address</h1>
-      </div>
+      
 
 
       <div class="govuk-grid-column-two-thirds">
                       <form method="post">
 
-                        <h2 class="govuk-heading-m">Unverified address</h2>
-                        <p class="govuk-body govuk-!-font-size-24">
+                        <h2 class="govuk-heading-s">Address submitted</h2>
+                        <p class="govuk-body">
                           Flat D<br>
                           104 Boundary Lane<br>
                           Hulme<br>
                           Manchester<br>
                           M15 6FD</p>
 
-
-
-                              <h2 class="govuk-heading-m">Select a verified address</h2>
+<br><br>
+<h2 class="govuk-heading-m">Choose an existing address</h2>
                                 <div class="govuk-form-group">
                                   <fieldset class="govuk-fieldset">
                                     <div class="govuk-radios">
@@ -85,22 +81,25 @@ Winter Fuel Payments
                                             Residential
                                           </strong>
                                         </label>
-                                      </div>
+                                      </div><br>
 
                                       <div class="govuk-radios__item">
                                         <input class="govuk-radios__input" id="address-fix-2" name="address-fix-1" type="radio" value="Address not found">
                                         <label class="govuk-label govuk-radios__label" for="address-1">
-                                          Search for another address
+                                          The address has not been found
                                         </label>
                                       </div>
+                                     <br>
                                       <div class="govuk-radios__item">
                                         <input class="govuk-radios__input" id="address-fix-2" name="address-fix-1" type="radio" value="duplicate">
                                         <label class="govuk-label govuk-radios__label" for="address-1">
-                                          If you have searched online and found this address then add it to our records
+                                          Add submitted address to SPS
                                         </label>
+                                        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                                          Select this option if you have verified that the submitted address is valid and can be used for payment calculation.
+                                        </div>
                                       </div>
                                     </div>
-
 
                                   </fieldset>
                                 </div>
@@ -130,7 +129,7 @@ Winter Fuel Payments
         '104A Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
         '104B Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
         '104C Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
-        'Address not found': 'enter-address-pre-filled.html',
+        'Address not found': 'search-again.html',
         'duplicate': 'enter-address-pre-filled3.html',
      }
   </script>
