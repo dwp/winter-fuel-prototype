@@ -104,6 +104,10 @@ Winter Fuel Payments
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Correspondence address</th>
                 <td class="govuk-table__cell">
+                  G05 Chorlton Mill<br>
+                  Manchester<br>
+                  M1 5BY
+<!--
                   {% if data['correspondence-address-change'] %}
                   {{data['correspondence-address-change'].split(', ').join('<br />') | safe }}
                   {% elif data.address %}
@@ -111,15 +115,18 @@ Winter Fuel Payments
                   {% else %}
 
                   {% endif %}
+-->                   
                 </td>
                 <td class="govuk-table__cell">
                   <a href="correspondence-address">
+<!--
                     {% if not data['correspondence-address-change'] %}
                     Add <span class="govuk-visually-hidden">contact preferences</span>
                     {% else %}
                     Change <span class="govuk-visually-hidden">contact preferences</span>
                     {% endif %}
                     <span class="govuk-visually-hidden">Change address</span>
+-->
                   </a>
                 </td>
               </tr>
