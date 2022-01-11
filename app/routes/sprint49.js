@@ -247,7 +247,7 @@ router.post('/legacy/sprint49/living-with', function(req, res) {
 });
 
 router.post('/legacy/sprint49/living-with-date', (req, res) => {
-  res.redirect('/legacy/sprint49/homephone-address')
+  res.redirect('/legacy/sprint52g/address-fork')
 });
 
 
