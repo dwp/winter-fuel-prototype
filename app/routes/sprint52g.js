@@ -181,7 +181,7 @@ router.post('/legacy/sprint52g/address-commercial2', function(req, res) {
 
 router.post('/legacy/sprint52g/not-commercial', function(req, res) {
   if (req.body['care-home'] === 'yes') {
-    res.redirect('/legacy/sprint49/move-date');
+    res.redirect('/legacy/sprint49/move-date2');
   } else {
     res.redirect('/legacy/sprint49/address2');
   }

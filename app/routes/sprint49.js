@@ -218,6 +218,11 @@ router.post('/legacy/sprint49/move-date', (req, res) => {
   res.redirect('/legacy/sprint49/living-with')
 });
 
+// Move date
+router.post('/legacy/sprint49/move-date2', (req, res) => {
+  res.redirect('/legacy/sprint49/living-with2')
+});
+
 // Care home move date
 router.post('/legacy/sprint49/carehome-move-date', (req, res) => {
   res.redirect('/legacy/sprint49/declaration')
@@ -246,8 +251,25 @@ router.post('/legacy/sprint49/living-with', function(req, res) {
   }
 });
 
+// Living with anyone at address change on yes journey
+router.post('/legacy/sprint49/living-with2', function(req, res) {
+  if (req.body['living-with'] === 'Lives with someone else who gets Winter Fuel Payment') {
+    res.redirect('living-with-age2');
+  } else {
+    res.redirect('living-with-date2');
+  }
+});
+
 router.post('/legacy/sprint49/living-with-date', (req, res) => {
   res.redirect('/legacy/sprint52g/address-fork')
+});
+
+router.post('/legacy/sprint49/living-with-date2', (req, res) => {
+  res.redirect('/legacy/sprint49/declaration')
+});
+
+router.post('/legacy/sprint49/living-with-date-skip-correspondence', (req, res) => {
+  res.redirect('/legacy/sprint49/declaration')
 });
 
 
@@ -331,6 +353,14 @@ router.post('/legacy/sprint49/living-with-age', function(req, res) {
     res.redirect('/legacy/sprint65c/living-with-over-80');
   } else {
     res.redirect('living-with-date');
+  }
+});
+
+router.post('/legacy/sprint49/living-with-age2', function(req, res) {
+  if (req.body['before-1954'] === 'Yes') {
+    res.redirect('/legacy/sprint65c/living-with-over-80');
+  } else {
+    res.redirect('living-with-date-skip-correspondence');
   }
 });
 
