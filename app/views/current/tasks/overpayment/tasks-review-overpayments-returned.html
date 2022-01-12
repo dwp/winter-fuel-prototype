@@ -16,7 +16,19 @@ Winter Fuel Payments
       <div class="govuk-grid-column-full">
         <form method="post" action="/current/tasks/overpayment/overpayment-referral-shared">
 
-          <h1 class="govuk-heading-xl">Review overpayments</h1>
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Success
+              </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+          
+              <p class="govuk-body">Case returned to queue</p>
+            </div>
+          </div>
+
+          <h1 class="govuk-heading-l">Get next overpayment case</h1>
 
 
           <div id="govuk-checkboxes govuk-checkboxes--small">
@@ -45,7 +57,7 @@ Winter Fuel Payments
 
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button" button type=“submit”>
-            Get next overpayment case
+            Get next case
           </button>
 
           <a class="govuk-button govuk-button--secondary" data-module="govuk-button" href="tasks-radio-small">
