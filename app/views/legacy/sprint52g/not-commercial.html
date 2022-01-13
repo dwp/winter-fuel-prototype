@@ -39,7 +39,7 @@ GOV.UK Prototype Kit
             </div>
           </div>
 
-          
+
 
           <form method="post">
             <div class="govuk-form-group">
@@ -75,6 +75,15 @@ GOV.UK Prototype Kit
                           No
                         </label>
                       </div>
+
+
+                  <div class="govuk-radios govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="care-home-no" name="care-home" type="radio" value="correspondence" data-aria-controls="conditional-contact">
+                        <label class="govuk-label govuk-radios__label" for="contact">
+                          No - but I use this for correspondence
+                        </label>
+                      </div>
                   </div>
 
               </fieldset>
@@ -93,5 +102,13 @@ GOV.UK Prototype Kit
 
 </main>
 </div>
+
+<script>
+    nextPageRoutes = {
+        'yes': '/legacy/sprint49/move-date2.html',
+        'no': '/legacy/sprint49/address2.html',
+        'correspondence': '/legacy/sprint49/address2.html',
+      }
+</script>
 
 {% endblock %}
