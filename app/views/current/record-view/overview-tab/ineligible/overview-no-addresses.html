@@ -1,4 +1,12 @@
-{% extends "layout.html" %}
+
+
+
+
+
+
+
+
+  {% extends "layout.html" %}
 
 {% block header %}
 {% include 'current/includes/_header.html' %}
@@ -59,12 +67,21 @@ Winter Fuel Payments
                   <td class="govuk-table__cell">9 August 1953</td>
                 </tr>
                  <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">GSL</th>
+                  <td class="govuk-table__cell">Disallowed</td>
+                </tr>
+                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Address</th>
                   <td class="govuk-table__cell">
+                    
                     No correspondence address
+                   
+                    <br><br>
+                since 10 March 2016
                
                   </td>
                 </tr>
+               
               </tbody>
             </table>
 
@@ -72,9 +89,7 @@ Winter Fuel Payments
             </a>
 
       </div>
-      <div class="govuk-grid-column-one-third">
-        {% include 'current/includes/_history.html' %}
-      </div>
+     
     </div>
 
   </div>
