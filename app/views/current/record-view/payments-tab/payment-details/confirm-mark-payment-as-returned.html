@@ -22,7 +22,7 @@ Winter Fuel Payments
       <div class="govuk-grid-column-two-thirds">
        {% include 'current/includes/_bar.html' %}
 
-      <h1 class="govuk-heading-l">Are you sure you want to mark this payment as returned?</h1>
+      <h1 class="govuk-heading-l">Are you sure you want to mark this payment as FAILED?</h1>
 
         <form method="post">
         
@@ -65,8 +65,8 @@ Winter Fuel Payments
 
 <script>
     nextPageRoutes = {
-        'yes': '../payments',
-        'no': '../payments',
+        'yes': '../payments?intl-account=yes',
+        'no': '../payments?intl-account=yes',
 
     }
     

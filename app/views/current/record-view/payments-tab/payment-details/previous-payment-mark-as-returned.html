@@ -53,7 +53,7 @@ Winter Fuel Payments
                     </table>
 
 
-          <p><a href="confirm-mark-payment-as-returned" class="govuk-link">Mark payment as returned</a></p>
+          <p><a href="confirm-mark-payment-as-returned" class="govuk-link">Mark payment as FAILED</a></p>
 
           <br>
 
@@ -98,24 +98,31 @@ Winter Fuel Payments
             </thead>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-width-one-third">Bank or building society</th>
-                <td class="govuk-table__cell">TSB</td>
-                <td class="govuk-table__cell"></td>
+                <th scope="row" class="govuk-table__header govuk-!-width-one-third">Name on the account</th>
+                <td class="govuk-table__cell">
+                  {% if data.accountholder %}
+                  {{data.accountholder}}
+                  {% else %}
+                  Mrs T D Best
+                  {% endif %}</td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Name on the account</th>
-                <td class="govuk-table__cell">T Best</td>
-                <td class="govuk-table__cell"></td>
+                <th scope="row" class="govuk-table__header">BIC or SWIFT code</th>
+                <td class="govuk-table__cell">
+                  {% if data.rollnumber %}
+                  {{data.rollnumber}}
+                  {% else %}
+                  SBININBB425
+                  {% endif %}</td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Sort code</th>
-                <td class="govuk-table__cell">00 11 22</td>
-                <td class="govuk-table__cell"></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Account number</th>
-                <td class="govuk-table__cell">****5678</td>
-                <td class="govuk-table__cell"></td>
+                <th scope="row" class="govuk-table__header">IBAN</th>
+                <td class="govuk-table__cell">
+                  {% if data.accountnumber %}
+                  {{data.accountnumber}}
+                  {% else %}
+                  AT483200000012345864
+                  {% endif %}</td>
               </tr>
             </tbody>
           </table>
