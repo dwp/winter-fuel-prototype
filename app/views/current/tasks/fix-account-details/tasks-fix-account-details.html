@@ -14,7 +14,11 @@ Winter Fuel Payments
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <form method="post" action="/current/tasks/fix-account-details/bank-task">
+        {% if data ['checkboxes'] %}
+          <form method="post" action="/current/tasks/fix-account-details/bank-task">
+        {% else %}
+          <form method="post" action="/current/tasks/fix-account-details/tasks-fix-account-details-error">
+        {% endif %}
 
           <h1 class="govuk-heading-xl">Fix account details</h1>
 
