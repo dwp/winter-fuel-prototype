@@ -8,13 +8,15 @@
 {% block pageTitle %}
 Winter Fuel Payments
 {% endblock %}
+
 {% block content %}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <form method="post" action="/current/tasks/fix-account-details/bank-task">
+            <form method="post" onsubmit="return handleAction(this)">
+
 
 
 
@@ -73,5 +75,17 @@ Winter Fuel Payments
 
 </main>
 </div>
+<script type="text/javascript">
 
+      function handleAction(form) {
+        const cbInternational = document.querySelector('#fix-account-details');
+        const cbOther = document.querySelector('#fix-account-details-2');
+        if (cbInternational.checked || cbOther.checked) {
+          form.action =  "/current/tasks/fix-account-details/bank-task";
+        } else {
+          form.action = "/current/tasks/fix-account-details/tasks-fix-account-details-error";
+        }
+      }
+
+</script>
 {% endblock %}
