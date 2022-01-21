@@ -14,10 +14,10 @@ Winter Fuel Payments
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        {% if data ['checkboxes'] %}
-          <form method="post" action="/current/tasks/fix-account-details/bank-task">
-        {% else %}
+        {% if data ['fix-account-details-2'] or  data ['fix-account-details'] %}
           <form method="post" action="/current/tasks/fix-account-details/tasks-fix-account-details-error">
+        {% else %}
+          <form method="post" action="/current/tasks/fix-account-details/bank-task">
         {% endif %}
 
           <h1 class="govuk-heading-xl">Fix account details</h1>
@@ -55,5 +55,7 @@ Winter Fuel Payments
 
 </main>
 </div>
+
+
 
 {% endblock %}
