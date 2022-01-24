@@ -2,6 +2,7 @@
 
 {% block header %}
 {% include 'current/includes/_header-tasks.html' %}
+
 {% endblock %}
 
 
@@ -11,21 +12,29 @@ Winter Fuel Payments
 {% block content %}
 
 
-
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <form method="post" action="/legacy/sprint56/bank-task">
+
+     <!-- {% if data['fix-account-details'] == 'international' or  data ['fix-account-details'] == 'other' %}
+              <form method="post" action="/current/tasks/fix-account-details/bank-task">
+      {% else %}
+              <form method="post" action="/current/tasks/fix-account-details/tasks-fix-account-details-error">
+      {% endif %} -->
+
+
+
 
           <h1 class="govuk-heading-xl">Fix account details</h1>
 
 
           <div id="govuk-checkboxes govuk-checkboxes--small">
+            <form method="post" onsubmit="return handleAction(this)">
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
 
-                <p><strong>Select a case type(s) to continue</strong></p>
+                <p><strong>Select the case types you want to fix</strong></p>
 
                 <div class="govuk-checkboxes govuk-checkboxes--small">
                   <div class="govuk-checkboxes__item">
@@ -43,13 +52,10 @@ Winter Fuel Payments
                 </div>
               </div>
 
-      <button disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled" data-module="govuk-button">
+      <button class="govuk-button" data-module="govuk-button" button type=“submit”>
         Continue
       </button>
-
-
-
-      </form>
+</form>
     </div>
 
 </div>
@@ -57,33 +63,18 @@ Winter Fuel Payments
 </main>
 </div>
 
-<script>
-  const checkboxes = [...document.querySelectorAll('[name=fix-account-details]')];
-  const submitbtn = document.querySelector('button.govuk-button');
+<script type="text/javascript">
 
-  function anyChecked() {
-    return checkboxes.some((checkbox) => checkbox.checked);
-  }
+      function handleAction(form) {
+        const cbInternational = document.querySelector('#fix-account-details');
+        const cbOther = document.querySelector('#fix-account-details-2');
+        if (cbInternational.checked || cbOther.checked) {
+          form.action =  "/current/tasks/fix-account-details/bank-task";
+        } else {
+          form.action = "/current/tasks/fix-account-details/tasks-fix-account-details-error";
+        }
+      }
 
-  function disableButton(button) {
-    button.setAttribute('disabled', '');
-    button.classList.add('govuk-button--disabled');
-  }
-
-  function enableButton(button) {
-    button.removeAttribute('disabled');
-    button.classList.remove('govuk-button--disabled');
-  }
-
-  checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener('click', () => {
-      anyChecked()
-        ? enableButton(submitbtn)
-        : disableButton(submitbtn)
-    });
-  });
-
-  anyChecked() ? enableButton(submitbtn) : disableButton(submitbtn);
-  </script>
+</script>
 
 {% endblock %}
