@@ -24,7 +24,7 @@ Winter Fuel Payments
   </div>
   <div class="govuk-notification-banner__content">
 
-    <p class="govuk-body">International payment approved - case removed from queue</p>
+    <p class="govuk-body">Case removed from queue</p>
   </div>
 </div>
 
@@ -77,5 +77,17 @@ Winter Fuel Payments
 
 </main>
 </div>
+<script type="text/javascript">
 
+      function handleAction(form) {
+        const cbInternational = document.querySelector('#fix-account-details');
+        const cbOther = document.querySelector('#fix-account-details-2');
+        if (cbInternational.checked || cbOther.checked) {
+          form.action =  "/current/tasks/fix-account-details/bank-task";
+        } else {
+          form.action = "/current/tasks/fix-account-details/tasks-fix-account-details-error";
+        }
+      }
+
+</script>
 {% endblock %}
