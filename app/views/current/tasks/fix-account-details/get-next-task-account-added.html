@@ -66,7 +66,7 @@ Winter Fuel Payments
                       <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
 
-                          <p><strong>Apply optional filter(s)</strong></p>
+                          <p><strong>Select the case types you want to fix</strong></p>
 
                           <div class="govuk-checkboxes govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
@@ -108,5 +108,17 @@ Winter Fuel Payments
 
 </main>
 </div>
+<script type="text/javascript">
 
+      function handleAction(form) {
+        const cbInternational = document.querySelector('#fix-account-details');
+        const cbOther = document.querySelector('#fix-account-details-2');
+        if (cbInternational.checked || cbOther.checked) {
+          form.action =  "/current/tasks/fix-account-details/bank-task";
+        } else {
+          form.action = "/current/tasks/fix-account-details/tasks-fix-account-details-error";
+        }
+      }
+
+</script>
 {% endblock %}
