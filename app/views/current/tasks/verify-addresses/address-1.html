@@ -36,15 +36,17 @@ Winter Fuel Payments
                   Manchester<br>
                   M15 6FD</p>
 
+                  <h2 class="govuk-heading-m">Contact numbers</h2>
+                  <p><strong>Home phone:</strong> 01324 800 900<br>
+                    <strong>Mobile phone:</strong> 07771 900 900<br>
+                    <strong>Work phone:</strong> 01324 400 500</p>
+
               </div>
 
 
-              <div class="govuk-grid-column-one-half">
-                <h2 class="govuk-heading-m">Contact numbers</h2>
-                <p><strong>Home phone:</strong> 01324 800 900<br>
-                  <strong>Mobile phone:</strong> 07771 900 900<br>
-                  <strong>Work phone:</strong> 01324 400 500</p>
-              </div>
+
+
+
 
                 <div class="govuk-grid-column-two-thirds">
 
@@ -52,17 +54,6 @@ Winter Fuel Payments
                   <div class="govuk-form-group">
                     <fieldset class="govuk-fieldset">
                       <div class="govuk-radios">
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="address-fix-1" name="address-fix-1" type="radio" value="104D Boundary Lane, Manchester, M15 6FD">
-                          <label class="govuk-label govuk-radios__label" for="address">
-                            104D Boundary Lane<br>
-                            Manchester<br>
-                            M15 6FD<br>
-                            <strong class="govuk-tag govuk-tag--blue">
-                              Residential
-                            </strong>
-                          </label>
-                        </div>
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="address-fix-2" name="address-fix-1" type="radio" value="104A Boundary Lane, Manchester, M15 6FD">
                           <label class="govuk-label govuk-radios__label" for="address">
@@ -97,9 +88,26 @@ Winter Fuel Payments
                           </label>
                         </div>
                         <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="address-fix-1" name="address-fix-1" type="radio" value="104D Boundary Lane, Manchester, M15 6FD">
+                          <label class="govuk-label govuk-radios__label" for="address">
+                            104D Boundary Lane<br>
+                            Manchester<br>
+                            M15 6FD<br>
+                            <strong class="govuk-tag govuk-tag--blue">
+                              Residential
+                            </strong>
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="address-fix-5" name="address-fix-1" type="radio" value="Address not found">
                           <label class="govuk-label govuk-radios__label" for="address">
                             Search for a different address
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="address-fix-6" name="address-fix-1" type="radio" value="Enter address manually">
+                          <label class="govuk-label govuk-radios__label" for="address">
+                            Enter address manually
                           </label>
                         </div>
                       </div>
@@ -107,12 +115,13 @@ Winter Fuel Payments
                   </div>
 
                   <p> <a href="cannot-verify-1" class="govuk-link">This address cannot be verified</a> </p>
-                  <br>
 
+                  <p><a href="next-task" class="govuk-link">Return this case to the queue</a></p>
+<br>
                   <button type="submit" class="govuk-button">
                     Continue
                   </button>
-<br><a href="next-task" class="govuk-link">Return this case to the queue</a>
+
 
                 </div>
 
@@ -146,6 +155,7 @@ Winter Fuel Payments
         '104B Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
         '104C Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
         'Address not found': 'verify-address-manual-1.html',
+        'Enter address manually': 'enter-address-manually.html',
      }
   </script>
 
