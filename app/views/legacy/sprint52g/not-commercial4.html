@@ -46,7 +46,7 @@ GOV.UK Prototype Kit
               <fieldset class="govuk-fieldset" aria-describedby="nok-details-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   <h1 class="govuk-fieldset__heading">
-                    Is this your residential address?
+                    Do you want to use this address for correspondence?
                   </h1>
                 </legend>
 
@@ -63,7 +63,7 @@ GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="care-home-yes" name="care-home" type="radio" value="yes" >
                     <label class="govuk-label govuk-radios__label" for="nok-details">
-                      Yes
+                      Yes - save this as correspondence address and enter new residential address
                     </label>
                   </div>
 
@@ -72,17 +72,15 @@ GOV.UK Prototype Kit
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="care-home-no" name="care-home" type="radio" value="correspondence" data-aria-controls="conditional-contact">
                         <label class="govuk-label govuk-radios__label" for="contact">
-                          No - but I want to use this address for correspondence
+                          No - enter new residential address
                         </label>
-                        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-                          You can enter the residential address on the next page
-                        </div>
+
                       </div>
                   </div>
 
               </fieldset>
 <br>
-
+<p><a href="/legacy/sprint49/address2" class="govuk-link">Start again</a></p>
 
             </div>
             <button type="submit" class="govuk-button">
