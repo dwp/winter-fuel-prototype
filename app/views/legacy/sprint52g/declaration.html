@@ -9,6 +9,13 @@
 Winter Fuel Payments
 {% endblock %}
 {% block content %}
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+
+{% include './_bar.html' %}
+
 
 
 <div class="govuk-width-container">
@@ -16,17 +23,9 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form method="post">
+        <form method="post" action="overview-changed">
 
-          {% include './_bar.html' %}
 
-          {{ govukBackLink({
-              text: "Back",
-              href: "javascript:history.go(-1)"
-            }) }}
-
-          <br>
-          <br>
 
           <h1 class="govuk-heading-l">Caller declaration</h1>
 
@@ -36,6 +35,7 @@ Winter Fuel Payments
             <li>you'll tell the Department for Work and Pensions straight away if your circumstances change</li>
             <li>you'll pay back any money you're overpaid if you're asked to</li>
           </ul>
+          <br>
 
 <!--          {{ govukWarningText({
             text: "You could be prosecuted or have to pay a financial penalty if you deliberately

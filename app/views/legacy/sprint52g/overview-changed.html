@@ -27,13 +27,15 @@ Winter Fuel Payments
         {% else %}
           <span class="moj-banner__assistive">Success</span>Details updated</div>
         {% endif %}
-        
+
 
         </div>
 
       <form method="post">
 
-{% include './_bar.html' %}
+{% include './_bar-approved.html' %}
+
+
 
             {% include './_tab-overview.html' %}
 
@@ -59,8 +61,7 @@ Winter Fuel Payments
 
             <table class="govuk-table">
                   <h2 class="govuk-heading-m">Qualification details</h2>
-              <a href="address" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 80%">Update details</span>
-              </a>
+
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                   <th scope="col" class="govuk-table__header"></th>
@@ -100,7 +101,7 @@ Winter Fuel Payments
                       15 July 2020
                     {% endif %}
                   </td>
-                  </td>
+
                 </tr>
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Occupancy</th>
@@ -114,10 +115,13 @@ Winter Fuel Payments
                     {% endif %}
                   </td>
                 </tr>
-                
-              </tbody>
-            </table>
 
+              </tbody>
+
+
+            </table>
+            <a href="address" <span class="govuk-link govuk-!-font-size-19">Update details</span>
+            </a>
       </div>
 
 

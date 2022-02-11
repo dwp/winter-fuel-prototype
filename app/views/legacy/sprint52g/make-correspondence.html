@@ -24,7 +24,7 @@ GOV.UK Prototype Kit
       <div class="govuk-grid-column-two-thirds">
 
 
-        <form method="post">
+        <form method="post" action="declaration">
 
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
@@ -46,7 +46,7 @@ GOV.UK Prototype Kit
               <fieldset class="govuk-fieldset" aria-describedby="nok-details-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   <h1 class="govuk-fieldset__heading">
-                    Do you want to make this your correspondence address?
+                    Do you want to make this commercial address your correspondence address?
                   </h1>
                 </legend>
 
@@ -98,11 +98,6 @@ GOV.UK Prototype Kit
 </main>
 </div>
 
-<script>
-    nextPageRoutes = {
-        'yes': '/legacy/sprint49/declaration.html',
-        'no': '/legacy/sprint49/declaration.html',
-      }
-</script>
+
 
 {% endblock %}
