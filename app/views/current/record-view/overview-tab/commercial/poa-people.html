@@ -17,15 +17,16 @@ Winter Fuel Payments
 
       <form method="post" action="declaration">
 
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
         {% include 'current/includes/_bar.html' %}
 
-            {{ govukBackLink({
-                text: "Back",
-                href: "javascript:history.go(-1)"
-              }) }}
 
-            <br>
-            <br>
+
+
 
             <form method="post">
                 <div class="govuk-form-group">

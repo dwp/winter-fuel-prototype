@@ -17,17 +17,17 @@ Winter Fuel Payments
 
       <form method="post" action="homephone-address">
 
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
         {% include 'current/includes/_bar.html' %}
 
-            {{ govukBackLink({
-                text: "Back",
-                href: "javascript:history.go(-1)"
-              }) }}
 
-            <br>
-            <br>
 
-            
+
+
 
         <h1 class="govuk-heading-l">When did the number of people you live with change?</h1>
 
