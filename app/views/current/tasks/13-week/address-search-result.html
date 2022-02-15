@@ -16,16 +16,14 @@ Winter Fuel Payments
       <div class="govuk-grid-column-two-thirds">
 
         <form method="post">
-
-          {% include 'current/includes/_bar.html' %}
-
           {{ govukBackLink({
                 text: "Back",
                 href: "javascript:history.go(-1)"
               }) }}
+          {% include 'current/includes/_bar.html' %}
 
-          <br>
-          <br>
+
+
 
           <form method="post">
 
@@ -66,15 +64,16 @@ Winter Fuel Payments
               </fieldset>
             </div>
 
-           
+            <p><a href="next-task" class="govuk-link">Return this case to the queue</a></p>
+            <br>
 
             <button type="submit" class="govuk-button">
               Continue
             </button>
             <input type="hidden" name="change-address" value="yes">
 
- <br><a href="next-task" class="govuk-link">Return this case to the queue</a>
-   
+
+
 
           </form>
 
