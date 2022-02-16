@@ -6,6 +6,11 @@ GOV.UK Prototype Kit
 
 
 {% block beforeContent %}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.go(-1)"
+    }) }}
 {% include 'current/includes/_bar-name-nino.html' %}
 {% endblock %}
 
