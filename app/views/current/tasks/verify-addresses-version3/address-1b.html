@@ -5,10 +5,12 @@ Winter Fuel Payments
 {% endblock %}
 
 {% block content %}
+
 {{ govukBackLink({
   text: "Back",
   href: "javascript:history.go(-1)"
 }) }}
+
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
@@ -55,6 +57,12 @@ Winter Fuel Payments
                                           Search for another address
                                         </label>
                                       </div>
+                                      <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="address-fix-6" name="address-fix-1" type="radio" value="Enter address manually">
+                                        <label class="govuk-label govuk-radios__label" for="address">
+                                          SPS cannot find a matching address
+                                        </label>
+                                      </div>
                                     </div>
                                   </fieldset>
                                 </div>
@@ -88,6 +96,7 @@ Winter Fuel Payments
         '104B Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
         '104C Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
         'Address not found': 'verify-address-manual-1.html',
+        'Enter address manually': 'enter-address-manually-details.html',
      }
   </script>
 
