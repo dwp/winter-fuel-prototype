@@ -50,56 +50,67 @@ Winter Fuel Payments
 
 <br>
 
-            <fieldset class="govuk-fieldset">
+<fieldset class="govuk-fieldset">
 
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-    <h1 class="govuk-fieldset__heading">
-      Enter address search details
-    </h1>
-  </legend>
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+<h1 class="govuk-fieldset__heading">
+Enter address search details
+</h1>
+</legend>
 
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="address-line-1">
-      Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
-    </label>
-    <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
-  </div>
+<div class="govuk-inset-text">
+<p>You can add, remove or change any details shown below.</p>
+</div>
 
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="address-line-2">
-      <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
-    </label>
-    <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2">
-  </div>
+<div class="govuk-form-group">
+<label class="govuk-label" for="address-search-line-1">
+Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+</label>
+<input class="govuk-input" id="address-search-line-1" name="address-search-line-1" type="text" value="Flat D">
+</div>
 
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="address-town">
-      Town or city
-    </label>
-    <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
-  </div>
+<div class="govuk-form-group">
+<label class="govuk-label" for="address-search-line-2">
+<span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+</label>
+<input class="govuk-input" id="address-search-line-2" name="address-search-line-2" type="text" value="104 Boundary Lane">
+</div>
 
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="address-county">
-      County
-    </label>
-    <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
-  </div>
+<div class="govuk-form-group">
+<label class="govuk-label" for="address-search-town">
+Town or city
+</label>
+<input class="govuk-input govuk-!-width-two-thirds" id="address-search-town" name="address-search-town" type="text" value="Hulme">
+</div>
 
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="address-postcode">
-      Postcode
-    </label>
-    <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
-  </div>
+<div class="govuk-form-group">
+<label class="govuk-label" for="address-search-county">
+County
+</label>
+<input class="govuk-input govuk-!-width-two-thirds" id="address-search-county" name="address-search-county" type="text" value="Manchester, Lancs">
+</div>
 
-</fieldset>
+<div class="govuk-form-group">
+<label class="govuk-label" for="address-search-postcode">
+Postcode
+</label>
+<input class="govuk-input govuk-input--width-10" id="address-search-postcode" name="address-search-postcode" type="text" value="M15 6FD">
+</div>
 
 <p><a href="verify-address-not-fixed-returned" class="govuk-link">Return this case to the queue</a></p>
 <br>
-            <button type="submit" class="govuk-button">
-              Search
-            </button>
+
+
+<div class="govuk-button-group">
+<button class="govuk-button" button type="submit" data-module="govuk-button">
+Search
+</button>
+
+<a class="govuk-link" href="address-cleared">Clear form</a>
+</div>
+
+
+</fieldset>
 
           </form>
           <br>
