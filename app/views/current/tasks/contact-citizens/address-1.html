@@ -22,7 +22,21 @@ Winter Fuel Payments
 
         <form method="post">
 
-          {% include 'current/includes/_bar.html' %}
+          <div>
+            <h1 class="govuk-heading-xl">
+              Theodora Best<br>
+              <span class="govuk-body-l">
+                {% if data['nino'] %}
+                {{data['nino']}}
+                {% else %}
+                XX 12 34 56
+                {% endif %}<br>
+                <strong class="govuk-tag govuk-tag--red">
+                  unverified address
+                </strong>
+              </span>
+            </h1>
+          </div>
 
 
 
@@ -41,15 +55,13 @@ Winter Fuel Payments
                   Manchester<br>
                   M15 6FD</p>
 
+
+                  <h2 class="govuk-heading-m">Contact numbers</h2>
+                  <p><strong>Home phone:</strong> 01324 800 900<br>
+                    <strong>Mobile phone:</strong> 07771 900 900<br>
+                    <strong>Work phone:</strong> 01324 400 500</p>
               </div>
 
-
-              <div class="govuk-grid-column-one-half">
-                <h2 class="govuk-heading-m">Contact numbers</h2>
-                <p><strong>Home phone:</strong> 01324 800 900<br>
-                  <strong>Mobile phone:</strong> 07771 900 900<br>
-                  <strong>Work phone:</strong> 01324 400 500</p>
-              </div>
 
                 <div class="govuk-grid-column-two-thirds">
 
@@ -112,12 +124,13 @@ Winter Fuel Payments
                   </div>
 
                   <p> <a href="cannot-verify-1" class="govuk-link">This address cannot be verified</a> </p>
-                  <br>
+
+                  <p><a href="next-task" class="govuk-link">Return this case to the queue</a></p>
 
                   <button type="submit" class="govuk-button">
                     Continue
                   </button>
-<br><a href="next-task" class="govuk-link">Return this case to the queue</a>
+
 
                 </div>
 

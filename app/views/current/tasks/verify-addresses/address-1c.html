@@ -1,12 +1,15 @@
 {% extends "layout.html" %}
 
-{% block pageTitle %}
-Winter Fuel Payments
+{% block header %}
+{% include 'current/includes/_header.html' %}
 {% endblock %}
 
 
-
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
 {% block content %}
+
 
 
 <div class="govuk-width-container">
@@ -17,12 +20,21 @@ Winter Fuel Payments
 
         <form method="post">
 
-          {% include 'current/includes/_bar.html' %}
-
-
-
-          <form method="post">
-
+          <div>
+            <h1 class="govuk-heading-xl">
+              Theodora Best<br>
+              <span class="govuk-body-l">
+                {% if data['nino'] %}
+                {{data['nino']}}
+                {% else %}
+                XX 12 34 56
+                {% endif %}<br>
+                <strong class="govuk-tag govuk-tag--red">
+                  unverified address
+                </strong>
+              </span>
+            </h1>
+          </div>
 
             <h2 class="govuk-heading-l">Verify an address</h2>
 

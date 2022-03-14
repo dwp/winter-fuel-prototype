@@ -20,8 +20,21 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
 
       <div class="govuk-grid-column-full">
-          {% include 'current/includes/_bar.html' %}
-
+        <div>
+          <h1 class="govuk-heading-xl">
+            Theodora Best<br>
+            <span class="govuk-body-l">
+              {% if data['nino'] %}
+              {{data['nino']}}
+              {% else %}
+              XX 12 34 56
+              {% endif %}<br>
+              <strong class="govuk-tag govuk-tag--red">
+                unverified address
+              </strong>
+            </span>
+          </h1>
+        </div>
                       <h2 class="govuk-heading-l">Search for a different address</h2>
     </div>
 
