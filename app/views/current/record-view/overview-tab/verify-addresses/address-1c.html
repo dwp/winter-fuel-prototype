@@ -1,9 +1,13 @@
 {% extends "layout.html" %}
 
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
 {% block pageTitle %}
 Winter Fuel Payments
 {% endblock %}
-
 {% block content %}
 
 {{ govukBackLink({
@@ -19,7 +23,21 @@ Winter Fuel Payments
 
         <form method="post">
 
-          {% include 'current/includes/_bar.html' %}
+          <div>
+            <h1 class="govuk-heading-xl">
+              Theodora Best<br>
+              <span class="govuk-body-l">
+                {% if data['nino'] %}
+                {{data['nino']}}
+                {% else %}
+                XX 12 34 56
+                {% endif %}<br>
+                <strong class="govuk-tag govuk-tag--red">
+                  unverified address
+                </strong>
+              </span>
+            </h1>
+          </div>
 
 
 
