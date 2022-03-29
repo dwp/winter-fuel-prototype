@@ -4,9 +4,6 @@
 {% include 'current/includes/_header.html' %}
 {% endblock %}
 
-{% block beforeContent %}
-{% include 'current/includes/_name_bar.html' %}
-{% endblock %}
 
 
 {% block pageTitle %}
@@ -28,8 +25,11 @@ Winter Fuel Payments
                 href: "javascript:history.go(-1)"
               }) }}
 
-            <br>
-            <br>
+              {% if data['mark-as-dlo']=='yes'%}
+               {% include 'current/includes/_bar-dlo.html' %}
+             {% else %}
+               {% include 'current/includes/_bar.html' %}
+             {% endif %}
 
             <form method="post">
 
