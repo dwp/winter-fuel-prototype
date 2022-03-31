@@ -4,15 +4,20 @@
 {% include 'current/includes/_header.html' %}
 {% endblock %}
 
-{% block beforeContent %}
-{% include 'current/includes/_name_bar.html' %}
-{% endblock %}
+
 
 
 {% block pageTitle %}
 Winter Fuel Payments
 {% endblock %}
 {% block content %}
+
+
+{% if data['mark-as-dlo']=='yes'%}
+ {% include 'current/includes/_bar-dlo.html' %}
+{% else %}
+ {% include 'current/includes/_bar.html' %}
+{% endif %}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
@@ -25,13 +30,15 @@ Winter Fuel Payments
 
                   <div class="govuk-inset-text"><span style="font-weight: bold">If you need to ask security questions to verify the caller's identity, do it now before continuing.</span></div>
 
+                  <p><a href="type-of-application" class="govuk-link">Start again</a></p>
+                  <br>
 
           <button type="submit" class="govuk-button">
             Continue
           </button>
 
   <br>
-                        <p>  <a href="type-of-application" class="govuk-link">Start again</a></p>
+
 
         </form>
 
