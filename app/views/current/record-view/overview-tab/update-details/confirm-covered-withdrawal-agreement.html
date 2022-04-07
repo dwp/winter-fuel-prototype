@@ -22,11 +22,11 @@ Winter Fuel Payments
 
 
 
-          {% include 'current/includes/_bar.html' %}
+        {% include 'current/includes/_bar-not-covered-wa.html' %}
 
 
 
-            <h1 class="govuk-heading-l">Are you sure you want to mark this citizen as NOT COVERED BY WITHDRAWAL AGREEMENT?</h1>
+            <h1 class="govuk-heading-l">Are you sure you want to remove the NOT COVERED BY WITHDRAWAL AGREEMENT status from this citizen?</h1>
 
             <form method="post">
               <div class="govuk-form-group">
@@ -35,13 +35,13 @@ Winter Fuel Payments
                   </legend>
                   <div class="govuk-radios govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="withdrawal" name="not-covered-wa" type="radio" value="yes">
+                      <input class="govuk-radios__input" id="withdrawal" name="covered-wa" type="radio" value="yes">
                       <label class="govuk-label govuk-radios__label" for="stop-payments-1">
                         Yes
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="withdrawal" name="not-covered-wa" type="radio" value="no">
+                      <input class="govuk-radios__input" id="withdrawal" name="covered-wa" type="radio" value="no">
                       <label class="govuk-label govuk-radios__label" for="stop-payments-2">
                       No
                       </label>
@@ -50,7 +50,7 @@ Winter Fuel Payments
                 </fieldset>
               </div>
               <div class="govuk-inset-text">
-                <p>If you select Yes, their future Winter Fuel Payments will be stopped.</p>
+                <p>If you select Yes, their future Winter Fuel Payments may be restarted.</p>
             </div>
 
               <button type="submit" class="govuk-button">
@@ -70,8 +70,8 @@ Winter Fuel Payments
 
 <script>
     nextPageRoutes = {
-        'yes': '/current/record-view/overview-tab/update-details/overview-withdrawal-agreement?not-covered-wa-tag=yes',
-        'no': '/current/record-view/overview-tab/overview',
+        'yes': '/current/record-view/overview-tab/update-details/overview-withdrawal-agreement?stop-payments=no&mark-as-dead=no&not-covered-wa=no&not-covered-wa-tag=no',
+        'no': '/current/record-view/overview-tab/update-details/overview-withdrawal-agreement?not-covered-wa-tag=yes&not-covered-wa=no',
 
     }
 

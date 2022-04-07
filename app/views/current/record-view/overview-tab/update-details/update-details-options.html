@@ -98,7 +98,13 @@ Winter Fuel Payments
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="dlo" name="update-details-options" type="radio" value="not-covered-withdrawal-agreement" data-aria-controls="conditional-carehome-conditional-2">
                   <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
+                    {% if data['not-covered-wa-tag']=='yes'%}
+                    Remove NOT COVERED BY WITHDRAWAL AGREEMENT status
+                  {% else %}
                     Mark citizen as NOT COVERED BY WITHDRAWAL AGREEMENT
+                  {% endif %}
+                    
+                    
                   </label>
                 </div>
 
@@ -173,7 +179,12 @@ Winter Fuel Payments
 {% if data ['gsl-disallowed']=='yes'%}
   {% set nextGSLPage = 'confirm-gsl-approved-again' %}
 {% else %}
-  {% set nextGSLPage = 'confirm-gsl-disallowed' %}
+  {% set nextGSLPage = 'confirm-gsl-disallowed' %}  
+{% endif %}
+{% if data ['not-covered-wa']=='yes'%}
+  {% set nextWAPage = 'confirm-covered-withdrawal-agreement' %}
+{% else %}
+  {% set nextWAPage = 'confirm-not-covered-withdrawal-agreement' %}
 {% endif %}
     <script>
         nextPageRoutes = {
@@ -182,7 +193,7 @@ Winter Fuel Payments
             'opt-out': '{{nextOptPage}}',
             'dlo': '{{nextDLOPage}}',
             'gsl': '{{nextGSLPage}}',
-            'not-covered-withdrawal-agreement': 'confirm-not-covered-withdrawal-agreement',
+            'not-covered-withdrawal-agreement': '{{nextWAPage}}',
             'immig-control': 'confirm-immigration-control',
             'benefit-flag': 'choose-benefit-flag',
             'in-prison': 'confirm-remove-prison-flag',
