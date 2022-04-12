@@ -20,7 +20,7 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form method="post" action="/current/record-view/contact-tab/contact-details">
+        <form method="post">
           {% include 'current/includes/_bar.html' %}
 
           
@@ -28,7 +28,7 @@ Winter Fuel Payments
           <br>
           <br>
 
-          <form method="post">
+         
 
             <h1 class="govuk-heading-xl">Do you need your letter in bold?</h1>
 
@@ -65,5 +65,18 @@ Winter Fuel Payments
 
 </main>
 </div>
+
+{% if data ['newclaim']=='yes'%}
+  {% set nextPage = '/current/new-claims/uk/bank-details' %}
+{% else %}
+  {% set nextPage = '/current/record-view/contact-tab/contact-details' %}
+{% endif %}
+
+<script>
+  nextPageRoutes = {
+      'yes': '{{nextPage}}',
+      'no': '{{nextPage}}',
+       }
+</script>
 
 {% endblock %}

@@ -20,7 +20,12 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form method="post" action="/current/record-view/contact-tab/contact-details">
+        {% if data ['newclaim']=='yes'%}
+          <form method="post" action="/current/new-claims/uk/bank-details">
+        {% else %}
+          <form method="post" action="/current/record-view/contact-tab/contact-details">
+        {% endif %}
+
 
           {% include 'current/includes/_bar.html' %}
 

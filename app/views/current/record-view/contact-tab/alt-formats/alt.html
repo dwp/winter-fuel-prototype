@@ -144,20 +144,24 @@ Winter Fuel Payments
   </main>
   </div>
 
- 
+  {% if data ['newclaim']=='yes'%}
+    {% set nextPage = '/current/new-claims/uk/bank-details' %}
+  {% else %}
+    {% set nextPage = '/current/record-view/contact-tab/contact-details' %}
+  {% endif %}
 
 <script>
     nextPageRoutes = {
-        'Audio - cassette tape': '/current/record-view/contact-tab/contact-details.html',
-        'Audio - CD': '/current/record-view/contact-tab/contact-details.html',
-        'Audio - DVD': '/current/record-view/contact-tab/contact-details.html',
-        'Audio - MP3': '/current/record-view/contact-tab/contact-details.html',
-        'Braille Type 1': '/current/record-view/contact-tab/contact-details.html',
-        'Braille Type 2': '/current/record-view/contact-tab/contact-details.html',
-        'BSL (British Sign Language) - DVD': '/current/record-view/contact-tab/contact-details.html',
-        'BSL (British Sign Language) - MPEG': '/current/record-view/contact-tab/contact-details.html',
+        'Audio - cassette tape': '{{nextPage}}',
+        'Audio - CD': '{{nextPage}}',
+        'Audio - DVD': '{{nextPage}}',
+        'Audio - MP3': '{{nextPage}}',
+        'Braille Type 1': '{{nextPage}}',
+        'Braille Type 2': '{{nextPage}}',
+        'BSL (British Sign Language) - DVD': '{{nextPage}}',
+        'BSL (British Sign Language) - MPEG': '{{nextPage}}',
         'Coloured paper': 'paper',
-        'Easy Read': '/current/record-view/contact-tab/contact-details.html',
+        'Easy Read': '{{nextPage}}',
         'Large print (default - size 16)': 'bold',
         'Large print (custom size)': 'large-print',
         'Web accessible PDF': 'email2',
