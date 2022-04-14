@@ -1,14 +1,22 @@
 {% extends "layout.html" %}
 
-{% block header %}
-{% include 'current/includes/_header.html' %}
-{% endblock %}
-
-
 {% block pageTitle %}
-Winter Fuel Payments
+GOV.UK Prototype Kit
 {% endblock %}
-{% block content %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+{% include './_find-someone.html' %}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
@@ -18,7 +26,7 @@ Winter Fuel Payments
         <h1 class="govuk-heading-xl">Find the caller's record</h1>
 
 
-        <form method="post" action="find-result-1">
+        <form method="post">
           <div class="govuk-form-group">
             <label class="govuk-label" for="nino">
               National Insurance number
@@ -29,7 +37,7 @@ Winter Fuel Payments
           <button type="submit" class="govuk-button">
             Find
           </button>
-<br><a href="next-task" class="govuk-link">Return this case to the queue</a>
+
         </form>
 
 
@@ -45,7 +53,12 @@ Winter Fuel Payments
 </main>
       </div>
 
-      
+      {% endblock %}
+
+      {% block content %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
         </div>
       </div>
 

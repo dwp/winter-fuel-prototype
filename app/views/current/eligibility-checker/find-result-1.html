@@ -1,15 +1,11 @@
 {% extends "layout.html" %}
 
-{% block header %}
-{% include 'current/includes/_header.html' %}
-{% endblock %}
-
 {% block pageTitle %}
-Winter Fuel Payments
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-{% include 'current/includes/_find-someone.html' %}
+{% include './_find-someone.html' %}
 {% endblock %}
 
 {% block content %}
@@ -24,7 +20,7 @@ Winter Fuel Payments
             href: "javascript:history.go(-1)"
           }) }}
 
-        <form method="post" action="security-1">
+        <form method="post">
 
           <br>
 
@@ -35,7 +31,7 @@ Winter Fuel Payments
           <button type="submit" class="govuk-button">
             Confirm name
           </button>
-<br><a href="next-task" class="govuk-link">Return this case to the queue</a>
+
       </div>
 
     </div>

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-{% include 'current/includes/_header.html' %}
+{% include './_header.html' %}
 {% endblock %}
 
 
@@ -26,8 +26,7 @@ Winter Fuel Payments
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
 
 
-              <h1 class="govuk-heading-xl">Did you move into the care or nursing
-                home after 28 June 2020?</h1>
+              <h1 class="govuk-heading-xl">Did you move into the care home after 28 June 2020?</h1>
 
               <div class="govuk-radios govuk-radios--inline">
                 <div class="govuk-radios__item">
@@ -57,12 +56,5 @@ Winter Fuel Payments
 
 </main>
 </div>
-
-<script>
-    nextPageRoutes = {
-        'yes': 'care-home-shared',
-        'no': 'care-home-full',
-        }
-</script>
 
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-{% include 'current/includes/_header.html' %}
+{% include './_header.html' %}
 {% endblock %}
 
 
@@ -16,7 +16,7 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form method="post" action="residency">
+        <form method="post">
 
           {{ govukBackLink({
               text: "Back",

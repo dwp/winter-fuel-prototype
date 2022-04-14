@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-{% include 'current/includes/_header.html' %}
+{% include './_header.html' %}
 {% endblock %}
 
 
@@ -38,12 +38,12 @@ Winter Fuel Payments
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="nhs-hospital" name="where-were-you-living" type="radio" value="hospital">
                   <label class="govuk-label govuk-radios__label" for="nhs-hospital">
-                    Staying in an NHS hospital
+                    In a hospital getting free treatment
                   </label> </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="care-nursing-home" name="where-were-you-living" type="radio" value="carehome">
                   <label class="govuk-label govuk-radios__label" for="care-nursing-home">
-                    Living in a care or nursing home
+                    In a care home
                   </label> </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="no-fixed-abode" name="where-were-you-living" type="radio" value="no-abode">
@@ -53,7 +53,7 @@ Winter Fuel Payments
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="prison" name="where-were-you-living" type="radio" value="prison">
                   <label class="govuk-label govuk-radios__label" for="prison">
-                    In prison for the whole week
+                    In prison
 
                   </label> </div>
 
@@ -80,15 +80,5 @@ Winter Fuel Payments
 
 </main>
 </div>
-
-<script>
-    nextPageRoutes = {
-        'hospital': 'hospital-pc',
-        'carehome': 'care-home-pc',
-        'no-abode': 'no-abode',
-        'prison': 'prison',
-        'normal': 'pension-credit',
-        }
-</script>
 
 {% endblock %}

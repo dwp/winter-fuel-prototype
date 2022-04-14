@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-{% include 'current/includes/_header.html' %}
+{% include './_header.html' %}
 {% endblock %}
 
 
@@ -18,7 +18,7 @@ Winter Fuel Payments
 
         <form method="post">
 
-          <a href="residency-type" class="govuk-back-link">Back</a>
+          <a href="/legacy/sprint22b/residency-type" class="govuk-back-link">Back</a>
           <br>
           <br>
 
@@ -55,12 +55,5 @@ Winter Fuel Payments
 
 </main>
 </div>
-
-<script>
-    nextPageRoutes = {
-        'yes': 'living-with',
-        'no': 'full-payment',
-        }
-</script>
 
 {% endblock %}

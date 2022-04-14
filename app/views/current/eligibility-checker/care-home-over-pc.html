@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-{% include 'current/includes/_header.html' %}
+{% include './_header.html' %}
 {% endblock %}
 
 
@@ -15,7 +15,7 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form action="residency-type-pc" method="post">
+        <form action="/legacy/sprint21/benefits" method="post">
 
           {{ govukBackLink({
               text: "Back",
@@ -29,7 +29,7 @@ Winter Fuel Payments
              of 21 to 27 September 2020. This is called the 'qualifying week'.</p>
 
           <p>You do not qualify because you were getting Pension Credit and
-            living in a care or nursing home for 13 weeks or more, including qualifying week.</p>
+            living in a care home for 13 weeks or more, including qualifying week.</p>
 
 
 <br>

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-{% include 'current/includes/_header.html' %}
+{% include './_header.html' %}
 {% endblock %}
 
 
@@ -75,11 +75,5 @@ Winter Fuel Payments
 
 </main>
 </div>
-
-<script>
-    nextPageRoutes = {
-        'yes': 'residency-type-pc',
-        'no': 'receiving-sp',}
-</script>
 
 {% endblock %}

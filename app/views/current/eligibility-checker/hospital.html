@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-{% include 'current/includes/_header.html' %}
+{% include './_header.html' %}
 {% endblock %}
 
 
@@ -49,7 +49,7 @@ Winter Fuel Payments
           <button type="submit" class="govuk-button">
             Continue
           </button>
-<br><a href="next-task" class="govuk-link">Return this case to the queue</a>
+
       </div>
 
 
@@ -59,12 +59,5 @@ Winter Fuel Payments
 
 </main>
 </div>
-
-<script>
-    nextPageRoutes = {
-        'yes': 'who',
-        'no': 'hospital-over-year',
-        }
-</script>
 
 {% endblock %}

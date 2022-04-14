@@ -1,14 +1,21 @@
 {% extends "layout.html" %}
 
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
 {% block pageTitle %}
 Winter Fuel Payments
 {% endblock %}
-
-{% block beforeContent %}
-{% include 'current/includes/_find-someone.html' %}
-{% endblock %}
-
 {% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
 
 
 <div class="govuk-width-container">
@@ -28,7 +35,7 @@ Winter Fuel Payments
               21 to 27 September 2020.
           </p>
 
-          <a href="date-of-birth" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">
+          <a href="/current/eligibility-checker/date-of-birth" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">
             Start now
           </a>
 
