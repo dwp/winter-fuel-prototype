@@ -29,7 +29,7 @@ Winter Fuel Payments
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
 
-              <h1 class="govuk-heading-xl">Were you admitted into hospital after 21 September 2019?</h1>
+              <h1 class="govuk-heading-xl">Were you admitted into hospital after <span class="year-ago"></span>?</h1>
 
               <div class="govuk-radios govuk-radios--inline">
                 <div class="govuk-radios__item">
@@ -59,5 +59,23 @@ Winter Fuel Payments
 
 </main>
 </div>
+
+<script>
+  var monthNames = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+  
+  newDate = new Date();
+  var numberOfDaysToAdd = -366;
+  newDate.setDate(newDate.getDate() + numberOfDaysToAdd);
+  ny = newDate.getFullYear();
+  nm = newDate.getMonth();
+  nd = newDate.getDate();
+  
+  document.querySelector(".year-ago").innerHTML = nd + " " + monthNames[nm] + " " + ny;
+  </script>
 
 {% endblock %}

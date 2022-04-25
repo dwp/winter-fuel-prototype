@@ -80,8 +80,22 @@ router.post('/current/eligibility-checker/check-eligibility', (req, res) => {
 
   // Benefits SP?
 
-  router.post('/current/eligibility-checker/receiving-sp', (req, res) =>  {
-      res.redirect('residency-type')
+  router.post('/current/eligibility-checker/receiving-sp', function(req, res)  {
+    if ( req.body['benefit'] === 'no' ) {
+      res.redirect('immigration-control');
+    } else {
+      res.redirect('residency-type');
+    }
+  });
+
+// immigration control?
+
+router.post('/current/eligibility-checker/immigration-control', function(req, res) {
+  if ( req.body['immigration-control'] === 'yes' ) {
+    res.redirect('not-qualify-immig-control');
+  } else {
+    res.redirect('residency-type');
+  }
   });
 
 
