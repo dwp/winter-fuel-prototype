@@ -10,6 +10,11 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
@@ -18,10 +23,6 @@ GOV.UK Prototype Kit
 
     <form action="/legacy/sprint21/residency-type" method="post">
 
-      {{ govukBackLink({
-          text: "Back",
-          href: "javascript:history.go(-1)"
-        }) }}
 
           <div class="govuk-panel govuk-panel--confirmation">
                     <div class="govuk-panel__body">

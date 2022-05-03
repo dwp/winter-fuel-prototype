@@ -1,14 +1,15 @@
 {% extends "layout.html" %}
 
-{% block pageTitle %}
-GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-{% include './_find-someone.html' %}
+{% block header %}
+{% include './_header.html' %}
 {% endblock %}
 
 {% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
@@ -17,15 +18,12 @@ GOV.UK Prototype Kit
 
         <form method="post">
 
-          {{ govukBackLink({
-              text: "Back",
-              href: "javascript:history.go(-1)"
-            }) }}
+      
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
 
-              <h1 class="govuk-heading-l">Were you admitted into hospital after 15 September 2018?</h1>
+              <h1 class="govuk-heading-xl">Were you admitted into hospital after <span class="year-ago"></span>?</h1>
 
 <br>
 
@@ -57,5 +55,23 @@ GOV.UK Prototype Kit
 
 </main>
 </div>
+
+<script>
+  var monthNames = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+  
+  newDate = new Date();
+  var numberOfDaysToAdd = -366;
+  newDate.setDate(newDate.getDate() + numberOfDaysToAdd);
+  ny = newDate.getFullYear();
+  nm = newDate.getMonth();
+  nd = newDate.getDate();
+  
+  document.querySelector(".year-ago").innerHTML = nd + " " + monthNames[nm] + " " + ny;
+  </script>
 
 {% endblock %}

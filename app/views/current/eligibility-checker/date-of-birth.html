@@ -10,6 +10,11 @@ Winter Fuel Payments
 {% endblock %}
 {% block content %}
 
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
@@ -18,13 +23,8 @@ Winter Fuel Payments
 
         <form method="post">
 
-          {{ govukBackLink({
-              text: "Back",
-              href: "javascript:history.go(-1)"
-            }) }}
+         
 
-            <br>
-            <br>
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">

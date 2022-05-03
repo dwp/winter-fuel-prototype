@@ -189,7 +189,7 @@ if ( req.body['query'] === 'eligibility' ) {
 
       router.post('/current/eligibility-checker/who', function(req, res) {
         if ( req.body['who-do-you-live-with'] === 'yes' ) {
-          res.redirect('living-with');
+          res.redirect('living-with-over-80');
         } else {
           res.redirect('full-payment-under-80');
         }

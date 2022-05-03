@@ -10,6 +10,12 @@ Winter Fuel Payments
 {% endblock %}
 {% block content %}
 
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
@@ -17,18 +23,12 @@ Winter Fuel Payments
 
         <form method="post">
 
-          {{ govukBackLink({
-              text: "Back",
-              href: "javascript:history.go(-1)"
-            }) }}
 
-<br>
-<br>
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
 
-              <h1 class="govuk-heading-xl">Were you living in the UK during the week of 21 to 27 September 2020?</h1>
+              <h1 class="govuk-heading-xl">Do you live in the UK?</h1>
 
               <div class="govuk-radios govuk-radios--inline">
                 <div class="govuk-radios__item">

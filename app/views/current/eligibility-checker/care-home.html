@@ -10,6 +10,11 @@ Winter Fuel Payments
 {% endblock %}
 {% block content %}
 
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
@@ -17,16 +22,14 @@ Winter Fuel Payments
 
         <form method="post">
 
-          <a href="/legacy/sprint22b/residency-type" class="govuk-back-link">Back</a>
-          <br>
-          <br>
+          
 
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
 
 
-              <h1 class="govuk-heading-xl">Did you move into the care home after 28 June 2020?</h1>
+              <h1 class="govuk-heading-xl">Did you move into the care home after <span class="year-ago"></span>?</h1>
 
               <div class="govuk-radios govuk-radios--inline">
                 <div class="govuk-radios__item">
@@ -56,5 +59,23 @@ Winter Fuel Payments
 
 </main>
 </div>
+
+<script>
+  var monthNames = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+  
+  newDate = new Date();
+  var numberOfDaysToAdd = -92;
+  newDate.setDate(newDate.getDate() + numberOfDaysToAdd);
+  ny = newDate.getFullYear();
+  nm = newDate.getMonth();
+  nd = newDate.getDate();
+  
+  document.querySelector(".year-ago").innerHTML = nd + " " + monthNames[nm] + " " + ny;
+  </script>
 
 {% endblock %}

@@ -10,6 +10,10 @@ Winter Fuel Payments
 {% endblock %}
 {% block content %}
 
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
@@ -18,13 +22,7 @@ Winter Fuel Payments
 
         <form action="/legacy/sprint21/benefits" method="post">
 
-          {{ govukBackLink({
-              text: "Back",
-              href: "javascript:history.go(-1)"
-            }) }}
-
-            <br>
-            <br>
+        
 
           <h1 class="govuk-heading-xl">You do not qualify for a Winter Fuel Payment</h1>
 

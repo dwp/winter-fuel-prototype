@@ -10,6 +10,10 @@ Winter Fuel Payments
 {% endblock %}
 {% block content %}
 
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
@@ -17,23 +21,17 @@ Winter Fuel Payments
       <div class="govuk-grid-column-two-thirds">
 
 
-
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
 
         <form method="post">
 
-          <h1 class="govuk-heading-xl">Check eligibility for Winter Fuel Payment</h1>
+         
 
-          <p class="govuk-body">Use this service to find out if someone is
-            eligible for Winter Fuel Payment and how much they might get.</p>
+          <h1 class="govuk-heading-xl">Check how much Winter Fuel Payment you might get</h1>
 
-          <p>
-              This service checks eligibility based on qualifying week
-              21 to 27 September 2020.
-          </p>
+          <p class="govuk-body">Use this service to find out if you
+            qualify for Winter Fuel Payments and how much you might be paid.</p>
+
+          
 
           <a href="/current/eligibility-checker/date-of-birth" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">
             Start now

@@ -10,6 +10,11 @@ Winter Fuel Payments
 {% endblock %}
 {% block content %}
 
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
@@ -18,14 +23,14 @@ Winter Fuel Payments
 
         <form method="post">
 
-          <a href="/legacy/sprint22b/residency-type" class="govuk-back-link">Back</a>
-          <br>
-          <br>
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
-
-                  <h1 class="govuk-heading-xl">Were you living with anyone during the week of 21 to 27 September 2020?</h1>
+              {% if data['where-were-you-living'] == 'hospital'%}
+                <h1 class="govuk-heading-xl">Before going into hospital, were you living with anyone who was born before 27 September 1955?</h1>
+              {% else %}
+                <h1 class="govuk-heading-xl">Do you live with anyone born before 27 September 1955?</h1>
+              {% endif %}
 
               <div class="govuk-radios govuk-radios--inline">
                 <div class="govuk-radios__item">
