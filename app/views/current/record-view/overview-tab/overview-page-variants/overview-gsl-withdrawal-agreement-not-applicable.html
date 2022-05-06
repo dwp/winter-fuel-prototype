@@ -16,9 +16,7 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-       
-        {% include 'current/includes/_bar-withdrawal-agreement-not-reviewed.html' %}
-       
+        {% include 'current/includes/_bar.html' %}
 
         <form method="post">  
 
@@ -29,14 +27,25 @@ Winter Fuel Payments
             <br>
 
         
-            <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
-            <div class="govuk-warning-text">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong class="govuk-warning-text__text">
-                <span class="govuk-warning-text__assistive">Warning</span>
-                 This person has been sent an IPCL091 form<br> <a href="/current/record-view/overview-tab/wa/covered-by-withdrawal-agreement" class="govuk-link">Enter Withdrawal Agreement decision</a>
-              </strong>
-            </div></a>
+            <table class="govuk-table">
+              <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header govuk-!-width-one-third">Payment date</th>
+                    <td class="govuk-table__cell">Monday, 4 November 2021</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Amount</th>
+                    <td class="govuk-table__cell">£100</td>
+                  </tr>
+                </tbody>
+              </table>
         
             <br>
 
@@ -58,46 +67,29 @@ Winter Fuel Payments
                   <th scope="row" class="govuk-table__cell">Date of birth</th>
                   <td class="govuk-table__cell">9 August 1953</td>
                 </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__cell">GSL</th>
+                  <td class="govuk-table__cell">Approved</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__cell">Withdrawal Agreement</th>
+                  <td class="govuk-table__cell">Covered</td>
+                </tr>
                 
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Date of death</th>
-                    {% if data['death-day']%}
-                      <td class="govuk-table__cell">{{data['death-day']}}
-                        {% if (data['death-month'] == '1') or (data['death-month'] == '01') %} January 
-                        {% elif (data['death-month'] == '2') or (data['death-month'] == '02') %} February 
-                        {% elif (data['death-month'] == '3') or (data['death-month'] == '03') %} March 
-                        {% elif (data['death-month'] == '4') or (data['death-month'] == '04') %} April 
-                        {% elif (data['death-month'] == '5') or (data['death-month'] == '05') %} May 
-                        {% elif (data['death-month'] == '6') or (data['death-month'] == '06') %} June 
-                        {% elif (data['death-month'] == '7') or (data['death-month'] == '07') %} July 
-                        {% elif (data['death-month'] == '8') or (data['death-month'] == '08') %} August 
-                        {% elif (data['death-month'] == '9') or (data['death-month'] == '09') %} September 
-                        {% elif data['death-month'] == '10' %} October 
-                        {% elif data['death-month'] == '11' %} November 
-                        {% elif data['death-month'] == '12' %} December 
-                        {% endif %}
-                    {{data['death-year']}}
-                      </td>
-                      {% else %}
-                      <td class="govuk-table__cell">
-                          23 June 2021
-                      </td>
-                      {% endif %}
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Address</th>
-                    <td class="govuk-table__cell">
-                      
-                      Via Albarelle 6<br>
-                      St-Pierre-de-Clages<br>
-                      1955<br>
-                      Switzerland
-                     
-                      <br><br>
-                  since 10 March 2016
-                 
-                    </td>
-                  </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell">
+                    
+                    Via Albarelle 6<br>
+                    St-Pierre-de-Clages<br>
+                    1955<br>
+                    Switzerland
+                    
+                    <br><br>
+                since 10 March 2016
+                
+                  </td>
+                </tr>
                 </tr>
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Occupancy</th>
