@@ -72,9 +72,15 @@ Winter Fuel Payments
   </main>
   </div>
 
+  {% if data ['wa']=='yes'%}
+   {% set nextGSLApprovedPage = '/current/record-view/overview-tab/update-details/completed-ipcl091-form?gsl-disallowed=no' %}
+  {% else %}
+    {% set nextGSLApprovedPage = '/current/record-view/overview-tab/update-details/overview-gsl?gsl-disallowed=no' %}
+  {% endif %}
+
 <script>
     nextPageRoutes = {
-        'yes': '/current/record-view/overview-tab/update-details/overview-gsl?gsl-disallowed=no',
+        'yes': '{{nextGSLApprovedPage}}',
         'no': '/current/record-view/overview-tab/update-details/overview-gsl',
     }   
 </script>

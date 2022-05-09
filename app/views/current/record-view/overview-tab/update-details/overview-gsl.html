@@ -125,38 +125,28 @@ Winter Fuel Payments
                 </tr>
                 {% endif %}
 
+                {% if data['gsl-disallowed']=='yes' and data['remove-disallowed']!='no'%}
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">GSL</th>
+                    <td class="govuk-table__cell">Disallowed</td>
+                  </tr>
+                {% else %}
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">GSL</th>
+                  <td class="govuk-table__cell">Approved</td>
+                </tr>
+                {% endif %}
+                
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Address</th>
                   <td class="govuk-table__cell">
-                    {% if data['address-change'] %}
-                    {{data['address-change'].split(', ').join('<br />') | safe }}
-                    {% elif data.address %}
-                    {{data.address.split(', ').join('<br />') | safe}}
-                    {% else %}
-                    1 Victoria Road<br>
-                    FALKIRK<br>
-                    FK55 8XN
-                    {% endif %}
+                    Via Albarelle 6<br>
+                    St-Pierre-de-Clages<br>
+                    1955<br>
+                    Switzerland
+                   
                     <br><br>
-                since {% if data['move-date-changed'] == 'true' %}
-                {{data['moveday']}}
-                {% if (data['movemonth'] == '1') or (data['movemonth'] == '01') %} January 
-                {% elif (data['movemonth'] == '2') or (data['movemonth'] == '02') %} February 
-                {% elif (data['movemonth'] == '3') or (data['movemonth'] == '03') %} March 
-                {% elif (data['movemonth'] == '4') or (data['movemonth'] == '04') %} April 
-                {% elif (data['movemonth'] == '5') or (data['movemonth'] == '05') %} May 
-                {% elif (data['movemonth'] == '6') or (data['movemonth'] == '06') %} June 
-                {% elif (data['movemonth'] == '7') or (data['movemonth'] == '07') %} July 
-                {% elif (data['movemonth'] == '8') or (data['movemonth'] == '08') %} August 
-                {% elif (data['movemonth'] == '9') or (data['movemonth'] == '09') %} September 
-                {% elif data['movemonth'] == '10' %} October 
-                {% elif data['movemonth'] == '11' %} November 
-                {% elif data['movemonth'] == '12' %} December 
-                {% endif %}
-                {{data['moveyear']}}
-                      {% else %}
-                      10 March 2016
-                    {% endif %}
+                since 10 March 2016
                   </td>
                 </tr>
                 

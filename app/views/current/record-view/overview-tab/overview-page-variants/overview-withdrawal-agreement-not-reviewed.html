@@ -84,6 +84,17 @@ Winter Fuel Payments
                       </td>
                       {% endif %}
                   </tr>
+                  {% if data['gsl-disallowed']=='yes' and data['remove-disallowed']!='no'%}
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">GSL</th>
+                    <td class="govuk-table__cell">Disallowed</td>
+                  </tr>
+                {% else %}
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">GSL</th>
+                  <td class="govuk-table__cell">Approved</td>
+                </tr>
+                {% endif %}
                   <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">Address</th>
                     <td class="govuk-table__cell">
