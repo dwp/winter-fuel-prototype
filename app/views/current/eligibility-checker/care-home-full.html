@@ -22,23 +22,39 @@ Winter Fuel Payments
 
         <form method="post">
 
-         
+          {% if data['dob-year'] == '1940' %}
+            <div class="govuk-panel govuk-panel--confirmation">
+              <div class="govuk-panel__body">
+              <strong>You qualify for a Winter Fuel Payment of £150</strong>
+              </div>
+            </div>
+            <br>
+            <p>For winter 2020, we worked out your payment during the week
+            of 21 to 27 September 2020. This is called the 'qualifying week'.</p>
+            
+            <p>You qualify for £150 because you:</p>
 
+            <ul class="govuk-list govuk-list--bullet">
+              <li>were born on or before 20 September 1940</li>
+              <li>moved into the care home more than 13
+                weeks before qualifying week</li>
+            </ul>
+         {% else %} 
           <div class="govuk-panel govuk-panel--confirmation">
-                    <div class="govuk-panel__body">
-                    <strong>You qualify for a Winter Fuel Payment of £200</strong>
-                    </div>
-                  </div>
+            <div class="govuk-panel__body">
+            <strong>You qualify for a Winter Fuel Payment of £100</strong>
+            </div>
+          </div>
+          <br>
+          <p>You qualify for £100 because you:</p>
 
-<br>
-
-        <p>For winter 2020, we worked out your payment during the week
-           of 21 to 27 September 2020. This is called the 'qualifying week'.</p>
-
-        <p>You get £200 because you had lived in a care home fewer than
-           13 weeks at that time.</p>
-
-      </div>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>were born before 6 October 1954</li>
+              <li>moved into the care home more than 13
+                weeks before qualifying week</li>
+            </ul>
+         {% endif %}
+     
 
       <button class="govuk-button" data-module="govuk-button">
         Start again

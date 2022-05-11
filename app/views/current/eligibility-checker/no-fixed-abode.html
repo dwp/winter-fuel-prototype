@@ -8,6 +8,7 @@
 {% block pageTitle %}
 Winter Fuel Payments
 {% endblock %}
+
 {% block content %}
 
 {{ govukBackLink({
@@ -22,52 +23,45 @@ Winter Fuel Payments
 
         <form method="post">
 
+
           <div class="govuk-form-group">
 
             {% if data['dob-year'] == '1940' %}
+
               <div class="govuk-panel govuk-panel--confirmation">
                 <div class="govuk-panel__body">
                   <strong>You qualify for a Winter Fuel Payment of £300</strong>
                 </div>
               </div>
+                  
+              <p>You qualify for £300 because you:</p>
 
-              <br>
-
-             
-
-              <p>You qualify for £200 because you were over 80 years old and getting
-                Pension Credit during the qualifying week.</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>were born on or before 20 September 1940</li>
+                <li>have no fixed abode</li>
+              </ul>
             {% else %}
-              <div class="govuk-panel govuk-panel--confirmation">
-                <div class="govuk-panel__body">
-                  <strong>You qualify for a Winter Fuel Payment of £200</strong>
+            <div class="govuk-panel govuk-panel--confirmation">
+              <div class="govuk-panel__body">
+              <strong>You qualify for a Winter Fuel Payment of £200</strong>
                 </div>
               </div>
+            
+              <p>You qualify for £200 because you:</p>
 
-              <br>
-
-              <p>For winter 2019, we worked out your payment during the week of
-                21 to 27 September 2020. This is called the 'qualifying week'.</p>
-
-              <p>You qualify for £200 because you were under 80 years old and getting
-                Pension Credit during the qualifying week.</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>were born before 6 October 1954</li>
+                <li>have no fixed abode</li>
+              </ul>
             {% endif %}
-
-           
-
+            </form>
+            <button class="govuk-button" data-module="govuk-button">
+              Start again
+            </button>
           </div>
-
-
-
-
       </div>
-
-
     </div>
-
-</div>
-
-</main>
+  </main>
 </div>
 
 {% endblock %}

@@ -23,8 +23,6 @@ router.post('/current/eligibility-checker/check-eligibility', (req, res) => {
 
   // Date of birth
 
-  
-
   router.post('/current/eligibility-checker/date-of-birth', function(req, res) {
     if ( req.body['dob-year'] > 1955) {
       res.redirect('too-young');
@@ -72,7 +70,7 @@ router.post('/current/eligibility-checker/check-eligibility', (req, res) => {
 
   router.post('/current/eligibility-checker/receiving-pc', function(req, res) {
     if ( req.body['pension-credit'] === 'yes' ) {
-      res.redirect('residency-type-pc');
+      res.redirect('residency-type');
     } else if ( req.body['pension-credit'] === 'no' ) {
       res.redirect('receiving-sp');
     }
@@ -111,7 +109,7 @@ if ( req.body['query'] === 'eligibility' ) {
 
 
 
-  // Residency type SP
+  // Residency type
 
   router.post('/current/eligibility-checker/residency-type', function(req, res) {
     if ( req.body['where-were-you-living'] === 'hospital' ) {
@@ -119,25 +117,25 @@ if ( req.body['query'] === 'eligibility' ) {
     } else if ( req.body['where-were-you-living'] === 'carehome' ) {
       res.redirect('care-home');
     } else if ( req.body['where-were-you-living'] === 'no-abode' ) {
-      res.redirect('no-abode-under-80');
+      res.redirect('no-fixed-abode');
     } else if ( req.body['where-were-you-living'] === 'prison' ) {
       res.redirect('prison');
     } else {
-      res.redirect('who');
+      if ( req.session.data['pension-credit'] === 'yes' ) {
+        res.redirect('other-person-gets-pc');
+      } else {
+        res.redirect('who');
+      }
     }
   });
 
-  // Residency type PC
+ 
 
-  router.post('/current/eligibility-checker/residency-type-pc', function(req, res) {
-    if ( req.body['where-were-you-living'] === 'hospital' ) {
-      res.redirect('hospital-pc');
-    } else if ( req.body['where-were-you-living'] === 'carehome' ) {
-      res.redirect('care-home-pc');
-    } else if ( req.body['where-were-you-living'] === 'no-abode' ) {
-      res.redirect('no-abode-under-80');
-    } else if ( req.body['where-were-you-living'] === 'prison' ) {
-      res.redirect('prison');
+  // If lives at home, check if anyone else gets PC
+
+  router.post('/current/eligibility-checker/other-person-gets-pc', function(req, res) {
+    if ( req.body['other-person-pension-credit'] === 'yes' ) {
+      res.redirect('pension-credit-other-person');
     } else {
       res.redirect('pension-credit');
     }
@@ -167,11 +165,16 @@ if ( req.body['query'] === 'eligibility' ) {
     // Care or nursing home 13 weeks
 
     router.post('/current/eligibility-checker/care-home', function(req, res) {
-      if ( req.body['care-home-admission'] === 'yes' ) {
+      if ( req.body['care-home-admission'] === 'no' ) {
+        if ( req.session.data['pension-credit'] === 'yes' ) {
+          res.redirect('care-home-over-pc');
+        } else {
+          res.redirect('care-home-shared');
+        }}
+      else {
         res.redirect('care-home-full');
-      } else {
-        res.redirect('care-home-shared');
       }
+    
     });
 
 
@@ -191,15 +194,15 @@ if ( req.body['query'] === 'eligibility' ) {
         if ( req.body['who-do-you-live-with'] === 'yes' ) {
           res.redirect('living-with-over-80');
         } else {
-          res.redirect('full-payment-under-80');
+          res.redirect('full-payment');
         }
       });
 
       router.post('/current/eligibility-checker/living-with-over-80', function(req, res) {
         if ( req.body['live-with-age-over-80'] === 'yes' ) {
-          res.redirect('under-80-shared-with-over-80');
+          res.redirect('shared-with-over-80');
         } else {
-          res.redirect('over-80-shared');
+          res.redirect('shared-with-under-80');
         }
       });
 
@@ -220,7 +223,7 @@ if ( req.body['query'] === 'eligibility' ) {
           if ( req.body['live-with-age'] === 'yes' ) {
             res.redirect('living-with-over-80');
           } else {
-            res.redirect('full-payment-under-80');
+            res.redirect('full-payment');
           }
         });
 

@@ -15,6 +15,7 @@ Winter Fuel Payments
   href: "javascript:history.go(-1)"
 }) }}
 
+
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
@@ -22,8 +23,7 @@ Winter Fuel Payments
 
         <form method="post">
 
-          <div class="govuk-form-group">
-
+          {% if data['dob-year'] == '1940' %}
             <div class="govuk-panel govuk-panel--confirmation">
               <div class="govuk-panel__body">
                 <strong>You qualify for a Winter Fuel Payment of £200</strong>
@@ -35,18 +35,40 @@ Winter Fuel Payments
             <p>You qualify for £200 because you:</p>
 
             <ul class="govuk-list govuk-list--bullet">
-              <li>were born before 6 October 1954</li>
-              <li>get an income-related benefit</li>
+              <li>were born on or before 20 September 1940</li>
+              <li>live with someone else who was born before 6 October 1954</li>
             </ul>
+          {% else %}
+            <div class="govuk-panel govuk-panel--confirmation">
+              <div class="govuk-panel__body">
+                <strong>You qualify for a Winter Fuel Payment of £100</strong>
+              </div>
+            </div>
 
-           </form>
-           <button class="govuk-button" data-module="govuk-button">
+            <br>
+
+            <p>You qualify for £100 because you:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>were born before 6 October 1954</li>
+              <li>live with someone else who was born before 6 October 1954</li>
+            </ul>
+          {% endif %}
+
+          <button class="govuk-button" data-module="govuk-button">
             Start again
           </button>
-          </div>
+
+
+        </form>
+
       </div>
+
+
+
     </div>
 
+</div>
 </main>
 </div>
 
