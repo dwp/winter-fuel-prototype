@@ -145,34 +145,30 @@ if ( req.body['query'] === 'eligibility' ) {
   // Hospital
 
   router.post('/current/eligibility-checker/hospital', function(req, res) {
-    if ( req.body['hospital-admission'] === 'yes' ) {
-      res.redirect('who');
-    } else {
+    if ( req.body['hospital-admission'] === 'no' ) {
+      if ( req.session.data['pension-credit'] === 'yes' ) {
+        res.redirect('pension-credit');
+      } else {
+        res.redirect('who');
+      }}
+    else {
       res.redirect('hospital-over-year');
     }
   });
 
-  // Hospital PC
-
-  router.post('/current/eligibility-checker/hospital-pc', function(req, res) {
-    if ( req.body['hospital-admission'] === 'yes' ) {
-      res.redirect('pension-credit');
-    } else {
-      res.redirect('hospital-over-year');
-    }
-  });
+  
 
     // Care or nursing home 13 weeks
 
     router.post('/current/eligibility-checker/care-home', function(req, res) {
       if ( req.body['care-home-admission'] === 'no' ) {
         if ( req.session.data['pension-credit'] === 'yes' ) {
-          res.redirect('care-home-over-pc');
-        } else {
           res.redirect('care-home-shared');
+        } else {
+          res.redirect('care-home-full');
         }}
       else {
-        res.redirect('care-home-full');
+        res.redirect('care-home-over-pc');
       }
     
     });
