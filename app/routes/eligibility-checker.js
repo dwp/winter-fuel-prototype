@@ -92,8 +92,12 @@ router.post('/current/eligibility-checker/immigration-control', function(req, re
   if ( req.body['immigration-control'] === 'yes' ) {
     res.redirect('not-qualify-immig-control');
   } else {
-    res.redirect('residency-type');
+    res.redirect('had-winter-fuel-before');
   }
+  });
+
+router.post('/current/eligibility-checker/had-winter-fuel-before', function(req, res) {
+  res.redirect('/current/eligibility-checker/residency-type')
   });
 
 

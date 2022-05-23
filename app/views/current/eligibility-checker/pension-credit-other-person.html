@@ -31,15 +31,19 @@ Winter Fuel Payments
                 </div>
               </div>
 
-              <br>
-
+              {% if data['had-winter-fuel-before'] == 'no' %}
               <div class="govuk-warning-text">
-                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                <strong class="govuk-warning-text__text">
-                  <span class="govuk-warning-text__assistive">Warning</span>
-                  As you live with someone else who gets Pension Credit only one person in the household will get the payment.
-                </strong>
-              </div>
+               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+               <strong class="govuk-warning-text__text">
+                 <span class="govuk-warning-text__assistive">Warning</span>
+                 You need to <a href="/current/eligibility-checker/gov-uk-guidance/how-to-claim#claim-for-the-first-time-by-phone">make a claim</a> to get this payment.<br><br>
+                 As you live with someone else who gets Pension Credit only one person in the household will get the payment.
+               </strong>
+             </div>
+              {% endif %}
+              
+
+              
 
             </div>
           {% else %}
@@ -53,7 +57,8 @@ Winter Fuel Payments
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
               <strong class="govuk-warning-text__text">
                 <span class="govuk-warning-text__assistive">Warning</span>
-                As you live with someone else who gets Pension Credit, only one person in the household will get the payment.
+                You need to <a href="/current/eligibility-checker/gov-uk-guidance/how-to-claim#claim-for-the-first-time-by-phone">make a claim</a> to get this payment.<br><br>
+                As you live with someone else who gets Pension Credit only one person in the household will get the payment.
               </strong>
             </div>
           </div>

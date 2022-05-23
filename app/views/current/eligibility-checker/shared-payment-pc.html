@@ -28,7 +28,16 @@ Winter Fuel Payments
                     <strong>You qualify for a Winter Fuel Payment of £100</strong>
                     </div>
                   </div>
-
+                  {% if data['had-winter-fuel-before'] == 'no' %}
+                  <div class="govuk-warning-text">
+                   <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                   <strong class="govuk-warning-text__text">
+                     <span class="govuk-warning-text__assistive">Warning</span>
+                     You need to <a href="/current/eligibility-checker/gov-uk-guidance/how-to-claim#claim-for-the-first-time-by-phone">make a claim</a> to get this payment.
+                   </strong>
+                 </div>
+                  {% endif %}
+                  
            <br><br>
 
 
