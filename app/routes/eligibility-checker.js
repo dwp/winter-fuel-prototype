@@ -24,7 +24,7 @@ router.post('/current/eligibility-checker/check-eligibility', (req, res) => {
   // Date of birth
 
   router.post('/current/eligibility-checker/date-of-birth', function(req, res) {
-    if ( req.body['dob-year'] > 1955) {
+    if ( req.body['dob-year'] > 1954) {
       res.redirect('too-young');
     } else {
       res.redirect('residency');
