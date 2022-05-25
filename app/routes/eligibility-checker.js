@@ -121,7 +121,7 @@ if ( req.body['query'] === 'eligibility' ) {
     } else if ( req.body['where-were-you-living'] === 'carehome' ) {
       res.redirect('care-home');
     } else if ( req.body['where-were-you-living'] === 'no-abode' ) {
-      res.redirect('no-fixed-abode');
+      res.redirect('no-fixed-address');
     } else if ( req.body['where-were-you-living'] === 'prison' ) {
       res.redirect('prison');
     } else {
