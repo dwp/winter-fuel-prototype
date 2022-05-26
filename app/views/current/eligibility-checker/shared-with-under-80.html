@@ -26,7 +26,7 @@ Winter Fuel Payments
           {% if data['dob-year'] == '1940' %}
             <div class="govuk-panel govuk-panel--confirmation">
               <div class="govuk-panel__body">
-                <strong>You'll get a Winter Fuel Payment of £200</strong>
+                <strong>You qualify for a Winter Fuel Payment of £200</strong>
               </div>
             </div>
 
@@ -34,7 +34,7 @@ Winter Fuel Payments
           {% else %}
             <div class="govuk-panel govuk-panel--confirmation">
               <div class="govuk-panel__body">
-                <strong>You'll get a Winter Fuel Payment of £100</strong>
+                <strong>You qualify for a Winter Fuel Payment of £100</strong>
               </div>
             </div> 
           {% endif %}
@@ -50,6 +50,8 @@ Winter Fuel Payments
           </ul>
           <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
+          <h2 class="govuk-heading-m">What happens next</h2>
+
           {% if data['had-winter-fuel-before'] == 'no' %}
           <div class="govuk-warning-text">
            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -61,7 +63,7 @@ Winter Fuel Payments
           {% endif %}
           
           <br><br>
-          <a href="/current/eligibility-checker/start-page" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">
+          <a href="/current/eligibility-checker/start-page" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" style="font-weight:normal">
             Start again
           </a>
 

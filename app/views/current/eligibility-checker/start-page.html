@@ -29,7 +29,16 @@ Winter Fuel Payments
           <h1 class="govuk-heading-xl">Check how much Winter Fuel Payment you might get</h1>
 
           
-          <p class="govuk-body">Use this service to find out if you qualify for Winter Fuel Payments, how much you might be paid and if you need to make a claim to get it.</p>
+          <p class="govuk-body">Use this service to find out:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>if you qualify for Winter Fuel Payments</li>
+            <li>how much you might be paid</li>
+            <li>if you need to make a claim to get it</li>
+           
+          </ul>
+
+        
          
           <div class="govuk-inset-text">
             It usually takes less than a minute to answer the questions and get your result.
@@ -40,8 +49,8 @@ Winter Fuel Payments
             Start now
           </a>
 
-          
-          <details class="govuk-details" data-module="govuk-details" style="padding-top:100px">
+          {% if data['notes'] == 'yes' %}  
+          <details class="govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
                 (Prototype notes)
@@ -55,6 +64,7 @@ Winter Fuel Payments
               </ul>
             </div>
           </details>
+          {% endif %}
 
       </div>
 

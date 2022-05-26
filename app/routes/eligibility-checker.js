@@ -198,7 +198,13 @@ if ( req.body['query'] === 'eligibility' ) {
         }
       });
 
+     
+
       router.post('/current/eligibility-checker/living-with-over-80', function(req, res) {
+          res.redirect('warning-page');
+      });
+
+      router.post('/current/eligibility-checker/warning-page', function(req, res) {
         if ( req.body['live-with-age-over-80'] === 'yes' ) {
           res.redirect('shared-with-over-80');
         } else {
