@@ -16,7 +16,7 @@ router.use((req, res, next) => {
 
 // Start screen
 
-router.post('/current/eligibility-checker/check-eligibility', (req, res) => {
+router.post('/current/eligibility-checker/start-page', (req, res) => {
   res.redirect('/current/eligibility-checker/date-of-birth')
 })
 ;
@@ -97,9 +97,25 @@ router.post('/current/eligibility-checker/immigration-control', function(req, re
   });
 
 router.post('/current/eligibility-checker/had-winter-fuel-before', function(req, res) {
-  res.redirect('/current/eligibility-checker/residency-type')
+  if ( req.body['had-winter-fuel-before'] === 'yes' ) {
+    res.redirect('deferred-sp');
+  } else {
+    res.redirect('residency-type');
+  }
   });
 
+router.post('/current/eligibility-checker/deferred-sp', function(req, res) {
+  if ( req.body['deferred-sp'] === 'yes' ) {
+    res.redirect('claimed-since-deferred');
+  } else {
+    res.redirect('residency-type');
+  }
+  });
+
+router.post('/current/eligibility-checker/claimed-since-deferred', function(req, res) {
+  res.redirect('/current/eligibility-checker/residency-type')
+})
+;
 
 // Query
 
