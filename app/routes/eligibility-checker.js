@@ -220,17 +220,11 @@ if ( req.body['query'] === 'eligibility' ) {
           if ( req.body['live-with-age-over-80'] === 'yes' ) {
             res.redirect('shared-with-over-80');
           } else {
-            res.redirect('warning-page');
+            res.redirect('shared-with-under-80');
           }
         });
 
-      router.post('/current/eligibility-checker/warning-page', function(req, res) {
-        if ( req.body['live-with-age-over-80'] === 'yes' ) {
-          res.redirect('shared-with-over-80');
-        } else {
-          res.redirect('shared-with-under-80');
-        }
-      });
+     
 
       // Who (Living with)
 
