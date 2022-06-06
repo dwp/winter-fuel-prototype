@@ -21,6 +21,11 @@ router.post('/current/eligibility-checker/start-page', (req, res) => {
 })
 ;
 
+router.post('/current/eligibility-checker/start-page2', (req, res) => {
+  res.redirect('/current/eligibility-checker-postqweek/date-of-birth')
+})
+;
+
   // Date of birth
 
   router.post('/current/eligibility-checker/date-of-birth', function(req, res) {
