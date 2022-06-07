@@ -26,7 +26,7 @@ Winter Fuel Payments
           {% if data['dob-year'] == '1940' %}
             <div class="govuk-panel govuk-panel--confirmation">
               <div class="govuk-panel__body">
-                <strong>Based on the answers you've given us, you qualify for a Winter Fuel Payment of £200</strong>
+                <strong>You qualify for a Winter Fuel Payment of £200</strong>
               </div>
             </div>
 
@@ -34,7 +34,7 @@ Winter Fuel Payments
           {% else %}
             <div class="govuk-panel govuk-panel--confirmation">
               <div class="govuk-panel__body">
-                <strong>Based on the answers you've given us, you qualify for a Winter Fuel Payment of £100</strong>
+                <strong>You qualify for a Winter Fuel Payment of £100</strong>
               </div>
             </div> 
           {% endif %}
@@ -49,31 +49,22 @@ Winter Fuel Payments
             <li>you live with someone under 80 (we assumed they also qualify for a Winter Fuel Payment when we worked out your result)</li>
             {% endif %}
 
-          </ul>
+          </ul><br>
+         
 
-          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-          <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" style="background:#3f4041; border:5px solid #3f4041">
-            <div class="govuk-notification-banner__header">
-              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-                Important
-              </h2>
-            </div>
-            <div class="govuk-notification-banner__content">
-              <p class="govuk-notification-banner__heading" style="font-size:18px">
-                If anything you've told us changes before the end of the third week in September (when we work out your actual payment):
+         <p class="govuk-body"><span style="display:inline-block; padding:1px 4px 0; margin-right:5px;margin-bottom:8px; color:#ffffff;background:#d4351c; font-size:14px">IMPORTANT</span><br>
+             If anything you've told us changes before the end of the third week in September (when we work out your actual payment):
             
-                <ul>
-                  <li>you might get a different amount for your Winter Fuel Payment, or</li>
-                  <li>you might not qualify for a payment at all</li>
-               
-                </ul>
-                
-              </p>
-            </div>
-          </div>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>you might get a different amount for your Winter Fuel Payment, or</li>
+                <li>you might not qualify for a payment at all</li>
+              </ul>
           
+            </p>
+         
 
+
+          
           <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
           <h2 class="govuk-heading-m">What happens next</h2>
@@ -129,9 +120,11 @@ Winter Fuel Payments
                   <div class="step-number-track"></div>
               </div>
               <div class="step-detail">
-                  <h2 class="govuk-heading-s">Tell us if anything changes</h2>
+                  <h2 class="govuk-heading-s" id="tell-us-changes">Tell us if anything changes </h2>
+                 
+                  
                   <p class="govuk-body">You need to tell us about any change of circumstances as soon as possible, as these can affect how much Winter Fuel Payment you get. For example, if you stop getting a benefit, move house or go into care.<br><br>
-                    You can call us for free on 0800 731 0160 (Monday to Friday, 8am to 6pm)<br><br>
+                    Telephone: 0800 731 0160 (Monday to Friday, 8am to 6pm)<br><br>
                         
                     <a href="https://www.gov.uk/winter-fuel-payment/report-change-circumstances#guide-contents">Other ways to contact us</a></p>
               </div>
@@ -173,9 +166,9 @@ Winter Fuel Payments
                     </div>
           
          
-                    <a href="/current/eligibility-checker/shared-with-under-80-2" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" style="font-weight:normal">
-                      Start again
-                    </a>
+          <a href="/current/eligibility-checker/start-page" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" style="font-weight:normal">
+            Start again
+          </a>
 
 
         </form>

@@ -26,7 +26,7 @@ Winter Fuel Payments
           {% if data['dob-year'] == '1940' %}
             <div class="govuk-panel govuk-panel--confirmation">
               <div class="govuk-panel__body">
-                <strong>Based on the answers you've given us, you qualify for a Winter Fuel Payment of £200</strong>
+                <strong>You qualify for a Winter Fuel Payment of £200</strong>
               </div>
             </div>
 
@@ -34,7 +34,7 @@ Winter Fuel Payments
           {% else %}
             <div class="govuk-panel govuk-panel--confirmation">
               <div class="govuk-panel__body">
-                <strong>Based on the answers you've given us, you qualify for a Winter Fuel Payment of £100</strong>
+                <strong>You qualify for a Winter Fuel Payment of £100</strong>
               </div>
             </div> 
           {% endif %}
@@ -43,10 +43,10 @@ Winter Fuel Payments
           <ul class="govuk-list govuk-list--bullet">
             {% if data['dob-year'] == '1940' %}  
               <li>you are 80 or over </li>
-              <li>you live with someone under 80 (we assumed they also qualify for a Winter Fuel Payment when we worked out your result)</li>
+              <li>you do not live with anyone else who also qualifies for a Winter Fuel Payment</li>
             {% else %}
             <li>you are under 80</li>
-            <li>you live with someone under 80 (we assumed they also qualify for a Winter Fuel Payment when we worked out your result)</li>
+            <li>you do not live with anyone else who also qualifies for a Winter Fuel Payment</li>
             {% endif %}
 
           </ul>
