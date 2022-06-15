@@ -430,10 +430,11 @@
 
   <div class="govuk-grid-column-two-thirds" id="guide-contents" >
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    {% if data['v']=='2'%}
         <h2 class="part-title" style="font-size:24px">
           How much you'll get
         </h2>
-
+        {% endif %}
       
 <div class="gem-c-govspeak govuk-govspeak direction-ltr disable-youtube" data-module="govspeak" style="font-size:19px;">
   
@@ -445,9 +446,9 @@
         <li><a href="/current/eligibility-checker/start-page">use the Winter Fuel Payment checker</a></li>
         <li>read through this guide</li>
       </ul>
-  {% endif %}
+  
       
-        <br>
+        <br>{% endif %}
         <h2 id="if-you-get-certain-benefits" style="font-size:24px">If you get certain benefits</h2>
        
         
