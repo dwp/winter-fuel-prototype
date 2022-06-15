@@ -439,13 +439,13 @@
   
         
     <div class="gem-c-govspeak govuk-govspeak direction-ltr disable-youtube" data-module="govspeak">
-
+      {% if data['v']=='2'%}
       <p>To find out how much you'll get, you can:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="/current/eligibility-checker/start-page">use the Winter Fuel Payment checker</a></li>
         <li>read through this guide</li>
       </ul>
-    
+  {% endif %}
       
         <br>
         <h2 id="if-you-get-certain-benefits" style="font-size:24px">If you get certain benefits</h2>
