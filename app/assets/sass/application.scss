@@ -22,6 +22,9 @@ $govuk-assets-path: '/govuk/assets/';
 @import 'custom-styles';
 @import 'duet-date-picker-custom';
 @import 'panels';
+@import 'timeline';
+@import 'navigation-secondary';
+@import 'navigation-global';
 
 // Hide GOV.UK logo and bump size of service name
 .govuk-header__logo {display: none}
