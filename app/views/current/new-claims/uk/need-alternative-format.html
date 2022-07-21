@@ -35,13 +35,15 @@ Winter Fuel Payments
             <form method="post">
 
               <div class="govuk-form-group">
-                <h1 class="govuk-heading-l">Do you need any correspondence in an alternative format?</h1>
                 <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                      Do you need any correspondence in an alternative format?
+                    </h1>
                   </legend>
-                  <span id="are-you-sure-hint" class="govuk-hint">
+                  <div id="changed-name-hint" class="govuk-hint">
                     For example large print, Braille or audio.
-                  </span>
+                  </div>
                   <br>
                   <div class="govuk-radios govuk-radios--inline">
                     <div class="govuk-radios__item">
@@ -57,8 +59,11 @@ Winter Fuel Payments
                       </label>
                     </div>
                   </div>
+              
                 </fieldset>
               </div>
+
+             
 
               <button type="submit" class="govuk-button">
                 Continue
