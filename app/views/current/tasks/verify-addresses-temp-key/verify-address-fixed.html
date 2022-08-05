@@ -16,8 +16,13 @@
 <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
 
 <div class="moj-banner__message">
-<span class="moj-banner__assistive">Success</span>Submitted address found - task removed from queue</div>
-
+  {% if data['address-fix-1'] === 'care' %}
+    <span class="moj-banner__assistive">Success</span>Submitted address found - property type changed to CARE HOME and task removed from queue</div>
+  {% elif data['address-fix-1'] === 'hospital' %}
+    <span class="moj-banner__assistive">Success</span>Submitted address found - property type changed to HOSPITAL and task removed from queue</div>
+  {% else %}
+    <span class="moj-banner__assistive">Success</span>Submitted address found - task removed from queue</div>
+  {% endif %}
 </div>
 
 
@@ -32,6 +37,7 @@
         <button href="verify-address-manual-1" class="govuk-button" data-module="govuk-button">
           Check next submitted address case
         </button>
+        <input type="hidden" name="not-residential" value="unknown">
 
 </div>
 </div>
