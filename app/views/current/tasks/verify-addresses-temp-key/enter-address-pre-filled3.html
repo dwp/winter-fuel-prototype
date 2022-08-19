@@ -24,7 +24,7 @@ Winter Fuel Payments
 
       <div class="govuk-grid-column-two-thirds">
 
-        <form method="post" action="duplicate-key-found">
+        <form method="post">
 
               <h2 class="govuk-heading-l">Add submitted address to SPS</h2>
 
@@ -100,7 +100,15 @@ Winter Fuel Payments
                         </strong>
                       </label>
                     </div>
-                   
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-fix-1" name="address-fix-1" type="radio" value="commercial">
+                      <label class="govuk-label govuk-radios__label" for="address">
+                        
+                        <strong class="govuk-tag govuk-tag--orange">
+                          Commercial
+                        </strong>
+                      </label>
+                    </div>
                     <br>
 
                   </div>
@@ -135,5 +143,15 @@ Winter Fuel Payments
 
 </main>
 </div>
+
+<script>
+  nextPageRoutes = {
+      'care': 'duplicate-key-found',
+      'hospital': 'duplicate-key-found',
+      'residential': 'duplicate-key-found',
+      'commercial': 'confirm-commercial-no-payment'
+
+   }
+</script>
 
 {% endblock %}
