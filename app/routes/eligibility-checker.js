@@ -17,7 +17,7 @@ router.use((req, res, next) => {
 // Start screen
 
 router.post('/current/eligibility-checker/start-page', (req, res) => {
-  res.redirect('/current/eligibility-checker-expect/warning-page')
+  res.redirect('/current/eligibility-checker/date-of-birth')
 })
 ;
 
@@ -188,15 +188,23 @@ if ( req.body['query'] === 'eligibility' ) {
     router.post('/current/eligibility-checker/care-home', function(req, res) {
       if ( req.body['care-home-admission'] === 'no' ) {
         if ( req.session.data['pension-credit'] === 'yes' ) {
-          res.redirect('care-home-shared');
-        } else {
           res.redirect('care-home-full');
+        } else {
+          res.redirect('care-home-lived-with-before');
         }}
       else {
         res.redirect('care-home-over-pc');
       }
     
     });
+
+    router.post('/current/eligibility-checker/care-home-lived-with-before', function(req, res) {
+      if ( req.body['lived-with-someone-before'] === 'yes' ) {
+        res.redirect('/current/eligibility-checker/49b_version/care-home-shared');
+      } else {
+        res.redirect('/current/eligibility-checker/49b_version/care-home-full');
+      }
+      });
 
 
     // Care or nursing home PC 13 weeks
