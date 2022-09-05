@@ -44,32 +44,24 @@ Winter Fuel Payments
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
               <strong class="govuk-warning-text__text">
                 <span class="govuk-warning-text__assistive">Warning</span>
-                This person has an outstanding alternative format task. {% if data['wf-agent']== 'yes' %}<a href="/tasks/send-alternative-format/alternative-format" class="govuk-link">Review task</a>{% endif %}
+                <span style="padding-bottom:10px; display:inline-block">A manual payment has been requested for this citizen.</span><br>
+                <a href="/current/tasks/request-manual-payment/request-manual-payment" class="govuk-link" style="padding-top:10px">Review manual payment request</a>
               </strong>
             </div>
         {% else %}
             <table class="govuk-table">
             <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header"></th>
-                <th scope="col" class="govuk-table__header"></th>
-              </tr>
-            </thead>
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header govuk-!-width-one-third">Payment date</th>
-                  <td class="govuk-table__cell">Monday, 4 November 2021</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Amount</th>
-                  <td class="govuk-table__cell">£100</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                <span style="padding-bottom:10px; display:inline-block">A manual payment has been requested for this citizen.</span><br>
+                <a href="/current/tasks/request-manual-payment/request-manual-payment" class="govuk-link" style="padding-top:10px">Review manual payment request</a>
+              </strong>
+            </div>
         
 {% endif %}
-<br>
+
 
             <table class="govuk-table">
               <h2 class="govuk-heading-m">Current details</h2>
