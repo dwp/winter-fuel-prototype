@@ -34,10 +34,22 @@ Winter Fuel Payments
                   Amount
                 </label>
               </h2>
-                  <div class="govuk-input__wrapper">
-                    <div class="govuk-input__prefix" aria-hidden="true">£</div>
-                    <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
-                  </div>
+              <div class="govuk-input__wrapper">
+                <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                
+                <div class="govuk-form-group">
+                  
+                  <select class="govuk-select" id="sort" name="sort">
+                    <option value="250" selected>250</option>
+                    <option value="300">300</option>
+                    <option value="350">350</option>
+                    <option value="500">500</option>
+                    <option value="600">600</option>
+                  </select>
+                </div>
+
+
+              </div>
              
                   <br><br>
 
@@ -72,7 +84,7 @@ Winter Fuel Payments
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="living-with-q-week-yes" name="living-with-q-week" type="radio" value="Lives with someone else of State Pension age">
                       <label class="govuk-label govuk-radios__label" for="living-with-q-week-1">
-                        Previous years payment
+                        Payment needed for last year's exercise
                       </label>
                     </div>
                     <div class="govuk-radios__item">
@@ -87,12 +99,7 @@ Winter Fuel Payments
                         Address not found during new claim
                       </label>
                     </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="living-with-q-week-yes" name="living-with-q-week" type="radio" value="Lives with someone else of State Pension age">
-                      <label class="govuk-label govuk-radios__label" for="living-with-q-week-1">
-                        Death arrears amount incorrect
-                      </label>
-                    </div>
+                   
                    
                    <br><br>
                    
