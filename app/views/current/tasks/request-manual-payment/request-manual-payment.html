@@ -27,20 +27,9 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-
-        {% if data['update-details'] == 'yes'%}
-        <form method="post" action="/current/record-view/overview-tab/update-details/overview-manual-payment-processed">
-        {% else %}
-        <form method="post" action="get-next-task-manual-payment">
-        {% endif %}
+        <form method="post">
+    
           {% include 'current/includes/_bar_2.html' %}
-
-
-
-
-
-
-
 
             <h1 class="govuk-heading-m">Manual payment request details</h1>
             <table class="govuk-table">
@@ -108,14 +97,14 @@ Winter Fuel Payments
                 </legend>
                 <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="contact" name="request" type="radio" value="yes" data-aria-controls="conditional-contact">
+                    <input class="govuk-radios__input" id="contact" name="approve" type="radio" value="yes" data-aria-controls="conditional-contact">
                     <label class="govuk-label govuk-radios__label" for="contact">
                       Yes
                     </label>
                   </div>
                   
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="contact-2" name="request" type="radio" value="no" data-aria-controls="conditional-contact-2">
+                    <input class="govuk-radios__input" id="contact-2" name="approve" type="radio" value="no" data-aria-controls="conditional-contact-2">
                     <label class="govuk-label govuk-radios__label" for="contact-2">
                       No - cancel the request
                     </label>
@@ -128,16 +117,16 @@ Winter Fuel Payments
             </div>
 
 
-            {% if data['update-details'] == 'no'%}
+            {% if data['update-details'] != 'no'%}
             <p><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a></p>
 <br>
 {% endif %}
 
 
-            <button type="submit" class="govuk-button">
+            <button class="govuk-button" data-module="govuk-button">
               Continue
             </button>
-
+   
 
 
           </form>
@@ -150,5 +139,20 @@ Winter Fuel Payments
 
 </main>
 </div>
+
+
+{% if data['update-details'] == 'yes'%}
+   {% set nextReviewPage = '/current/record-view/overview-tab/update-details/overview-manual-payment-processed' %} 
+{% else %}
+  {% set nextReviewPage = 'get-next-task-manual-payment' %}
+{% endif %}
+
+    <script>
+        nextPageRoutes = {
+            'yes': '{{nextReviewPage}}',
+            'no': 'cancel-reason',
+        }
+    </script>
+
 
 {% endblock %}
