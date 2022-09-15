@@ -17,8 +17,12 @@ Winter Fuel Payments
 
         <form method="post">
 
-          {% include 'current/includes/_bar.html' %}
-
+          {% if data['preferred-name-added']=='true'%}
+             {% include 'current/includes/_bar-preferred-name.html' %}
+          {% else %}
+             {% include 'current/includes/_bar-preferred-name.html' %}
+          {% endif %}
+          
           {% if data['alt-format-changed'] == 'true' or data ['contact-details-changed'] == 'true'%}
           <div class="moj-banner moj-banner--success">
 
@@ -119,6 +123,24 @@ Winter Fuel Payments
                     Change<span class="govuk-visually-hidden">email</span>
                     {% else %}
                     Add<span class="govuk-visually-hidden">email</span>
+                    {% endif %}
+
+                  </a>
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Preferred name</th>
+                <td class="govuk-table__cell">
+                  {{data['preferred-first-name']}} {{data['preferred-last-name']}}
+                </td>
+                <td class="govuk-table__cell table-links-padding-left">
+                  <a href="/current/record-view/overview-tab/update-details/preferred-name.html">
+
+                    {% if data['preferred-last-name'] %}
+                    Change<span class="govuk-visually-hidden">preferred name</span>
+                    {% else %}
+                    Add<span class="govuk-visually-hidden">preferred name</span>
                     {% endif %}
 
                   </a>
