@@ -26,7 +26,7 @@ Winter Fuel Payments
       
 
 
-          <form method="post" action="request-manual-payment">
+          <form method="post">
 
          
 
@@ -40,12 +40,12 @@ Winter Fuel Payments
 
               <div class="govuk-radios govuk-radios--inline">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="live-yes" name="live-with-age-over-80" type="radio" value="yes">
+                  <input class="govuk-radios__input" id="live-yes" name="last-year" type="radio" value="yes">
                   <label class="govuk-label govuk-radios__label" for="live-yes">
                     Yes
                   </label> </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="live-no" name="live-with-age-over-80" type="radio" value="no">
+                  <input class="govuk-radios__input" id="live-no" name="last-year" type="radio" value="no">
                   <label class="govuk-label govuk-radios__label" for="live-no">
                     No
                   </label> </div>
@@ -67,6 +67,12 @@ Winter Fuel Payments
 </main>
 </div>
 
-
+<script>
+  nextPageRoutes = {
+      'yes': 'request-manual-payment-last-year',
+      'no': 'request-manual-payment',
+      
+  }   
+</script>
 
 {% endblock %}
