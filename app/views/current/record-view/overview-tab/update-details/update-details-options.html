@@ -21,9 +21,11 @@ Winter Fuel Payments
       <div class="govuk-grid-column-two-thirds">
 
 
-
+        {% if data['preferred-name-added']=='true'%}
+         {% include 'current/includes/_bar-preferred-name.html' %}
+        {% else %}
           {% include 'current/includes/_bar.html' %}
-
+        {% endif %}
 
 
         <form method="post">
@@ -146,12 +148,12 @@ Winter Fuel Payments
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="dlo" name="update-details-options" type="radio" value="add-preferred-name" data-aria-controls="conditional-carehome-conditional-2">
                   <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
-                    {% if data['preferred-last-name']%}
-                    Change or remove preferred name
-                  {% else %}
-                    Add preferred name
-                  {% endif %}
-                  </label>
+                    {% if data['preferred-name-added']=='true'%}
+                      Change or remove preferred name
+                    {% else %}
+                      Add preferred name
+                    {% endif %}
+                    </label>
                 </div>
 
               </div>
@@ -216,7 +218,7 @@ Winter Fuel Payments
             'benefit-flag': 'choose-benefit-flag',
             'in-prison': 'confirm-remove-prison-flag',
             '1-and-4-sent': 'confirm-1-and-4-sent',
-            'request-manual-payment': 'request-manual-payment',
+            'request-manual-payment': 'request-manual-payment-which-exercise',
             'add-preferred-name': 'preferred-name',
         }
     </script>

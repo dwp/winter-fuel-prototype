@@ -40,11 +40,11 @@ Winter Fuel Payments
                     <div class="govuk-form-group">
                       
                       <select class="govuk-select" id="sort" name="sort">
-                        <option value="250" selected>250</option>
-                        <option value="300">300</option>
-                        <option value="350">350</option>
-                        <option value="500">500</option>
-                        <option value="600">600</option>
+                        <option value="250" selected>250 - shared entitlement</option>
+                        <option value="300">300 - shared entitlement  / shared over 80 entitlement</option>
+                        <option value="350">350 - shared entitlement  / full over 80 entitlement</option>
+                        <option value="500">500 - full entitlement</option>
+                        <option value="600">600 - full entitlement / full over 80 entitlement</option>
                       </select>
                     </div>
 
@@ -63,12 +63,7 @@ Winter Fuel Payments
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                   </legend>
                   <div class="govuk-radios">
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="living-with-q-week-yes" name="living-with-q-week" type="radio" value="Lives with someone else of State Pension age">
-                      <label class="govuk-label govuk-radios__label" for="living-with-q-week-1">
-                        Problem with case - incident raised
-                      </label>
-                    </div>
+                    
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="living-with-q-week-no" name="living-with-q-week" type="radio" value="Does not live with anyone else of State Pension age">
                       <label class="govuk-label govuk-radios__label" for="living-with-q-week-2">
@@ -81,12 +76,7 @@ Winter Fuel Payments
                         Address classification incorrect and cannot be updated
                       </label>
                     </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="living-with-q-week-yes" name="living-with-q-week" type="radio" value="Lives with someone else of State Pension age">
-                      <label class="govuk-label govuk-radios__label" for="living-with-q-week-1">
-                        Payment needed for last year's exercise
-                      </label>
-                    </div>
+                    
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="living-with-q-week-yes" name="living-with-q-week" type="radio" value="Lives with someone else of State Pension age">
                       <label class="govuk-label govuk-radios__label" for="living-with-q-week-1">
@@ -100,7 +90,12 @@ Winter Fuel Payments
                         Address not found during new claim
                       </label>
                     </div>
-
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="living-with-q-week-yes" name="living-with-q-week" type="radio" value="Lives with someone else of State Pension age">
+                      <label class="govuk-label govuk-radios__label" for="living-with-q-week-1">
+                        Technical problem with SPS
+                      </label>
+                    </div>
                     
                    
                    <br><br>
