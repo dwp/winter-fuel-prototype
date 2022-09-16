@@ -22,7 +22,11 @@ Winter Fuel Payments
 
       
 
+        {% if data['preferred-name-added']=='true'%}
+          {% include 'current/includes/_bar-preferred-name.html' %}
+        {% else %}
           {% include 'current/includes/_bar.html' %}
+        {% endif %}
 
 
             <br>
