@@ -23,7 +23,9 @@ Winter Fuel Payments
       Can you confirm your full name?<br>
     </h1>
 
+    {% if data ['preferred-last-name']%}
     <p class="govuk-body-l"><strong>Preferred name: </strong>{{data['preferred-first-name']}} {{data['preferred-last-name']}}</p>
+    {% endif %}
       <p class="govuk-body-l"><strong>Name in SPS: </strong>Theodora Best</p>
 
       <br>
